@@ -1,1 +1,74 @@
+name: Daily Stock Analysis Portfolio xAI v1
 
+on:
+  schedule:
+    - cron: "0 2 * * 1-5"   # HKT 10:00
+    - cron: "30 8 * * 1-5"  # HKT 16:30
+    - cron: "0 15 * * 1-5"  # HKT 23:00
+    - cron: "0 2 * * 6,0"   # HKT 10:00 週末
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15   # 防止卡住
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip yfinance xai-sdk pytz
+
+      - name: Create portfolio data directory
+        run: mkdir -p portfolio_xai_v1/daily-data
+
+      - name: Run daily report
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          FORCE_SEND: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+          PYTHONUNBUFFERED: "1"
+        run: |
+          pwd
+          ls -la
+          echo "=== portfolio_xai_v1/daily-data 資料夾內容 ==="
+          ls -la portfolio_xai_v1/daily-data/ || echo "資料夾為空"
+          
+          python --version
+          python -u portfolio_xai_v1/main_new.py
+
+      - name: Commit updated state files
+        if: always()
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          
+          git add portfolio_xai_v1/daily-data/stock_ideas_history.json \
+                  portfolio_xai_v1/daily-data/stock_ideas_removelist.json \
+                  portfolio_xai_v1/daily-data/portfolio.json \
+                  portfolio_xai_v1/daily-data/xai_portfolio_book.json \
+                  portfolio_xai_v1/daily-data/last_run_time.txt || true
+          
+          if git diff --quiet --staged; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-update market state files [skip ci]"
+            git push
+            echo "✅ 已成功 commit 並 push 狀態檔案"
+          fi
