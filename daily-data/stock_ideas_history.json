@@ -1,0 +1,68 @@
+{
+  "MU": {
+    "ticker": "MU",
+    "name": "Micron Technology",
+    "first_recommended_at": "2026-05-22 17:17",
+    "first_price": 762.0999755859375,
+    "recommend_count": 1,
+    "sector": "半導體記憶體",
+    "last_recommended_at": "2026-05-22 17:17",
+    "last_price": 762.0999755859375,
+    "stop": "跌破5日均線或-8%"
+  },
+  "NVDA": {
+    "ticker": "NVDA",
+    "name": "NVIDIA",
+    "first_recommended_at": "2026-05-22 17:17",
+    "first_price": 219.50999450683594,
+    "recommend_count": 1,
+    "sector": "AI晶片",
+    "last_recommended_at": "2026-05-22 17:17",
+    "last_price": 219.50999450683594,
+    "stop": "跌破20日均線"
+  },
+  "AMD": {
+    "ticker": "AMD",
+    "name": "AMD",
+    "first_recommended_at": "2026-05-22 17:17",
+    "first_price": 449.5899963378906,
+    "recommend_count": 1,
+    "sector": "AI晶片",
+    "last_recommended_at": "2026-05-22 17:17",
+    "last_price": 449.5899963378906,
+    "stop": "跌破10日均線"
+  },
+  "QQQ": {
+    "ticker": "QQQ",
+    "name": "Invesco QQQ Trust",
+    "first_recommended_at": "2026-05-22 17:17",
+    "first_price": 714.510009765625,
+    "recommend_count": 1,
+    "sector": "AI ETF",
+    "last_recommended_at": "2026-05-22 17:17",
+    "last_price": 714.510009765625,
+    "stop": "跌破200日均線"
+  },
+  "BTC-USD": {
+    "ticker": "BTC-USD",
+    "name": "Bitcoin",
+    "first_recommended_at": "2026-05-22 17:17",
+    "first_price": 77129.421875,
+    "recommend_count": 1,
+    "sector": "加密貨幣",
+    "last_recommended_at": "2026-05-22 17:17",
+    "last_price": 77129.421875,
+    "stop": "跌破70,000"
+  },
+  "ETH-USD": {
+    "ticker": "ETH-USD",
+    "name": "Ethereum",
+    "first_recommended_at": "2026-05-22 17:17",
+    "first_price": 2117.5,
+    "recommend_count": 1,
+    "sector": "加密貨幣",
+    "last_recommended_at": "2026-05-22 17:17",
+    "last_price": 2117.5,
+    "stop": "跌破1,900"
+  }
+}
