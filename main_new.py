@@ -817,7 +817,7 @@ def portfolio_table(items, today, sell_items=None):
     <div class="portfolio-panel">
       <div class="portfolio-head">
         <div class="portfolio-head-left">
-          <div>Portfolio Snapshot</div>
+          <div>xAI 模擬 Portfolio</div>
           <div class="portfolio-capital-line">
             <span class="portfolio-capital-label {total_return_class}">{esc(total_assets_text)}</span>
             <span class="portfolio-capital-change {total_return_class}">{esc(total_return_text)}</span>
@@ -831,7 +831,7 @@ def portfolio_table(items, today, sell_items=None):
             <th style="width:18%;">Action</th>
             <th style="width:42%;">Position</th>
             <th style="width:20%;text-align:right;">Value</th>
-            <th style="width:20%;text-align:center;">P/L</th>
+            <th style="width:20%;text-align:right;">P/L</th>
           </tr>
         </thead>
         <tbody>
@@ -967,7 +967,7 @@ td{{padding:9px 0;border-bottom:1px solid #eee;font-size:14px}}
 .portfolio-subline{{color:#64748b;font-size:10px;line-height:1.2;margin-top:3px;white-space:nowrap}}
 .portfolio-subline.gain{{color:#059669}} .portfolio-subline.loss{{color:#e11d48}} .portfolio-subline.flat{{color:#64748b}}
 .portfolio-price{{color:#111827;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}}
-.portfolio-pnl{{font-weight:400;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}} .portfolio-pnl.gain{{color:#059669}} .portfolio-pnl.loss{{color:#e11d48}} .portfolio-pnl.flat{{color:#64748b}}
+.portfolio-pnl{{font-weight:400;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}} .portfolio-pnl.gain{{color:#059669}} .portfolio-pnl.loss{{color:#e11d48}} .portfolio-pnl.flat{{color:#64748b}}
 .up{{color:#0a8f3c;font-weight:700}} .down{{color:#d93025;font-weight:700}}
 .footer{{color:#888;font-size:11px;margin-top:28px;text-align:center}}
 </style></head><body><div class="c">
