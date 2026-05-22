@@ -51,7 +51,7 @@ jobs:
           ls -la portfolio_xai_v1/daily-data/ || echo "資料夾為空"
           
           python --version
-          python -u portfolio_xai_v1/main_new.py
+          python main_new.py
 
       - name: Commit updated state files
         if: always()
