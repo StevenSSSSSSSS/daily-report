@@ -38,7 +38,7 @@ PORTFOLIO_POSITION_NOTIONAL = 1000.0
 PORTFOLIO_MAX_POSITIONS = 5
 
 # ==================== 新增開關 ====================
-USE_XAI = True   # 設為 False 可暫時關閉 xAI 呼叫，快速測試排版
+USE_XAI = False   # 設為 False 可暫時關閉 xAI 呼叫，快速測試排版
 USE_PORTFOLIO_DEMO = False   # 設為 True 使用固定 Buy/Hold/Sell 數據測試 portfolio 排版
 
 # ==================== 原有常數 ====================
@@ -445,6 +445,7 @@ def portfolio_snapshot_rows(book):
 
         shares = float(pos.get("shares", 0) or 0)
         value = shares * float(current_price or 0)
+        pnl_amount = value - float(pos.get("invested", 0) or 0)
         
         pnl_pct = ((float(current_price) - avg_cost) / avg_cost * 100) if current_price and avg_cost > 0 else 0
         
@@ -456,7 +457,9 @@ def portfolio_snapshot_rows(book):
             "shares_text": f"{shares:.4f}",
             "avg_cost_text": f"${avg_cost:,.2f}",
             "value_text": f"${value:,.2f}",
+            "current_price_text": f"${float(current_price or 0):,.2f}",
             "pnl": f"{pnl_pct:+.2f}%",
+            "pnl_amount_text": f"{pnl_amount:+,.2f}",
         })
     return rows
 
@@ -842,6 +845,8 @@ def portfolio_table(items, today, sell_items=None):
         shares_text = str(row.get("shares_text") or "--").strip()
         avg_cost_text = str(row.get("avg_cost_text") or "--").strip()
         value_text = str(row.get("value_text") or row.get("price") or "--").strip()
+        current_price_text = str(row.get("current_price_text") or "").strip()
+        pnl_amount_text = str(row.get("pnl_amount_text") or "").strip()
 
         html_parts.append(f'''
           <tr>
@@ -850,8 +855,14 @@ def portfolio_table(items, today, sell_items=None):
               <div class="portfolio-ticker">{esc(row.get("ticker", ""))}</div>
               <div class="portfolio-subline">{esc(shares_text)} @ {esc(avg_cost_text)}</div>
             </td>
-            <td class="portfolio-price">{esc(value_text)}</td>
-            <td class="portfolio-pnl {pnl_class}">{esc(pnl)}</td>
+            <td class="portfolio-price">
+              <div>{esc(value_text)}</div>
+              <div class="portfolio-subline">{esc(current_price_text)}</div>
+            </td>
+            <td class="portfolio-pnl {pnl_class}">
+              <div>{esc(pnl)}</div>
+              <div class="portfolio-subline {pnl_class}">{esc(pnl_amount_text)}</div>
+            </td>
           </tr>
         ''')
 
@@ -954,6 +965,7 @@ td{{padding:9px 0;border-bottom:1px solid #eee;font-size:14px}}
 .portfolio-badge.buy{{color:#047857;background:#d1fae5}} .portfolio-badge.hold{{color:#92400e;background:#fef3c7}} .portfolio-badge.sell{{color:#be123c;background:#ffe4e6}}
 .portfolio-ticker{{font-weight:700;color:#111827;font-size:14px;line-height:1.15}}
 .portfolio-subline{{color:#64748b;font-size:10px;line-height:1.2;margin-top:3px;white-space:nowrap}}
+.portfolio-subline.gain{{color:#059669}} .portfolio-subline.loss{{color:#e11d48}} .portfolio-subline.flat{{color:#64748b}}
 .portfolio-price{{color:#111827;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}}
 .portfolio-pnl{{font-weight:700;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}} .portfolio-pnl.gain{{color:#059669}} .portfolio-pnl.loss{{color:#e11d48}} .portfolio-pnl.flat{{color:#64748b}}
 .up{{color:#0a8f3c;font-weight:700}} .down{{color:#d93025;font-weight:700}}
