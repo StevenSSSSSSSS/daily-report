@@ -4,11 +4,11 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 2,
+    "recommend_count": 3,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-22 19:22",
-    "last_price": 762.0999755859375,
-    "stop": "140美元"
+    "last_recommended_at": "2026-05-23 01:01",
+    "last_price": 770.9349975585938,
+    "stop": "跌破20日均線或關鍵支撐位止損。"
   },
   "NVDA": {
     "ticker": "NVDA",
@@ -48,21 +48,21 @@
     "name": "Bitcoin",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 77129.421875,
-    "recommend_count": 2,
+    "recommend_count": 3,
     "sector": "加密貨幣",
-    "last_recommended_at": "2026-05-22 19:22",
-    "last_price": 77153.5078125,
-    "stop": "73,000美元"
+    "last_recommended_at": "2026-05-23 01:01",
+    "last_price": 76875.7578125,
+    "stop": "跌破74000美元止損。"
   },
   "ETH-USD": {
     "ticker": "ETH-USD",
     "name": "Ethereum",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 2117.5,
-    "recommend_count": 2,
+    "recommend_count": 3,
     "sector": "加密貨幣",
-    "last_recommended_at": "2026-05-22 19:22",
-    "last_price": 2120.010009765625,
-    "stop": "1,950美元"
+    "last_recommended_at": "2026-05-23 01:01",
+    "last_price": 2122.56005859375,
+    "stop": "跌破2000美元止損。"
   }
 }
