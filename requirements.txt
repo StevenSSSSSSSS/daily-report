@@ -1,0 +1,8 @@
+yfinance
+feedparser
+xai-sdk
+alpaca-py
+requests
+holidays
+pytz
+tradingview-ta
