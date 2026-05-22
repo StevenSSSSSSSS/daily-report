@@ -265,6 +265,7 @@ def load_portfolio_book():
     book.setdefault("cash", PORTFOLIO_INITIAL_CAPITAL)
     book.setdefault("positions", {})
     book.setdefault("closed_trades", [])
+    book.setdefault("trade_log", [])
     return book
 
 
@@ -358,6 +359,7 @@ def apply_portfolio_decisions(book, report, now):
 
     positions = book.setdefault("positions", {})
     closed_trades = book.setdefault("closed_trades", [])
+    trade_log = book.setdefault("trade_log", [])
     cash = float(book.get("cash", PORTFOLIO_INITIAL_CAPITAL) or 0)
     now_text = now.strftime("%Y-%m-%d %H:%M")
 
@@ -380,6 +382,7 @@ def apply_portfolio_decisions(book, report, now):
             proceeds = shares * float(price or 0)
             invested = float(pos.get("invested", 0) or 0)
             cash += proceeds
+            realized_pnl = proceeds - invested
             closed_trades.append({
                 "ticker": ticker,
                 "name": pos.get("name", ""),
@@ -389,7 +392,19 @@ def apply_portfolio_decisions(book, report, now):
                 "sell_price": price,
                 "invested": round(invested, 2),
                 "proceeds": round(proceeds, 2),
-                "pnl": round(proceeds - invested, 2),
+                "pnl": round(realized_pnl, 2),
+                "reason": order.get("reason", ""),
+            })
+            trade_log.append({
+                "time": now_text,
+                "action": "sell",
+                "ticker": ticker,
+                "price": round(float(price or 0), 4),
+                "shares": round(shares, 6),
+                "amount": round(proceeds, 2),
+                "invested": round(invested, 2),
+                "pnl": round(realized_pnl, 2),
+                "cash_after": round(cash, 2),
                 "reason": order.get("reason", ""),
             })
 
@@ -398,6 +413,23 @@ def apply_portfolio_decisions(book, report, now):
             positions[ticker]["last_reason"] = order.get("reason", "")
             if price:
                 positions[ticker]["last_price"] = price
+            pos = positions[ticker]
+            shares = float(pos.get("shares", 0) or 0)
+            avg_cost = normalize_portfolio_position_cost(pos)
+            current_price = float(price or pos.get("last_price", avg_cost) or 0)
+            value = shares * current_price
+            invested = float(pos.get("invested", 0) or 0)
+            trade_log.append({
+                "time": now_text,
+                "action": "hold",
+                "ticker": ticker,
+                "price": round(current_price, 4),
+                "shares": round(shares, 6),
+                "value": round(value, 2),
+                "unrealized_pnl": round(value - invested, 2),
+                "cash_after": round(cash, 2),
+                "reason": order.get("reason", ""),
+            })
 
         elif action == "buy" and ticker not in positions and len(positions) < PORTFOLIO_MAX_POSITIONS:
             allocation = min(float(order.get("allocation_usd") or PORTFOLIO_POSITION_NOTIONAL), 
@@ -424,6 +456,17 @@ def apply_portfolio_decisions(book, report, now):
                 "stop": order.get("stop", ""),
                 "buy_price_confirmed": price   # 備份
             }
+            trade_log.append({
+                "time": now_text,
+                "action": "buy",
+                "ticker": ticker,
+                "price": round(float(price), 4),
+                "shares": round(shares, 6),
+                "amount": round(allocation, 2),
+                "cash_after": round(cash, 2),
+                "reason": order.get("reason", ""),
+                "stop": order.get("stop", ""),
+            })
 
     book["cash"] = round(cash, 2)
     book["last_updated_at"] = now_text
