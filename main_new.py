@@ -38,7 +38,7 @@ PORTFOLIO_POSITION_NOTIONAL = 1000.0
 PORTFOLIO_MAX_POSITIONS = 5
 
 # ==================== 新增開關 ====================
-USE_XAI = False   # 設為 False 可暫時關閉 xAI 呼叫，快速測試排版
+USE_XAI = True   # 設為 False 可暫時關閉 xAI 呼叫，快速測試排版
 USE_PORTFOLIO_DEMO = False   # 設為 True 使用固定 Buy/Hold/Sell 數據測試 portfolio 排版
 
 # ==================== 原有常數 ====================
