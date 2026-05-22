@@ -130,7 +130,7 @@ def trading_session_instruction(now):
     if now.hour == 16:
         return "HKT 16:30 亞洲收盤後：總結亞洲市場，制定今晚美股交易計劃，buy/sell 保守。"
     if now.hour == 23:
-        return "HKT 23:00 美股交易時段：可根據即時訊號作 buy/hold/sell 決策。"
+        return "美股交易時段掃描：通常對應 HKT 21:30-04:00/05:00，可根據即時訊號作 buy/hold/sell 決策。"
     return "非標準時間手動掃描：保守處理交易決策，優先 watchlist、hold 和風險管理。"
 
 
