@@ -1,0 +1,91 @@
+{
+  "initial_capital": 5000.0,
+  "cash": 0.0,
+  "positions": {
+    "MU": {
+      "ticker": "MU",
+      "name": "MU",
+      "shares": 1.3378015993849248,
+      "avg_cost": 747.4949951171875,
+      "invested": 1000.0,
+      "opened_at": "2026-05-21 23:42",
+      "last_price": 762.0999755859375,
+      "last_decision": "hold",
+      "reason": "從監察名單選入，HBM需求強勁",
+      "stop": "105美元",
+      "buy_price_confirmed": 747.4949951171875,
+      "last_reason": "HBM需求強勁，持倉續航"
+    },
+    "AMD": {
+      "ticker": "AMD",
+      "name": "AMD",
+      "shares": 2.271695251194671,
+      "avg_cost": 440.19989013671875,
+      "invested": 1000.0,
+      "opened_at": "2026-05-21 23:42",
+      "last_price": 449.5899963378906,
+      "last_decision": "hold",
+      "reason": "從監察名單選入，MI系列放量",
+      "stop": "148美元",
+      "buy_price_confirmed": 440.19989013671875,
+      "last_reason": "MI系列放量，資料中心成長"
+    },
+    "TSM": {
+      "ticker": "TSM",
+      "name": "TSM",
+      "shares": 2.4804663652227834,
+      "avg_cost": 403.1499938964844,
+      "invested": 1000.0,
+      "opened_at": "2026-05-21 23:42",
+      "last_price": 407.1499938964844,
+      "last_decision": "hold",
+      "reason": "從監察名單選入，CoWoS滿載",
+      "stop": "158美元",
+      "buy_price_confirmed": 403.1499938964844,
+      "last_reason": "CoWoS滿載，AI代工利多"
+    },
+    "BTC-USD": {
+      "ticker": "BTC-USD",
+      "name": "BTC-USD",
+      "shares": 0.012963219901783354,
+      "avg_cost": 77141.328125,
+      "invested": 1000.0,
+      "opened_at": "2026-05-21 23:42",
+      "last_price": 77396.859375,
+      "last_decision": "hold",
+      "reason": "從監察名單選入，機構配置增加",
+      "stop": "74000美元",
+      "buy_price_confirmed": 77141.328125,
+      "last_reason": "機構配置支撐"
+    },
+    "ETH-USD": {
+      "ticker": "ETH-USD",
+      "name": "ETH-USD",
+      "shares": 0.4664782048285487,
+      "avg_cost": 2143.3798828125,
+      "invested": 999.84,
+      "opened_at": "2026-05-22 01:27",
+      "last_price": 2127.610107421875,
+      "last_decision": "hold",
+      "reason": "從監察名單選入，加密補強",
+      "stop": "跌破2000美元",
+      "buy_price_confirmed": 2143.3798828125,
+      "last_reason": "加密補強，短期觀察"
+    }
+  },
+  "closed_trades": [
+    {
+      "ticker": "NVDA",
+      "name": "NVDA",
+      "opened_at": "2026-05-21 23:42",
+      "closed_at": "2026-05-21 23:58",
+      "avg_cost": 219.56590270996094,
+      "sell_price": 219.52999877929688,
+      "invested": 1000.0,
+      "proceeds": 999.84,
+      "pnl": -0.16,
+      "reason": "跌穿止蝕位，移除冷卻名單"
+    }
+  ],
+  "last_updated_at": "2026-05-22 14:16"
+}

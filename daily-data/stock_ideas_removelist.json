@@ -1,0 +1,12 @@
+[
+  {
+    "ticker": "NVDA",
+    "name": "NVIDIA",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-05-21T23:42:44.838814+08:00",
+    "cooldown_days": 7,
+    "first_price": 219.56590270996094,
+    "sell_price": 219.56590270996094,
+    "performance_pct": 0.0
+  }
+]
