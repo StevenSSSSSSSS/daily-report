@@ -110,8 +110,8 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席�
 }
 
 **stock_ideas 選股規則**：
-- 總數 4-6 隻（本期新推 3-5 隻 + 固定 BTC-USD 與 ETH-USD）。
-- 允許 ETF：QQQ, QQQI, SPY, VOO, DXYZ, FDVV。
+- 總數 4-6 隻（本期新推 3-5 隻）。
+- 允許 ETF：QQQ, QQQI, SPY, VOO, DXYZ, FDVV, NASA, XOVR, RONB。
 - 優先 AI 記憶體、AI晶片、先進封裝、半導體設備材料、新能源/電動車及允許的ETF。
 
 **Portfolio 決策規則**：
