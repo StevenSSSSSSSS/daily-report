@@ -4,44 +4,44 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 4,
+    "recommend_count": 5,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-23 13:42",
+    "last_recommended_at": "2026-05-24 14:04",
     "last_price": 751.0,
-    "stop": "跌破5日均線下方3%"
+    "stop": "5%下方"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 3,
+    "recommend_count": 4,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-05-23 13:42",
+    "last_recommended_at": "2026-05-24 14:04",
     "last_price": 215.3300018310547,
-    "stop": "跌破20日均線"
+    "stop": "8%下方"
   },
   "AMD": {
     "ticker": "AMD",
     "name": "AMD",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 2,
+    "recommend_count": 3,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-05-22 19:22",
-    "last_price": 449.5899963378906,
-    "stop": "跌破50日均線"
+    "last_recommended_at": "2026-05-24 14:04",
+    "last_price": 467.510009765625,
+    "stop": "6%下方"
   },
   "QQQ": {
     "ticker": "QQQ",
-    "name": "Invesco QQQ Trust",
+    "name": "Invesco QQQ",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 2,
+    "recommend_count": 3,
     "sector": "AI ETF",
-    "last_recommended_at": "2026-05-23 13:42",
+    "last_recommended_at": "2026-05-24 14:04",
     "last_price": 717.5399780273438,
-    "stop": "跌破近期低點"
+    "stop": "4%下方"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -64,5 +64,16 @@
     "last_recommended_at": "2026-05-23 01:01",
     "last_price": 2122.56005859375,
     "stop": "跌破2000美元止損。"
+  },
+  "TSM": {
+    "ticker": "TSM",
+    "name": "TSMC",
+    "first_recommended_at": "2026-05-24 14:04",
+    "first_price": 404.5199890136719,
+    "recommend_count": 1,
+    "sector": "晶圓代工",
+    "last_recommended_at": "2026-05-24 14:04",
+    "last_price": 404.5199890136719,
+    "stop": "5%下方"
   }
 }
