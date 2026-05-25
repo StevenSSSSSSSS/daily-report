@@ -73,6 +73,8 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席�
 
 分析範圍：美股與AI產業鏈、亞太（A股、日股為主）、宏觀、加密貨幣。
 
+在風險可控的前提下，你被鼓勵積極尋找並執行優質交易機會，而非過度保守。
+
 **JSON 輸出格式**（只輸出合法 JSON，不要任何額外文字）：
 {
   "subject": "不超過22字的郵件標題",
@@ -115,24 +117,28 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席�
 - 優先 AI 記憶體、AI晶片、先進封裝、半導體設備材料、新能源/電動車及允許的ETF。
 
 **Portfolio 決策規則**：
-- 你控制一個初始本金 5,000 美金的模擬 portfolio。
-- 第一步建立 watchlist；第二步從 watchlist 選 buy；第三步對現有持倉逐一決定 hold 或 sell。
+- 你控制一個初始本金 5,000 美金的模擬 portfolio，目標是長期穩健增值。
+- 當出現高信心的買入機會（清晰催化劑、良好風險報酬比、技術面確認）時，應積極從 watchlist 或 stock_ideas 中執行 buy。
+- 對現有持倉必須逐一明確決定：thesis 持續成立 → hold；thesis 弱化、止損觸發、或有更好機會 → sell。
 - 每個新 buy 預設 allocation_usd 為 1,000；最多同時持有 5 個倉位；不可超過可用現金。
-- portfolio_decisions.orders 必須包含現有持倉的 hold/sell 決策；buy 只可來自 watchlist 或 stock_ideas。
-- Python 會負責實際現金、股數與倉位限制；你負責投資判斷。
-- 你的目標是讓模擬 portfolio 長期增值；交易決策需重視風險調整後回報，避免 data mining、過度追逐單一訊號，或為短期收益承擔不成比例的虧損風險。"""
+- portfolio_decisions.orders 必須包含所有現有持倉的明確決策（buy/hold/sell），不可遺漏。
+- 在市場趨勢強烈、訊號一致時，可較積極增加曝險；在不確定性高時則偏向防守。
+"""
 
 def trading_session_instruction(now):
     if now.weekday() >= 5:
-        return "週末休市掃描：只做復盤、風險檢查和下週 watchlist，不主動給即時 buy/sell。"
+        return "週末休市模式：可復盤並為下週準備 watchlist 和潛在買點，允許提出高 conviction 的買入建議。"
+    
     if now.hour == 10:
-        return "HKT 10:00 亞洲盤中：美股用上一交易日收盤資料，重點更新亞洲市場和今晚美股 watchlist。"
+        return "HKT 10:00 亞洲盤中：可針對亞洲市場和美股隔夜動向提出 watchlist 或買入建議。"
+    
     if now.hour == 16:
-        return "HKT 16:30 亞洲收盤後：總結亞洲市場，制定今晚美股交易計劃，buy/sell 保守。"
-    if now.hour == 23:
-        return "美股交易時段掃描：通常對應 HKT 21:30-04:00/05:00，可根據即時訊號作 buy/hold/sell 決策。"
-    return "非標準時間手動掃描：保守處理交易決策，優先 watchlist、hold 和風險管理。"
-
+        return "HKT 16:30 亞洲收盤後：總結市場並可積極制定今晚美股的 buy/hold/sell 決策。"
+    
+    if now.hour == 23 or (now.hour < 5):   # 美股交易時段
+        return "美股交易活躍時段：可根據即時市場訊號積極提出 buy/hold/sell 決策。"
+    
+    return "一般交易時段：可正常提出投資決策，視市場訊號強弱決定積極度。"
 
 def build_prompt(today, quotes, status, session_note, time_note, removelist_text, portfolio_text):
     return f"""當前香港時間：{today}
