@@ -4,22 +4,22 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 5,
+    "recommend_count": 6,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-24 14:04",
+    "last_recommended_at": "2026-05-25 14:26",
     "last_price": 751.0,
-    "stop": "5%下方"
+    "stop": "跌破近期低點5%"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 4,
+    "recommend_count": 5,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-05-24 14:04",
+    "last_recommended_at": "2026-05-25 14:26",
     "last_price": 215.3300018310547,
-    "stop": "8%下方"
+    "stop": "跌破200日均線"
   },
   "AMD": {
     "ticker": "AMD",
@@ -37,11 +37,11 @@
     "name": "Invesco QQQ",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 3,
+    "recommend_count": 4,
     "sector": "AI ETF",
-    "last_recommended_at": "2026-05-24 14:04",
+    "last_recommended_at": "2026-05-25 14:26",
     "last_price": 717.5399780273438,
-    "stop": "4%下方"
+    "stop": "跌破關鍵支撐"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -75,5 +75,16 @@
     "last_recommended_at": "2026-05-24 14:04",
     "last_price": 404.5199890136719,
     "stop": "5%下方"
+  },
+  "TPE:2330": {
+    "ticker": "TPE:2330",
+    "name": "台積電",
+    "first_recommended_at": "2026-05-25 14:26",
+    "first_price": null,
+    "recommend_count": 1,
+    "sector": "先進製程",
+    "last_recommended_at": "2026-05-25 14:26",
+    "last_price": null,
+    "stop": "跌破月線"
   }
 }
