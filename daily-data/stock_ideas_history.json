@@ -4,44 +4,44 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 9,
+    "recommend_count": 10,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-26 00:57",
+    "last_recommended_at": "2026-05-26 14:06",
     "last_price": 751.0,
-    "stop": "跌破近期低點5-7%"
+    "stop": "跌破近期低點5%"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 8,
+    "recommend_count": 9,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-05-26 00:57",
+    "last_recommended_at": "2026-05-26 14:06",
     "last_price": 215.3300018310547,
-    "stop": "跌破20日均線"
+    "stop": "10日均線下破"
   },
   "AMD": {
     "ticker": "AMD",
-    "name": "Advanced Micro Devices",
+    "name": "AMD",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 6,
+    "recommend_count": 7,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-05-26 00:57",
+    "last_recommended_at": "2026-05-26 14:06",
     "last_price": 467.510009765625,
-    "stop": "跌破關鍵支撐"
+    "stop": "8%止損"
   },
   "QQQ": {
     "ticker": "QQQ",
     "name": "Invesco QQQ",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 6,
-    "sector": "AI ETF",
-    "last_recommended_at": "2026-05-25 20:02",
+    "recommend_count": 7,
+    "sector": "科技ETF",
+    "last_recommended_at": "2026-05-26 14:06",
     "last_price": 717.5399780273438,
-    "stop": "跌破關鍵支撐。"
+    "stop": "5%止損"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -103,10 +103,10 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 1,
-    "sector": "半導體",
-    "last_recommended_at": "2026-05-26 00:57",
+    "recommend_count": 2,
+    "sector": "網路與自訂晶片",
+    "last_recommended_at": "2026-05-26 14:06",
     "last_price": 414.1400146484375,
-    "stop": "跌破近期低點"
+    "stop": "近期低點"
   }
 }

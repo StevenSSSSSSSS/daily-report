@@ -10,10 +10,11 @@
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
       "last_price": 751.0,
-      "last_decision": "buy",
+      "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
-      "buy_price_confirmed": 751.0
+      "buy_price_confirmed": 751.0,
+      "last_reason": "thesis持續成立，HBM短缺催化"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -23,10 +24,11 @@
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
       "last_price": 215.3300018310547,
-      "last_decision": "buy",
+      "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
-      "buy_price_confirmed": 215.3300018310547
+      "buy_price_confirmed": 215.3300018310547,
+      "last_reason": "AI晶片龍頭地位穩固"
     },
     "AMD": {
       "ticker": "AMD",
@@ -36,10 +38,11 @@
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
       "last_price": 467.510009765625,
-      "last_decision": "buy",
+      "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
-      "buy_price_confirmed": 467.510009765625
+      "buy_price_confirmed": 467.510009765625,
+      "last_reason": "GPU業務加速，風險可控"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -49,10 +52,11 @@
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
       "last_price": 414.1400146484375,
-      "last_decision": "buy",
+      "last_decision": "hold",
       "reason": "網路與自訂晶片需求",
       "stop": "跌破近期低點",
-      "buy_price_confirmed": 414.1400146484375
+      "buy_price_confirmed": 414.1400146484375,
+      "last_reason": "網路與自訂晶片需求強"
     }
   },
   "closed_trades": [],
@@ -100,7 +104,51 @@
       "cash_after": 1000.0,
       "reason": "網路與自訂晶片需求",
       "stop": "跌破近期低點"
+    },
+    {
+      "time": "2026-05-26 14:06",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 751.0,
+      "shares": 1.331558,
+      "value": 1000.0,
+      "unrealized_pnl": 0.0,
+      "cash_after": 1000.0,
+      "reason": "thesis持續成立，HBM短缺催化"
+    },
+    {
+      "time": "2026-05-26 14:06",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 215.33,
+      "shares": 4.644035,
+      "value": 1000.0,
+      "unrealized_pnl": 0.0,
+      "cash_after": 1000.0,
+      "reason": "AI晶片龍頭地位穩固"
+    },
+    {
+      "time": "2026-05-26 14:06",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 467.51,
+      "shares": 2.138992,
+      "value": 1000.0,
+      "unrealized_pnl": 0.0,
+      "cash_after": 1000.0,
+      "reason": "GPU業務加速，風險可控"
+    },
+    {
+      "time": "2026-05-26 14:06",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 414.14,
+      "shares": 2.414642,
+      "value": 1000.0,
+      "unrealized_pnl": -0.0,
+      "cash_after": 1000.0,
+      "reason": "網路與自訂晶片需求強"
     }
   ],
-  "last_updated_at": "2026-05-26 00:57"
+  "last_updated_at": "2026-05-26 14:06"
 }
