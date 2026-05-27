@@ -4,44 +4,44 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 11,
+    "recommend_count": 12,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-27 01:50",
-    "last_price": 898.1699829101562,
-    "stop": "成本下方8%"
+    "last_recommended_at": "2026-05-27 14:20",
+    "last_price": 895.8800048828125,
+    "stop": "跌破20日均線或-8%"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 10,
-    "sector": "AI晶片龍頭",
-    "last_recommended_at": "2026-05-27 01:50",
-    "last_price": 213.86500549316406,
-    "stop": "成本下方10%"
+    "recommend_count": 11,
+    "sector": "AI晶片",
+    "last_recommended_at": "2026-05-27 14:20",
+    "last_price": 214.86000061035156,
+    "stop": "跌破關鍵移動平均或-10%"
   },
   "AMD": {
     "ticker": "AMD",
     "name": "AMD",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 8,
+    "recommend_count": 9,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-05-27 01:50",
-    "last_price": 497.3349914550781,
-    "stop": "成本下方7%"
+    "last_recommended_at": "2026-05-27 14:20",
+    "last_price": 503.8900146484375,
+    "stop": "跌破近期低點或-7%"
   },
   "QQQ": {
     "ticker": "QQQ",
-    "name": "Invesco QQQ",
+    "name": "Invesco QQQ Trust",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 7,
+    "recommend_count": 8,
     "sector": "科技ETF",
-    "last_recommended_at": "2026-05-26 14:06",
-    "last_price": 717.5399780273438,
-    "stop": "5%止損"
+    "last_recommended_at": "2026-05-27 14:20",
+    "last_price": 730.280029296875,
+    "stop": "跌破關鍵支撐或-6%"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -103,10 +103,10 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 3,
+    "recommend_count": 4,
     "sector": "網路與自訂晶片",
-    "last_recommended_at": "2026-05-27 01:50",
-    "last_price": 422.8999938964844,
-    "stop": "成本下方6%"
+    "last_recommended_at": "2026-05-27 14:20",
+    "last_price": 422.010009765625,
+    "stop": "跌破20日均線或-8%"
   }
 }
