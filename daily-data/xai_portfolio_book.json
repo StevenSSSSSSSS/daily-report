@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，HBM短缺催化強勁，獲利19%續抱"
+      "last_reason": "thesis持續成立，獲利中"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -28,7 +28,7 @@
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "AI晶片龍頭，需求穩健，thesis未變"
+      "last_reason": "AI晶片龍頭，thesis強勁"
     },
     "AMD": {
       "ticker": "AMD",
@@ -42,7 +42,7 @@
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "GPU業務加速，風險可控，thesis成立"
+      "last_reason": "GPU業務加速，風險可控"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -56,7 +56,7 @@
       "reason": "網路與自訂晶片需求",
       "stop": "跌破近期低點",
       "buy_price_confirmed": 414.1400146484375,
-      "last_reason": "自訂晶片與網路需求強，thesis持續"
+      "last_reason": "網路與自訂晶片需求穩健"
     }
   },
   "closed_trades": [],
@@ -236,7 +236,51 @@
       "unrealized_pnl": 19.0,
       "cash_after": 1000.0,
       "reason": "自訂晶片與網路需求強，thesis持續"
+    },
+    {
+      "time": "2026-05-27 19:52",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 895.88,
+      "shares": 1.331558,
+      "value": 1192.92,
+      "unrealized_pnl": 192.92,
+      "cash_after": 1000.0,
+      "reason": "thesis持續成立，獲利中"
+    },
+    {
+      "time": "2026-05-27 19:52",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 214.86,
+      "shares": 4.644035,
+      "value": 997.82,
+      "unrealized_pnl": -2.18,
+      "cash_after": 1000.0,
+      "reason": "AI晶片龍頭，thesis強勁"
+    },
+    {
+      "time": "2026-05-27 19:52",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 503.89,
+      "shares": 2.138992,
+      "value": 1077.82,
+      "unrealized_pnl": 77.82,
+      "cash_after": 1000.0,
+      "reason": "GPU業務加速，風險可控"
+    },
+    {
+      "time": "2026-05-27 19:52",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 422.01,
+      "shares": 2.414642,
+      "value": 1019.0,
+      "unrealized_pnl": 19.0,
+      "cash_after": 1000.0,
+      "reason": "網路與自訂晶片需求穩健"
     }
   ],
-  "last_updated_at": "2026-05-27 14:20"
+  "last_updated_at": "2026-05-27 19:52"
 }
