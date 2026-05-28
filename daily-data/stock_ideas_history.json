@@ -37,11 +37,11 @@
     "name": "Invesco QQQ Trust",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 11,
-    "sector": "AI ETF",
-    "last_recommended_at": "2026-05-28 19:55",
-    "last_price": 729.4500122070312,
-    "stop": "跌破關鍵支撐"
+    "recommend_count": 12,
+    "sector": "科技ETF",
+    "last_recommended_at": "2026-05-29 01:55",
+    "last_price": 736.3499755859375,
+    "stop": "跌破近期低點5%"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -103,10 +103,32 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 8,
-    "sector": "AI晶片與網路",
-    "last_recommended_at": "2026-05-28 19:55",
-    "last_price": 421.8599853515625,
-    "stop": "跌破10日均線"
+    "recommend_count": 9,
+    "sector": "半導體",
+    "last_recommended_at": "2026-05-29 01:55",
+    "last_price": 428.510009765625,
+    "stop": "跌破MA50"
+  },
+  "SMCI": {
+    "ticker": "SMCI",
+    "name": "Super Micro Computer",
+    "first_recommended_at": "2026-05-29 01:55",
+    "first_price": 41.95500183105469,
+    "recommend_count": 1,
+    "sector": "AI伺服器",
+    "last_recommended_at": "2026-05-29 01:55",
+    "last_price": 41.95500183105469,
+    "stop": "跌破近期支撐"
+  },
+  "ASML": {
+    "ticker": "ASML",
+    "name": "ASML Holding",
+    "first_recommended_at": "2026-05-29 01:55",
+    "first_price": 1612.3299560546875,
+    "recommend_count": 1,
+    "sector": "半導體設備",
+    "last_recommended_at": "2026-05-29 01:55",
+    "last_price": 1612.3299560546875,
+    "stop": "跌破MA200"
   }
 }
