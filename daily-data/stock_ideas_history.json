@@ -4,33 +4,33 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 17,
+    "recommend_count": 18,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-29 14:13",
+    "last_recommended_at": "2026-05-29 19:44",
     "last_price": 923.52001953125,
-    "stop": "跌破20日均線"
+    "stop": "跌破5日均線止損"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 12,
+    "recommend_count": 13,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-05-27 19:52",
-    "last_price": 214.86000061035156,
-    "stop": "跌破20日均線"
+    "last_recommended_at": "2026-05-29 19:44",
+    "last_price": 214.25,
+    "stop": "跌破關鍵支撐"
   },
   "AMD": {
     "ticker": "AMD",
     "name": "AMD",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 13,
+    "recommend_count": 14,
     "sector": "AI GPU",
-    "last_recommended_at": "2026-05-29 14:13",
+    "last_recommended_at": "2026-05-29 19:44",
     "last_price": 518.0900268554688,
-    "stop": "跌破50日均線"
+    "stop": "跌破10日均線"
   },
   "QQQ": {
     "ticker": "QQQ",
@@ -89,25 +89,25 @@
   },
   "NYSE:TSM": {
     "ticker": "NYSE:TSM",
-    "name": "Taiwan Semiconductor",
+    "name": "TSMC",
     "first_recommended_at": "2026-05-25 20:02",
     "first_price": null,
-    "recommend_count": 1,
-    "sector": "先進封裝",
-    "last_recommended_at": "2026-05-25 20:02",
+    "recommend_count": 2,
+    "sector": "先進封裝代工",
+    "last_recommended_at": "2026-05-29 19:44",
     "last_price": null,
-    "stop": "跌破關鍵支撐3-5%。"
+    "stop": "跌破月線"
   },
   "AVGO": {
     "ticker": "AVGO",
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 10,
-    "sector": "AI晶片與網路",
-    "last_recommended_at": "2026-05-29 14:13",
+    "recommend_count": 11,
+    "sector": "網路與自訂晶片",
+    "last_recommended_at": "2026-05-29 19:44",
     "last_price": 426.5799865722656,
-    "stop": "跌破關鍵支撐"
+    "stop": "跌破近期低點"
   },
   "SMCI": {
     "ticker": "SMCI",
