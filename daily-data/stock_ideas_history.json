@@ -4,11 +4,11 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 16,
+    "recommend_count": 17,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-28 19:55",
-    "last_price": 928.4099731445312,
-    "stop": "跌破5日均線"
+    "last_recommended_at": "2026-05-29 14:13",
+    "last_price": 923.52001953125,
+    "stop": "跌破20日均線"
   },
   "NVDA": {
     "ticker": "NVDA",
@@ -26,22 +26,22 @@
     "name": "AMD",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 12,
+    "recommend_count": 13,
     "sector": "AI GPU",
-    "last_recommended_at": "2026-05-28 19:55",
-    "last_price": 495.5400085449219,
-    "stop": "跌破關鍵均線"
+    "last_recommended_at": "2026-05-29 14:13",
+    "last_price": 518.0900268554688,
+    "stop": "跌破50日均線"
   },
   "QQQ": {
     "ticker": "QQQ",
     "name": "Invesco QQQ Trust",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 12,
-    "sector": "科技ETF",
-    "last_recommended_at": "2026-05-29 01:55",
-    "last_price": 736.3499755859375,
-    "stop": "跌破近期低點5%"
+    "recommend_count": 13,
+    "sector": "AI ETF",
+    "last_recommended_at": "2026-05-29 14:13",
+    "last_price": 735.5999755859375,
+    "stop": "跌破關鍵均線"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -103,11 +103,11 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 9,
-    "sector": "半導體",
-    "last_recommended_at": "2026-05-29 01:55",
-    "last_price": 428.510009765625,
-    "stop": "跌破MA50"
+    "recommend_count": 10,
+    "sector": "AI晶片與網路",
+    "last_recommended_at": "2026-05-29 14:13",
+    "last_price": 426.5799865722656,
+    "stop": "跌破關鍵支撐"
   },
   "SMCI": {
     "ticker": "SMCI",
