@@ -9,12 +9,12 @@
       "avg_cost": 751.0,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 951.8200073242188,
+      "last_price": 971.0,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI記憶體需求強勁"
+      "last_reason": "thesis持續成立，HBM需求強勁"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -23,12 +23,12 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 215.38499450683594,
+      "last_price": 211.13999938964844,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "AI晶片龍頭，thesis強勁"
+      "last_reason": "AI晶片龍頭，長期thesis未變"
     },
     "AMD": {
       "ticker": "AMD",
@@ -37,7 +37,7 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 503.7099914550781,
+      "last_price": 516.0999755859375,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
@@ -51,7 +51,7 @@
       "avg_cost": 414.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 435.1099853515625,
+      "last_price": 446.7699890136719,
       "last_decision": "hold",
       "reason": "網路與自訂晶片需求",
       "stop": "跌破近期低點",
@@ -65,12 +65,12 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 417.5050048828125,
+      "last_price": 418.45001220703125,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "AI代工機會不變，微跌不影響長期"
+      "last_reason": "AI代工機會持續"
     }
   },
   "closed_trades": [],
@@ -679,7 +679,62 @@
       "unrealized_pnl": -6.27,
       "cash_after": 0.0,
       "reason": "AI代工機會不變，微跌不影響長期"
+    },
+    {
+      "time": "2026-05-30 13:51",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 971.0,
+      "shares": 1.331558,
+      "value": 1292.94,
+      "unrealized_pnl": 292.94,
+      "cash_after": 0.0,
+      "reason": "thesis持續成立，HBM需求強勁"
+    },
+    {
+      "time": "2026-05-30 13:51",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 211.14,
+      "shares": 4.644035,
+      "value": 980.54,
+      "unrealized_pnl": -19.46,
+      "cash_after": 0.0,
+      "reason": "AI晶片龍頭，長期thesis未變"
+    },
+    {
+      "time": "2026-05-30 13:51",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 516.1,
+      "shares": 2.138992,
+      "value": 1103.93,
+      "unrealized_pnl": 103.93,
+      "cash_after": 0.0,
+      "reason": "GPU業務加速，風險可控"
+    },
+    {
+      "time": "2026-05-30 13:51",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 446.77,
+      "shares": 2.414642,
+      "value": 1078.79,
+      "unrealized_pnl": 78.79,
+      "cash_after": 0.0,
+      "reason": "網路與自訂晶片需求穩健"
+    },
+    {
+      "time": "2026-05-30 13:51",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 418.45,
+      "shares": 2.380159,
+      "value": 995.98,
+      "unrealized_pnl": -4.02,
+      "cash_after": 0.0,
+      "reason": "AI代工機會持續"
     }
   ],
-  "last_updated_at": "2026-05-30 01:59"
+  "last_updated_at": "2026-05-30 13:51"
 }
