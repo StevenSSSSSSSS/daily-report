@@ -4,11 +4,11 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 20,
+    "recommend_count": 21,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-05-30 13:51",
+    "last_recommended_at": "2026-05-31 14:22",
     "last_price": 971.0,
-    "stop": "跌破5日均線或-8%"
+    "stop": "110"
   },
   "NVDA": {
     "ticker": "NVDA",
@@ -34,14 +34,14 @@
   },
   "QQQ": {
     "ticker": "QQQ",
-    "name": "Invesco QQQ Trust",
+    "name": "Invesco QQQ",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 14,
+    "recommend_count": 15,
     "sector": "AI ETF",
-    "last_recommended_at": "2026-05-30 13:51",
+    "last_recommended_at": "2026-05-31 14:22",
     "last_price": 738.3099975585938,
-    "stop": "跌破200日均線"
+    "stop": "450"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -103,11 +103,11 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 13,
-    "sector": "AI晶片/網路",
-    "last_recommended_at": "2026-05-30 13:51",
+    "recommend_count": 14,
+    "sector": "AI晶片與網路",
+    "last_recommended_at": "2026-05-31 14:22",
     "last_price": 446.7699890136719,
-    "stop": "跌破近期低點-7%"
+    "stop": "140"
   },
   "SMCI": {
     "ticker": "SMCI",
@@ -125,11 +125,11 @@
     "name": "ASML Holding",
     "first_recommended_at": "2026-05-29 01:55",
     "first_price": 1612.3299560546875,
-    "recommend_count": 1,
+    "recommend_count": 2,
     "sector": "半導體設備",
-    "last_recommended_at": "2026-05-29 01:55",
-    "last_price": 1612.3299560546875,
-    "stop": "跌破MA200"
+    "last_recommended_at": "2026-05-31 14:22",
+    "last_price": 1612.760009765625,
+    "stop": "700"
   },
   "DELL": {
     "ticker": "DELL",
