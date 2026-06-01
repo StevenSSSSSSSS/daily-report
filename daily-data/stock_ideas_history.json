@@ -4,22 +4,22 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 23,
+    "recommend_count": 24,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-01 22:33",
-    "last_price": 1030.300048828125,
-    "stop": "跌破5日均線"
+    "last_recommended_at": "2026-06-02 03:50",
+    "last_price": 1030.6199951171875,
+    "stop": "跌破近期支撐位止損。"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 15,
+    "recommend_count": 16,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-01 22:33",
-    "last_price": 221.47520446777344,
-    "stop": "跌破20日均線"
+    "last_recommended_at": "2026-06-02 03:50",
+    "last_price": 222.72000122070312,
+    "stop": "關鍵移動平均線下方。"
   },
   "AMD": {
     "ticker": "AMD",
@@ -92,22 +92,22 @@
     "name": "TSMC",
     "first_recommended_at": "2026-05-25 20:02",
     "first_price": null,
-    "recommend_count": 4,
+    "recommend_count": 5,
     "sector": "先進封裝代工",
-    "last_recommended_at": "2026-06-01 22:33",
+    "last_recommended_at": "2026-06-02 03:50",
     "last_price": null,
-    "stop": "跌破月線"
+    "stop": "月線支撐。"
   },
   "AVGO": {
     "ticker": "AVGO",
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 16,
+    "recommend_count": 17,
     "sector": "網路與自訂晶片",
-    "last_recommended_at": "2026-06-01 22:33",
-    "last_price": 455.79998779296875,
-    "stop": "關鍵支撐失守"
+    "last_recommended_at": "2026-06-02 03:50",
+    "last_price": 458.06500244140625,
+    "stop": "5-7%止損。"
   },
   "SMCI": {
     "ticker": "SMCI",
