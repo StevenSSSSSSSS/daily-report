@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續，獲利29%"
+      "last_reason": "thesis持續成立，AI記憶體需求強勁"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -28,7 +28,7 @@
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "AI晶片龍頭，thesis強勁"
+      "last_reason": "AI晶片龍頭地位穩固"
     },
     "AMD": {
       "ticker": "AMD",
@@ -42,7 +42,7 @@
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "GPU業務加速"
+      "last_reason": "GPU業務加速，風險可控"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -56,7 +56,7 @@
       "reason": "網路與自訂晶片需求",
       "stop": "跌破近期低點",
       "buy_price_confirmed": 414.1400146484375,
-      "last_reason": "網路與自訂晶片需求"
+      "last_reason": "網路與自訂晶片需求穩健"
     },
     "TSM": {
       "ticker": "TSM",
@@ -70,7 +70,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "AI代工高信心"
+      "last_reason": "先進封裝產能滿載"
     }
   },
   "closed_trades": [],
@@ -789,7 +789,62 @@
       "unrealized_pnl": -4.02,
       "cash_after": 0.0,
       "reason": "AI代工高信心"
+    },
+    {
+      "time": "2026-06-01 14:54",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 971.0,
+      "shares": 1.331558,
+      "value": 1292.94,
+      "unrealized_pnl": 292.94,
+      "cash_after": 0.0,
+      "reason": "thesis持續成立，AI記憶體需求強勁"
+    },
+    {
+      "time": "2026-06-01 14:54",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 211.14,
+      "shares": 4.644035,
+      "value": 980.54,
+      "unrealized_pnl": -19.46,
+      "cash_after": 0.0,
+      "reason": "AI晶片龍頭地位穩固"
+    },
+    {
+      "time": "2026-06-01 14:54",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 516.1,
+      "shares": 2.138992,
+      "value": 1103.93,
+      "unrealized_pnl": 103.93,
+      "cash_after": 0.0,
+      "reason": "GPU業務加速，風險可控"
+    },
+    {
+      "time": "2026-06-01 14:54",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 446.77,
+      "shares": 2.414642,
+      "value": 1078.79,
+      "unrealized_pnl": 78.79,
+      "cash_after": 0.0,
+      "reason": "網路與自訂晶片需求穩健"
+    },
+    {
+      "time": "2026-06-01 14:54",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 418.45,
+      "shares": 2.380159,
+      "value": 995.98,
+      "unrealized_pnl": -4.02,
+      "cash_after": 0.0,
+      "reason": "先進封裝產能滿載"
     }
   ],
-  "last_updated_at": "2026-05-31 14:22"
+  "last_updated_at": "2026-06-01 14:54"
 }
