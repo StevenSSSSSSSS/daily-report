@@ -76,6 +76,34 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席�
 
 在風險可控的前提下，你被鼓勵積極尋找並執行優質交易機會，而非過度保守。
 
+**stock_ideas 選股規則**：
+- 總數 4-6 隻（本期新推 3-5 隻）。
+- 允許 ETF：QQQ, QQQI, SPY, VOO, DXYZ, FDVV, NASA, XOVR, RONB。
+- 優先 AI 記憶體、AI晶片、先進封裝、半導體設備材料、新能源/電動車及允許的ETF。
+
+**Portfolio 決策規則**：
+- 你控制一個初始本金 5,000 美金的模擬 portfolio，目標是長期穩健增值。
+- 當出現高信心的買入機會（清晰催化劑、良好風險報酬比、技術面確認）時，應積極從 watchlist 或 stock_ideas 中執行 buy。
+- 對現有持倉必須逐一明確決定：thesis 持續成立 → hold；thesis 弱化、止損觸發、或有更好機會 → sell。
+- 每個新 buy 預設 allocation_usd 為 1,000；最多同時持有 5 個倉位；不可超過可用現金。
+- portfolio_decisions.orders 必須包含所有現有持倉的明確決策（buy/hold/sell），不可遺漏。
+- 在市場趨勢強烈、訊號一致時，可較積極增加曝險；在不確定性高時則偏向防守。
+
+**風險管理硬性規則（必須嚴格遵守）**：
+- 每個 stock_ideas 中的推薦，以及 portfolio_decisions 中的買入，**必須同時提供**以下三個欄位：
+  - "stop": 固定止損價（建議 -8% ~ -12%，請給具體價格，例如 142.50）
+  - "target": 初始止盈目標價（建議至少 1:3 風險報酬比，可設較遠，請給具體價格）
+  - "trailing_stop": "Trailing Stop 設定（例如：最高價回撤15%-18%，或跌破20日均線）"
+
+- **系統自動執行優先級**（讓贏家多跑）：
+  1. 觸及固定止損 → 立即賣出（最優先保護本金）
+  2. 獲利達 **+25%** 後才啟用 Trailing Stop
+  3. 達到 target 或 Trailing Stop 觸發 → 自動賣出
+
+- 制定 Trailing Stop 時應參考 ATR 波動率、20/50日均線、近期趨勢線及最高價回撤 15%-18%。
+- 制定 stop / target / trailing_stop 時，必須先遵守上述風險管理範圍，再參考 web_search / x_search 的最新資訊、X 市場情緒、行業催化劑、財報/指引風險、關鍵技術位與波動率，對具體價格作出適當調整；不得因情緒樂觀而放寬固定止損。
+- 如市場情緒極度亢奮或利好已被充分定價，target 應保守；如基本面催化持續且情緒未過熱，可給較遠 target 並放寬 trailing_stop。
+
 **JSON 輸出格式**（只輸出合法 JSON，不要任何額外文字）：
 {
   "subject": "不超過22字的郵件標題",
@@ -97,6 +125,8 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席�
       "technical": "技術面狀態",
       "entry": "入場條件",
       "stop": "止蝕位",
+      "target": "止盈目標價",
+      "trailing_stop": "Trailing Stop 設定",
       "risk": "主要風險"
     }
   ],
@@ -105,25 +135,10 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席�
       {"ticker": "NASDAQ:MU", "name": "Micron Technology", "rank": 1, "reason": "監察理由"}
     ],
     "orders": [
-      {"ticker": "MU", "action": "buy", "allocation_usd": 1000, "reason": "從監察名單中選入", "stop": "止蝕位"},
-      {"ticker": "NVDA", "action": "hold", "reason": "持倉理由"},
-      {"ticker": "AMD", "action": "sell", "reason": "賣出理由"}
+      {"ticker": "MU", "action": "buy", "allocation_usd": 1000, "reason": "從監察名單中選入", "stop": "...", "target": "...", "trailing_stop": "..."}
     ]
   }
 }
-
-**stock_ideas 選股規則**：
-- 總數 4-6 隻（本期新推 3-5 隻）。
-- 允許 ETF：QQQ, QQQI, SPY, VOO, DXYZ, FDVV, NASA, XOVR, RONB。
-- 優先 AI 記憶體、AI晶片、先進封裝、半導體設備材料、新能源/電動車及允許的ETF。
-
-**Portfolio 決策規則**：
-- 你控制一個初始本金 5,000 美金的模擬 portfolio，目標是長期穩健增值。
-- 當出現高信心的買入機會（清晰催化劑、良好風險報酬比、技術面確認）時，應積極從 watchlist 或 stock_ideas 中執行 buy。
-- 對現有持倉必須逐一明確決定：thesis 持續成立 → hold；thesis 弱化、止損觸發、或有更好機會 → sell。
-- 每個新 buy 預設 allocation_usd 為 1,000；最多同時持有 5 個倉位；不可超過可用現金。
-- portfolio_decisions.orders 必須包含所有現有持倉的明確決策（buy/hold/sell），不可遺漏。
-- 在市場趨勢強烈、訊號一致時，可較積極增加曝險；在不確定性高時則偏向防守。
 """
 
 def trading_session_instruction(now):
@@ -435,6 +450,32 @@ def apply_portfolio_decisions(book, report, now):
                 "cash_after": round(cash, 2),
                 "reason": order.get("reason", ""),
             })
+
+        elif action in {"buy", "sell"} and not can_trade:
+            if ticker in positions:
+                positions[ticker]["last_decision"] = "hold"
+                positions[ticker]["last_reason"] = f"非美股交易時段，原建議 {action} 未執行：{order.get('reason', '')}"
+                if price:
+                    positions[ticker]["last_price"] = price
+                pos = positions[ticker]
+                shares = float(pos.get("shares", 0) or 0)
+                avg_cost = normalize_portfolio_position_cost(pos)
+                current_price = float(price or pos.get("last_price", avg_cost) or 0)
+                value = shares * current_price
+                invested = float(pos.get("invested", 0) or 0)
+                trade_log.append({
+                    "time": now_text,
+                    "action": "hold",
+                    "ticker": ticker,
+                    "price": round(current_price, 4),
+                    "shares": round(shares, 6),
+                    "value": round(value, 2),
+                    "unrealized_pnl": round(value - invested, 2),
+                    "cash_after": round(cash, 2),
+                    "reason": positions[ticker]["last_reason"],
+                })
+            else:
+                print(f"⏸️ 非美股交易時段，跳過 {ticker} {action}")
 
         elif action == "hold" and ticker in positions:
             positions[ticker]["last_decision"] = "hold"
