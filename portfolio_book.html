@@ -147,6 +147,8 @@ http://localhost:8001/portfolio_book.html
       text-align: left;
       vertical-align: middle;
       white-space: nowrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
     }
 
     th {
@@ -294,7 +296,7 @@ http://localhost:8001/portfolio_book.html
       text-align: center;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       body {
         margin: 10px;
         font-size: 12px;
@@ -387,18 +389,22 @@ http://localhost:8001/portfolio_book.html
       }
 
       table {
-        font-size: 11px;
-        min-width: 920px;
+        font-size: 10px !important;
+        min-width: 1280px;
       }
 
       th,
       td {
-        padding: 6px 7px;
+        padding: 5px 6px;
         white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+        font-size: 10px !important;
+        line-height: 1.25 !important;
       }
 
       th {
-        font-size: 9px;
+        font-size: 9px !important;
       }
 
       .tag {
@@ -648,7 +654,7 @@ http://localhost:8001/portfolio_book.html
             <td class="${cls(r.pnl)}">${tagged(r.pnl)}</td>
             <td class="${cls(r.ret)}">${pct2(r.ret)}</td>
             <td>${r.stop || "-"}</td>
-            <td style="font-size:13px;">${r.last_reason || "-"}</td>
+            <td>${r.last_reason || "-"}</td>
           </tr>
         `).join("")
         + `
@@ -739,7 +745,7 @@ http://localhost:8001/portfolio_book.html
           <td>${num4(t.shares)}</td>
           <td>$${money(t.amount)}</td>
           <td>$${money(t.cash_after)}</td>
-          <td style="font-size:13px;">${t.reason || "-"}</td>
+          <td>${t.reason || "-"}</td>
           <td>${t.stop || "-"}</td>
         </tr>
       `).join("");
