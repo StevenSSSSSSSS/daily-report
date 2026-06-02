@@ -297,7 +297,7 @@ http://localhost:8001/portfolio_book.html
     @media (max-width: 700px) {
       body {
         margin: 10px;
-        font-size: 14px;
+        font-size: 12px;
       }
 
       .header-bar {
@@ -309,17 +309,17 @@ http://localhost:8001/portfolio_book.html
       }
 
       .header-title {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 1.25;
       }
 
       .header-date,
       .header-update {
-        font-size: 12px;
+        font-size: 11px;
       }
 
       .header-label {
-        font-size: 10px;
+        font-size: 9px;
       }
 
       .section {
@@ -329,14 +329,14 @@ http://localhost:8001/portfolio_book.html
       }
 
       .section h2 {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 12px;
         gap: 6px;
         letter-spacing: 0.4px;
       }
 
       .section h2 .badge {
-        font-size: 11px;
+        font-size: 10px;
         padding: 2px 6px;
       }
 
@@ -354,17 +354,17 @@ http://localhost:8001/portfolio_book.html
       }
 
       .card .label {
-        font-size: 10px;
+        font-size: 9px;
         line-height: 1.2;
       }
 
       .card .value {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.25;
       }
 
       .card .sub {
-        font-size: 11px;
+        font-size: 10px;
       }
 
       .table-wrap {
@@ -387,21 +387,22 @@ http://localhost:8001/portfolio_book.html
       }
 
       table {
-        font-size: 12px;
-        min-width: 720px;
+        font-size: 11px;
+        min-width: 920px;
       }
 
       th,
       td {
-        padding: 7px 8px;
+        padding: 6px 7px;
+        white-space: nowrap !important;
       }
 
       th {
-        font-size: 10px;
+        font-size: 9px;
       }
 
       .tag {
-        font-size: 10px;
+        font-size: 9px;
         padding: 2px 6px;
       }
 
@@ -416,21 +417,21 @@ http://localhost:8001/portfolio_book.html
       }
 
       .daily-card .ticker {
-        font-size: 14px;
+        font-size: 12px;
       }
 
       .daily-card .reason {
-        font-size: 12px;
+        font-size: 11px;
       }
 
       .daily-card .meta {
         flex-wrap: wrap;
         gap: 6px 12px;
-        font-size: 11px;
+        font-size: 10px;
       }
 
       .note {
-        font-size: 11px;
+        font-size: 10px;
         margin: 8px 0 12px;
       }
     }
@@ -647,7 +648,7 @@ http://localhost:8001/portfolio_book.html
             <td class="${cls(r.pnl)}">${tagged(r.pnl)}</td>
             <td class="${cls(r.ret)}">${pct2(r.ret)}</td>
             <td>${r.stop || "-"}</td>
-            <td style="max-width:220px;white-space:normal;font-size:13px;">${r.last_reason || "-"}</td>
+            <td style="font-size:13px;">${r.last_reason || "-"}</td>
           </tr>
         `).join("")
         + `
@@ -738,7 +739,7 @@ http://localhost:8001/portfolio_book.html
           <td>${num4(t.shares)}</td>
           <td>$${money(t.amount)}</td>
           <td>$${money(t.cash_after)}</td>
-          <td style="max-width:240px;white-space:normal;font-size:13px;">${t.reason || "-"}</td>
+          <td style="font-size:13px;">${t.reason || "-"}</td>
           <td>${t.stop || "-"}</td>
         </tr>
       `).join("");
