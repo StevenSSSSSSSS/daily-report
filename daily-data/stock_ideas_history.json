@@ -4,33 +4,33 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 24,
+    "recommend_count": 25,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-02 03:50",
-    "last_price": 1030.6199951171875,
-    "stop": "跌破近期支撐位止損。"
+    "last_recommended_at": "2026-06-02 14:41",
+    "last_price": 1035.5,
+    "stop": "跌破5日均線"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 16,
+    "recommend_count": 17,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-02 03:50",
-    "last_price": 222.72000122070312,
-    "stop": "關鍵移動平均線下方。"
+    "last_recommended_at": "2026-06-02 14:41",
+    "last_price": 224.36000061035156,
+    "stop": "跌破20日均線"
   },
   "AMD": {
     "ticker": "AMD",
     "name": "AMD",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 16,
-    "sector": "AI晶片",
-    "last_recommended_at": "2026-06-01 22:33",
-    "last_price": 505.6199951171875,
-    "stop": "跌破近期低點"
+    "recommend_count": 17,
+    "sector": "GPU與AI晶片",
+    "last_recommended_at": "2026-06-02 14:41",
+    "last_price": 510.1300048828125,
+    "stop": "跌破關鍵均線"
   },
   "QQQ": {
     "ticker": "QQQ",
@@ -103,11 +103,11 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 17,
+    "recommend_count": 18,
     "sector": "網路與自訂晶片",
-    "last_recommended_at": "2026-06-02 03:50",
-    "last_price": 458.06500244140625,
-    "stop": "5-7%止損。"
+    "last_recommended_at": "2026-06-02 14:41",
+    "last_price": 459.9700012207031,
+    "stop": "近期低點"
   },
   "SMCI": {
     "ticker": "SMCI",
