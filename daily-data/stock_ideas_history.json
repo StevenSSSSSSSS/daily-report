@@ -4,22 +4,22 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 26,
+    "recommend_count": 27,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-02 18:10",
+    "last_recommended_at": "2026-06-02 20:23",
     "last_price": 1035.5,
-    "stop": "跌破5日均線"
+    "stop": "125.00"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 18,
+    "recommend_count": 19,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-02 18:10",
+    "last_recommended_at": "2026-06-02 20:23",
     "last_price": 224.36000061035156,
-    "stop": "跌破關鍵支撐"
+    "stop": "138.00"
   },
   "AMD": {
     "ticker": "AMD",
