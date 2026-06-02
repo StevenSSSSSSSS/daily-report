@@ -130,12 +130,15 @@ http://localhost:8001/portfolio_book.html
     /* ---- table ---- */
     .table-wrap {
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 8px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 14px;
+      min-width: 760px;
     }
 
     th, td {
@@ -289,6 +292,147 @@ http://localhost:8001/portfolio_book.html
       color: #8192a8;
       margin: 12px 0 24px;
       text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        margin: 10px;
+        font-size: 14px;
+      }
+
+      .header-bar {
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+      }
+
+      .header-title {
+        font-size: 17px;
+        line-height: 1.25;
+      }
+
+      .header-date,
+      .header-update {
+        font-size: 12px;
+      }
+
+      .header-label {
+        font-size: 10px;
+      }
+
+      .section {
+        padding: 14px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+      }
+
+      .section h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        gap: 6px;
+        letter-spacing: 0.4px;
+      }
+
+      .section h2 .badge {
+        font-size: 11px;
+        padding: 2px 6px;
+      }
+
+      .summary-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .card {
+        min-width: 0;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .card .label {
+        font-size: 10px;
+        line-height: 1.2;
+      }
+
+      .card .value {
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      .card .sub {
+        font-size: 11px;
+      }
+
+      .table-wrap {
+        margin: 0 -2px;
+        padding-bottom: 6px;
+      }
+
+      .table-wrap::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .table-wrap::-webkit-scrollbar-track {
+        background: #0d1b2d;
+        border-radius: 99px;
+      }
+
+      .table-wrap::-webkit-scrollbar-thumb {
+        background: #3f5773;
+        border-radius: 99px;
+      }
+
+      table {
+        font-size: 12px;
+        min-width: 720px;
+      }
+
+      th,
+      td {
+        padding: 7px 8px;
+      }
+
+      th {
+        font-size: 10px;
+      }
+
+      .tag {
+        font-size: 10px;
+        padding: 2px 6px;
+      }
+
+      .daily-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .daily-card {
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .daily-card .ticker {
+        font-size: 14px;
+      }
+
+      .daily-card .reason {
+        font-size: 12px;
+      }
+
+      .daily-card .meta {
+        flex-wrap: wrap;
+        gap: 6px 12px;
+        font-size: 11px;
+      }
+
+      .note {
+        font-size: 11px;
+        margin: 8px 0 12px;
+      }
     }
   </style>
 </head>
