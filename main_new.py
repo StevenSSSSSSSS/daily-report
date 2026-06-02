@@ -29,6 +29,7 @@ PORTFOLIO_BOOK_FILE = f"{DATA_DIR}/xai_portfolio_book.json"
 STOCK_HISTORY_FILE = f"{DATA_DIR}/stock_ideas_history.json"
 REMOVELIST_FILE = f"{DATA_DIR}/stock_ideas_removelist.json"
 LAST_RUN_FILE = f"{DATA_DIR}/last_run_time.txt"
+PORTFOLIO_BOOK_URL = "https://stevenssssssss.github.io/daily-report/portfolio_book.html"
 
 REMOVELIST_COOLDOWN_DAYS = 7
 RECIPIENT = "stevieeseto@hotmail.com"
@@ -939,6 +940,9 @@ def portfolio_table(items, today, sell_items=None):
     html_parts.append('''
         </tbody>
       </table>
+      <div style="margin:10px 0 0;text-align:right;font-size:14px;line-height:1.4;">
+        <a href="''' + esc(PORTFOLIO_BOOK_URL) + '''" style="color:#2563eb;font-size:14px;font-weight:600;text-decoration:none;">View full portfolio book</a>
+      </div>
     </div>
     ''')
     return "".join(html_parts)
