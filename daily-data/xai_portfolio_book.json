@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，獲利43.75%但趨勢強勁"
+      "last_reason": "thesis持續成立，+43.75%獲利續跑"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -42,7 +42,7 @@
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "GPU業務加速，風險可控"
+      "last_reason": "GPU業務加速，thesis成立"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -56,7 +56,7 @@
       "reason": "網路與自訂晶片需求",
       "stop": "跌破近期低點",
       "buy_price_confirmed": 414.1400146484375,
-      "last_reason": "網路與自訂晶片需求"
+      "last_reason": "網路與自訂晶片需求穩健"
     },
     "TSM": {
       "ticker": "TSM",
@@ -70,7 +70,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "AI代工高信心機會"
+      "last_reason": "AI代工機會持續"
     }
   },
   "closed_trades": [],
@@ -1229,7 +1229,62 @@
       "unrealized_pnl": 39.39,
       "cash_after": 0.0,
       "reason": "AI代工高信心機會"
+    },
+    {
+      "time": "2026-06-04 19:28",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1079.5699,
+      "shares": 1.331558,
+      "value": 1437.51,
+      "unrealized_pnl": 437.51,
+      "cash_after": 0.0,
+      "reason": "thesis持續成立，+43.75%獲利續跑"
+    },
+    {
+      "time": "2026-06-04 19:28",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 214.75,
+      "shares": 4.644035,
+      "value": 997.31,
+      "unrealized_pnl": -2.69,
+      "cash_after": 0.0,
+      "reason": "AI晶片龍頭，thesis強勁"
+    },
+    {
+      "time": "2026-06-04 19:28",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 542.52,
+      "shares": 2.138992,
+      "value": 1160.45,
+      "unrealized_pnl": 160.45,
+      "cash_after": 0.0,
+      "reason": "GPU業務加速，thesis成立"
+    },
+    {
+      "time": "2026-06-04 19:28",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 479.23,
+      "shares": 2.414642,
+      "value": 1157.17,
+      "unrealized_pnl": 157.17,
+      "cash_after": 0.0,
+      "reason": "網路與自訂晶片需求穩健"
+    },
+    {
+      "time": "2026-06-04 19:28",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 436.69,
+      "shares": 2.380159,
+      "value": 1039.39,
+      "unrealized_pnl": 39.39,
+      "cash_after": 0.0,
+      "reason": "AI代工機會持續"
     }
   ],
-  "last_updated_at": "2026-06-04 14:42"
+  "last_updated_at": "2026-06-04 19:28"
 }
