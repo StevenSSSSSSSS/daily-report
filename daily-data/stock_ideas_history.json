@@ -4,21 +4,21 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 33,
+    "recommend_count": 34,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-05 17:22",
+    "last_recommended_at": "2026-06-05 17:49",
     "last_price": 996.0,
-    "stop": "114.50"
+    "stop": "118.50"
   },
   "NVDA": {
     "ticker": "NVDA",
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 19,
+    "recommend_count": 20,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-02 20:23",
-    "last_price": 224.36000061035156,
+    "last_recommended_at": "2026-06-05 17:49",
+    "last_price": 218.66000366210938,
     "stop": "138.00"
   },
   "AMD": {
@@ -26,11 +26,11 @@
     "name": "Advanced Micro Devices",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 23,
+    "recommend_count": 24,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-05 17:22",
+    "last_recommended_at": "2026-06-05 17:49",
     "last_price": 523.2000122070312,
-    "stop": "105.50"
+    "stop": "112.00"
   },
   "QQQ": {
     "ticker": "QQQ",
@@ -103,9 +103,9 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 22,
-    "sector": "AI晶片",
-    "last_recommended_at": "2026-06-05 14:21",
+    "recommend_count": 23,
+    "sector": "半導體",
+    "last_recommended_at": "2026-06-05 17:49",
     "last_price": 418.9100036621094,
     "stop": "142.00"
   },
