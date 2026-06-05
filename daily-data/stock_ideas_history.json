@@ -4,11 +4,11 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 32,
+    "recommend_count": 33,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-05 14:21",
-    "last_price": NaN,
-    "stop": "118.50"
+    "last_recommended_at": "2026-06-05 17:22",
+    "last_price": 996.0,
+    "stop": "114.50"
   },
   "NVDA": {
     "ticker": "NVDA",
@@ -23,25 +23,25 @@
   },
   "AMD": {
     "ticker": "AMD",
-    "name": "AMD",
+    "name": "Advanced Micro Devices",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 22,
+    "recommend_count": 23,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-05 01:37",
-    "last_price": 524.5850219726562,
-    "stop": "118.00"
+    "last_recommended_at": "2026-06-05 17:22",
+    "last_price": 523.2000122070312,
+    "stop": "105.50"
   },
   "QQQ": {
     "ticker": "QQQ",
     "name": "Invesco QQQ Trust",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 17,
+    "recommend_count": 18,
     "sector": "AI ETF",
-    "last_recommended_at": "2026-06-04 19:28",
-    "last_price": 744.2100219726562,
-    "stop": "465.00"
+    "last_recommended_at": "2026-06-05 17:22",
+    "last_price": 740.6099853515625,
+    "stop": "432.00"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
@@ -125,11 +125,11 @@
     "name": "ASML Holding",
     "first_recommended_at": "2026-05-29 01:55",
     "first_price": 1612.3299560546875,
-    "recommend_count": 2,
+    "recommend_count": 3,
     "sector": "半導體設備",
-    "last_recommended_at": "2026-05-31 14:22",
-    "last_price": 1612.760009765625,
-    "stop": "700"
+    "last_recommended_at": "2026-06-05 17:22",
+    "last_price": 1757.469970703125,
+    "stop": "782.00"
   },
   "DELL": {
     "ticker": "DELL",
