@@ -4,11 +4,11 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 31,
+    "recommend_count": 32,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-05 01:37",
-    "last_price": 1020.8499755859375,
-    "stop": "124.50"
+    "last_recommended_at": "2026-06-05 14:21",
+    "last_price": NaN,
+    "stop": "118.50"
   },
   "NVDA": {
     "ticker": "NVDA",
@@ -103,11 +103,11 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 21,
+    "recommend_count": 22,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-05 01:37",
-    "last_price": 422.5050964355469,
-    "stop": "168.00"
+    "last_recommended_at": "2026-06-05 14:21",
+    "last_price": NaN,
+    "stop": "142.00"
   },
   "SMCI": {
     "ticker": "SMCI",
