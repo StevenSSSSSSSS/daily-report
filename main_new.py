@@ -330,6 +330,7 @@ def load_portfolio_book():
     book.setdefault("positions", {})
     book.setdefault("closed_trades", [])
     book.setdefault("trade_log", [])
+    book.setdefault("pending_orders", [])
     return book
 
 
@@ -430,9 +431,14 @@ def apply_portfolio_decisions(book, report, now):
     positions = book.setdefault("positions", {})
     closed_trades = book.setdefault("closed_trades", [])
     trade_log = book.setdefault("trade_log", [])
+    pending_orders = book.setdefault("pending_orders", [])
     cash = float(book.get("cash", PORTFOLIO_INITIAL_CAPITAL) or 0)
     now_text = now.strftime("%Y-%m-%d %H:%M")
     can_trade = is_us_market_open(now)
+    if can_trade and pending_orders:
+        orders = pending_orders + orders
+        book["pending_orders"] = []
+        pending_orders = book["pending_orders"]
 
     for order in orders:
         if not isinstance(order, dict):
@@ -483,6 +489,17 @@ def apply_portfolio_decisions(book, report, now):
             if ticker in positions:
                 positions[ticker]["last_decision"] = "hold"
                 positions[ticker]["last_reason"] = f"非美股交易時段，原建議 {action} 未執行：{order.get('reason', '')}"
+                if action == "sell" and not order.get("force"):
+                    pending_orders[:] = [
+                        pending for pending in pending_orders
+                        if normalize_ticker(pending.get("ticker")) != ticker
+                    ]
+                    pending_orders.append({
+                        "ticker": ticker,
+                        "action": "sell",
+                        "reason": order.get("reason", ""),
+                        "created_at": now_text,
+                    })
                 if price:
                     positions[ticker]["last_price"] = price
                 pos = positions[ticker]
@@ -506,6 +523,10 @@ def apply_portfolio_decisions(book, report, now):
                 print(f"⏸️ 非美股交易時段，跳過 {ticker} {action}")
 
         elif action == "hold" and ticker in positions:
+            pending_orders[:] = [
+                pending for pending in pending_orders
+                if normalize_ticker(pending.get("ticker")) != ticker
+            ]
             positions[ticker]["last_decision"] = "hold"
             positions[ticker]["last_reason"] = order.get("reason", "")
             if price:
