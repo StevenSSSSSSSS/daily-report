@@ -46,10 +46,7 @@ USE_PORTFOLIO_DEMO = False   # 設為 True 使用固定 Buy/Hold/Sell 數據測�
 # ==================== 原有常數 ====================
 TARGETS = {
     "^GSPC": "標普500", "^IXIC": "納斯達克", "^DJI": "道瓊工業",
-    "000001.SS": "上證指數", "^HSI": "恒生指數", "^N225": "日經平均指數",
-    "JPY=X": "美元/日圓", "BTC-USD": "比特幣 BTC", "ETH-USD": "以太幣 ETH",
-    "EURUSD=X": "歐元/美元", "USDCNY=X": "美元/人民幣", "DX-Y.NYB": "美元指數",
-    "^TNX": "美債10年", "^VIX": "恐慌指數", "GC=F": "現貨黃金",
+    "^TNX": "美債10年", "^VIX": "恐慌指數",
 }
 
 X_ACCOUNTS = ["elonmusk", "GavinSBaker", "SeekingAlpha", "bloomberg"]
@@ -58,7 +55,6 @@ DEMO_PORTFOLIO_ROWS = [
     {"action": "Buy", "ticker": "NVDA", "name": "NVIDIA", "price": "132.40", "pnl": "+4.8%"},
     {"action": "Hold", "ticker": "MU", "name": "Micron", "price": "98.20", "pnl": "+1.6%"},
     {"action": "Sell", "ticker": "AMD", "name": "AMD", "price": "164.80", "pnl": "-2.3%"},
-    {"action": "Buy", "ticker": "BTC-USD", "name": "Bitcoin", "price": "94,500", "pnl": "+3.1%"},
 ]
 
 # ==================== 固定 System Prompt ====================
@@ -77,36 +73,21 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的美股市場策略團隊首席�
 
 選股與 portfolio_decisions 僅允許美股普通股與美國上市 ETF，ticker 可使用 NASDAQ: 或 NYSE: 前綴；禁止 BTC-USD、ETH-USD、TPE:、HKEX:、A股、日股或任何非美股標的。
 
-在風險可控的前提下，你被鼓勵積極尋找並執行優質交易機會，而非過度保守。
+在風險可控的前提下，請找出優質候選股和市場訊號；交易決策會由獨立 portfolio manager prompt 處理。
 
 **stock_ideas 選股規則**：
 - 總數 4-6 隻（本期新推 3-5 隻）。
 - 允許 ETF：QQQ, QQQI, SPY, VOO, DXYZ, FDVV, NASA, XOVR, RONB。
 - 優先 AI 記憶體、AI晶片、先進封裝、半導體設備材料、新能源/電動車及允許的ETF。
 
-**Portfolio 決策規則**：
-- 你控制一個初始本金 5,000 美金的模擬 portfolio，目標是長期穩健增值。
-- 當出現高信心的買入機會（清晰催化劑、良好風險報酬比、技術面確認）時，應積極從 watchlist 或 stock_ideas 中執行 buy。
-- 對現有持倉必須逐一明確決定：thesis 持續成立 → hold；thesis 弱化、止損觸發、或有更好機會 → sell。
-- 每個新 buy 預設 allocation_usd 為 1,000；最多同時持有 5 個倉位；不可超過可用現金。
-- portfolio_decisions.orders 必須包含所有現有持倉的明確決策（buy/hold/sell），不可遺漏。
-- sell 必須在 reason 中明確標註原因類型：thesis_break、stop、target、trailing、better_opportunity 其中之一；stop/target/trailing 會由程式硬規則優先執行，AI 主要負責 thesis_break 與 better_opportunity。
-- 在市場趨勢強烈、訊號一致時，可較積極增加曝險；在不確定性高時則偏向防守。
-
-**風險管理硬性規則（必須嚴格遵守）**：
-- 每個 stock_ideas 中的推薦，以及 portfolio_decisions 中的買入，**必須同時提供**以下三個欄位：
+**watchlist 要求**：
+- 每個 stock_ideas 必須提供 status：strong_buy / watch / weakening / remove。
+- 每個 stock_ideas 必須提供 conviction_score、catalyst_score、technical_score、sentiment_score、risk_score（0-100）。
+- 情緒熱度不是禁止買入條件；強 thesis + 強 momentum + 真催化仍可標 strong_buy。
+- 每個 stock_ideas 必須同時提供以下三個欄位：
   - "stop": 固定止損價（建議 -8% ~ -12%，請給具體價格，例如 142.50）
   - "target": 初始止盈目標價（建議至少 1:3 風險報酬比，可設較遠，請給具體價格）
-  - "trailing_stop": "Trailing Stop 設定（例如：最高價回撤15%-18%，或跌破20日均線）"
-
-- **系統自動執行優先級**（讓贏家多跑）：
-  1. 觸及固定止損 → 立即賣出（最優先保護本金）
-  2. 獲利達 **+25%** 後才啟用 Trailing Stop
-  3. 達到 target 或 Trailing Stop 觸發 → 自動賣出
-
-- 制定 Trailing Stop 時應參考 ATR 波動率、20/50日均線、近期趨勢線及最高價回撤 15%-18%。
-- 制定 stop / target / trailing_stop 時，必須先遵守上述風險管理範圍，再參考 web_search / x_search 的最新資訊、X 市場情緒、行業催化劑、財報/指引風險、關鍵技術位與波動率，對具體價格作出適當調整；不得因情緒樂觀而放寬固定止損。
-- 如市場情緒極度亢奮或利好已被充分定價，target 應保守；如基本面催化持續且情緒未過熱，可給較遠 target 並放寬 trailing_stop。
+  - "trailing_stop": "獲利超過25%後，最高價回調5%止賺"
 
 **JSON 輸出格式**（只輸出合法 JSON，不要任何額外文字）：
 {
@@ -133,14 +114,31 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的美股市場策略團隊首席�
       "trailing_stop": "Trailing Stop 設定",
       "risk": "主要風險"
     }
-  ],
+  ]
+}
+"""
+
+PORTFOLIO_SYSTEM_PROMPT = """你是獨立的美股 portfolio manager，只負責模擬 portfolio 的 buy/hold/sell 決策，不負責撰寫市場新聞。
+請只輸出合法 JSON，不要任何額外文字。
+
+硬性規則：
+- 只允許美股普通股與美國上市 ETF；禁止加密貨幣、台股、港股、A股、日股、外匯、商品。
+- 買入只能從 status=strong_buy 或高分 watchlist 候選中選；不能因新聞熱度單獨買入。
+- 情緒過熱不是禁止買入條件；如果 thesis 強、momentum 強、催化劑真實且 stop 合理，仍可 buy。
+- portfolio 最多 5 個持倉；如果已滿 5 個且要 buy，必須同時提出 sell 先騰出倉位。
+- orders 中必須先列出 sell，再列出 buy，最後列出 hold。
+- sell reason 必須標註 thesis_break 或 better_opportunity；stop/trailing 由程式硬規則處理。
+- target_price 只作參考，不作硬性止盈；強勢股讓 winner run。
+- trailing 規則由程式執行：獲利超過25%後，最高價回調5%止賺。
+- 每個現有持倉必須有明確 hold 或 sell；沒有足夠證據時 hold。
+
+輸出格式：
+{
   "portfolio_decisions": {
-    "watchlist": [
-      {"ticker": "NASDAQ:MU", "name": "Micron Technology", "rank": 1, "reason": "監察理由"}
-    ],
     "orders": [
-      {"ticker": "MU", "action": "buy", "allocation_usd": 1000, "reason": "從監察名單中選入", "stop": "...", "target": "...", "trailing_stop": "..."},
-      {"ticker": "AMD", "action": "sell", "reason": "thesis_break：賣出理由"}
+      {"ticker": "AVGO", "action": "sell", "reason": "thesis_break：..."},
+      {"ticker": "MU", "action": "hold", "reason": "thesis持續成立..."},
+      {"ticker": "NVDA", "action": "buy", "allocation_usd": 1000, "reason": "strong_buy：...", "stop": "142.50", "target": "190.00", "trailing_stop": "獲利超過25%後，最高價回調5%止賺"}
     ]
   }
 }
@@ -167,6 +165,21 @@ def build_prompt(today, quotes, status, session_note, time_note, removelist_text
 交易決策時段：{session_note}
 最新報價：{quotes}
 時間範圍：{time_note}
+剔除/冷卻狀態：{removelist_text}
+目前模擬 portfolio 狀態：{portfolio_text}"""
+
+
+def build_portfolio_prompt(today, report, portfolio_text, watchlist_text, session_note, removelist_text):
+    signals = {
+        "summary": report.get("summary"),
+        "executive_brief": report.get("executive_brief"),
+        "market_dashboard": report.get("market_dashboard"),
+        "x_consensus": report.get("x_consensus"),
+    } if isinstance(report, dict) else {}
+    return f"""當前香港時間：{today}
+交易決策時段：{session_note}
+市場訊號：{json.dumps(signals, ensure_ascii=False)}
+候選監察名單：{watchlist_text}
 剔除/冷卻狀態：{removelist_text}
 目前模擬 portfolio 狀態：{portfolio_text}"""
 
@@ -278,6 +291,18 @@ def normalize_ticker(ticker):
     for prefix in ("NASDAQ:", "NYSE:"):
         symbol = symbol.replace(prefix, "")
     return symbol
+
+
+def is_allowed_us_equity_ticker(ticker):
+    raw = str(ticker or "").strip().upper()
+    symbol = normalize_ticker(raw)
+    if not symbol or symbol == "N/A":
+        return False
+    if raw.startswith(("TPE:", "HKEX:", "HKG:", "SHA:", "SHE:", "TSE:")):
+        return False
+    if symbol.startswith("^") or symbol.endswith(("-USD", "=X", "=F", ".TW", ".HK", ".SS", ".SZ", ".T")):
+        return False
+    return bool(re.fullmatch(r"[A-Z][A-Z0-9.-]{0,9}", symbol))
 
 
 def is_valid_price(price):
@@ -439,6 +464,10 @@ def apply_portfolio_decisions(book, report, now):
         orders = pending_orders + orders
         book["pending_orders"] = []
         pending_orders = book["pending_orders"]
+    orders = sorted(
+        orders,
+        key=lambda order: {"sell": 0, "buy": 1, "hold": 2}.get(str(order.get("action") or "").lower().strip(), 3)
+    )
 
     for order in orders:
         if not isinstance(order, dict):
@@ -563,7 +592,7 @@ def apply_portfolio_decisions(book, report, now):
 
             stop_price = parse_stop_price(order.get("stop"), price)
             target_price = parse_target_price(order.get("target"))
-            trailing_stop_pct = parse_trailing_stop_pct(order.get("trailing_stop"))
+            trailing_stop_pct = 0.05
 
             positions[ticker] = {
                 "ticker": ticker,
@@ -577,7 +606,7 @@ def apply_portfolio_decisions(book, report, now):
                 "reason": order.get("reason", ""),
                 "stop": order.get("stop", ""),
                 "target": order.get("target", ""),
-                "trailing_stop": order.get("trailing_stop", ""),
+                "trailing_stop": order.get("trailing_stop", "獲利超過25%後，最高價回調5%止賺"),
                 "stop_price": stop_price,
                 "target_price": target_price,
                 "trailing_stop_pct": trailing_stop_pct,
@@ -728,8 +757,7 @@ def apply_portfolio_risk_rules(book):
         price = float(price)
         avg_cost = normalize_portfolio_position_cost(pos)
         stop_price = pos.get("stop_price")
-        target_price = pos.get("target_price")
-        trailing_stop_pct = pos.get("trailing_stop_pct")
+        trailing_stop_pct = 0.05
         highest_price = pos.get("highest_price", price)
 
         reason = None
@@ -737,15 +765,12 @@ def apply_portfolio_risk_rules(book):
         if is_valid_price(stop_price) and price <= float(stop_price):
             sell_type = "stop"
             reason = f"硬性止損觸發：現價 {price:.2f} <= stop_price {float(stop_price):.2f}"
-        elif is_valid_price(target_price) and price >= float(target_price):
-            sell_type = "target"
-            reason = f"止盈目標觸發：現價 {price:.2f} >= target_price {float(target_price):.2f}"
         elif trailing_stop_pct and is_valid_price(highest_price) and avg_cost > 0:
             gain_pct = (price - avg_cost) / avg_cost
             trailing_trigger = float(highest_price) * (1 - float(trailing_stop_pct))
-            if gain_pct >= 0.25 and price <= trailing_trigger:
+            if gain_pct > 0.25 and price <= trailing_trigger:
                 sell_type = "trailing"
-                reason = f"Trailing stop 觸發：現價 {price:.2f} <= 最高價回撤 {float(trailing_stop_pct) * 100:.1f}% 的 {trailing_trigger:.2f}"
+                reason = f"Trailing stop 觸發：獲利超過25%，現價 {price:.2f} <= 最高價回調5%的 {trailing_trigger:.2f}"
 
         if reason:
             orders.append({
@@ -757,6 +782,54 @@ def apply_portfolio_risk_rules(book):
             })
 
     return orders
+
+
+def watchlist_buy_candidates(watchlist):
+    candidates = set()
+    groups = []
+    if isinstance(watchlist, dict):
+        groups = list(watchlist.get("new", [])) + list(watchlist.get("continued", []))
+    elif isinstance(watchlist, list):
+        groups = watchlist
+
+    for item in groups:
+        if not isinstance(item, dict):
+            continue
+        ticker = normalize_ticker(item.get("ticker"))
+        if not is_allowed_us_equity_ticker(ticker):
+            continue
+        status = str(item.get("status") or "").lower()
+        conviction = item.get("conviction_score")
+        catalyst = item.get("catalyst_score")
+        technical = item.get("technical_score")
+        high_score = (
+            isinstance(conviction, (int, float)) and conviction >= 75
+            and isinstance(catalyst, (int, float)) and catalyst >= 60
+            and isinstance(technical, (int, float)) and technical >= 60
+        )
+        if status == "strong_buy" or high_score:
+            candidates.add(ticker)
+    return candidates
+
+
+def filter_portfolio_buy_orders(report, watchlist):
+    decisions = report.get("portfolio_decisions") if isinstance(report, dict) else None
+    orders = decisions.get("orders") if isinstance(decisions, dict) else None
+    if not isinstance(orders, list):
+        return
+
+    buy_candidates = watchlist_buy_candidates(watchlist)
+    filtered = []
+    for order in orders:
+        if not isinstance(order, dict):
+            continue
+        action = str(order.get("action") or "").lower().strip()
+        ticker = normalize_ticker(order.get("ticker"))
+        if action == "buy" and ticker not in buy_candidates:
+            print(f"⏸️ 跳過 {ticker} buy：不在 strong_buy / 高分 watchlist 候選中")
+            continue
+        filtered.append(order)
+    decisions["orders"] = filtered
 
 
 def active_removelist(now):
@@ -852,9 +925,9 @@ def timeout_handler(signum, frame):
     raise TimeoutError("AI 回應超時")
 
 
-def ask_xai(prompt):
+def ask_xai_with_system(prompt, system_prompt, purpose):
     if not USE_XAI:
-        print("USE_XAI = False，已跳過 xAI 呼叫，直接使用 fallback")
+        print(f"USE_XAI = False，已跳過 {purpose} xAI 呼叫")
         return fallback_report()
 
     signal.signal(signal.SIGALRM, timeout_handler)
@@ -872,10 +945,10 @@ def ask_xai(prompt):
         try:
             chat = client.chat.create(model=MODEL, tools=[web_search(), x_search()], temperature=0.1)
             
-            chat.append(system(SYSTEM_PROMPT))
+            chat.append(system(system_prompt))
             chat.append(user(prompt))
             
-            print("正在呼叫 xAI grok-4.3 分析（已啟用 Prompt Caching）...")
+            print(f"正在呼叫 xAI grok-4.3 {purpose}（已啟用 Prompt Caching）...")
             signal.alarm(240)
             response = chat.sample()
             signal.alarm(0)
@@ -889,7 +962,7 @@ def ask_xai(prompt):
                 last_token_usage["cached"] = getattr(usage, 'cached_prompt_text_tokens', 0)
             
             print(f"✅ Tokens → Prompt: {last_token_usage['prompt']} | Completion: {last_token_usage['completion']} | Cached: {last_token_usage['cached']}")
-            print("xAI 分析成功！")
+            print(f"xAI {purpose}成功！")
             return parse_json(response.content)
         except Exception as e:
             signal.alarm(0)
@@ -897,9 +970,31 @@ def ask_xai(prompt):
             if attempt < 2:
                 time.sleep(8)
 
-    print("已使用 fallback 報告。")
+    print(f"已使用 fallback：{purpose}")
     last_token_usage = {"prompt": 0, "completion": 0, "cached": 0}
     return fallback_report()
+
+
+def ask_xai(prompt):
+    return ask_xai_with_system(prompt, SYSTEM_PROMPT, "市場分析")
+
+
+def fallback_portfolio_decisions(book):
+    orders = []
+    for ticker in (book.get("positions") or {}).keys():
+        orders.append({"ticker": ticker, "action": "hold", "reason": "portfolio prompt 失敗，保守維持持倉"})
+    return {"portfolio_decisions": {"orders": orders}}
+
+
+def ask_portfolio_manager(prompt, book):
+    if not USE_XAI:
+        return fallback_portfolio_decisions(book)
+    result = ask_xai_with_system(prompt, PORTFOLIO_SYSTEM_PROMPT, "portfolio 決策")
+    decisions = result.get("portfolio_decisions") if isinstance(result, dict) else None
+    orders = decisions.get("orders") if isinstance(decisions, dict) else None
+    if not isinstance(orders, list):
+        return fallback_portfolio_decisions(book)
+    return result
 
 
 def esc(value):
@@ -970,7 +1065,24 @@ def update_stock_history(items, now):
             continue
 
         ticker = normalize_ticker(item.get("ticker"))
-        if not ticker or ticker == "N/A":
+        if not is_allowed_us_equity_ticker(item.get("ticker")):
+            continue
+
+        status = str(item.get("status") or "").lower().strip()
+        if status == "remove":
+            removed = history.pop(ticker, None)
+            if ticker not in removelist_tickers:
+                removelist.append({
+                    "ticker": ticker,
+                    "name": item.get("name", (removed or {}).get("name", "")),
+                    "reason": item.get("reason", "watchlist status=remove"),
+                    "removed_at": now.isoformat(),
+                    "cooldown_days": REMOVELIST_COOLDOWN_DAYS,
+                    "first_price": (removed or {}).get("first_price"),
+                    "sell_price": (removed or {}).get("last_price"),
+                    "performance_pct": None,
+                })
+                removelist_tickers.add(ticker)
             continue
 
         current_price = get_latest_price(ticker)
@@ -987,6 +1099,13 @@ def update_stock_history(items, now):
         record.update({
             "name": item.get("name", record.get("name", "")),
             "sector": item.get("sector", record.get("sector", "")),
+            "status": item.get("status", record.get("status", "watch")),
+            "conviction_score": item.get("conviction_score", record.get("conviction_score")),
+            "catalyst_score": item.get("catalyst_score", record.get("catalyst_score")),
+            "technical_score": item.get("technical_score", record.get("technical_score")),
+            "sentiment_score": item.get("sentiment_score", record.get("sentiment_score")),
+            "risk_score": item.get("risk_score", record.get("risk_score")),
+            "last_review_reason": item.get("reason", record.get("last_review_reason", "")),
             "last_recommended_at": now_text,
             "last_price": current_price,
             "stop": item.get("stop", record.get("stop", "")),
@@ -1361,7 +1480,11 @@ def get_full_active_stock_ideas(current_items, history, removelist, now):
         if not isinstance(item, dict):
             continue
         ticker_norm = normalize_ticker(item.get("ticker"))
-        if ticker_norm in removelist_tickers:
+        if (
+            not is_allowed_us_equity_ticker(item.get("ticker"))
+            or ticker_norm in removelist_tickers
+            or str(item.get("status") or "").lower().strip() == "remove"
+        ):
             continue
 
         new_item = dict(item)
@@ -1372,14 +1495,26 @@ def get_full_active_stock_ideas(current_items, history, removelist, now):
 
     history_items = list(history.items())
     for ticker_norm, record in history_items[:12]:
-        if ticker_norm in seen_tickers or ticker_norm in removelist_tickers:
+        record_ticker = record.get("ticker", ticker_norm)
+        if (
+            not is_allowed_us_equity_ticker(record_ticker)
+            or ticker_norm in seen_tickers
+            or ticker_norm in removelist_tickers
+            or str(record.get("status") or "").lower().strip() == "remove"
+        ):
             continue
 
         hist_item = {
-            "ticker": record.get("ticker", ticker_norm),
+            "ticker": record_ticker,
             "name": record.get("name", ""),
             "sector": record.get("sector", ""),
-            "reason": record.get("reason", "長期追蹤 | 等待新催化劑"),
+            "status": record.get("status", "watch"),
+            "conviction_score": record.get("conviction_score"),
+            "catalyst_score": record.get("catalyst_score"),
+            "technical_score": record.get("technical_score"),
+            "sentiment_score": record.get("sentiment_score"),
+            "risk_score": record.get("risk_score"),
+            "reason": record.get("last_review_reason", record.get("reason", "長期追蹤 | 等待新催化劑")),
             "technical": record.get("technical", "技術面維持觀察"),
             "entry": record.get("entry", "參考技術支撐位"),
             "stop": record.get("stop", "N/A"),
@@ -1435,6 +1570,25 @@ def main():
     )
     
     report = ask_xai(prompt)
+    current_ideas = report.get("stock_ideas", []) if isinstance(report, dict) else []
+    update_stock_history(current_ideas, now)
+    stock_history = load_json_file(STOCK_HISTORY_FILE, {})
+    removelist = active_removelist(now)
+    full_ideas = get_full_active_stock_ideas(current_ideas, stock_history, removelist, now)
+    watchlist_text = json.dumps(full_ideas, ensure_ascii=False)
+    portfolio_prompt = build_portfolio_prompt(
+        today,
+        report,
+        portfolio_prompt_state(portfolio_book),
+        watchlist_text,
+        trading_session_instruction(now),
+        removelist_note(now),
+    )
+    portfolio_report = ask_portfolio_manager(portfolio_prompt, portfolio_book)
+    if isinstance(portfolio_report, dict):
+        report["portfolio_decisions"] = portfolio_report.get("portfolio_decisions", {})
+    filter_portfolio_buy_orders(report, full_ideas)
+
     update_position_risk_state(portfolio_book)
     risk_orders = apply_portfolio_risk_rules(portfolio_book)
     if risk_orders:
@@ -1453,11 +1607,6 @@ def main():
     portfolio_book = apply_portfolio_decisions(portfolio_book, report, now)
     save_portfolio_book(portfolio_book)
     
-    current_ideas = report.get("stock_ideas", [])
-    
-    removelist = active_removelist(now)
-    full_ideas = get_full_active_stock_ideas(current_ideas, stock_history, removelist, now)
-    
     stock_ideas = enrich_stock_ideas(full_ideas, stock_history)
     if not isinstance(stock_ideas, dict):
         stock_ideas = {"new": [], "continued": []}
@@ -1474,8 +1623,6 @@ def main():
     if should_send(content):
         subject = report.get("subject") or report.get("summary") or "最新市場情報"
         send_email(subject, content)
-        
-        update_stock_history(current_ideas, now)
         
         with open(LAST_RUN_FILE, "w", encoding="utf-8") as f:
             f.write(today)
