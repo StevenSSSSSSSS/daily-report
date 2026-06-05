@@ -79,6 +79,14 @@
     }
   },
   "closed_trades": [],
+  "pending_orders": [
+    {
+      "ticker": "AVGO",
+      "action": "sell",
+      "reason": "財報指引不及預期，thesis弱化",
+      "created_at": "2026-06-05 17:22"
+    }
+  ],
   "trade_log": [
     {
       "time": "2026-05-26 00:57",
@@ -1621,5 +1629,10 @@
       "reason": "thesis持續，Gavin Baker正面評價"
     }
   ],
+<<<<<<< HEAD
   "last_updated_at": "2026-06-05 20:54"
 }
+=======
+  "last_updated_at": "2026-06-05 19:40"
+}
+>>>>>>> 1c79fd6 (新增AVGO賣出待處理訂單，原因為財報指引不及預期)
