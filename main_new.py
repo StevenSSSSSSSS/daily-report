@@ -1,6 +1,7 @@
 import hashlib
 import html
 import json
+import math
 import os
 import re
 import signal
@@ -61,18 +62,20 @@ DEMO_PORTFOLIO_ROWS = [
 ]
 
 # ==================== 固定 System Prompt ====================
-SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席分析師，具備深厚半導體供應鏈背景。
+SYSTEM_PROMPT = """你是華爾街投資銀行的美股市場策略團隊首席分析師，具備深厚半導體供應鏈背景。
 請用繁體中文撰寫每日市場簡報，語氣專業、簡潔、可執行。
 
 請優先使用 web_search 和 x_search 工具獲取最新資訊，再結合以下 X 帳號：@elonmusk, @GavinSBaker, @SeekingAlpha, @bloomberg
 
+**分析範圍硬性限制**：只分析美股、美國上市 ETF、NASDAQ 指數與道瓊工業指數（DJI）。不得分析、推薦或納入 A股、港股、台股、日股、亞太市場、加密貨幣、外匯或商品；如最新報價包含非美股資料，只能忽略。
+
 **核心摘要強化要求**：executive_brief 必須是整份報告中最精華的 4-5 點。
 
-**市場動態壓縮要求**：market_dashboard 四個欄位必須簡潔有力（us 60-90字、asia 150-200字、macro 70-110字、crypto 50-80字）。
+**市場動態壓縮要求**：market_dashboard 四個欄位必須簡潔有力，且全部圍繞美股（us 60-90字、asia 填寫 NASDAQ 重點 60-90字、macro 填寫 DJI 重點 60-90字、crypto 填寫美股風險/資金流 50-80字）。
 
 **X 市場共識要求**：輸出 4-6 條重點，並標註代表性帳號（僅使用 @elonmusk、@GavinSBaker、@SeekingAlpha、@bloomberg）。
 
-分析範圍：美股與AI產業鏈、亞太（A股、日股為主）、宏觀、加密貨幣。
+選股與 portfolio_decisions 僅允許美股普通股與美國上市 ETF，ticker 可使用 NASDAQ: 或 NYSE: 前綴；禁止 BTC-USD、ETH-USD、TPE:、HKEX:、A股、日股或任何非美股標的。
 
 在風險可控的前提下，你被鼓勵積極尋找並執行優質交易機會，而非過度保守。
 
@@ -111,9 +114,9 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的亞洲市場策略團隊首席�
   "executive_brief": ["重點1", "重點2", "重點3", "重點4", "重點5"],
   "market_dashboard": {
     "us": "美股與AI產業鏈重點，60-90字",
-    "asia": "亞太、中國和香港市場重點，150-200字",
-    "macro": "宏觀重點，70-110字",
-    "crypto": "加密重點，50-80字"
+    "asia": "NASDAQ 指數與科技股重點，60-90字",
+    "macro": "DJI 與大型藍籌股重點，60-90字",
+    "crypto": "美股風險、資金流或市場廣度重點，50-80字"
   },
   "x_consensus": ["重點1 (@帳號)", "重點2 (@帳號)", "重點3 (@帳號)", "重點4 (@帳號)"],
   "stock_ideas": [
@@ -146,10 +149,10 @@ def trading_session_instruction(now):
         return "週末休市模式：可復盤並為下週準備 watchlist 和潛在買點，允許提出高 conviction 的買入建議。"
     
     if now.hour == 10:
-        return "HKT 10:00 亞洲盤中：可針對亞洲市場和美股隔夜動向提出 watchlist 或買入建議。"
+        return "HKT 10:00 美股盤後/盤前準備：只針對美股隔夜動向、NASDAQ 與 DJI 提出 watchlist 或買入建議。"
     
     if now.hour == 16:
-        return "HKT 16:30 亞洲收盤後：總結市場並可積極制定今晚美股的 buy/hold/sell 決策。"
+        return "HKT 16:30 美股盤前準備：總結美股、NASDAQ 與 DJI，並可積極制定今晚美股 buy/hold/sell 決策。"
     
     if now.hour == 23 or (now.hour < 5):   # 美股交易時段
         return "美股交易活躍時段：可根據即時市場訊號積極提出 buy/hold/sell 決策。"
@@ -205,12 +208,22 @@ def load_json_file(path, default):
         return default
 
 
+def sanitize_json_value(value):
+    if isinstance(value, float) and not math.isfinite(value):
+        return None
+    if isinstance(value, dict):
+        return {k: sanitize_json_value(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [sanitize_json_value(v) for v in value]
+    return value
+
+
 def save_json_file(path, data):
     try:
         os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
         
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+            json.dump(sanitize_json_value(data), f, ensure_ascii=False, indent=2, allow_nan=False)
         print(f"✅ 成功儲存檔案: {path}")
     except Exception as e:
         print(f"❌ 儲存 {path} 失敗: {type(e).__name__} - {e}")
@@ -257,7 +270,16 @@ def fetch_quotes():
 
 
 def normalize_ticker(ticker):
-    return str(ticker or "").replace("NASDAQ:", "").strip().upper()
+    symbol = str(ticker or "").strip().upper()
+    if symbol.startswith("TPE:"):
+        return f"{symbol.split(':', 1)[1]}.TW"
+    for prefix in ("NASDAQ:", "NYSE:"):
+        symbol = symbol.replace(prefix, "")
+    return symbol
+
+
+def is_valid_price(price):
+    return isinstance(price, (int, float)) and math.isfinite(float(price)) and float(price) > 0
 
 
 def get_latest_price(ticker):
@@ -272,9 +294,12 @@ def get_latest_price(ticker):
         hist = ticker_obj.history(period="5d", auto_adjust=True)
         
         if len(hist) > 0:
-            price = float(hist["Close"].iloc[-1])
-            print(f"✅ {symbol} 最新價格: ${price:.4f} (history)")
-            return price
+            prices = hist["Close"].dropna()
+            if len(prices) > 0:
+                price = float(prices.iloc[-1])
+                if is_valid_price(price):
+                    print(f"✅ {symbol} 最新價格: ${price:.4f} (history)")
+                    return price
     except Exception as e:
         print(f"⚠️ {symbol} history 失敗: {e}")
 
@@ -284,8 +309,9 @@ def get_latest_price(ticker):
         for key in ['currentPrice', 'regularMarketPrice', 'previousClose']:
             if key in info and info[key] is not None:
                 price = float(info[key])
-                print(f"✅ {symbol} 最新價格: ${price:.4f} (info.{key})")
-                return price
+                if is_valid_price(price):
+                    print(f"✅ {symbol} 最新價格: ${price:.4f} (info.{key})")
+                    return price
     except Exception as e:
         print(f"⚠️ {symbol} info 失敗: {e}")
 

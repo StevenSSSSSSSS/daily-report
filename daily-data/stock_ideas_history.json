@@ -80,22 +80,22 @@
     "ticker": "TPE:2330",
     "name": "台積電",
     "first_recommended_at": "2026-05-25 14:26",
-    "first_price": null,
+    "first_price": 2365.0,
     "recommend_count": 1,
     "sector": "先進製程",
     "last_recommended_at": "2026-05-25 14:26",
-    "last_price": null,
+    "last_price": 2365.0,
     "stop": "跌破月線"
   },
   "NYSE:TSM": {
     "ticker": "NYSE:TSM",
     "name": "TSMC",
     "first_recommended_at": "2026-05-25 20:02",
-    "first_price": null,
+    "first_price": 444.9200134277344,
     "recommend_count": 7,
     "sector": "先進封裝",
     "last_recommended_at": "2026-06-05 01:37",
-    "last_price": null,
+    "last_price": 444.9200134277344,
     "stop": "168.00"
   },
   "AVGO": {
@@ -106,7 +106,7 @@
     "recommend_count": 22,
     "sector": "AI晶片",
     "last_recommended_at": "2026-06-05 14:21",
-    "last_price": NaN,
+    "last_price": 418.9100036621094,
     "stop": "142.00"
   },
   "SMCI": {
