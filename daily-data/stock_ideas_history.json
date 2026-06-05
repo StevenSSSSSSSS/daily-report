@@ -15,9 +15,9 @@
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 20,
+    "recommend_count": 21,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-05 17:49",
+    "last_recommended_at": "2026-06-05 19:40",
     "last_price": 218.66000366210938,
     "stop": "138.00"
   },
@@ -37,11 +37,11 @@
     "name": "Invesco QQQ Trust",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 714.510009765625,
-    "recommend_count": 18,
-    "sector": "AI ETF",
-    "last_recommended_at": "2026-06-05 17:22",
+    "recommend_count": 19,
+    "sector": "科技ETF",
+    "last_recommended_at": "2026-06-05 19:40",
     "last_price": 740.6099853515625,
-    "stop": "432.00"
+    "stop": "245.50"
   },
   "BTC-USD": {
     "ticker": "BTC-USD",
