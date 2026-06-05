@@ -4,9 +4,9 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 34,
+    "recommend_count": 35,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-05 17:49",
+    "last_recommended_at": "2026-06-05 20:54",
     "last_price": 996.0,
     "stop": "118.50"
   },
@@ -15,22 +15,22 @@
     "name": "NVIDIA",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 219.50999450683594,
-    "recommend_count": 21,
+    "recommend_count": 22,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-05 19:40",
+    "last_recommended_at": "2026-06-05 20:54",
     "last_price": 218.66000366210938,
     "stop": "138.00"
   },
   "AMD": {
     "ticker": "AMD",
-    "name": "Advanced Micro Devices",
+    "name": "AMD",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 449.5899963378906,
-    "recommend_count": 24,
+    "recommend_count": 25,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-05 17:49",
+    "last_recommended_at": "2026-06-05 20:54",
     "last_price": 523.2000122070312,
-    "stop": "112.00"
+    "stop": "142.00"
   },
   "QQQ": {
     "ticker": "QQQ",
@@ -70,11 +70,11 @@
     "name": "TSMC",
     "first_recommended_at": "2026-05-24 14:04",
     "first_price": 404.5199890136719,
-    "recommend_count": 4,
-    "sector": "先進封裝/代工",
-    "last_recommended_at": "2026-05-30 13:51",
-    "last_price": 418.45001220703125,
-    "stop": "跌破近期低點-6%"
+    "recommend_count": 5,
+    "sector": "半導體代工",
+    "last_recommended_at": "2026-06-05 20:54",
+    "last_price": 444.9200134277344,
+    "stop": "168.00"
   },
   "TPE:2330": {
     "ticker": "TPE:2330",
