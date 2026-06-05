@@ -346,6 +346,29 @@ def get_latest_price(ticker):
     return None
 
 
+def get_latest_quote(ticker):
+    symbol = normalize_ticker(ticker)
+    if not symbol or symbol == "N/A":
+        return None, None
+
+    try:
+        hist = yf.Ticker(symbol).history(period="5d", auto_adjust=True)
+        prices = hist["Close"].dropna() if len(hist) > 0 else []
+        if len(prices) > 0:
+            price = float(prices.iloc[-1])
+            pct = None
+            if len(prices) >= 2:
+                prev = float(prices.iloc[-2])
+                if is_valid_price(prev):
+                    pct = (price - prev) / prev * 100
+            if is_valid_price(price):
+                return price, pct
+    except Exception as e:
+        print(f"⚠️ {symbol} quote 失敗: {e}")
+
+    return get_latest_price(symbol), None
+
+
 def load_portfolio_book():
     book = load_json_file(PORTFOLIO_BOOK_FILE, {})
     if not isinstance(book, dict):
@@ -1031,7 +1054,7 @@ def enrich_stock_ideas(items, history):
         ticker_norm = normalize_ticker(ticker_raw)
 
         old = history.get(ticker_norm, {})
-        current_price = get_latest_price(ticker_raw)
+        current_price, current_pct = get_latest_quote(ticker_raw)
 
         item = dict(item)
 
@@ -1039,6 +1062,7 @@ def enrich_stock_ideas(items, history):
         item["last_recommended_at"] = item.get("last_recommended_at") or old.get("last_recommended_at", "本期新增")
 
         item["current_price"] = current_price
+        item["current_pct"] = current_pct
         item["first_price"] = old.get("first_price", item.get("first_price"))
         item["performance_pct"] = None
 
@@ -1302,21 +1326,83 @@ def render_stock_card(item):
     ticker = str(item.get("ticker") or "").replace("NASDAQ:", "").strip()
     performance = item.get("performance_pct")
     performance_text = f"{performance:+.2f}%" if isinstance(performance, (int, float)) else "本期新增"
+    latest_quote_text = latest_quote_display(item)
+    levels = display_trade_levels(item)
 
     return f"""
     <div class="stock-card">
       <div class="stock-title">{esc(ticker)} | {esc(item.get("name", ""))}</div>
       <div><b>首次推介：</b>{esc(item.get("first_recommended_at", "未知"))}</div>
       <div><b>上次推介：</b>{esc(item.get("last_recommended_at", "未知"))}</div>
-      <div><b>推介後表現：</b>{esc(performance_text)}</div>
+      <div><b>首次推介後表現：</b>{esc(performance_text)}</div>
+      <div><b>最新報價：</b>{esc(latest_quote_text)}</div>
       <div><b>板塊：</b>{esc(item.get("sector", ""))}</div>
       <div><b>推介理由：</b>{esc(item.get("reason", ""))}</div>
       <div><b>技術面：</b>{esc(item.get("technical", ""))}</div>
-      <div><b>入場條件：</b>{esc(item.get("entry", ""))}</div>
-      <div><b>止蝕位：</b>{esc(item.get("stop", ""))}</div>
+      <div><b>入場條件：</b>{esc(levels["entry"])}</div>
+      <div><b>止蝕位：</b>{esc(levels["stop"])}</div>
+      <div><b>目標價：</b>{esc(levels["target"])}</div>
+      <div><b>移動止賺：</b>{esc(levels["trailing_stop"])}</div>
       <div><b>主要風險：</b>{esc(item.get("risk", ""))}</div>
     </div>
     """
+
+
+def latest_quote_display(item):
+    price = item.get("current_price")
+    if not is_valid_price(price):
+        price = item.get("last_price")
+    pct = item.get("current_pct")
+    if is_valid_price(price) and isinstance(pct, (int, float)) and math.isfinite(float(pct)):
+        return f"${float(price):,.2f}（{float(pct):+.2f}%）"
+    if is_valid_price(price):
+        return f"${float(price):,.2f}"
+    return "--"
+
+
+def display_trade_levels(item):
+    current_price = item.get("current_price")
+    if not is_valid_price(current_price):
+        current_price = item.get("last_price")
+    if not is_valid_price(current_price):
+        first_price = item.get("first_price")
+        current_price = first_price if is_valid_price(first_price) else None
+
+    raw_stop = extract_number(item.get("stop"))
+    raw_target = extract_number(item.get("target"))
+
+    if is_valid_price(current_price):
+        price = float(current_price)
+        stop = raw_stop if is_valid_price(raw_stop) and price * 0.75 <= float(raw_stop) < price else round(price * 0.9, 2)
+        target = raw_target if is_valid_price(raw_target) and float(raw_target) > price else round(price * 1.3, 2)
+        return {
+            "entry": item.get("entry") if item.get("entry") and item.get("entry") != "N/A" else f"現價附近或回調至 ${price:,.2f}",
+            "stop": f"${float(stop):,.2f}",
+            "target": f"${float(target):,.2f}",
+            "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+        }
+
+    return {
+        "entry": item.get("entry", ""),
+        "stop": item.get("stop", ""),
+        "target": item.get("target", ""),
+        "trailing_stop": item.get("trailing_stop", "獲利超過25%後，最高價回調5%止賺"),
+    }
+
+
+def normalize_watchlist_trade_levels(watchlist):
+    if not isinstance(watchlist, dict):
+        return watchlist
+    for group in ("new", "continued"):
+        for item in watchlist.get(group, []):
+            if not isinstance(item, dict):
+                continue
+            levels = display_trade_levels(item)
+            item["entry"] = levels["entry"]
+            item["stop"] = levels["stop"]
+            item["target"] = levels["target"]
+            item["trailing_stop"] = levels["trailing_stop"]
+    return watchlist
 
 
 def email_html(report, quote_rows, today, token_info=None, sell_items=None):
@@ -1504,6 +1590,7 @@ def get_full_active_stock_ideas(current_items, history, removelist, now):
         ):
             continue
 
+        current_price, current_pct = get_latest_quote(ticker_norm)
         hist_item = {
             "ticker": record_ticker,
             "name": record.get("name", ""),
@@ -1521,7 +1608,8 @@ def get_full_active_stock_ideas(current_items, history, removelist, now):
             "risk": record.get("risk", "板塊輪動與宏觀風險"),
             "first_recommended_at": record.get("first_recommended_at", "未知"),
             "last_recommended_at": record.get("last_recommended_at", "未知"),
-            "current_price": get_latest_price(ticker_norm),
+            "current_price": current_price,
+            "current_pct": current_pct,
             "performance_pct": None,
             "is_new": False
         }
@@ -1575,6 +1663,7 @@ def main():
     stock_history = load_json_file(STOCK_HISTORY_FILE, {})
     removelist = active_removelist(now)
     full_ideas = get_full_active_stock_ideas(current_ideas, stock_history, removelist, now)
+    full_ideas = normalize_watchlist_trade_levels(full_ideas)
     watchlist_text = json.dumps(full_ideas, ensure_ascii=False)
     portfolio_prompt = build_portfolio_prompt(
         today,
