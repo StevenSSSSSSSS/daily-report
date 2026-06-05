@@ -9,12 +9,12 @@
       "avg_cost": 751.0,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 996.0,
+      "last_price": 922.4099731445312,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，獲利32.6%繼續持有",
+      "last_reason": "thesis持續成立，AI記憶體需求強勁",
       "highest_price": 996.0
     },
     "NVDA": {
@@ -24,12 +24,12 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 218.66000366210938,
+      "last_price": 207.7899932861328,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "thesis強勁，AI龍頭地位穩固",
+      "last_reason": "thesis強勁，長期AI龍頭地位不變",
       "highest_price": 218.66000366210938
     },
     "AMD": {
@@ -39,28 +39,13 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 523.2000122070312,
+      "last_price": 483.8500061035156,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
       "last_reason": "thesis持續，GPU業務加速",
       "highest_price": 523.2000122070312
-    },
-    "AVGO": {
-      "ticker": "AVGO",
-      "name": "AVGO",
-      "shares": 2.4146423060541435,
-      "avg_cost": 414.1400146484375,
-      "invested": 1000.0,
-      "opened_at": "2026-05-26 00:57",
-      "last_price": 418.9100036621094,
-      "last_decision": "hold",
-      "reason": "網路與自訂晶片需求",
-      "stop": "跌破近期低點",
-      "buy_price_confirmed": 414.1400146484375,
-      "last_reason": "非美股交易時段，原建議 sell 未執行：thesis_break：Q3指引低於預期，AI過熱疑慮升溫",
-      "highest_price": 418.9100036621094
     },
     "TSM": {
       "ticker": "TSM",
@@ -69,16 +54,48 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 444.9200134277344,
+      "last_price": 423.8500061035156,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "thesis持續，Gavin Baker正面評價",
+      "last_reason": "thesis持續，AI代工需求穩健",
       "highest_price": 444.9200134277344
+    },
+    "QQQ": {
+      "ticker": "QQQ",
+      "name": "QQQ",
+      "shares": 1.3252178853730658,
+      "avg_cost": 720.6749877929688,
+      "invested": 955.0513833642581,
+      "opened_at": "2026-06-05 23:38",
+      "last_price": 720.6749877929688,
+      "last_decision": "buy",
+      "reason": "從watchlist選入，回檔布局AI ETF",
+      "stop": "465.00",
+      "target": "520.00",
+      "trailing_stop": "最高價回撤17%或跌破20日均線",
+      "stop_price": 465.0,
+      "target_price": 520.0,
+      "trailing_stop_pct": 0.2,
+      "highest_price": 720.6749877929688,
+      "buy_price_confirmed": 720.6749877929688
     }
   },
-  "closed_trades": [],
+  "closed_trades": [
+    {
+      "ticker": "AVGO",
+      "name": "AVGO",
+      "opened_at": "2026-05-26 00:57",
+      "closed_at": "2026-06-05 23:38",
+      "avg_cost": 414.1400146484375,
+      "sell_price": 395.5249938964844,
+      "invested": 1000.0,
+      "proceeds": 955.05,
+      "pnl": -44.95,
+      "reason": "thesis_break：AI需求指引不及預期，基本面催化弱化"
+    }
+  ],
   "trade_log": [
     {
       "time": "2026-05-26 00:57",
@@ -1619,7 +1636,75 @@
       "unrealized_pnl": 58.98,
       "cash_after": 0.0,
       "reason": "thesis持續，Gavin Baker正面評價"
+    },
+    {
+      "time": "2026-06-05 23:38",
+      "action": "sell",
+      "ticker": "AVGO",
+      "price": 395.525,
+      "shares": 2.414642,
+      "amount": 955.05,
+      "invested": 1000.0,
+      "pnl": -44.95,
+      "cash_after": 955.05,
+      "reason": "thesis_break：AI需求指引不及預期，基本面催化弱化"
+    },
+    {
+      "time": "2026-06-05 23:38",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 922.41,
+      "shares": 1.331558,
+      "value": 1228.24,
+      "unrealized_pnl": 228.24,
+      "cash_after": 955.05,
+      "reason": "thesis持續成立，AI記憶體需求強勁"
+    },
+    {
+      "time": "2026-06-05 23:38",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 207.79,
+      "shares": 4.644035,
+      "value": 964.98,
+      "unrealized_pnl": -35.02,
+      "cash_after": 955.05,
+      "reason": "thesis強勁，長期AI龍頭地位不變"
+    },
+    {
+      "time": "2026-06-05 23:38",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 483.85,
+      "shares": 2.138992,
+      "value": 1034.95,
+      "unrealized_pnl": 34.95,
+      "cash_after": 955.05,
+      "reason": "thesis持續，GPU業務加速"
+    },
+    {
+      "time": "2026-06-05 23:38",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 423.85,
+      "shares": 2.380159,
+      "value": 1008.83,
+      "unrealized_pnl": 8.83,
+      "cash_after": 955.05,
+      "reason": "thesis持續，AI代工需求穩健"
+    },
+    {
+      "time": "2026-06-05 23:38",
+      "action": "buy",
+      "ticker": "QQQ",
+      "price": 720.675,
+      "shares": 1.325218,
+      "amount": 955.05,
+      "cash_after": 0.0,
+      "reason": "從watchlist選入，回檔布局AI ETF",
+      "stop": "465.00"
     }
   ],
-  "last_updated_at": "2026-06-05 20:54"
+  "last_updated_at": "2026-06-05 23:38",
+  "pending_orders": []
 }
