@@ -1458,9 +1458,12 @@ def main():
     removelist = active_removelist(now)
     full_ideas = get_full_active_stock_ideas(current_ideas, stock_history, removelist, now)
     
-    report["stock_ideas"] = enrich_stock_ideas(full_ideas, stock_history)
-    report["stock_ideas"]["portfolio_rows"] = portfolio_snapshot_rows(portfolio_book)
-    report["stock_ideas"]["portfolio_summary"] = portfolio_snapshot_summary(portfolio_book)
+    stock_ideas = enrich_stock_ideas(full_ideas, stock_history)
+    if not isinstance(stock_ideas, dict):
+        stock_ideas = {"new": [], "continued": []}
+    stock_ideas["portfolio_rows"] = portfolio_snapshot_rows(portfolio_book)
+    stock_ideas["portfolio_summary"] = portfolio_snapshot_summary(portfolio_book)
+    report["stock_ideas"] = stock_ideas
     
     display_sell_items = enrich_sell_items(removelist, stock_history)
     content = email_html(report, quote_rows, today, last_token_usage, display_sell_items)
