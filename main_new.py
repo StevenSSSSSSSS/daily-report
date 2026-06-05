@@ -90,6 +90,7 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的美股市場策略團隊首席�
 - 對現有持倉必須逐一明確決定：thesis 持續成立 → hold；thesis 弱化、止損觸發、或有更好機會 → sell。
 - 每個新 buy 預設 allocation_usd 為 1,000；最多同時持有 5 個倉位；不可超過可用現金。
 - portfolio_decisions.orders 必須包含所有現有持倉的明確決策（buy/hold/sell），不可遺漏。
+- sell 必須在 reason 中明確標註原因類型：thesis_break、stop、target、trailing、better_opportunity 其中之一；stop/target/trailing 會由程式硬規則優先執行，AI 主要負責 thesis_break 與 better_opportunity。
 - 在市場趨勢強烈、訊號一致時，可較積極增加曝險；在不確定性高時則偏向防守。
 
 **風險管理硬性規則（必須嚴格遵守）**：
@@ -138,7 +139,8 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的美股市場策略團隊首席�
       {"ticker": "NASDAQ:MU", "name": "Micron Technology", "rank": 1, "reason": "監察理由"}
     ],
     "orders": [
-      {"ticker": "MU", "action": "buy", "allocation_usd": 1000, "reason": "從監察名單中選入", "stop": "...", "target": "...", "trailing_stop": "..."}
+      {"ticker": "MU", "action": "buy", "allocation_usd": 1000, "reason": "從監察名單中選入", "stop": "...", "target": "...", "trailing_stop": "..."},
+      {"ticker": "AMD", "action": "sell", "reason": "thesis_break：賣出理由"}
     ]
   }
 }
@@ -442,7 +444,7 @@ def apply_portfolio_decisions(book, report, now):
 
         price = get_latest_price(ticker)
 
-        if action == "sell" and ticker in positions and can_trade:
+        if action == "sell" and ticker in positions and (can_trade or order.get("force")):
             # ... (賣出邏輯保持不變)
             pos = positions.pop(ticker)
             shares = float(pos.get("shares", 0) or 0)
@@ -538,6 +540,10 @@ def apply_portfolio_decisions(book, report, now):
             
             print(f"🛒 BUY {ticker} | 價格 ${price:.4f} | 股數 {shares:.4f} | 金額 ${allocation:.2f}")
 
+            stop_price = parse_stop_price(order.get("stop"), price)
+            target_price = parse_target_price(order.get("target"))
+            trailing_stop_pct = parse_trailing_stop_pct(order.get("trailing_stop"))
+
             positions[ticker] = {
                 "ticker": ticker,
                 "name": order.get("name", ticker),
@@ -549,6 +555,12 @@ def apply_portfolio_decisions(book, report, now):
                 "last_decision": "buy",
                 "reason": order.get("reason", ""),
                 "stop": order.get("stop", ""),
+                "target": order.get("target", ""),
+                "trailing_stop": order.get("trailing_stop", ""),
+                "stop_price": stop_price,
+                "target_price": target_price,
+                "trailing_stop_pct": trailing_stop_pct,
+                "highest_price": price,
                 "buy_price_confirmed": price   # 備份
             }
             trade_log.append({
@@ -619,6 +631,111 @@ def portfolio_snapshot_summary(book):
 def extract_number(text):
     match = re.search(r"\d+(?:\.\d+)?", str(text or "").replace(",", ""))
     return float(match.group(0)) if match else None
+
+
+def parse_stop_price(value, entry_price=None):
+    if isinstance(value, (int, float)) and is_valid_price(value):
+        return float(value)
+
+    text = str(value or "")
+    number = extract_number(text)
+    if number is None:
+        return None
+
+    if "%" in text and entry_price and is_valid_price(entry_price):
+        return round(float(entry_price) * (1 - number / 100), 4)
+    return number
+
+
+def parse_target_price(value):
+    if isinstance(value, (int, float)) and is_valid_price(value):
+        return float(value)
+    return extract_number(value)
+
+
+def parse_trailing_stop_pct(value):
+    if isinstance(value, (int, float)) and float(value) > 0:
+        pct = float(value)
+        return pct / 100 if pct > 1 else pct
+
+    text = str(value or "")
+    numbers = [float(n) for n in re.findall(r"\d+(?:\.\d+)?", text.replace(",", ""))]
+    if not numbers:
+        return None
+
+    pct = max(numbers) if "%" in text or "回撤" in text else numbers[0]
+    return pct / 100 if pct > 1 else pct
+
+
+def update_position_risk_state(book):
+    positions = book.get("positions", {}) if isinstance(book, dict) else {}
+    if not isinstance(positions, dict):
+        return
+
+    for ticker, pos in positions.items():
+        if not isinstance(pos, dict):
+            continue
+
+        price = get_latest_price(ticker)
+        if price is None:
+            price = pos.get("last_price", pos.get("avg_cost"))
+        if not is_valid_price(price):
+            continue
+
+        pos["last_price"] = float(price)
+        prev_high = pos.get("highest_price")
+        if is_valid_price(prev_high):
+            pos["highest_price"] = max(float(prev_high), float(price))
+        else:
+            pos["highest_price"] = float(price)
+
+
+def apply_portfolio_risk_rules(book):
+    orders = []
+    positions = book.get("positions", {}) if isinstance(book, dict) else {}
+    if not isinstance(positions, dict):
+        return orders
+
+    for ticker, pos in positions.items():
+        if not isinstance(pos, dict):
+            continue
+
+        price = pos.get("last_price")
+        if not is_valid_price(price):
+            continue
+
+        price = float(price)
+        avg_cost = normalize_portfolio_position_cost(pos)
+        stop_price = pos.get("stop_price")
+        target_price = pos.get("target_price")
+        trailing_stop_pct = pos.get("trailing_stop_pct")
+        highest_price = pos.get("highest_price", price)
+
+        reason = None
+        sell_type = None
+        if is_valid_price(stop_price) and price <= float(stop_price):
+            sell_type = "stop"
+            reason = f"硬性止損觸發：現價 {price:.2f} <= stop_price {float(stop_price):.2f}"
+        elif is_valid_price(target_price) and price >= float(target_price):
+            sell_type = "target"
+            reason = f"止盈目標觸發：現價 {price:.2f} >= target_price {float(target_price):.2f}"
+        elif trailing_stop_pct and is_valid_price(highest_price) and avg_cost > 0:
+            gain_pct = (price - avg_cost) / avg_cost
+            trailing_trigger = float(highest_price) * (1 - float(trailing_stop_pct))
+            if gain_pct >= 0.25 and price <= trailing_trigger:
+                sell_type = "trailing"
+                reason = f"Trailing stop 觸發：現價 {price:.2f} <= 最高價回撤 {float(trailing_stop_pct) * 100:.1f}% 的 {trailing_trigger:.2f}"
+
+        if reason:
+            orders.append({
+                "ticker": ticker,
+                "action": "sell",
+                "reason": reason,
+                "sell_type": sell_type,
+                "force": True,
+            })
+
+    return orders
 
 
 def active_removelist(now):
@@ -1297,6 +1414,21 @@ def main():
     )
     
     report = ask_xai(prompt)
+    update_position_risk_state(portfolio_book)
+    risk_orders = apply_portfolio_risk_rules(portfolio_book)
+    if risk_orders:
+        decisions = report.setdefault("portfolio_decisions", {})
+        if not isinstance(decisions, dict):
+            decisions = {}
+            report["portfolio_decisions"] = decisions
+        ai_orders = decisions.get("orders", [])
+        if not isinstance(ai_orders, list):
+            ai_orders = []
+        risk_tickers = {order.get("ticker") for order in risk_orders}
+        decisions["orders"] = risk_orders + [
+            order for order in ai_orders
+            if normalize_ticker(order.get("ticker")) not in risk_tickers
+        ]
     portfolio_book = apply_portfolio_decisions(portfolio_book, report, now)
     save_portfolio_book(portfolio_book)
     
