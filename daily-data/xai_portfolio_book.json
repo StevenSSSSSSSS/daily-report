@@ -9,12 +9,12 @@
       "avg_cost": 751.0,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 949.280029296875,
+      "last_price": 972.5399780273438,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI記憶體需求強勁，持股表現正向",
+      "last_reason": "thesis持續成立，AI記憶體需求強勁，HBM市占提升，獲利29.5%續抱",
       "highest_price": 996.0,
       "stop_price": 675.9,
       "target_price": 976.3,
@@ -28,7 +28,7 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 208.63999938964844,
+      "last_price": 209.41000366210938,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
@@ -47,12 +47,12 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 490.3299865722656,
+      "last_price": 490.1400146484375,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "thesis持續成立，GPU業務加速",
+      "last_reason": "thesis持續成立，GPU業務加速，MI300/MI350出貨成長",
       "highest_price": 523.2000122070312,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -66,12 +66,12 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 426.79998779296875,
+      "last_price": 435.25,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "thesis持續成立，AI代工龍頭",
+      "last_reason": "thesis持續成立，先進製程需求強，AI代工龍頭",
       "highest_price": 444.9200134277344,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -2118,34 +2118,78 @@
       "unrealized_pnl": 15.85,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工龍頭"
+    },
+    {
+      "time": "2026-06-09 21:56",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 972.54,
+      "shares": 1.331558,
+      "value": 1294.99,
+      "unrealized_pnl": 294.99,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，HBM市占提升，獲利29.5%續抱"
+    },
+    {
+      "time": "2026-06-09 21:56",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 209.41,
+      "shares": 4.644035,
+      "value": 972.51,
+      "unrealized_pnl": -27.49,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI晶片龍頭需求強勁"
+    },
+    {
+      "time": "2026-06-09 21:56",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 490.14,
+      "shares": 2.138992,
+      "value": 1048.41,
+      "unrealized_pnl": 48.41,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，GPU業務加速，MI300/MI350出貨成長"
+    },
+    {
+      "time": "2026-06-09 21:56",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 435.25,
+      "shares": 2.380159,
+      "value": 1035.96,
+      "unrealized_pnl": 35.96,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，先進製程需求強，AI代工龍頭"
     }
   ],
-  "last_updated_at": "2026-06-09 19:37",
+  "last_updated_at": "2026-06-09 21:56",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-09 19:37",
+    "time": "2026-06-09 21:56",
     "review": {
       "strategy_health": "good",
-      "summary": "AI mandate intact; thesis-driven holds captured MU rebound while NVDA dip offset by others, with AVGO pivot to broader exposure.",
+      "summary": "AI mandate 持倉 thesis 穩固，MU 獲利續抱帶動整體正報酬，市場反彈中風險可控。",
       "what_worked": [
-        "MU 26.4% gain held on strong memory thesis",
-        "Consistent holds across NVDA/AMD/TSM post-rebound",
-        "AVGO closed at loss to shift toward QQQ ETF for mandate diversification"
+        "MU 持倉獲利29.5% 續抱正確，HBM 市占提升",
+        "聚焦記憶體、GPU、晶片、代工不同子環節分散",
+        "AVGO 轉 QQQ ETF 優化廣泛 AI 曝險"
       ],
       "mistakes_or_risks": [
-        "NVDA position remains underwater without re-evaluation",
-        "All 4 holdings semi-focused with limited sub-segment spread",
-        "Idle cash (~19%) not deployed despite max 5 positions"
+        "NVDA 小幅虧損，GPU 環節與 AMD 重疊",
+        "僅4檔持倉，cash 未充分利用第5檔機會",
+        "單一 ticker 權重偏高 (MU 近26%)"
       ],
       "next_improvements": [
-        "Deploy cash into AI ETF (QQQ/SMH) or equipment/materials for internal diversification",
-        "Define explicit stop-loss thresholds per thesis",
-        "Scan watchlist for advanced packaging or infra names to balance current GPU/memory/foundry mix"
+        "考慮加入 AI 設備/封裝或 ETF 作為第5檔",
+        "設定 thesis 失效或止蝕再平衡規則",
+        "監控 HBM 與 AI capex 確認持續 thesis"
       ],
       "risk_notes": [
-        "Moderate concentration in AI semi supply chain",
-        "Single-ticker thesis risk on NVDA",
-        "No recent trading activity beyond holds"
+        "AI 半導體集中符合 mandate，無需非 AI 分散",
+        "VIX 下降風險偏好回升有利持倉",
+        "地緣風險緩和支撐半導體需求"
       ]
     }
   },
@@ -2201,6 +2245,33 @@
           "Moderate concentration in AI semi supply chain",
           "Single-ticker thesis risk on NVDA",
           "No recent trading activity beyond holds"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-09 21:56",
+      "review": {
+        "strategy_health": "good",
+        "summary": "AI mandate 持倉 thesis 穩固，MU 獲利續抱帶動整體正報酬，市場反彈中風險可控。",
+        "what_worked": [
+          "MU 持倉獲利29.5% 續抱正確，HBM 市占提升",
+          "聚焦記憶體、GPU、晶片、代工不同子環節分散",
+          "AVGO 轉 QQQ ETF 優化廣泛 AI 曝險"
+        ],
+        "mistakes_or_risks": [
+          "NVDA 小幅虧損，GPU 環節與 AMD 重疊",
+          "僅4檔持倉，cash 未充分利用第5檔機會",
+          "單一 ticker 權重偏高 (MU 近26%)"
+        ],
+        "next_improvements": [
+          "考慮加入 AI 設備/封裝或 ETF 作為第5檔",
+          "設定 thesis 失效或止蝕再平衡規則",
+          "監控 HBM 與 AI capex 確認持續 thesis"
+        ],
+        "risk_notes": [
+          "AI 半導體集中符合 mandate，無需非 AI 分散",
+          "VIX 下降風險偏好回升有利持倉",
+          "地緣風險緩和支撐半導體需求"
         ]
       }
     }
