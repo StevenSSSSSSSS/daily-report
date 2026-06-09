@@ -4,10 +4,10 @@
     "name": "Micron Technology",
     "first_recommended_at": "2026-05-22 17:17",
     "first_price": 762.0999755859375,
-    "recommend_count": 46,
+    "recommend_count": 47,
     "sector": "半導體記憶體",
-    "last_recommended_at": "2026-06-09 01:42",
-    "last_price": 949.4299926757812,
+    "last_recommended_at": "2026-06-09 14:08",
+    "last_price": 949.280029296875,
     "stop": "115.00",
     "status": "strong_buy",
     "conviction_score": 85,
@@ -15,7 +15,7 @@
     "technical_score": 70,
     "sentiment_score": 65,
     "risk_score": 40,
-    "last_review_reason": "AI HBM 需求強勁，Q3 指引優於預期，反彈領漲，portfolio 已獲利26%。"
+    "last_review_reason": "AI記憶體需求強勁，週五大跌後反彈10%，HBM與NAND展望佳"
   },
   "NVDA": {
     "ticker": "NVDA",
@@ -105,18 +105,18 @@
     "name": "Broadcom",
     "first_recommended_at": "2026-05-26 00:57",
     "first_price": 414.1400146484375,
-    "recommend_count": 28,
+    "recommend_count": 29,
     "sector": "AI晶片",
-    "last_recommended_at": "2026-06-06 13:56",
-    "last_price": 385.7300109863281,
-    "stop": "168.00",
+    "last_recommended_at": "2026-06-09 14:08",
+    "last_price": 396.6000061035156,
+    "stop": "235.00",
     "status": "watch",
     "conviction_score": 75,
     "catalyst_score": 70,
     "technical_score": 60,
     "sentiment_score": 55,
     "risk_score": 50,
-    "last_review_reason": "AI ASIC與網路晶片領導者，AI資本支出持續，週五回檔吸引買盤。"
+    "last_review_reason": "AI ASIC與網路晶片領導者，反彈中，長期成長確定"
   },
   "SMCI": {
     "ticker": "SMCI",
@@ -156,11 +156,18 @@
     "name": "Marvell Technology",
     "first_recommended_at": "2026-06-03 02:29",
     "first_price": 284.43011474609375,
-    "recommend_count": 1,
-    "sector": "半導體網路",
-    "last_recommended_at": "2026-06-03 02:29",
-    "last_price": 284.43011474609375,
-    "stop": "72.00"
+    "recommend_count": 2,
+    "sector": "AI晶片",
+    "last_recommended_at": "2026-06-09 14:08",
+    "last_price": 288.8500061035156,
+    "stop": "68.00",
+    "status": "watch",
+    "conviction_score": null,
+    "catalyst_score": null,
+    "technical_score": null,
+    "sentiment_score": null,
+    "risk_score": null,
+    "last_review_reason": "S&P500納入利多，AI數據中心需求強，週五大跌後反彈近10%"
   },
   "AMAT": {
     "ticker": "AMAT",
@@ -179,5 +186,23 @@
     "last_recommended_at": "2026-06-06 01:07",
     "last_price": 465.6499938964844,
     "stop": "178.00"
+  },
+  "INTC": {
+    "ticker": "INTC",
+    "name": "Intel",
+    "first_recommended_at": "2026-06-09 14:08",
+    "first_price": 110.2699966430664,
+    "recommend_count": 1,
+    "sector": "半導體",
+    "status": "watch",
+    "conviction_score": null,
+    "catalyst_score": null,
+    "technical_score": null,
+    "sentiment_score": null,
+    "risk_score": null,
+    "last_review_reason": "Google/NVDA備援代工傳聞，AI晶片復甦，週五大跌後+11%",
+    "last_recommended_at": "2026-06-09 14:08",
+    "last_price": 110.2699966430664,
+    "stop": "19.50"
   }
 }
