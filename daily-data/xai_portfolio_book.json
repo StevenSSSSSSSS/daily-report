@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI記憶體需求強勁，已獲利26.4%繼續持有觀察新催化",
+      "last_reason": "thesis持續成立，AI記憶體需求強勁，持股表現正向",
       "highest_price": 996.0,
       "stop_price": 675.9,
       "target_price": 976.3,
@@ -2074,34 +2074,78 @@
       "unrealized_pnl": 15.85,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工龍頭"
+    },
+    {
+      "time": "2026-06-09 19:37",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 949.28,
+      "shares": 1.331558,
+      "value": 1264.02,
+      "unrealized_pnl": 264.02,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，持股表現正向"
+    },
+    {
+      "time": "2026-06-09 19:37",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 208.64,
+      "shares": 4.644035,
+      "value": 968.93,
+      "unrealized_pnl": -31.07,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI晶片龍頭需求強勁"
+    },
+    {
+      "time": "2026-06-09 19:37",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 490.33,
+      "shares": 2.138992,
+      "value": 1048.81,
+      "unrealized_pnl": 48.81,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，GPU業務加速"
+    },
+    {
+      "time": "2026-06-09 19:37",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 426.8,
+      "shares": 2.380159,
+      "value": 1015.85,
+      "unrealized_pnl": 15.85,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI代工龍頭"
     }
   ],
-  "last_updated_at": "2026-06-09 16:57",
+  "last_updated_at": "2026-06-09 19:37",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-09 16:57",
+    "time": "2026-06-09 19:37",
     "review": {
-      "strategy_health": "warning",
-      "summary": "AI半導體集中持倉受益市場反彈但sector風險偏高",
+      "strategy_health": "good",
+      "summary": "AI mandate intact; thesis-driven holds captured MU rebound while NVDA dip offset by others, with AVGO pivot to broader exposure.",
       "what_worked": [
-        "MU獲利26.4% thesis持續成立",
-        "市場風險偏好回升利好科技成長股",
-        "持倉穩定無過度交易"
+        "MU 26.4% gain held on strong memory thesis",
+        "Consistent holds across NVDA/AMD/TSM post-rebound",
+        "AVGO closed at loss to shift toward QQQ ETF for mandate diversification"
       ],
       "mistakes_or_risks": [
-        "4檔全集中AI供應鏈缺乏分散",
-        "NVDA小幅虧損仍持續持有",
-        "無明確止蝕紀律"
+        "NVDA position remains underwater without re-evaluation",
+        "All 4 holdings semi-focused with limited sub-segment spread",
+        "Idle cash (~19%) not deployed despite max 5 positions"
       ],
       "next_improvements": [
-        "增加非AI板塊分散風險",
-        "設定個股止蝕點強化紀律",
-        "定期檢視thesis有效性"
+        "Deploy cash into AI ETF (QQQ/SMH) or equipment/materials for internal diversification",
+        "Define explicit stop-loss thresholds per thesis",
+        "Scan watchlist for advanced packaging or infra names to balance current GPU/memory/foundry mix"
       ],
       "risk_notes": [
-        "sector concentration risk高",
-        "AI敘事依賴度過高",
-        "cash可利用但未積極部署"
+        "Moderate concentration in AI semi supply chain",
+        "Single-ticker thesis risk on NVDA",
+        "No recent trading activity beyond holds"
       ]
     }
   },
@@ -2130,6 +2174,33 @@
           "sector concentration risk高",
           "AI敘事依賴度過高",
           "cash可利用但未積極部署"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-09 19:37",
+      "review": {
+        "strategy_health": "good",
+        "summary": "AI mandate intact; thesis-driven holds captured MU rebound while NVDA dip offset by others, with AVGO pivot to broader exposure.",
+        "what_worked": [
+          "MU 26.4% gain held on strong memory thesis",
+          "Consistent holds across NVDA/AMD/TSM post-rebound",
+          "AVGO closed at loss to shift toward QQQ ETF for mandate diversification"
+        ],
+        "mistakes_or_risks": [
+          "NVDA position remains underwater without re-evaluation",
+          "All 4 holdings semi-focused with limited sub-segment spread",
+          "Idle cash (~19%) not deployed despite max 5 positions"
+        ],
+        "next_improvements": [
+          "Deploy cash into AI ETF (QQQ/SMH) or equipment/materials for internal diversification",
+          "Define explicit stop-loss thresholds per thesis",
+          "Scan watchlist for advanced packaging or infra names to balance current GPU/memory/foundry mix"
+        ],
+        "risk_notes": [
+          "Moderate concentration in AI semi supply chain",
+          "Single-ticker thesis risk on NVDA",
+          "No recent trading activity beyond holds"
         ]
       }
     }
