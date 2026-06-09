@@ -77,6 +77,8 @@
 | 2026-06-09 | `GOAL.md`, `PROGRESS.md` | 補充每階段完成後必須自動 code review、debug / 驗證、記錄；需要人工測試時提醒 Steven | `git status --short` 確認只有三個文件變更 |
 | 2026-06-09 | `main_new.py`, `prompts.py`, `GOAL.md`, `PROGRESS.md` | Phase 2：固定 system prompts 拆到 `prompts.py`，`main_new.py` 改為 import | `python3 -m py_compile main_new.py prompts.py` 通過；`rg` 確認 prompt 定義和引用正常 |
 | 2026-06-09 | `main_new.py`, `prompts.py`, `GOAL.md`, `PROGRESS.md` | Phase 3：新增 portfolio strategy review，不直接下單；review 顯示在 email 並寫入 portfolio book | `python3 -m py_compile main_new.py prompts.py` 通過；本機 import 測試因缺少 `xai_sdk` 無法執行 |
+| 2026-06-09 | `prompts.py`, `PROGRESS.md` | 修正 portfolio review prompt：明確 portfolio mandate 是美股 AI 產業鏈，避免把 AI / 半導體集中本身誤判為策略錯誤 | `python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-09 | `main_new.py`, `PROGRESS.md` | 將 email 內完整 stock ideas / watchlist 卡片改為三欄 table：Ticker、Company Name、Price，沿用 portfolio table 風格 | `python3 -m py_compile main_new.py prompts.py` 通過 |
 
 ## 暫停 / 恢復記錄
 

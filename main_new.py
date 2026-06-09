@@ -1291,19 +1291,79 @@ def stock_cards(items, today=None, sell_items=None):
     html_parts = []
 
     html_parts.append(portfolio_table(items, today or "", sell_items))
+    html_parts.append(watchlist_table(items, today or ""))
 
-    new_items = items.get("new", [])
-    if new_items:
-        html_parts.append('<h2 style="color:#1d4ed8; margin:22px 0 10px 0;">活躍板塊股票推介 - 【本期重點推介】</h2>')
-        for item in new_items:
-            html_parts.append(render_stock_card(item))
+    return "".join(html_parts)
 
-    continued_items = items.get("continued", [])
-    if continued_items:
-        html_parts.append('<h2 style="color:#334155; margin:28px 0 10px 0; padding-top:20px;">活躍板塊股票推介 - 【持續追蹤名單】</h2>')
-        for item in continued_items:
-            html_parts.append(render_stock_card(item))
 
+def watchlist_rows(items):
+    rows = []
+    seen = set()
+    for group_name in ("new", "continued"):
+        for item in items.get(group_name, []):
+            if not isinstance(item, dict):
+                continue
+            ticker = normalize_ticker(item.get("ticker"))
+            if not ticker or ticker == "N/A" or ticker in seen:
+                continue
+            seen.add(ticker)
+            rows.append({
+                "ticker": ticker,
+                "name": item.get("name", ""),
+                "price": compact_price_display(item),
+            })
+    return rows
+
+
+def compact_price_display(item):
+    price = item.get("current_price")
+    if not is_valid_price(price):
+        price = item.get("last_price")
+    if not is_valid_price(price):
+        price = item.get("first_price")
+    if is_valid_price(price):
+        return f"${float(price):,.2f}"
+    return "--"
+
+
+def watchlist_table(items, today):
+    rows = watchlist_rows(items)
+    if not rows:
+        return ""
+
+    html_parts = [f'''
+    <div class="portfolio-panel">
+      <div class="portfolio-head">
+        <div class="portfolio-head-left">
+          <div>Stock Ideas / Watchlist</div>
+        </div>
+        <div class="portfolio-date">{esc(display_date(today))}</div>
+      </div>
+      <table class="portfolio-table">
+        <thead>
+          <tr>
+            <th style="width:24%;">Ticker</th>
+            <th style="width:52%;">Company Name</th>
+            <th style="width:24%;text-align:right;">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+    ''']
+
+    for row in rows:
+        html_parts.append(f'''
+          <tr>
+            <td><div class="portfolio-ticker">{esc(row.get("ticker", ""))}</div></td>
+            <td>{esc(row.get("name", ""))}</td>
+            <td class="portfolio-price">{esc(row.get("price", "--"))}</td>
+          </tr>
+        ''')
+
+    html_parts.append('''
+        </tbody>
+      </table>
+    </div>
+    ''')
     return "".join(html_parts)
 
 
