@@ -18,6 +18,8 @@ from xai_sdk import Client
 from xai_sdk.chat import user, system
 from xai_sdk.tools import web_search, x_search
 
+from prompts import PORTFOLIO_REVIEW_SYSTEM_PROMPT, PORTFOLIO_SYSTEM_PROMPT, SYSTEM_PROMPT
+
 
 CACHE_FILE = "/tmp/last_report_hash.txt"
 
@@ -57,93 +59,6 @@ DEMO_PORTFOLIO_ROWS = [
     {"action": "Sell", "ticker": "AMD", "name": "AMD", "price": "164.80", "pnl": "-2.3%"},
 ]
 
-# ==================== 固定 System Prompt ====================
-SYSTEM_PROMPT = """你是華爾街投資銀行的美股市場策略團隊首席分析師，具備深厚半導體供應鏈背景。
-請用繁體中文撰寫每日市場簡報，語氣專業、簡潔、可執行。
-
-請優先使用 web_search 和 x_search 工具獲取最新資訊，再結合以下 X 帳號：@elonmusk, @GavinSBaker, @SeekingAlpha, @bloomberg
-
-**分析範圍硬性限制**：只分析美股、美國上市 ETF、NASDAQ 指數與道瓊工業指數（DJI）。不得分析、推薦或納入 A股、港股、台股、日股、亞太市場、加密貨幣、外匯或商品；如最新報價包含非美股資料，只能忽略。
-
-**核心摘要強化要求**：executive_brief 必須是整份報告中最精華的 4-5 點。
-
-**市場動態壓縮要求**：market_dashboard 四個欄位必須簡潔有力，且全部圍繞美股（us 60-90字、asia 填寫 NASDAQ 重點 60-90字、macro 填寫 DJI 重點 60-90字、crypto 填寫美股風險/資金流 50-80字）。
-
-**X 市場共識要求**：輸出 4-6 條重點，並標註代表性帳號（僅使用 @elonmusk、@GavinSBaker、@SeekingAlpha、@bloomberg）。
-
-選股與 portfolio_decisions 僅允許美股普通股與美國上市 ETF，ticker 可使用 NASDAQ: 或 NYSE: 前綴；禁止 BTC-USD、ETH-USD、TPE:、HKEX:、A股、日股或任何非美股標的。
-
-在風險可控的前提下，請找出優質候選股和市場訊號；交易決策會由獨立 portfolio manager prompt 處理。
-
-**stock_ideas 選股規則**：
-- 總數 4-6 隻（本期新推 3-5 隻）。
-- 允許 ETF：QQQ, QQQI, SPY, VOO, DXYZ, FDVV, NASA, XOVR, RONB。
-- 優先 AI 記憶體、AI晶片、先進封裝、半導體設備材料、新能源/電動車及允許的ETF。
-
-**watchlist 要求**：
-- 每個 stock_ideas 必須提供 status：strong_buy / watch / weakening / remove。
-- 每個 stock_ideas 必須提供 conviction_score、catalyst_score、technical_score、sentiment_score、risk_score（0-100）。
-- 情緒熱度不是禁止買入條件；強 thesis + 強 momentum + 真催化仍可標 strong_buy。
-- 每個 stock_ideas 必須同時提供以下三個欄位：
-  - "stop": 固定止損價（建議 -8% ~ -12%，請給具體價格，例如 142.50）
-  - "target": 初始止盈目標價（建議至少 1:3 風險報酬比，可設較遠，請給具體價格）
-  - "trailing_stop": "獲利超過25%後，最高價回調5%止賺"
-
-**JSON 輸出格式**（只輸出合法 JSON，不要任何額外文字）：
-{
-  "subject": "不超過22字的郵件標題",
-  "summary": "一句話總結今日最重要市場訊號",
-  "executive_brief": ["重點1", "重點2", "重點3", "重點4", "重點5"],
-  "market_dashboard": {
-    "us": "美股與AI產業鏈重點，60-90字",
-    "asia": "NASDAQ 指數與科技股重點，60-90字",
-    "macro": "DJI 與大型藍籌股重點，60-90字",
-    "crypto": "美股風險、資金流或市場廣度重點，50-80字"
-  },
-  "x_consensus": ["重點1 (@帳號)", "重點2 (@帳號)", "重點3 (@帳號)", "重點4 (@帳號)"],
-  "stock_ideas": [
-    {
-      "ticker": "NASDAQ:MU",
-      "name": "Micron Technology",
-      "sector": "半導體記憶體",
-      "reason": "詳細理由",
-      "technical": "技術面狀態",
-      "entry": "入場條件",
-      "stop": "止蝕位",
-      "target": "止盈目標價",
-      "trailing_stop": "Trailing Stop 設定",
-      "risk": "主要風險"
-    }
-  ]
-}
-"""
-
-PORTFOLIO_SYSTEM_PROMPT = """你是獨立的美股 portfolio manager，只負責模擬 portfolio 的 buy/hold/sell 決策，不負責撰寫市場新聞。
-請只輸出合法 JSON，不要任何額外文字。
-
-硬性規則：
-- 只允許美股普通股與美國上市 ETF；禁止加密貨幣、台股、港股、A股、日股、外匯、商品。
-- 買入只能從 status=strong_buy 或高分 watchlist 候選中選；不能因新聞熱度單獨買入。
-- 情緒過熱不是禁止買入條件；如果 thesis 強、momentum 強、催化劑真實且 stop 合理，仍可 buy。
-- portfolio 最多 5 個持倉；如果已滿 5 個且要 buy，必須同時提出 sell 先騰出倉位。
-- orders 中必須先列出 sell，再列出 buy，最後列出 hold。
-- sell reason 必須標註 thesis_break 或 better_opportunity；stop/trailing 由程式硬規則處理。
-- target_price 只作參考，不作硬性止盈；強勢股讓 winner run。
-- trailing 規則由程式執行：獲利超過25%後，最高價回調5%止賺。
-- 每個現有持倉必須有明確 hold 或 sell；沒有足夠證據時 hold。
-
-輸出格式：
-{
-  "portfolio_decisions": {
-    "orders": [
-      {"ticker": "AVGO", "action": "sell", "reason": "thesis_break：..."},
-      {"ticker": "MU", "action": "hold", "reason": "thesis持續成立..."},
-      {"ticker": "NVDA", "action": "buy", "allocation_usd": 1000, "reason": "strong_buy：...", "stop": "142.50", "target": "190.00", "trailing_stop": "獲利超過25%後，最高價回調5%止賺"}
-    ]
-  }
-}
-"""
-
 def trading_session_instruction(now):
     if now.weekday() >= 5:
         return "週末休市模式：可復盤並為下週準備 watchlist 和潛在買點，允許提出高 conviction 的買入建議。"
@@ -170,12 +85,7 @@ def build_prompt(today, quotes, status, session_note, time_note, removelist_text
 
 
 def build_portfolio_prompt(today, report, portfolio_text, watchlist_text, session_note, removelist_text):
-    signals = {
-        "summary": report.get("summary"),
-        "executive_brief": report.get("executive_brief"),
-        "market_dashboard": report.get("market_dashboard"),
-        "x_consensus": report.get("x_consensus"),
-    } if isinstance(report, dict) else {}
+    signals = market_signal_summary(report)
     return f"""當前香港時間：{today}
 交易決策時段：{session_note}
 市場訊號：{json.dumps(signals, ensure_ascii=False)}
@@ -184,7 +94,39 @@ def build_portfolio_prompt(today, report, portfolio_text, watchlist_text, sessio
 目前模擬 portfolio 狀態：{portfolio_text}"""
 
 
+def market_signal_summary(report):
+    return {
+        "summary": report.get("summary"),
+        "executive_brief": report.get("executive_brief"),
+        "market_dashboard": report.get("market_dashboard"),
+        "x_consensus": report.get("x_consensus"),
+    } if isinstance(report, dict) else {}
+
+
+def portfolio_review_state(book):
+    if not isinstance(book, dict):
+        return "{}"
+    return json.dumps({
+        "portfolio": json.loads(portfolio_prompt_state(book)),
+        "recent_trade_log": (book.get("trade_log") or [])[-8:],
+        "recent_closed_trades": (book.get("closed_trades") or [])[-5:],
+        "pending_orders": book.get("pending_orders") or [],
+    }, ensure_ascii=False)
+
+
+def build_portfolio_review_prompt(today, report, book, session_note):
+    decisions = report.get("portfolio_decisions", {}) if isinstance(report, dict) else {}
+    return f"""當前香港時間：{today}
+交易決策時段：{session_note}
+壓縮市況：{json.dumps(market_signal_summary(report), ensure_ascii=False)}
+今日 portfolio orders：{json.dumps(decisions, ensure_ascii=False)}
+目前 portfolio 與最近交易：{portfolio_review_state(book)}
+
+請檢討今日策略質素、目前持倉風險、過去交易是否暴露系統性問題，並提出下次可執行的優化方向。"""
+
+
 last_token_usage = {"prompt": 0, "completion": 0, "cached": 0}
+total_token_usage = {"prompt": 0, "completion": 0, "cached": 0}
 
 
 def hk_now():
@@ -962,7 +904,7 @@ def ask_xai_with_system(prompt, system_prompt, purpose):
         metadata=(("x-grok-conv-id", "daily_market_morning_note_v2"),)
     )
 
-    global last_token_usage
+    global last_token_usage, total_token_usage
     
     for attempt in range(3):
         try:
@@ -983,6 +925,8 @@ def ask_xai_with_system(prompt, system_prompt, purpose):
                 last_token_usage["prompt"] = getattr(usage, 'prompt_tokens', 0)
                 last_token_usage["completion"] = getattr(usage, 'completion_tokens', 0)
                 last_token_usage["cached"] = getattr(usage, 'cached_prompt_text_tokens', 0)
+            for key in total_token_usage:
+                total_token_usage[key] += last_token_usage.get(key, 0)
             
             print(f"✅ Tokens → Prompt: {last_token_usage['prompt']} | Completion: {last_token_usage['completion']} | Cached: {last_token_usage['cached']}")
             print(f"xAI {purpose}成功！")
@@ -1020,12 +964,56 @@ def ask_portfolio_manager(prompt, book):
     return result
 
 
+def fallback_portfolio_review():
+    return {
+        "portfolio_review": {
+            "strategy_health": "warning",
+            "summary": "portfolio review prompt 失敗，今日只保留交易決策紀錄，暫不調整策略。",
+            "what_worked": [],
+            "mistakes_or_risks": ["review 資料不足或 AI 回應失敗，避免用未驗證結論影響策略。"],
+            "next_improvements": ["下次重新檢查市況、持倉 thesis、最近交易紀錄。"],
+            "risk_notes": [],
+        }
+    }
+
+
+def ask_portfolio_review(prompt):
+    if not USE_XAI:
+        return fallback_portfolio_review()
+    result = ask_xai_with_system(prompt, PORTFOLIO_REVIEW_SYSTEM_PROMPT, "portfolio review")
+    review = result.get("portfolio_review") if isinstance(result, dict) else None
+    if not isinstance(review, dict):
+        return fallback_portfolio_review()
+    return result
+
+
 def esc(value):
     return html.escape(str(value or "").strip())
 
 
 def li(items):
     return "".join(f"<li>{esc(item)}</li>" for item in (items if isinstance(items, list) else [items]) if str(item).strip())
+
+
+def portfolio_review_html(review):
+    if not isinstance(review, dict):
+        return ""
+    health = str(review.get("strategy_health") or "").strip()
+    summary = str(review.get("summary") or "").strip()
+    parts = [
+        "<h2>Portfolio Strategy Review</h2>",
+        f"<div class=\"box\"><b>策略狀態：</b>{esc(health)}<br><b>總結：</b>{esc(summary)}</div>",
+    ]
+    for title, items in (
+        ("有效地方", review.get("what_worked")),
+        ("問題 / 風險", review.get("mistakes_or_risks")),
+        ("下次優化", review.get("next_improvements")),
+        ("風險備註", review.get("risk_notes")),
+    ):
+        rendered = li(items or [])
+        if rendered:
+            parts.append(f"<h3 style=\"font-size:15px;margin:14px 0 6px;\">{esc(title)}</h3><ul>{rendered}</ul>")
+    return "".join(parts)
 
 
 def quote_table(rows):
@@ -1474,6 +1462,8 @@ td{{padding:9px 0;border-bottom:1px solid #eee;font-size:14px}}
 
 {stock_cards(report.get("stock_ideas", []), today, sell_items)}
 
+{portfolio_review_html(report.get("portfolio_review"))}
+
 <h2>詳細市場動態</h2>
 <div class="box"><b>美股 / AI：</b>{esc(d.get("us"))}</div>
 <div class="box"><b>亞太：</b>{esc(d.get("asia"))}</div>
@@ -1626,6 +1616,9 @@ def get_full_active_stock_ideas(current_items, history, removelist, now):
 
 
 def main():
+    global total_token_usage
+    total_token_usage = {"prompt": 0, "completion": 0, "cached": 0}
+
     print("main_new.py 已啟動。")
     os.makedirs(DATA_DIR, exist_ok=True)
     print(f"📁 狀態資料夾已確認: {DATA_DIR}/")
@@ -1694,6 +1687,27 @@ def main():
             if normalize_ticker(order.get("ticker")) not in risk_tickers
         ]
     portfolio_book = apply_portfolio_decisions(portfolio_book, report, now)
+
+    review_prompt = build_portfolio_review_prompt(
+        today,
+        report,
+        portfolio_book,
+        trading_session_instruction(now),
+    )
+    review_report = ask_portfolio_review(review_prompt)
+    if isinstance(review_report, dict):
+        report["portfolio_review"] = review_report.get("portfolio_review", {})
+        if isinstance(report["portfolio_review"], dict):
+            review_entry = {
+                "time": today,
+                "review": report["portfolio_review"],
+            }
+            portfolio_book["latest_review"] = review_entry
+            review_history = portfolio_book.setdefault("review_history", [])
+            if isinstance(review_history, list):
+                review_history.append(review_entry)
+                portfolio_book["review_history"] = review_history[-20:]
+
     save_portfolio_book(portfolio_book)
     
     stock_ideas = enrich_stock_ideas(full_ideas, stock_history)
@@ -1704,7 +1718,7 @@ def main():
     report["stock_ideas"] = stock_ideas
     
     display_sell_items = enrich_sell_items(removelist, stock_history)
-    content = email_html(report, quote_rows, today, last_token_usage, display_sell_items)
+    content = email_html(report, quote_rows, today, total_token_usage, display_sell_items)
     
     active_count = len(report.get("stock_ideas", {}).get("portfolio_rows", []))
     print(f"Email HTML 已建立。Portfolio 目前 {active_count} 個持倉。")
