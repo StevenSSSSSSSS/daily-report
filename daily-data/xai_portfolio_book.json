@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI HBM需求強勁，獲利26%續抱並依程式設定止盈",
+      "last_reason": "thesis持續成立，AI記憶體需求強勁，26%獲利讓winner run",
       "highest_price": 996.0,
       "stop_price": 675.9,
       "target_price": 976.3,
@@ -33,7 +33,7 @@
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "thesis持續成立，AI龍頭地位穩固",
+      "last_reason": "thesis持續成立，AI龍頭復甦買盤進場",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -52,7 +52,7 @@
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "thesis持續成立，GPU業務加速",
+      "last_reason": "thesis持續成立，GPU業務加速，AI動能續",
       "highest_price": 523.2000122070312,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -2250,34 +2250,78 @@
       "unrealized_pnl": 15.85,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工訂單穩健"
+    },
+    {
+      "time": "2026-06-10 19:51",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 949.28,
+      "shares": 1.331558,
+      "value": 1264.02,
+      "unrealized_pnl": 264.02,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，26%獲利讓winner run"
+    },
+    {
+      "time": "2026-06-10 19:51",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 208.64,
+      "shares": 4.644035,
+      "value": 968.93,
+      "unrealized_pnl": -31.07,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI龍頭復甦買盤進場"
+    },
+    {
+      "time": "2026-06-10 19:51",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 490.33,
+      "shares": 2.138992,
+      "value": 1048.81,
+      "unrealized_pnl": 48.81,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，GPU業務加速，AI動能續"
+    },
+    {
+      "time": "2026-06-10 19:51",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 426.8,
+      "shares": 2.380159,
+      "value": 1015.85,
+      "unrealized_pnl": 15.85,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI代工訂單穩健"
     }
   ],
-  "last_updated_at": "2026-06-10 14:23",
+  "last_updated_at": "2026-06-10 19:51",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-10 14:23",
+    "time": "2026-06-10 19:51",
     "review": {
       "strategy_health": "good",
-      "summary": "AI mandate intact with steady holds amid chip pullback; MU profit strong while others stable.",
+      "summary": "策略維持強勢持倉，thesis intact，MU獲利續抱表現穩健，符合AI復甦訊號。",
       "what_worked": [
-        "MU thesis validated with 26% gain and continued hold on HBM demand",
-        "Consistent hold decisions across NVDA/AMD/TSM without over-trading",
-        "AVGO closed to reallocate within AI (to broader exposure)"
+        "MU 26%獲利讓winner run",
+        "所有持倉thesis持續成立並hold",
+        "聚焦AI晶片/記憶體/代工符合市場買盤浮現"
       ],
       "mistakes_or_risks": [
-        "Portfolio concentrated in 4 semi-related names (memory/GPU/foundry) with similar entry timing",
-        "No explicit stop-loss triggers executed despite VIX and pullback signals",
-        "Missed potential intra-AI rotation (e.g., equipment or ETF) during 6/9 dip"
+        "NVDA小幅虧損未設止蝕",
+        "現金閒置未加碼AI ETF或設備股",
+        "AVGO轉QQQ未執行，錯過廣泛AI曝險"
       ],
       "next_improvements": [
-        "Define and apply take-profit/stop-loss rules for winners like MU",
-        "Monitor for re-entry or new AI mandate names (e.g., equipment/ASIC) on further weakness",
-        "Track position sizing to cap single-ticker exposure below 30%"
+        "在AI mandate內考慮加入QQQ或半導體設備股分散",
+        "設定明確止蝕/再平衡規則",
+        "監控VIX高檔下風險控管"
       ],
       "risk_notes": [
-        "MU unrealized gain >25% warrants profit-taking discipline",
-        "All positions opened late-May; correlated beta to chip cycle",
-        "Cash buffer available but no new deployments in today's session"
+        "GPU重疊(NVDA/AMD)",
+        "VIX升至22.13顯示波動加大",
+        "MU單一持倉權重偏高"
       ]
     }
   },
@@ -2414,6 +2458,33 @@
           "MU unrealized gain >25% warrants profit-taking discipline",
           "All positions opened late-May; correlated beta to chip cycle",
           "Cash buffer available but no new deployments in today's session"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-10 19:51",
+      "review": {
+        "strategy_health": "good",
+        "summary": "策略維持強勢持倉，thesis intact，MU獲利續抱表現穩健，符合AI復甦訊號。",
+        "what_worked": [
+          "MU 26%獲利讓winner run",
+          "所有持倉thesis持續成立並hold",
+          "聚焦AI晶片/記憶體/代工符合市場買盤浮現"
+        ],
+        "mistakes_or_risks": [
+          "NVDA小幅虧損未設止蝕",
+          "現金閒置未加碼AI ETF或設備股",
+          "AVGO轉QQQ未執行，錯過廣泛AI曝險"
+        ],
+        "next_improvements": [
+          "在AI mandate內考慮加入QQQ或半導體設備股分散",
+          "設定明確止蝕/再平衡規則",
+          "監控VIX高檔下風險控管"
+        ],
+        "risk_notes": [
+          "GPU重疊(NVDA/AMD)",
+          "VIX升至22.13顯示波動加大",
+          "MU單一持倉權重偏高"
         ]
       }
     }
