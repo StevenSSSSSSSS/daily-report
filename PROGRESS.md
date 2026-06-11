@@ -108,6 +108,7 @@
 | 2026-06-11 | `main_new.py`, `PROGRESS.md` | 緊急修正快速市場行情：yfinance 最後一行可能是 NaN，改為取最後兩個有效 Close，避免 email 顯示 `--` 或 `nan` | Code review：diff 只影響 `fetch_quotes`；Debug：`python3 -m py_compile main_new.py prompts.py` 通過，模擬最後一筆 NaN 時可取前面有效價格 |
 | 2026-06-11 | `scripts/push-code.sh`, `AGENTS.md`, `GOAL.md`, `PROGRESS.md` | 新增專用 push 流程，解決 GitHub Actions 先 commit `daily-data` 狀態檔導致本機 push 被拒絕的問題 | 文件/腳本修改；腳本會 fetch、確認遠端只含 `daily-data/` 更新、rebase、py_compile、push |
 | 2026-06-11 | `portfolio_book.html`, `PROGRESS.md` | 修正 Portfolio Strategy Review 版面：改為 full-width summary + 四欄 review cards，對齊現有 portfolio page 深色卡片設計 | Code review：diff 只影響 review 區塊 CSS/HTML render；Debug：抽出 `portfolio_book.html` script 後 `node --check` 通過，`python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-11 | `prompts.py`, `PROGRESS.md` | 小改 portfolio review prompt：要求 concentration risk 必須表述為 AI mandate 內部細分環節 / 風險因子 / thesis 過度集中，避免誤解為投資 AI 產業鏈本身有問題 | Code review：diff 只影響 `PORTFOLIO_REVIEW_SYSTEM_PROMPT` wording；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
 
 ## 暫停 / 恢復記錄
 

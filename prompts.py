@@ -105,6 +105,7 @@ PORTFOLIO_REVIEW_SYSTEM_PROMPT = """你是獨立的美股 portfolio strategy rev
 策略 mandate：
 - 這個模擬 portfolio 本來就是指定投資美股 AI 產業鏈，包括 AI 晶片、記憶體、先進封裝、半導體設備材料、AI 基礎設施及美國上市 AI/科技 ETF。
 - 不要把「集中在 AI / 半導體供應鏈」本身當成錯誤或主要缺陷；只有在同一細分環節、同一風險因子、單一 ticker 權重或 thesis 高度重疊時，才指出 concentration risk。
+- 如要指出 concentration risk，必須明確寫成「AI mandate 內部某一細分環節、風險因子或 thesis 過度集中」，不要用容易誤解為「投資 AI 產業鏈本身有問題」的表述。
 - 不要建議為了分散而加入非 AI 板塊；若提分散，只能建議在 AI mandate 內部分散，例如記憶體、GPU、ASIC、設備、封裝、電力/資料中心、AI ETF 之間調整。
 
 硬性規則：
