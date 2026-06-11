@@ -33,7 +33,7 @@
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "thesis持續成立，AI龍頭地位穩固，TSMC展望支撐",
+      "last_reason": "thesis持續成立，AI GPU龍頭地位穩固，短期回檔不改長期需求",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -71,7 +71,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "thesis持續成立，AI代工龍頭，資本支出提升",
+      "last_reason": "thesis持續成立，AI代工龍頭，CoWoS擴張中",
       "highest_price": 444.9200134277344,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -2426,34 +2426,78 @@
       "unrealized_pnl": 18.52,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工龍頭，資本支出提升"
+    },
+    {
+      "time": "2026-06-11 13:03",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 935.89,
+      "shares": 1.331558,
+      "value": 1246.19,
+      "unrealized_pnl": 246.19,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，獲利24.6%續抱"
+    },
+    {
+      "time": "2026-06-11 13:03",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 208.19,
+      "shares": 4.644035,
+      "value": 966.84,
+      "unrealized_pnl": -33.16,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI GPU龍頭地位穩固，短期回檔不改長期需求"
+    },
+    {
+      "time": "2026-06-11 13:03",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 475.51,
+      "shares": 2.138992,
+      "value": 1017.11,
+      "unrealized_pnl": 17.11,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，GPU業務加速，風險可控"
+    },
+    {
+      "time": "2026-06-11 13:03",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 427.92,
+      "shares": 2.380159,
+      "value": 1018.52,
+      "unrealized_pnl": 18.52,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI代工龍頭，CoWoS擴張中"
     }
   ],
-  "last_updated_at": "2026-06-11 12:54",
+  "last_updated_at": "2026-06-11 13:03",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-11 12:54",
+    "time": "2026-06-11 13:03",
     "review": {
-      "strategy_health": "good",
-      "summary": "AI mandate 內持倉分散良好、thesis 持續成立，逢低持穩策略符合市場支撐訊號。",
+      "strategy_health": "warning",
+      "summary": "持倉集中AI晶片/記憶體/代工，短期回檔續抱但內部分散不足，現金未積極部署。",
       "what_worked": [
-        "MU 獲利續抱、TSM/AMD 抗跌表現驗證記憶體與代工/ GPU 細分曝險",
-        "AVGO 止損轉向更廣 AI ETF 顯示紀律執行",
-        "維持 4 檔上限、cash 保留，無過度交易"
+        "MU獲利24.6%續抱符合thesis",
+        "避免過度交易維持紀律",
+        "AVGO止損轉向更廣AI曝險"
       ],
       "mistakes_or_risks": [
-        "NVDA 與 AMD 同屬 GPU/AI 晶片子環節，thesis 重疊度偏高",
-        "VIX 急升 22+ 環境下單一 ticker 權重仍集中，短期波動風險上升",
-        "現金未積極加碼 TSMC 展望帶動之設備/記憶體機會"
+        "4檔持倉高度重疊於半導體供應鏈",
+        "NVDA小虧未設止損",
+        "未利用現金新增設備/基礎設施/ETF"
       ],
       "next_improvements": [
-        "在 AI mandate 內新增 1 檔設備或電力/資料中心相關美股以平衡 GPU 曝險",
-        "設定單一子環節權重上限（例如 GPU 合計 <40%）",
-        "監測 QQQ 等 AI ETF 作為廣泛曝險補充"
+        "AI mandate內新增設備股分散",
+        "監控單一細分環節權重",
+        "等待回檔後評估基礎設施機會"
       ],
       "risk_notes": [
-        "VIX 22+ 與債息上升顯示短期避險情緒，續抱需搭配 thesis 追蹤",
-        "無止蝕觸發但市場回檔中，建議預設 10-15% 硬性止損",
-        "AI 長期趨勢不變，focus 基本面穩健 ticker"
+        "記憶體與GPU風險因子重疊",
+        "市場估值焦慮可能延續波動",
+        "現金閒置降低整體曝險"
       ]
     }
   },
@@ -2698,6 +2742,33 @@
           "VIX 22+ 與債息上升顯示短期避險情緒，續抱需搭配 thesis 追蹤",
           "無止蝕觸發但市場回檔中，建議預設 10-15% 硬性止損",
           "AI 長期趨勢不變，focus 基本面穩健 ticker"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-11 13:03",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "持倉集中AI晶片/記憶體/代工，短期回檔續抱但內部分散不足，現金未積極部署。",
+        "what_worked": [
+          "MU獲利24.6%續抱符合thesis",
+          "避免過度交易維持紀律",
+          "AVGO止損轉向更廣AI曝險"
+        ],
+        "mistakes_or_risks": [
+          "4檔持倉高度重疊於半導體供應鏈",
+          "NVDA小虧未設止損",
+          "未利用現金新增設備/基礎設施/ETF"
+        ],
+        "next_improvements": [
+          "AI mandate內新增設備股分散",
+          "監控單一細分環節權重",
+          "等待回檔後評估基礎設施機會"
+        ],
+        "risk_notes": [
+          "記憶體與GPU風險因子重疊",
+          "市場估值焦慮可能延續波動",
+          "現金閒置降低整體曝險"
         ]
       }
     }
