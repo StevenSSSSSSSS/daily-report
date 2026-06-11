@@ -44,6 +44,7 @@
 3. **人工測試提醒**：如果涉及實際寄信、GitHub Actions、AI token 消耗、portfolio 狀態檔、HTML 顯示或外部 API，必須提醒 Steven 需要人工確認。
 4. **記錄**：更新 `PROGRESS.md` 的修改記錄、review 結果、debug 結果、下一步 / 暫停點。
 5. **校正**：如驗證失敗或改動超出目標，先縮小修改範圍，回到最小可行方案。
+6. **Push**：功能 commit 不包含 `daily-data/*.json`；用 `scripts/push-code.sh` 處理遠端 Actions 狀態檔更新後再 push。
 
 ### Phase 1：文件與工作流基礎
 

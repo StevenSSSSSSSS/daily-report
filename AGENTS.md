@@ -73,6 +73,13 @@
 - 實際 AI 呼叫、email 寄送、GitHub Actions 排程 / 手動觸發、以及狀態檔自動 commit 測試，需要 Steven 人工確認或執行。
 - 回報測試結果時要分清楚「本機已驗證」和「仍需 GitHub / AI / email 實測」。
 
+## Push 流程
+
+- GitHub Actions 會自動 commit `daily-data/` 狀態檔，所以本機 push 前遠端常會領先。
+- 不要把 `daily-data/*.json` 混入功能 commit。
+- 功能 commit 完成後，優先用 `scripts/push-code.sh` push；腳本會先 fetch，確認遠端只有 `daily-data/` 更新，rebase 後再 push。
+- 如果遠端出現非 `daily-data/` 變更，先停下來人工 review，不要自動合併。
+
 ## 修改後流程
 
 每次完成階段性修改後：

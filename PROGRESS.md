@@ -106,6 +106,8 @@
 | 2026-06-11 | `PROGRESS.md` | Phase 3A.5 評估：暫不新增 append-only AI decision log，避免狀態檔膨脹與 GitHub Actions commit 噪音 | 文件修改；未改程式碼 |
 | 2026-06-11 | `prompts.py`, `main_new.py`, `portfolio_book.html`, `PROGRESS.md` | 修正現金部署 prompt，避免 AI 誤解每檔固定 20%；行情表加入 NaN 防護；portfolio page 顯示 latest review 與 thesis / review trigger / falsification points | Code review：diff 只影響 prompt、行情顯示防護、portfolio page 顯示；Debug：`python3 -m py_compile main_new.py prompts.py` 通過，抽出 `portfolio_book.html` script 後 `node --check` 通過 |
 | 2026-06-11 | `main_new.py`, `PROGRESS.md` | 緊急修正快速市場行情：yfinance 最後一行可能是 NaN，改為取最後兩個有效 Close，避免 email 顯示 `--` 或 `nan` | Code review：diff 只影響 `fetch_quotes`；Debug：`python3 -m py_compile main_new.py prompts.py` 通過，模擬最後一筆 NaN 時可取前面有效價格 |
+| 2026-06-11 | `scripts/push-code.sh`, `AGENTS.md`, `GOAL.md`, `PROGRESS.md` | 新增專用 push 流程，解決 GitHub Actions 先 commit `daily-data` 狀態檔導致本機 push 被拒絕的問題 | 文件/腳本修改；腳本會 fetch、確認遠端只含 `daily-data/` 更新、rebase、py_compile、push |
+| 2026-06-11 | `portfolio_book.html`, `PROGRESS.md` | 修正 Portfolio Strategy Review 版面：改為 full-width summary + 四欄 review cards，對齊現有 portfolio page 深色卡片設計 | Code review：diff 只影響 review 區塊 CSS/HTML render；Debug：抽出 `portfolio_book.html` script 後 `node --check` 通過，`python3 -m py_compile main_new.py prompts.py` 通過 |
 
 ## 暫停 / 恢復記錄
 
@@ -115,6 +117,7 @@
 | 2026-06-09 | Phase 2 完成 | 下一步可開始 Phase 3：Portfolio Review；需先確認是否新增第三次 AI 呼叫 |
 | 2026-06-09 | Phase 3 第一版完成 | 下一步人工觀察 GitHub Actions 實際報告中的 review 質素和 token 成本 |
 | 2026-06-11 | Phase 3A.5 暫緩 | 下一步建議由 Steven 在 GitHub Actions 實測一次 AI / email 流程，再按輸出質素決定是否調整 validation 或 log |
+| 2026-06-11 | Push 流程補強 | 後續功能 commit 用 `scripts/push-code.sh`，避免被遠端 Actions 狀態檔更新卡住 |
 
 ## 決策記錄
 
