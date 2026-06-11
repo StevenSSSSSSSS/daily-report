@@ -523,7 +523,13 @@ http://localhost:8001/portfolio_book.html
     <div class="daily-grid" id="dailyGrid"></div>
   </div>
 
-  <!-- ====== 3. 交易紀錄 ====== -->
+  <!-- ====== 3. Portfolio Review ====== -->
+  <div class="section">
+    <h2>🧭 Portfolio Strategy Review <span class="badge" id="reviewStatus">-</span></h2>
+    <div class="daily-grid" id="reviewGrid"></div>
+  </div>
+
+  <!-- ====== 4. 交易紀錄 ====== -->
   <div class="section">
     <h2>📊 交易紀錄 <span class="badge" id="tradeCount">-</span></h2>
     <div class="table-wrap">
@@ -545,7 +551,7 @@ http://localhost:8001/portfolio_book.html
     </div>
   </div>
 
-  <!-- ====== 4. 持續追蹤名單 ====== -->
+  <!-- ====== 5. 持續追蹤名單 ====== -->
   <div class="section">
     <h2>🔭 持續追蹤名單 <span class="badge" id="watchCount">-</span></h2>
     <div class="table-wrap">
@@ -609,6 +615,7 @@ http://localhost:8001/portfolio_book.html
 
         renderPortfolio(book);
         renderDaily(book);
+        renderReview(book);
         renderTrades(book);
         renderWatchlist(ideas, book);
         document.getElementById("footerNote").textContent =
@@ -687,7 +694,13 @@ http://localhost:8001/portfolio_book.html
             <td class="${cls(r.pnl)}">${tagged(r.pnl)}</td>
             <td class="${cls(r.ret)}">${pct2(r.ret)}</td>
             <td>${r.stop || "-"}</td>
-            <td>${r.last_reason || "-"}</td>
+            <td>
+              <div>${r.thesis || r.reason || r.last_reason || "-"}</div>
+              ${r.review_trigger ? `<div class="meta">Review: ${r.review_trigger}</div>` : ""}
+              ${Array.isArray(r.falsification_points) && r.falsification_points.length
+                ? `<div class="meta">失效條件: ${r.falsification_points.slice(0, 2).join("；")}</div>`
+                : ""}
+            </td>
           </tr>
         `).join("")
         + `
@@ -748,7 +761,45 @@ http://localhost:8001/portfolio_book.html
     }
 
     // ================================================================
-    // 3. 交易紀錄（只顯示 buy / sell，不含 hold）
+    // 3. Portfolio Review
+    // ================================================================
+    function renderReview(book) {
+      const entry = book.latest_review || {};
+      const review = entry.review || {};
+      const status = review.strategy_health || "-";
+      document.getElementById("reviewStatus").textContent = status;
+
+      if (!review.summary) {
+        document.getElementById("reviewGrid").innerHTML =
+          '<div style="color:#6e7681;">尚無 portfolio review</div>';
+        return;
+      }
+
+      const block = (title, items) => {
+        if (!Array.isArray(items) || !items.length) return "";
+        return `
+          <div class="meta" style="margin-top:8px;font-weight:700;">${title}</div>
+          <ul style="margin:6px 0 0 18px;padding:0;">${items.slice(0, 3).map(x => `<li>${x}</li>`).join("")}</ul>
+        `;
+      };
+
+      document.getElementById("reviewGrid").innerHTML = `
+        <div class="daily-card">
+          <div class="card-head">
+            <span class="ticker">${status}</span>
+            <span class="meta">${entry.time || entry.date || ""}</span>
+          </div>
+          <div class="reason">${review.summary || "-"}</div>
+          ${block("有效地方", review.what_worked)}
+          ${block("問題 / 風險", review.mistakes_or_risks)}
+          ${block("下次優化", review.next_improvements)}
+          ${block("風險備註", review.risk_notes)}
+        </div>
+      `;
+    }
+
+    // ================================================================
+    // 4. 交易紀錄（只顯示 buy / sell，不含 hold）
     // ================================================================
     function renderTrades(book) {
       const log = book.trade_log || [];

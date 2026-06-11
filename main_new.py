@@ -221,7 +221,7 @@ def last_run_instruction(state):
 
 
 def quote_format(ticker, close):
-    if close is None:
+    if not is_valid_price(close):
         return "--"
     if ticker in {"BTC-USD", "ETH-USD"}:
         return f"{close:,.0f}"
@@ -241,6 +241,10 @@ def fetch_quotes():
                 quote_text[name] = "N/A"
                 continue
             close, prev = hist["Close"].iloc[-1], hist["Close"].iloc[-2]
+            if not is_valid_price(close) or not is_valid_price(prev):
+                quote_text[name] = "N/A"
+                rows.append({"name": name, "price": "--", "pct": None})
+                continue
             pct = (close - prev) / prev * 100
             price = quote_format(ticker, close)
             quote_text[name] = f"{price} ({pct:+.2f}%) [時間:{hist.index[-1].strftime('%m-%d %H:%M')}]"
@@ -1098,9 +1102,21 @@ def portfolio_review_html(review):
 
 def quote_table(rows):
     return "".join(
-        f"<tr><td>{esc(r['name'])}</td><td align='right'>{esc(r['price'])}</td><td align='right' class='{'up' if r['pct'] >= 0 else 'down'}'>{r['pct']:+.2f}%</td></tr>"
+        f"<tr><td>{esc(r['name'])}</td><td align='right'>{esc(r['price'])}</td><td align='right' class='{quote_pct_class(r.get('pct'))}'>{quote_pct_text(r.get('pct'))}</td></tr>"
         for r in rows
     )
+
+
+def quote_pct_class(pct):
+    if not isinstance(pct, (int, float)) or not math.isfinite(float(pct)):
+        return ""
+    return "up" if pct >= 0 else "down"
+
+
+def quote_pct_text(pct):
+    if not isinstance(pct, (int, float)) or not math.isfinite(float(pct)):
+        return "--"
+    return f"{pct:+.2f}%"
 
 
 def enrich_stock_ideas(items, history):
