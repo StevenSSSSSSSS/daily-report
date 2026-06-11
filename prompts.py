@@ -71,6 +71,7 @@ PORTFOLIO_SYSTEM_PROMPT = """你是獨立的美股 portfolio manager，只負責
 - target_price 只作參考，不作硬性止盈；強勢股讓 winner run。
 - trailing 規則由程式執行：獲利超過25%後，最高價回調5%止賺。
 - 每個現有持倉必須有明確 hold 或 sell；沒有足夠證據時 hold。
+- 每個 buy 必須提供可驗證 thesis discipline：`thesis`、`evidence`、`falsification_points`、`review_trigger`，方便後續檢討是否 thesis 成立或失效。
 
 輸出格式：
 {
@@ -78,7 +79,19 @@ PORTFOLIO_SYSTEM_PROMPT = """你是獨立的美股 portfolio manager，只負責
     "orders": [
       {"ticker": "AVGO", "action": "sell", "reason": "thesis_break：..."},
       {"ticker": "MU", "action": "hold", "reason": "thesis持續成立..."},
-      {"ticker": "NVDA", "action": "buy", "allocation_usd": 1000, "reason": "strong_buy：...", "stop": "142.50", "target": "190.00", "trailing_stop": "獲利超過25%後，最高價回調5%止賺"}
+      {
+        "ticker": "NVDA",
+        "action": "buy",
+        "allocation_usd": 1000,
+        "reason": "strong_buy：...",
+        "thesis": "可被後續驗證的一句核心買入假設",
+        "evidence": ["支持 thesis 的市場、基本面、技術面或催化證據，最多3點"],
+        "falsification_points": ["如果出現此情況，代表 thesis 失效，最多3點"],
+        "review_trigger": "需要重新檢討 thesis 的價格、日期或事件條件",
+        "stop": "142.50",
+        "target": "190.00",
+        "trailing_stop": "獲利超過25%後，最高價回調5%止賺"
+      }
     ]
   }
 }

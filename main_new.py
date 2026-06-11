@@ -84,14 +84,15 @@ def build_prompt(today, quotes, status, session_note, time_note, removelist_text
 目前模擬 portfolio 狀態：{portfolio_text}"""
 
 
-def build_portfolio_prompt(today, report, portfolio_text, watchlist_text, session_note, removelist_text):
+def build_portfolio_prompt(today, report, portfolio_text, watchlist_text, session_note, removelist_text, book=None):
     signals = market_signal_summary(report)
     return f"""當前香港時間：{today}
 交易決策時段：{session_note}
 市場訊號：{json.dumps(signals, ensure_ascii=False)}
 候選監察名單：{watchlist_text}
 剔除/冷卻狀態：{removelist_text}
-目前模擬 portfolio 狀態：{portfolio_text}"""
+目前模擬 portfolio 狀態：{portfolio_text}
+最近 portfolio review 摘要：{portfolio_review_feedback_summary(book)}"""
 
 
 def market_signal_summary(report):
@@ -101,6 +102,30 @@ def market_signal_summary(report):
         "market_dashboard": report.get("market_dashboard"),
         "x_consensus": report.get("x_consensus"),
     } if isinstance(report, dict) else {}
+
+
+def portfolio_review_feedback_summary(book, limit=3):
+    if not isinstance(book, dict):
+        return "[]"
+    history = book.get("review_history") or []
+    if not isinstance(history, list):
+        return "[]"
+
+    summaries = []
+    for entry in history[-limit:]:
+        if not isinstance(entry, dict):
+            continue
+        review = entry.get("review") if isinstance(entry.get("review"), dict) else entry
+        if not isinstance(review, dict):
+            continue
+        summaries.append({
+            "date": entry.get("date") or entry.get("time") or "",
+            "strategy_health": review.get("strategy_health", ""),
+            "summary": review.get("summary", ""),
+            "next_improvements": normalize_text_list(review.get("next_improvements")),
+            "risk_notes": normalize_text_list(review.get("risk_notes")),
+        })
+    return json.dumps(summaries, ensure_ascii=False)
 
 
 def portfolio_review_state(book):
@@ -558,6 +583,10 @@ def apply_portfolio_decisions(book, report, now):
             stop_price = parse_stop_price(order.get("stop"), price)
             target_price = parse_target_price(order.get("target"))
             trailing_stop_pct = 0.05
+            thesis = str(order.get("thesis") or "").strip()
+            evidence = normalize_text_list(order.get("evidence"))
+            falsification_points = normalize_text_list(order.get("falsification_points"))
+            review_trigger = str(order.get("review_trigger") or "").strip()
 
             positions[ticker] = {
                 "ticker": ticker,
@@ -569,6 +598,10 @@ def apply_portfolio_decisions(book, report, now):
                 "last_price": price,
                 "last_decision": "buy",
                 "reason": order.get("reason", ""),
+                "thesis": thesis,
+                "evidence": evidence,
+                "falsification_points": falsification_points,
+                "review_trigger": review_trigger,
                 "stop": order.get("stop", ""),
                 "target": order.get("target", ""),
                 "trailing_stop": order.get("trailing_stop", "獲利超過25%後，最高價回調5%止賺"),
@@ -587,6 +620,10 @@ def apply_portfolio_decisions(book, report, now):
                 "amount": round(allocation, 2),
                 "cash_after": round(cash, 2),
                 "reason": order.get("reason", ""),
+                "thesis": thesis,
+                "evidence": evidence,
+                "falsification_points": falsification_points,
+                "review_trigger": review_trigger,
                 "stop": order.get("stop", ""),
             })
 
@@ -666,6 +703,13 @@ def parse_target_price(value):
     if isinstance(value, (int, float)) and is_valid_price(value):
         return float(value)
     return extract_number(value)
+
+
+def normalize_text_list(value, limit=3):
+    if isinstance(value, list):
+        return [str(item).strip() for item in value[:limit] if str(item).strip()]
+    text = str(value or "").strip()
+    return [text] if text else []
 
 
 def parse_trailing_stop_pct(value):
@@ -790,11 +834,47 @@ def filter_portfolio_buy_orders(report, watchlist):
             continue
         action = str(order.get("action") or "").lower().strip()
         ticker = normalize_ticker(order.get("ticker"))
+        if not is_valid_portfolio_order(order):
+            print(f"⏸️ 跳過 {ticker or 'N/A'} {action or 'N/A'}：portfolio order validation 失敗")
+            continue
         if action == "buy" and ticker not in buy_candidates:
             print(f"⏸️ 跳過 {ticker} buy：不在 strong_buy / 高分 watchlist 候選中")
             continue
         filtered.append(order)
     decisions["orders"] = filtered
+
+
+def is_valid_portfolio_order(order):
+    action = str(order.get("action") or "").lower().strip()
+    ticker = normalize_ticker(order.get("ticker"))
+    reason = str(order.get("reason") or "").strip()
+    if action not in {"buy", "hold", "sell"}:
+        return False
+    if not is_allowed_us_equity_ticker(ticker):
+        return False
+    if not reason:
+        return False
+
+    if action != "buy":
+        return True
+
+    allocation = extract_number(order.get("allocation_usd"))
+    if allocation is None or allocation <= 0 or allocation > PORTFOLIO_POSITION_NOTIONAL:
+        return False
+
+    stop = parse_stop_price(order.get("stop"))
+    target = parse_target_price(order.get("target"))
+    if stop is None or target is None or stop <= 0 or target <= 0:
+        return False
+
+    required_text = ("thesis", "review_trigger")
+    if any(not str(order.get(field) or "").strip() for field in required_text):
+        return False
+    if not normalize_text_list(order.get("evidence")):
+        return False
+    if not normalize_text_list(order.get("falsification_points")):
+        return False
+    return True
 
 
 def active_removelist(now):
@@ -1725,6 +1805,7 @@ def main():
         watchlist_text,
         trading_session_instruction(now),
         removelist_note(now),
+        portfolio_book,
     )
     portfolio_report = ask_portfolio_manager(portfolio_prompt, portfolio_book)
     if isinstance(portfolio_report, dict):

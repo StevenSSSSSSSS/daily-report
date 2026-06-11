@@ -1,7 +1,7 @@
 # Daily Report — PROGRESS.md
 
-> 最後更新：2026-06-09
-> 當前階段：Phase 3 — Portfolio Review 完成第一版
+> 最後更新：2026-06-11
+> 當前階段：Phase 3A — AI 決策品質與可追蹤性規劃
 
 ## 總覽
 
@@ -10,6 +10,7 @@
 | Phase 1：文件與工作流基礎 | 完成 | 2026-06-09 | 2026-06-09 |
 | Phase 2：Prompt 可維護性 | 完成 | 2026-06-09 | 2026-06-09 |
 | Phase 3：Portfolio Review | 進行中 | 2026-06-09 | — |
+| Phase 3A：AI 決策品質與可追蹤性 | 規劃中 | 2026-06-11 | — |
 | Phase 4：報告與資料穩定性 | 未開始 | — | — |
 
 ## 當前系統摘要
@@ -69,6 +70,22 @@
 | 3.6 | 視效果決定是否餵回下次 portfolio prompt | 未開始 | 先人工觀察 review 質素 |
 | 3.7 | Code review / debug | 完成 | `py_compile` 通過；本機 import 測試因缺少 `xai_sdk` 無法執行 |
 
+## Phase 3A：AI 決策品質與可追蹤性
+
+### 目標
+
+參考 `ai_ml_trading/PROJECT_ARCHITECTURE.md` 的 thesis discipline，但保持 daily-report 最小改動：先讓 AI buy 決策更可驗證，再逐步形成 review feedback loop。
+
+### 建議順序
+
+| # | 任務 | 狀態 | 備註 |
+|---|------|------|------|
+| 3A.1 | 修改 portfolio prompt schema | 完成 | buy order 加 `thesis`、`evidence`、`falsification_points`、`review_trigger` |
+| 3A.2 | 保存 thesis 欄位 | 完成 | 寫入 position / trade log，方便日後復盤 |
+| 3A.3 | Review 摘要餵回下次決策 | 完成 | 只帶最近 1-3 次壓縮摘要，控制 token |
+| 3A.4 | 輕量 AI output validation | 完成 | 檢查 `orders`、`action`、ticker、allocation、stop / target |
+| 3A.5 | 決策紀錄加強 | 暫緩 | 先使用現有 trade_log / review_history；待 GitHub 實測後再決定是否追加 append-only decision log |
+
 ## 修改記錄
 
 | 日期 | 修改檔案 | 內容 | Code Review / Debug |
@@ -79,6 +96,14 @@
 | 2026-06-09 | `main_new.py`, `prompts.py`, `GOAL.md`, `PROGRESS.md` | Phase 3：新增 portfolio strategy review，不直接下單；review 顯示在 email 並寫入 portfolio book | `python3 -m py_compile main_new.py prompts.py` 通過；本機 import 測試因缺少 `xai_sdk` 無法執行 |
 | 2026-06-09 | `prompts.py`, `PROGRESS.md` | 修正 portfolio review prompt：明確 portfolio mandate 是美股 AI 產業鏈，避免把 AI / 半導體集中本身誤判為策略錯誤 | `python3 -m py_compile main_new.py prompts.py` 通過 |
 | 2026-06-09 | `main_new.py`, `PROGRESS.md` | 將 email 內完整 stock ideas / watchlist 卡片改為三欄 table：Ticker、Company Name、Price，沿用 portfolio table 風格 | `python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-11 | `AGENTS.md`, `GOAL.md`, `PROGRESS.md` | 記錄 AI 決策優化建議：可驗證 thesis、review feedback loop、輕量 validation、決策紀錄加強 | 文件修改；未改程式碼 |
+| 2026-06-11 | `AGENTS.md`, `GOAL.md`, `PROGRESS.md` | 從 `soul.md` 精簡抽取控制迴路、降級、安全模式和抗干擾指引，加入專案文件 | 文件修改；未改程式碼 |
+| 2026-06-11 | `prompts.py`, `PROGRESS.md` | Phase 3A.1：portfolio buy prompt schema 加入可驗證 thesis 欄位 | Code review：diff 只影響 `PORTFOLIO_SYSTEM_PROMPT`；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-11 | `AGENTS.md`, `PROGRESS.md` | 補充測試邊界：本專案主要在 GitHub Actions 實際運行，AI / email / Actions 實測需 Steven 人工確認或執行 | 文件修改；未改程式碼 |
+| 2026-06-11 | `main_new.py`, `PROGRESS.md` | Phase 3A.2：buy 成交時保存 `thesis`、`evidence`、`falsification_points`、`review_trigger` 到 position / trade log | Code review：diff 只影響 buy 欄位保存與文字 list 正規化；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-11 | `main_new.py`, `PROGRESS.md` | Phase 3A.3：portfolio prompt 加入最近 1-3 次 review 壓縮摘要，形成下次決策 feedback loop | Code review：diff 只影響 prompt builder 與 review 摘要 helper；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-11 | `main_new.py`, `PROGRESS.md` | Phase 3A.4：加入輕量 portfolio order validation，過濾不合法 action / ticker / reason，以及缺少 allocation、stop、target、thesis 欄位的 buy | Code review：diff 只影響 order 過濾流程；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-11 | `PROGRESS.md` | Phase 3A.5 評估：暫不新增 append-only AI decision log，避免狀態檔膨脹與 GitHub Actions commit 噪音 | 文件修改；未改程式碼 |
 
 ## 暫停 / 恢復記錄
 
@@ -87,6 +112,7 @@
 | 2026-06-09 | 文件基礎建立 | 後續若修改 prompt 或 portfolio review，先按 `GOAL.md` 路線圖小步執行 |
 | 2026-06-09 | Phase 2 完成 | 下一步可開始 Phase 3：Portfolio Review；需先確認是否新增第三次 AI 呼叫 |
 | 2026-06-09 | Phase 3 第一版完成 | 下一步人工觀察 GitHub Actions 實際報告中的 review 質素和 token 成本 |
+| 2026-06-11 | Phase 3A.5 暫緩 | 下一步建議由 Steven 在 GitHub Actions 實測一次 AI / email 流程，再按輸出質素決定是否調整 validation 或 log |
 
 ## 決策記錄
 
@@ -94,3 +120,4 @@
 |------|------|------|
 | 2026-06-09 | 建立三份根目錄專案文件 | 方便 Codex 後續遵守專案規範，並追蹤每次修改 |
 | 2026-06-09 | `daily-data/xai_portfolio_book.json` 暫時保持 Git 追蹤 | GitHub Actions 會自動更新，本機測試前後用 `git status` 控制風險 |
+| 2026-06-11 | AI 決策優化先走 thesis discipline | 先提高決策可驗證性，不一次改交易執行規則或引入新 dependency |

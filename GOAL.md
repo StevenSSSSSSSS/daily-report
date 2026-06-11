@@ -20,6 +20,8 @@
 4. **可追蹤**：重要策略、prompt、portfolio 格式和 workflow 變更必須記錄在 `PROGRESS.md`。
 5. **資料保守**：`daily-data/` 是系統狀態來源，不能隨意清除。
 6. **人工可 review**：Prompt 和策略規則應使用繁體中文描述，JSON key 保持英文。
+7. **可降級**：外部 API、AI、email 或測試不可用時，系統應保留最小可用輸出並清楚標記限制。
+8. **抗干擾**：避免無關檔案、無關重構和過度設計影響每日報告主流程。
 
 ## 當前系統範圍
 
@@ -41,6 +43,7 @@
 2. **Debug / 驗證**：按改動範圍執行最小可行測試，例如 `python3 -m py_compile main_new.py`、本機 dry run、或檢查 GitHub Actions YAML。
 3. **人工測試提醒**：如果涉及實際寄信、GitHub Actions、AI token 消耗、portfolio 狀態檔、HTML 顯示或外部 API，必須提醒 Steven 需要人工確認。
 4. **記錄**：更新 `PROGRESS.md` 的修改記錄、review 結果、debug 結果、下一步 / 暫停點。
+5. **校正**：如驗證失敗或改動超出目標，先縮小修改範圍，回到最小可行方案。
 
 ### Phase 1：文件與工作流基礎
 
@@ -62,6 +65,14 @@
 - [x] Review 只輸出策略檢討，不直接下單
 - [ ] 視效果決定是否把 review 摘要餵回下一次 portfolio prompt
 
+### Phase 3A：AI 決策品質與可追蹤性
+
+- [ ] Portfolio buy prompt 加入可驗證 thesis 欄位：`thesis`、`evidence`、`falsification_points`、`review_trigger`
+- [ ] 將最近 1-3 次 portfolio review 壓縮餵回 portfolio manager prompt，形成低 token 閉環
+- [ ] 加入輕量 AI output validation，檢查 `orders`、`action`、ticker、allocation、stop / target 合理性
+- [ ] 保存 buy thesis 到 portfolio position / trade log，方便日後復盤
+- [ ] 視需要追加 append-only AI decision log，保存 prompt 摘要與 AI output
+
 ### Phase 4：報告與資料穩定性
 
 - [ ] 檢查 GitHub Actions 自動更新狀態檔流程
@@ -72,6 +83,8 @@
 
 - GitHub Actions 可穩定定時執行。
 - 每次報告都能產生清楚、可讀、可執行的市場摘要。
+- 外部資料或 AI 失效時，fallback 報告不誤導、不假裝完整分析。
 - Portfolio 狀態、交易紀錄和策略變更可追蹤。
+- AI buy 決策包含可驗證 thesis，後續 review 可根據證據檢討，而不是只看敘述理由。
 - Prompt 修改容易人工 review，不需要每次在大型 `main_new.py` 裡搜尋。
 - 本機測試不會污染自動更新資料。
