@@ -9,12 +9,12 @@
       "avg_cost": 751.0,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 891.8800048828125,
+      "last_price": 949.5,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI記憶體需求穩健，獲利18.76%續抱",
+      "last_reason": "thesis持續成立，AI記憶體需求強勁，獲利26%續抱",
       "highest_price": 996.0,
       "stop_price": 675.9,
       "target_price": 976.3,
@@ -28,12 +28,12 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 200.4199981689453,
+      "last_price": 203.06500244140625,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "thesis持續成立，AI晶片龍頭長期趨勢未變",
+      "last_reason": "thesis持續成立，AI晶片龍頭地位穩固",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -47,12 +47,12 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 452.3999938964844,
+      "last_price": 475.8999938964844,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "thesis持續成立，GPU業務成長機會仍在",
+      "last_reason": "thesis持續成立，GPU業務成長，strong_buy評等",
       "highest_price": 523.2000122070312,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -66,7 +66,7 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 408.75,
+      "last_price": 416.8699951171875,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
@@ -2558,34 +2558,78 @@
       "unrealized_pnl": -27.11,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工訂單能見度高"
+    },
+    {
+      "time": "2026-06-12 02:00",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 949.5,
+      "shares": 1.331558,
+      "value": 1264.31,
+      "unrealized_pnl": 264.31,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，獲利26%續抱"
+    },
+    {
+      "time": "2026-06-12 02:00",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 203.065,
+      "shares": 4.644035,
+      "value": 943.04,
+      "unrealized_pnl": -56.96,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI晶片龍頭地位穩固"
+    },
+    {
+      "time": "2026-06-12 02:00",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 475.9,
+      "shares": 2.138992,
+      "value": 1017.95,
+      "unrealized_pnl": 17.95,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，GPU業務成長，strong_buy評等"
+    },
+    {
+      "time": "2026-06-12 02:00",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 416.87,
+      "shares": 2.380159,
+      "value": 992.22,
+      "unrealized_pnl": -7.78,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI代工訂單能見度高"
     }
   ],
-  "last_updated_at": "2026-06-11 20:26",
+  "last_updated_at": "2026-06-12 02:00",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-11 20:26",
+    "time": "2026-06-12 02:00",
     "review": {
       "strategy_health": "good",
-      "summary": "策略維持AI mandate持倉紀律，透過短期回檔續抱核心thesis，無明顯過度交易或偏離。",
+      "summary": "AI mandate holdings performing as expected with thesis intact amid market rebound, disciplined holds on winners and laggards.",
       "what_worked": [
-        "MU持倉獲利續抱，AI記憶體需求thesis穩健",
-        "NVDA/AMD/TSM持倉維持，晶片與代工長期趨勢未變",
-        "AVGO轉向更廣AI曝險的決策符合mandate內調整"
+        "MU position delivering 26% unrealized gain on strong AI memory demand thesis",
+        "Consistent hold decisions across all positions avoiding overtrading",
+        "AVGO exit to pursue broader AI exposure via QQQ aligned with mandate"
       ],
       "mistakes_or_risks": [
-        "四檔持倉均為半導體供應鏈核心環節，AI mandate內部晶片/記憶體/代工風險因子重疊度偏高",
-        "近期多數持倉隨大盤回落，缺乏明確止蝕或trailing機制",
-        "單一開倉時點集中（5月底），未在波動中逐步分批調整"
+        "NVDA and TSM showing modest unrealized losses despite thesis support",
+        "Portfolio limited to 4 positions with ~19% cash, underutilizing max 5 slots within AI mandate",
+        "Heavy weighting toward chip/memory/foundry segments with limited equipment or infrastructure exposure"
       ],
       "next_improvements": [
-        "在AI mandate內部評估設備材料或電力/資料中心相關ticker，降低晶片/記憶體重疊",
-        "設定thesis失效或回檔閾值，強化持倉紀律",
-        "利用現金在AI ETF或次級環節低吸，優化曝險分布"
+        "Deploy cash into another AI mandate name (e.g., equipment or ETF) to reach 5 positions",
+        "Monitor Intel/Oracle/Supermicro developments for potential thesis-aligned additions",
+        "Review position sizing to balance recent MU outperformance with underperformers"
       ],
       "risk_notes": [
-        "市場風險偏好轉弱，VIX回落但科技股波動仍大",
-        "AI需求長期催化未變，但短期財報與宏觀數據需持續監測",
-        "portfolio總曝險約80%，現金緩衝適中"
+        "AI mandate internal concentration in semiconductor supply chain segments remains within guidelines",
+        "No single ticker or thesis overlap exceeding prudent levels",
+        "Market risk appetite recovery supports continued AI focus without immediate thesis invalidation"
       ]
     }
   },
@@ -2911,6 +2955,33 @@
           "市場風險偏好轉弱，VIX回落但科技股波動仍大",
           "AI需求長期催化未變，但短期財報與宏觀數據需持續監測",
           "portfolio總曝險約80%，現金緩衝適中"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-12 02:00",
+      "review": {
+        "strategy_health": "good",
+        "summary": "AI mandate holdings performing as expected with thesis intact amid market rebound, disciplined holds on winners and laggards.",
+        "what_worked": [
+          "MU position delivering 26% unrealized gain on strong AI memory demand thesis",
+          "Consistent hold decisions across all positions avoiding overtrading",
+          "AVGO exit to pursue broader AI exposure via QQQ aligned with mandate"
+        ],
+        "mistakes_or_risks": [
+          "NVDA and TSM showing modest unrealized losses despite thesis support",
+          "Portfolio limited to 4 positions with ~19% cash, underutilizing max 5 slots within AI mandate",
+          "Heavy weighting toward chip/memory/foundry segments with limited equipment or infrastructure exposure"
+        ],
+        "next_improvements": [
+          "Deploy cash into another AI mandate name (e.g., equipment or ETF) to reach 5 positions",
+          "Monitor Intel/Oracle/Supermicro developments for potential thesis-aligned additions",
+          "Review position sizing to balance recent MU outperformance with underperformers"
+        ],
+        "risk_notes": [
+          "AI mandate internal concentration in semiconductor supply chain segments remains within guidelines",
+          "No single ticker or thesis overlap exceeding prudent levels",
+          "Market risk appetite recovery supports continued AI focus without immediate thesis invalidation"
         ]
       }
     }
