@@ -105,6 +105,7 @@
 | 2026-06-11 | `main_new.py`, `PROGRESS.md` | Phase 3A.4：加入輕量 portfolio order validation，過濾不合法 action / ticker / reason，以及缺少 allocation、stop、target、thesis 欄位的 buy | Code review：diff 只影響 order 過濾流程；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
 | 2026-06-11 | `PROGRESS.md` | Phase 3A.5 評估：暫不新增 append-only AI decision log，避免狀態檔膨脹與 GitHub Actions commit 噪音 | 文件修改；未改程式碼 |
 | 2026-06-11 | `prompts.py`, `main_new.py`, `portfolio_book.html`, `PROGRESS.md` | 修正現金部署 prompt，避免 AI 誤解每檔固定 20%；行情表加入 NaN 防護；portfolio page 顯示 latest review 與 thesis / review trigger / falsification points | Code review：diff 只影響 prompt、行情顯示防護、portfolio page 顯示；Debug：`python3 -m py_compile main_new.py prompts.py` 通過，抽出 `portfolio_book.html` script 後 `node --check` 通過 |
+| 2026-06-11 | `main_new.py`, `PROGRESS.md` | 緊急修正快速市場行情：yfinance 最後一行可能是 NaN，改為取最後兩個有效 Close，避免 email 顯示 `--` 或 `nan` | Code review：diff 只影響 `fetch_quotes`；Debug：`python3 -m py_compile main_new.py prompts.py` 通過，模擬最後一筆 NaN 時可取前面有效價格 |
 
 ## 暫停 / 恢復記錄
 

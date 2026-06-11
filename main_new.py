@@ -237,14 +237,13 @@ def fetch_quotes():
     for ticker, name in TARGETS.items():
         try:
             hist = yf.Ticker(ticker).history(period="5d")
-            if len(hist) < 2:
-                quote_text[name] = "N/A"
-                continue
-            close, prev = hist["Close"].iloc[-1], hist["Close"].iloc[-2]
-            if not is_valid_price(close) or not is_valid_price(prev):
+            closes = hist["Close"].dropna() if "Close" in hist else []
+            closes = [float(value) for value in closes if is_valid_price(value)]
+            if len(closes) < 2:
                 quote_text[name] = "N/A"
                 rows.append({"name": name, "price": "--", "pct": None})
                 continue
+            close, prev = closes[-1], closes[-2]
             pct = (close - prev) / prev * 100
             price = quote_format(ticker, close)
             quote_text[name] = f"{price} ({pct:+.2f}%) [時間:{hist.index[-1].strftime('%m-%d %H:%M')}]"
