@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "ticker": "KLAC",
+    "name": "KLA Corporation",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-06-12T14:40:46.536632+08:00",
+    "cooldown_days": 7,
+    "first_price": 241.16400146484375,
+    "sell_price": 241.16400146484375,
+    "performance_pct": 0.0
+  }
+]

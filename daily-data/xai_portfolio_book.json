@@ -9,12 +9,12 @@
       "avg_cost": 751.0,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 949.5,
+      "last_price": 995.8699951171875,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI記憶體需求強勁，獲利26%續抱",
+      "last_reason": "thesis持續成立，AI記憶體需求強勁，昨日反彈確認動能",
       "highest_price": 996.0,
       "stop_price": 675.9,
       "target_price": 976.3,
@@ -28,7 +28,7 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 203.06500244140625,
+      "last_price": 204.8699951171875,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
@@ -47,12 +47,12 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 475.8999938964844,
+      "last_price": 488.45001220703125,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "thesis持續成立，GPU業務成長，strong_buy評等",
+      "last_reason": "strong_buy status，GPU業務成長thesis intact",
       "highest_price": 523.2000122070312,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -66,7 +66,7 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 416.8699951171875,
+      "last_price": 421.07000732421875,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
@@ -2602,34 +2602,78 @@
       "unrealized_pnl": -7.78,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工訂單能見度高"
+    },
+    {
+      "time": "2026-06-12 14:40",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 995.87,
+      "shares": 1.331558,
+      "value": 1326.06,
+      "unrealized_pnl": 326.06,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，昨日反彈確認動能"
+    },
+    {
+      "time": "2026-06-12 14:40",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 204.87,
+      "shares": 4.644035,
+      "value": 951.42,
+      "unrealized_pnl": -48.58,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI晶片龍頭地位穩固"
+    },
+    {
+      "time": "2026-06-12 14:40",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 488.45,
+      "shares": 2.138992,
+      "value": 1044.79,
+      "unrealized_pnl": 44.79,
+      "cash_after": 947.87,
+      "reason": "strong_buy status，GPU業務成長thesis intact"
+    },
+    {
+      "time": "2026-06-12 14:40",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 421.07,
+      "shares": 2.380159,
+      "value": 1002.21,
+      "unrealized_pnl": 2.21,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI代工訂單能見度高"
     }
   ],
-  "last_updated_at": "2026-06-12 02:00",
+  "last_updated_at": "2026-06-12 14:40",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-12 02:00",
+    "time": "2026-06-12 14:40",
     "review": {
       "strategy_health": "good",
-      "summary": "AI mandate holdings performing as expected with thesis intact amid market rebound, disciplined holds on winners and laggards.",
+      "summary": "持倉 thesis 完整，昨日反彈中維持核心 AI 供應鏈曝險，紀律良好。",
       "what_worked": [
-        "MU position delivering 26% unrealized gain on strong AI memory demand thesis",
-        "Consistent hold decisions across all positions avoiding overtrading",
-        "AVGO exit to pursue broader AI exposure via QQQ aligned with mandate"
+        "MU 獲利續抱確認記憶體需求動能",
+        "所有持倉 thesis 維持不變，無過度交易",
+        "地緣風險緩解後風險偏好回升下持倉表現正面"
       ],
       "mistakes_or_risks": [
-        "NVDA and TSM showing modest unrealized losses despite thesis support",
-        "Portfolio limited to 4 positions with ~19% cash, underutilizing max 5 slots within AI mandate",
-        "Heavy weighting toward chip/memory/foundry segments with limited equipment or infrastructure exposure"
+        "AI mandate 內部 GPU/記憶體/代工細分環節權重較集中",
+        "NVDA 仍處浮虧但未調整曝險",
+        "現金閒置未用於 mandate 內其他環節"
       ],
       "next_improvements": [
-        "Deploy cash into another AI mandate name (e.g., equipment or ETF) to reach 5 positions",
-        "Monitor Intel/Oracle/Supermicro developments for potential thesis-aligned additions",
-        "Review position sizing to balance recent MU outperformance with underperformers"
+        "以現金考慮新增 AI 設備或基礎設施相關 ticker",
+        "監控各持倉 thesis 變化，設定內部再平衡觸發點",
+        "追蹤 QQQ 等 AI ETF 作為廣義曝險補充"
       ],
       "risk_notes": [
-        "AI mandate internal concentration in semiconductor supply chain segments remains within guidelines",
-        "No single ticker or thesis overlap exceeding prudent levels",
-        "Market risk appetite recovery supports continued AI focus without immediate thesis invalidation"
+        "單一 ticker 權重未過高，但細分環節重疊需留意",
+        "止蝕紀律未觸發，適合 rebound 環境",
+        "市場廣度改善有利 AI 鏈續抱"
       ]
     }
   },
@@ -2982,6 +3026,33 @@
           "AI mandate internal concentration in semiconductor supply chain segments remains within guidelines",
           "No single ticker or thesis overlap exceeding prudent levels",
           "Market risk appetite recovery supports continued AI focus without immediate thesis invalidation"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-12 14:40",
+      "review": {
+        "strategy_health": "good",
+        "summary": "持倉 thesis 完整，昨日反彈中維持核心 AI 供應鏈曝險，紀律良好。",
+        "what_worked": [
+          "MU 獲利續抱確認記憶體需求動能",
+          "所有持倉 thesis 維持不變，無過度交易",
+          "地緣風險緩解後風險偏好回升下持倉表現正面"
+        ],
+        "mistakes_or_risks": [
+          "AI mandate 內部 GPU/記憶體/代工細分環節權重較集中",
+          "NVDA 仍處浮虧但未調整曝險",
+          "現金閒置未用於 mandate 內其他環節"
+        ],
+        "next_improvements": [
+          "以現金考慮新增 AI 設備或基礎設施相關 ticker",
+          "監控各持倉 thesis 變化，設定內部再平衡觸發點",
+          "追蹤 QQQ 等 AI ETF 作為廣義曝險補充"
+        ],
+        "risk_notes": [
+          "單一 ticker 權重未過高，但細分環節重疊需留意",
+          "止蝕紀律未觸發，適合 rebound 環境",
+          "市場廣度改善有利 AI 鏈續抱"
         ]
       }
     }
