@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI HBM需求強勁，Q3展望樂觀，獲利30%+續抱",
+      "last_reason": "thesis持續成立，AI記憶體需求強勁，HBM滲透率提升，獲利逾30%續抱",
       "highest_price": 1000.135009765625,
       "stop_price": 675.9,
       "target_price": 976.3,
@@ -33,7 +33,7 @@
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "thesis持續成立，AI龍頭地位穩固，Blackwell出貨預期強",
+      "last_reason": "thesis持續成立，AI晶片龍頭，Blackwell週期啟動",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -52,7 +52,7 @@
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "thesis持續成立，GPU業務加速，MI300市占提升",
+      "last_reason": "thesis持續成立，GPU業務加速，MI300系列滲透",
       "highest_price": 523.2000122070312,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -2778,34 +2778,78 @@
       "unrealized_pnl": 9.02,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工龍頭，CoWoS產能擴張"
+    },
+    {
+      "time": "2026-06-14 14:44",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 981.61,
+      "shares": 1.331558,
+      "value": 1307.07,
+      "unrealized_pnl": 307.07,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，HBM滲透率提升，獲利逾30%續抱"
+    },
+    {
+      "time": "2026-06-14 14:44",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 205.19,
+      "shares": 4.644035,
+      "value": 952.91,
+      "unrealized_pnl": -47.09,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI晶片龍頭，Blackwell週期啟動"
+    },
+    {
+      "time": "2026-06-14 14:44",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 511.57,
+      "shares": 2.138992,
+      "value": 1094.24,
+      "unrealized_pnl": 94.24,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，GPU業務加速，MI300系列滲透"
+    },
+    {
+      "time": "2026-06-14 14:44",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 423.93,
+      "shares": 2.380159,
+      "value": 1009.02,
+      "unrealized_pnl": 9.02,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI代工龍頭，CoWoS產能擴張"
     }
   ],
-  "last_updated_at": "2026-06-13 14:20",
+  "last_updated_at": "2026-06-14 14:44",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-13 14:20",
+    "time": "2026-06-14 14:44",
     "review": {
       "strategy_health": "good",
-      "summary": "AI mandate 內持倉分散、thesis 穩固，現金充裕適合下週高 conviction 佈局。",
+      "summary": "AI mandate 內持倉 thesis 穩固、細分環節分散，市場回暖下執行穩健無明顯問題。",
       "what_worked": [
-        "MU 獲利續抱、thesis 強勁",
-        "AVGO 止損移除轉向更廣 AI 曝險",
-        "持倉 thesis 持續成立無過度交易"
+        "MU 獲利逾30%續抱符合高 conviction 記憶體 thesis",
+        "NVDA/AMD/TSM 分屬晶片、GPU、代工不同環節，風險因子分散",
+        "週末休市模式下僅 hold、無過度交易"
       ],
       "mistakes_or_risks": [
-        "NVDA 小幅虧損需監控 Blackwell 出貨",
-        "AI 晶片與記憶體細分環節權重較高",
-        "美債利率上升可能影響估值"
+        "現金比例偏高，未及時部署 mandate 內 ETF 或設備材料機會",
+        "單一持倉規模相近，雖 thesis 不同但需監控整體 AI 供應鏈 beta",
+        "AVGO 提前平倉轉 ETF 計劃尚未執行，錯過部分反彈"
       ],
       "next_improvements": [
-        "下週關注半導體設備與先進封裝美股訊號",
-        "評估 QQQ 等 AI ETF 作為第 5 檔持倉",
-        "維持現金水位準備高 conviction 買點"
+        "在 AI mandate 內部評估設備/材料或 ETF 作為第五倉位補充",
+        "設定 thesis 失效觸發點以強化止蝕紀律",
+        "下週聚焦市場廣度改善時，檢視記憶體 vs GPU 權重平衡"
       ],
       "risk_notes": [
-        "單一 ticker 權重控制在 20-25%",
-        "避免同一風險因子過度集中",
-        "利率與供應鏈訊號持續追蹤"
+        "AI 晶片與記憶體需求強勁，Blackwell/HBM 週期 thesis 仍成立",
+        "無同一細分環節過度集中",
+        "VIX 回落利於風險偏好回升，適合 watchlist 準備"
       ]
     }
   },
@@ -3266,6 +3310,33 @@
           "單一 ticker 權重控制在 20-25%",
           "避免同一風險因子過度集中",
           "利率與供應鏈訊號持續追蹤"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-14 14:44",
+      "review": {
+        "strategy_health": "good",
+        "summary": "AI mandate 內持倉 thesis 穩固、細分環節分散，市場回暖下執行穩健無明顯問題。",
+        "what_worked": [
+          "MU 獲利逾30%續抱符合高 conviction 記憶體 thesis",
+          "NVDA/AMD/TSM 分屬晶片、GPU、代工不同環節，風險因子分散",
+          "週末休市模式下僅 hold、無過度交易"
+        ],
+        "mistakes_or_risks": [
+          "現金比例偏高，未及時部署 mandate 內 ETF 或設備材料機會",
+          "單一持倉規模相近，雖 thesis 不同但需監控整體 AI 供應鏈 beta",
+          "AVGO 提前平倉轉 ETF 計劃尚未執行，錯過部分反彈"
+        ],
+        "next_improvements": [
+          "在 AI mandate 內部評估設備/材料或 ETF 作為第五倉位補充",
+          "設定 thesis 失效觸發點以強化止蝕紀律",
+          "下週聚焦市場廣度改善時，檢視記憶體 vs GPU 權重平衡"
+        ],
+        "risk_notes": [
+          "AI 晶片與記憶體需求強勁，Blackwell/HBM 週期 thesis 仍成立",
+          "無同一細分環節過度集中",
+          "VIX 回落利於風險偏好回升，適合 watchlist 準備"
         ]
       }
     }
