@@ -9,13 +9,13 @@
       "avg_cost": 751.0,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 981.6099853515625,
+      "last_price": 1063.0,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI記憶體機會",
       "stop": "跌破近期低點5-7%",
       "buy_price_confirmed": 751.0,
-      "last_reason": "thesis持續成立，AI記憶體需求穩健，獲利30%讓winner run",
-      "highest_price": 1000.135009765625,
+      "last_reason": "thesis持續成立，AI記憶體需求強勁，獲利續抱",
+      "highest_price": 1063.0,
       "stop_price": 675.9,
       "target_price": 976.3,
       "trailing_stop_pct": 0.05,
@@ -28,12 +28,12 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 205.19000244140625,
+      "last_price": 209.25999450683594,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "thesis持續成立，AI GPU龍頭需求強勁",
+      "last_reason": "thesis持續成立，AI晶片龍頭地位穩固",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -47,13 +47,13 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 511.57000732421875,
+      "last_price": 546.405029296875,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
       "last_reason": "thesis持續成立，GPU業務加速",
-      "highest_price": 523.2000122070312,
+      "highest_price": 546.405029296875,
       "stop_price": 420.759,
       "target_price": 607.763,
       "trailing_stop_pct": 0.05,
@@ -66,12 +66,12 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 423.92999267578125,
+      "last_price": 437.1549987792969,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "thesis持續成立，AI代工龍頭CoWoS擴張",
+      "last_reason": "thesis持續成立，AI代工龍頭",
       "highest_price": 444.9200134277344,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -2866,34 +2866,76 @@
       "unrealized_pnl": 9.02,
       "cash_after": 947.87,
       "reason": "thesis持續成立，AI代工龍頭CoWoS擴張"
+    },
+    {
+      "time": "2026-06-15 22:41",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1063.0,
+      "shares": 1.331558,
+      "value": 1415.45,
+      "unrealized_pnl": 415.45,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI記憶體需求強勁，獲利續抱"
+    },
+    {
+      "time": "2026-06-15 22:41",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 209.26,
+      "shares": 4.644035,
+      "value": 971.81,
+      "unrealized_pnl": -28.19,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI晶片龍頭地位穩固"
+    },
+    {
+      "time": "2026-06-15 22:41",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 546.405,
+      "shares": 2.138992,
+      "value": 1168.76,
+      "unrealized_pnl": 168.76,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，GPU業務加速"
+    },
+    {
+      "time": "2026-06-15 22:41",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 437.155,
+      "shares": 2.380159,
+      "value": 1040.5,
+      "unrealized_pnl": 40.5,
+      "cash_after": 947.87,
+      "reason": "thesis持續成立，AI代工龍頭"
     }
   ],
-  "last_updated_at": "2026-06-15 15:19",
+  "last_updated_at": "2026-06-15 22:41",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-15 15:19",
+    "time": "2026-06-15 22:41",
     "review": {
       "strategy_health": "good",
-      "summary": "AI mandate 執行穩健，MU 獲利續抱、核心持倉 thesis 維持，現金充裕適合擇機調整。",
+      "summary": "AI mandate holdings performing well in rebound with intact theses and disciplined holds on winners.",
       "what_worked": [
-        "MU 獲利 30% 讓 winner run，thesis 持續成立",
-        "NVDA/AMD/TSM 持穩，無過度交易",
-        "AVGO 及時轉向更廣 AI 曝險機會"
+        "MU winner run with 41%+ gain and thesis reinforcement",
+        "All positions held per mandate with no over-trading",
+        "AVGO exit for mandate-aligned opportunity"
       ],
       "mistakes_or_risks": [
-        "AI mandate 內部記憶體與 GPU 細分環節權重較高",
-        "NVDA 小幅虧損但未觸發止蝕",
-        "尚未執行市場建議的 AI ETF 配置"
+        "GPU thesis overlap between NVDA and AMD creating internal concentration",
+        "Four positions all in core AI semis/memory/foundry with limited sub-segment spread"
       ],
       "next_improvements": [
-        "在 5 檔上限內評估設備或 ETF 補強",
-        "定期檢視各 thesis 基本面變化",
-        "維持現金彈性避免追高"
+        "Within AI mandate, consider adding equipment or infrastructure names to balance memory/GPU exposure",
+        "Monitor single-ticker weights to keep under 25% each",
+        "Review QQQ ETF addition for broader AI ETF diversification if not already allocated"
       ],
       "risk_notes": [
-        "VIX 回落、風險偏好回升有利 AI 板塊",
-        "單一 ticker 權重未過度集中",
-        "無明顯追高或過度交易跡象"
+        "No stop-loss triggers hit but maintain thesis review on NVDA small unrealized loss",
+        "Cash buffer supports opportunistic adds within mandate during volatility"
       ]
     }
   },
@@ -3408,6 +3450,31 @@
           "VIX 回落、風險偏好回升有利 AI 板塊",
           "單一 ticker 權重未過度集中",
           "無明顯追高或過度交易跡象"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-15 22:41",
+      "review": {
+        "strategy_health": "good",
+        "summary": "AI mandate holdings performing well in rebound with intact theses and disciplined holds on winners.",
+        "what_worked": [
+          "MU winner run with 41%+ gain and thesis reinforcement",
+          "All positions held per mandate with no over-trading",
+          "AVGO exit for mandate-aligned opportunity"
+        ],
+        "mistakes_or_risks": [
+          "GPU thesis overlap between NVDA and AMD creating internal concentration",
+          "Four positions all in core AI semis/memory/foundry with limited sub-segment spread"
+        ],
+        "next_improvements": [
+          "Within AI mandate, consider adding equipment or infrastructure names to balance memory/GPU exposure",
+          "Monitor single-ticker weights to keep under 25% each",
+          "Review QQQ ETF addition for broader AI ETF diversification if not already allocated"
+        ],
+        "risk_notes": [
+          "No stop-loss triggers hit but maintain thesis review on NVDA small unrealized loss",
+          "Cash buffer supports opportunistic adds within mandate during volatility"
         ]
       }
     }
