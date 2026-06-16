@@ -14,7 +14,7 @@
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "thesis持續成立，AI晶片龍頭地位穩固",
+      "last_reason": "Core AI chip leader thesis intact amid structural demand; recent pullback buying opportunity per signals.",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -33,7 +33,7 @@
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "thesis持續成立，GPU業務成長動能維持",
+      "last_reason": "GPU acceleration with Meta orders supporting momentum; overall_score 78 remains strong.",
       "highest_price": 546.4600219726562,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -52,7 +52,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "thesis持續成立，AI代工需求支撐",
+      "last_reason": "Highest conviction AI foundry play (score 90), advanced process monopoly core to infrastructure buildout.",
       "highest_price": 444.9200134277344,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -2959,65 +2959,71 @@
       "pnl": 307.07,
       "cash_after": 2254.94,
       "reason": "Trailing stop 觸發：獲利超過25%，現價 981.61 <= 最高價回調5%的 1032.56"
+    },
+    {
+      "time": "2026-06-16 21:09",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 205.19,
+      "shares": 4.644035,
+      "value": 952.91,
+      "unrealized_pnl": -47.09,
+      "cash_after": 2254.94,
+      "reason": "Core AI chip leader thesis intact amid structural demand; recent pullback buying opportunity per signals."
+    },
+    {
+      "time": "2026-06-16 21:09",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 511.57,
+      "shares": 2.138992,
+      "value": 1094.24,
+      "unrealized_pnl": 94.24,
+      "cash_after": 2254.94,
+      "reason": "GPU acceleration with Meta orders supporting momentum; overall_score 78 remains strong."
+    },
+    {
+      "time": "2026-06-16 21:09",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 441.4,
+      "shares": 2.380159,
+      "value": 1050.6,
+      "unrealized_pnl": 50.6,
+      "cash_after": 2254.94,
+      "reason": "Highest conviction AI foundry play (score 90), advanced process monopoly core to infrastructure buildout."
     }
   ],
-  "last_updated_at": "2026-06-16 15:25",
+  "last_updated_at": "2026-06-16 21:09",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-16 15:25",
+    "time": "2026-06-16 21:09",
     "review": {
       "strategy_health": "good",
-      "summary": "AI晶片持倉穩健，止蝕紀律執行良好，現金比例偏高但無明顯集中風險。",
+      "summary": "AI核心持倉穩健，止損紀律良好，集中風險需注意。",
       "what_worked": [
-        "MU trailing stop 獲利307%了結",
-        "NVDA/AMD/TSM thesis持續成立並持有",
-        "AVGO轉向QQQ ETF更好機會"
+        "Trailing stop成功獲利了結MU",
+        "NVDA/AMD/TSM thesis持續有效",
+        "市場反彈中持倉正報酬"
       ],
       "mistakes_or_risks": [
-        "持倉僅3檔集中AI晶片與代工",
-        "現金2254未積極部署AI基礎設施",
-        "未涵蓋先進封裝或設備股分散"
+        "持倉過度集中於三檔AI半導體股",
+        "缺乏ETF或基礎設施分散",
+        "AVGO提前出場後未補新機會"
       ],
       "next_improvements": [
-        "考慮現金配置AI ETF或設備股",
-        "設定持倉上限避免過度集中",
-        "強化Q2財報前監控記憶體需求"
+        "考慮加入AI ETF降低集中度",
+        "強化多標的監控機制",
+        "現金部署AI基礎設施機會"
       ],
       "risk_notes": [
-        "地緣緩和利多風險偏好",
-        "VIX降至17.68市場情緒回穩",
-        "AI供應鏈反彈但需控倉位"
+        "AI需求論述穩健但防回檔",
+        "半導體鏈集中風險",
+        "政治事件影響可控"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-10 01:16",
-      "review": {
-        "strategy_health": "good",
-        "summary": "策略維持持倉紀律，AI mandate thesis 持續成立，短期震盪下未過度交易或違反規則。",
-        "what_worked": [
-          "嚴守 hold 決策，thesis 不變且 MU 仍獲利近19%",
-          "關閉 AVGO 轉向 QQQ ETF 優化曝險",
-          "持倉涵蓋記憶體、GPU、代工等不同 AI 子環節"
-        ],
-        "mistakes_or_risks": [
-          "AI 晶片/記憶體持倉在地緣風險下共通波動",
-          "現金未積極部署 mandate 內其他機會",
-          "無明確止損機制，依賴 thesis 判斷"
-        ],
-        "next_improvements": [
-          "監控 VIX 與地緣，考慮在 AI 設備/電力/資料中心子板塊加倉",
-          "評估 QQQ ETF 權重以平衡單一 ticker 風險",
-          "維持 max 5 倉位，優先 mandate 內高信心機會"
-        ],
-        "risk_notes": [
-          "VIX 升至22，獲利了結與地緣壓力仍存",
-          "MU 單一持倉權重較高，波動加劇",
-          "整體 portfolio 仍輕微正報酬，長期 AI 需求結構不變"
-        ]
-      }
-    },
     {
       "time": "2026-06-10 14:23",
       "review": {
@@ -3526,6 +3532,33 @@
           "地緣緩和利多風險偏好",
           "VIX降至17.68市場情緒回穩",
           "AI供應鏈反彈但需控倉位"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-16 21:09",
+      "review": {
+        "strategy_health": "good",
+        "summary": "AI核心持倉穩健，止損紀律良好，集中風險需注意。",
+        "what_worked": [
+          "Trailing stop成功獲利了結MU",
+          "NVDA/AMD/TSM thesis持續有效",
+          "市場反彈中持倉正報酬"
+        ],
+        "mistakes_or_risks": [
+          "持倉過度集中於三檔AI半導體股",
+          "缺乏ETF或基礎設施分散",
+          "AVGO提前出場後未補新機會"
+        ],
+        "next_improvements": [
+          "考慮加入AI ETF降低集中度",
+          "強化多標的監控機制",
+          "現金部署AI基礎設施機會"
+        ],
+        "risk_notes": [
+          "AI需求論述穩健但防回檔",
+          "半導體鏈集中風險",
+          "政治事件影響可控"
         ]
       }
     }
