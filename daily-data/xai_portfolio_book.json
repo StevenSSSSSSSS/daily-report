@@ -2961,63 +2961,36 @@
       "reason": "Trailing stop 觸發：獲利超過25%，現價 981.61 <= 最高價回調5%的 1032.56"
     }
   ],
-  "last_updated_at": "2026-06-16 13:27",
+  "last_updated_at": "2026-06-16 15:25",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-16 13:27",
+    "time": "2026-06-16 15:25",
     "review": {
-      "strategy_health": "warning",
-      "summary": "追蹤止損執行良好但持倉過度集中於NVDA、AMD、TSM三檔AI股。",
+      "strategy_health": "good",
+      "summary": "AI晶片持倉穩健，止蝕紀律執行良好，現金比例偏高但無明顯集中風險。",
       "what_worked": [
-        "MU trailing stop成功鎖定30%獲利",
-        "thesis持續檢視維持持倉紀律",
-        "AVGO及時轉向更廣AI曝險"
+        "MU trailing stop 獲利307%了結",
+        "NVDA/AMD/TSM thesis持續成立並持有",
+        "AVGO轉向QQQ ETF更好機會"
       ],
       "mistakes_or_risks": [
-        "AI mandate內持倉集中風險高",
-        "僅三檔個股缺乏設備或ETF分散",
-        "現金比例偏高可能錯過基礎設施機會"
+        "持倉僅3檔集中AI晶片與代工",
+        "現金2254未積極部署AI基礎設施",
+        "未涵蓋先進封裝或設備股分散"
       ],
       "next_improvements": [
-        "增加AI設備或ETF持倉分散",
-        "設定單一股上限以控集中度",
-        "定期檢視thesis有效性"
+        "考慮現金配置AI ETF或設備股",
+        "設定持倉上限避免過度集中",
+        "強化Q2財報前監控記憶體需求"
       ],
       "risk_notes": [
-        "NVDA/AMD/TSM三檔合計曝險過高",
-        "地緣緩和後需監控回檔風險",
-        "止損紀律佳但需強化再入場機制"
+        "地緣緩和利多風險偏好",
+        "VIX降至17.68市場情緒回穩",
+        "AI供應鏈反彈但需控倉位"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-09 21:56",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate 持倉 thesis 穩固，MU 獲利續抱帶動整體正報酬，市場反彈中風險可控。",
-        "what_worked": [
-          "MU 持倉獲利29.5% 續抱正確，HBM 市占提升",
-          "聚焦記憶體、GPU、晶片、代工不同子環節分散",
-          "AVGO 轉 QQQ ETF 優化廣泛 AI 曝險"
-        ],
-        "mistakes_or_risks": [
-          "NVDA 小幅虧損，GPU 環節與 AMD 重疊",
-          "僅4檔持倉，cash 未充分利用第5檔機會",
-          "單一 ticker 權重偏高 (MU 近26%)"
-        ],
-        "next_improvements": [
-          "考慮加入 AI 設備/封裝或 ETF 作為第5檔",
-          "設定 thesis 失效或止蝕再平衡規則",
-          "監控 HBM 與 AI capex 確認持續 thesis"
-        ],
-        "risk_notes": [
-          "AI 半導體集中符合 mandate，無需非 AI 分散",
-          "VIX 下降風險偏好回升有利持倉",
-          "地緣風險緩和支撐半導體需求"
-        ]
-      }
-    },
     {
       "time": "2026-06-10 01:16",
       "review": {
@@ -3526,6 +3499,33 @@
           "NVDA/AMD/TSM三檔合計曝險過高",
           "地緣緩和後需監控回檔風險",
           "止損紀律佳但需強化再入場機制"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-16 15:25",
+      "review": {
+        "strategy_health": "good",
+        "summary": "AI晶片持倉穩健，止蝕紀律執行良好，現金比例偏高但無明顯集中風險。",
+        "what_worked": [
+          "MU trailing stop 獲利307%了結",
+          "NVDA/AMD/TSM thesis持續成立並持有",
+          "AVGO轉向QQQ ETF更好機會"
+        ],
+        "mistakes_or_risks": [
+          "持倉僅3檔集中AI晶片與代工",
+          "現金2254未積極部署AI基礎設施",
+          "未涵蓋先進封裝或設備股分散"
+        ],
+        "next_improvements": [
+          "考慮現金配置AI ETF或設備股",
+          "設定持倉上限避免過度集中",
+          "強化Q2財報前監控記憶體需求"
+        ],
+        "risk_notes": [
+          "地緣緩和利多風險偏好",
+          "VIX降至17.68市場情緒回穩",
+          "AI供應鏈反彈但需控倉位"
         ]
       }
     }
