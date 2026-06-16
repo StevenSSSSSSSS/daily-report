@@ -9,7 +9,7 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 205.19000244140625,
+      "last_price": 208.85980224609375,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
@@ -28,7 +28,7 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 511.57000732421875,
+      "last_price": 516.1099853515625,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
@@ -47,7 +47,7 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 441.3999938964844,
+      "last_price": 430.2699890136719,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
@@ -2994,63 +2994,36 @@
       "reason": "Highest conviction AI foundry play (score 90), advanced process monopoly core to infrastructure buildout."
     }
   ],
-  "last_updated_at": "2026-06-16 21:09",
+  "last_updated_at": "2026-06-17 02:51",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-16 21:09",
+    "time": "2026-06-17 02:51",
     "review": {
-      "strategy_health": "good",
-      "summary": "AI核心持倉穩健，止損紀律良好，集中風險需注意。",
+      "strategy_health": "warning",
+      "summary": "AI mandate持倉集中NVDA/AMD/TSM，止損紀律佳但追高風險與獲利了結壓力並存。",
       "what_worked": [
-        "Trailing stop成功獲利了結MU",
-        "NVDA/AMD/TSM thesis持續有效",
-        "市場反彈中持倉正報酬"
+        "MU trailing stop獲利307%執行精準",
+        "AVGO轉向更廣AI曝險決策果斷",
+        "核心thesis維持NVDA/AMD/TSM持股穩定"
       ],
       "mistakes_or_risks": [
-        "持倉過度集中於三檔AI半導體股",
-        "缺乏ETF或基礎設施分散",
-        "AVGO提前出場後未補新機會"
+        "僅3檔持倉過度集中AI晶片鏈",
+        "NVDA小虧未觸發止損但市場獲利了結明顯",
+        "錯過MBLY/QQQ等基礎設施機會"
       ],
       "next_improvements": [
-        "考慮加入AI ETF降低集中度",
-        "強化多標的監控機制",
-        "現金部署AI基礎設施機會"
+        "增加ETF分散如QQQ",
+        "強化內部集中度監控上限",
+        "定期檢視thesis有效性"
       ],
       "risk_notes": [
-        "AI需求論述穩健但防回檔",
-        "半導體鏈集中風險",
-        "政治事件影響可控"
+        "半導體板塊波動加劇",
+        "政治利多支撐風險偏好但不持久",
+        "現金充足可適度加碼但控總持倉≤5"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-10 14:23",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate intact with steady holds amid chip pullback; MU profit strong while others stable.",
-        "what_worked": [
-          "MU thesis validated with 26% gain and continued hold on HBM demand",
-          "Consistent hold decisions across NVDA/AMD/TSM without over-trading",
-          "AVGO closed to reallocate within AI (to broader exposure)"
-        ],
-        "mistakes_or_risks": [
-          "Portfolio concentrated in 4 semi-related names (memory/GPU/foundry) with similar entry timing",
-          "No explicit stop-loss triggers executed despite VIX and pullback signals",
-          "Missed potential intra-AI rotation (e.g., equipment or ETF) during 6/9 dip"
-        ],
-        "next_improvements": [
-          "Define and apply take-profit/stop-loss rules for winners like MU",
-          "Monitor for re-entry or new AI mandate names (e.g., equipment/ASIC) on further weakness",
-          "Track position sizing to cap single-ticker exposure below 30%"
-        ],
-        "risk_notes": [
-          "MU unrealized gain >25% warrants profit-taking discipline",
-          "All positions opened late-May; correlated beta to chip cycle",
-          "Cash buffer available but no new deployments in today's session"
-        ]
-      }
-    },
     {
       "time": "2026-06-10 19:51",
       "review": {
@@ -3559,6 +3532,33 @@
           "AI需求論述穩健但防回檔",
           "半導體鏈集中風險",
           "政治事件影響可控"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-17 02:51",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI mandate持倉集中NVDA/AMD/TSM，止損紀律佳但追高風險與獲利了結壓力並存。",
+        "what_worked": [
+          "MU trailing stop獲利307%執行精準",
+          "AVGO轉向更廣AI曝險決策果斷",
+          "核心thesis維持NVDA/AMD/TSM持股穩定"
+        ],
+        "mistakes_or_risks": [
+          "僅3檔持倉過度集中AI晶片鏈",
+          "NVDA小虧未觸發止損但市場獲利了結明顯",
+          "錯過MBLY/QQQ等基礎設施機會"
+        ],
+        "next_improvements": [
+          "增加ETF分散如QQQ",
+          "強化內部集中度監控上限",
+          "定期檢視thesis有效性"
+        ],
+        "risk_notes": [
+          "半導體板塊波動加劇",
+          "政治利多支撐風險偏好但不持久",
+          "現金充足可適度加碼但控總持倉≤5"
         ]
       }
     }
