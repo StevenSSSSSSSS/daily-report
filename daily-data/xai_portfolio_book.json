@@ -9,7 +9,7 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 207.41000366210938,
+      "last_price": 207.4199981689453,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
@@ -28,7 +28,7 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 507.2900085449219,
+      "last_price": 523.3300170898438,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
@@ -47,7 +47,7 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 425.8299865722656,
+      "last_price": 440.2300109863281,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
@@ -3027,63 +3027,36 @@
       "reason": "Advanced process leader benefiting from AI demand; stable holding with positive thesis."
     }
   ],
-  "last_updated_at": "2026-06-17 20:33",
+  "last_updated_at": "2026-06-18 01:42",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-17 20:33",
+    "time": "2026-06-18 01:42",
     "review": {
       "strategy_health": "warning",
-      "summary": "Portfolio 集中持倉 NVDA、AMD 及 TSM，thesis 穩健但短期 AI 晶片獲利了結風險上升，需注意集中度。",
+      "summary": "AI晶片與代工持倉過度集中，止損紀律良好但分散不足且現金偏高。",
       "what_worked": [
-        "成功以 trailing stop 獲利了結 MU",
-        "維持 TSM 高信心 AI 代工持倉表現穩定",
-        "保留充足現金維持策略彈性"
+        "MU trailing stop成功實現307%獲利",
+        "核心NVDA/AMD/TSM thesis持續有效",
+        "避免追高已觸及止損之冷卻股"
       ],
       "mistakes_or_risks": [
-        "持倉過度集中於少數 AI 晶片及代工股",
-        "NVDA 近期回檔導致未實現虧損擴大",
-        "缺乏記憶體或設備材料板塊分散配置"
+        "僅三檔持倉高度集中AI供應鏈",
+        "未納入QQQ等ETF分散風險",
+        "現金2254美元過高可能錯過反彈機會"
       ],
       "next_improvements": [
-        "逢低分批布局 AI 記憶體或先進封裝相關個股",
-        "強化個股止蝕與再平衡機制",
-        "定期檢視各持倉 thesis 與市場訊號一致性"
+        "引入AI基礎設施ETF降低集中度",
+        "設定持倉上限與再平衡機制",
+        "強化多空 thesis 定期驗證"
       ],
       "risk_notes": [
-        "AI 股短期波動加劇受獲利了結影響",
-        "市場資金可能持續輪動離開高估值科技股",
-        "長期 AI 資本支出趨勢不變但需觀察 Q3 指引"
+        "半導體板塊波動加劇風險",
+        "地緣政治對資金流影響仍存",
+        "止損與獲利了結紀律值得維持"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-11 12:22",
-      "review": {
-        "strategy_health": "good",
-        "summary": "策略在AI晶片賣壓修正中維持thesis持倉，紀律良好且內部分散。",
-        "what_worked": [
-          "MU獲利24.62%續抱，thesis強勁",
-          "所有持倉一致hold，無過度交易",
-          "AI mandate內分散：記憶體(MU)、GPU(NVDA/AMD)、代工(TSM)"
-        ],
-        "mistakes_or_risks": [
-          "NVDA小幅虧損暴露晶片賣壓風險",
-          "現金未部署，錯過AI ETF或設備股機會",
-          "無明確止蝕或再平衡機制"
-        ],
-        "next_improvements": [
-          "觀察反彈訊號後評估加碼記憶體或設備股",
-          "考慮將部分現金轉AI ETF分散風險",
-          "定期檢視各細分環節thesis有效性"
-        ],
-        "risk_notes": [
-          "VIX升至22.22，風險偏好降溫",
-          "半導體供應鏈單日重挫，集中度仍高",
-          "4檔持倉各約20%，權重均衡但波動大"
-        ]
-      }
-    },
     {
       "time": "2026-06-11 12:54",
       "review": {
@@ -3592,6 +3565,33 @@
           "AI 股短期波動加劇受獲利了結影響",
           "市場資金可能持續輪動離開高估值科技股",
           "長期 AI 資本支出趨勢不變但需觀察 Q3 指引"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-18 01:42",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI晶片與代工持倉過度集中，止損紀律良好但分散不足且現金偏高。",
+        "what_worked": [
+          "MU trailing stop成功實現307%獲利",
+          "核心NVDA/AMD/TSM thesis持續有效",
+          "避免追高已觸及止損之冷卻股"
+        ],
+        "mistakes_or_risks": [
+          "僅三檔持倉高度集中AI供應鏈",
+          "未納入QQQ等ETF分散風險",
+          "現金2254美元過高可能錯過反彈機會"
+        ],
+        "next_improvements": [
+          "引入AI基礎設施ETF降低集中度",
+          "設定持倉上限與再平衡機制",
+          "強化多空 thesis 定期驗證"
+        ],
+        "risk_notes": [
+          "半導體板塊波動加劇風險",
+          "地緣政治對資金流影響仍存",
+          "止損與獲利了結紀律值得維持"
         ]
       }
     }
