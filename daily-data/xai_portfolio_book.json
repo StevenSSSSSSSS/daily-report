@@ -3027,63 +3027,36 @@
       "reason": "Advanced process leader benefiting from AI demand; stable holding with positive thesis."
     }
   ],
-  "last_updated_at": "2026-06-17 15:08",
+  "last_updated_at": "2026-06-17 20:33",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-17 15:08",
+    "time": "2026-06-17 20:33",
     "review": {
       "strategy_health": "warning",
-      "summary": "持倉高度集中AI晶片與代工股，雖止損紀律佳但暴露集中風險與短期波動壓力。",
+      "summary": "Portfolio 集中持倉 NVDA、AMD 及 TSM，thesis 穩健但短期 AI 晶片獲利了結風險上升，需注意集中度。",
       "what_worked": [
-        "嚴守 trailing stop 賣出 MU 獲利了結",
-        "核心持倉 NVDA/AMD/TSM thesis 維持穩健",
-        "聚焦 AI 供應鏈符合 mandate"
+        "成功以 trailing stop 獲利了結 MU",
+        "維持 TSM 高信心 AI 代工持倉表現穩定",
+        "保留充足現金維持策略彈性"
       ],
       "mistakes_or_risks": [
-        "僅三檔持倉，晶片股集中度過高",
-        "未分散至設備或基礎設施相關機會",
-        "近期晶片賣壓下未調整倉位"
+        "持倉過度集中於少數 AI 晶片及代工股",
+        "NVDA 近期回檔導致未實現虧損擴大",
+        "缺乏記憶體或設備材料板塊分散配置"
       ],
       "next_improvements": [
-        "引入 AI 基礎設施或設備 ETF/個股分散風險",
-        "設定單一股或子板塊倉位上限",
-        "加強板塊輪動監控與 clearer 技術訊號等待"
+        "逢低分批布局 AI 記憶體或先進封裝相關個股",
+        "強化個股止蝕與再平衡機制",
+        "定期檢視各持倉 thesis 與市場訊號一致性"
       ],
       "risk_notes": [
-        "內部集中風險警示",
-        "短期納指回落與晶片賣壓",
-        "止損執行良好但需防追高回檔"
+        "AI 股短期波動加劇受獲利了結影響",
+        "市場資金可能持續輪動離開高估值科技股",
+        "長期 AI 資本支出趨勢不變但需觀察 Q3 指引"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-11 01:49",
-      "review": {
-        "strategy_health": "good",
-        "summary": "策略嚴守AI供應鏈mandate，持倉thesis穩固，無過度交易或偏離問題。",
-        "what_worked": [
-          "MU獲利20%續抱符合讓winner run原則",
-          "核心持倉NVDA/AMD/TSM/MU全數維持thesis一致",
-          "AVGO止損轉向更廣AI曝險的決策紀律清晰"
-        ],
-        "mistakes_or_risks": [
-          "四檔持倉均為半導體細分環節，單一風險因子集中度偏高",
-          "NVDA/AMD短期回檔但未觸發任何再評估機制",
-          "現金比例偏低(約19%)，波動加大時緩衝不足"
-        ],
-        "next_improvements": [
-          "在AI mandate內考慮加入SMH或QQQ ETF以分散晶片 vs 設備/基礎設施風險",
-          "設定thesis失效觸發條件而非純價格止蝕",
-          "定期檢視各持倉權重，避免單一ticker超過25%"
-        ],
-        "risk_notes": [
-          "10年債息升至4.55%可能延長估值壓縮",
-          "VIX升至21.8顯示短期風險偏好降溫",
-          "AI長期需求共識未變但短期獲利了結壓力仍存"
-        ]
-      }
-    },
     {
       "time": "2026-06-11 12:22",
       "review": {
@@ -3592,6 +3565,33 @@
           "內部集中風險警示",
           "短期納指回落與晶片賣壓",
           "止損執行良好但需防追高回檔"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-17 20:33",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "Portfolio 集中持倉 NVDA、AMD 及 TSM，thesis 穩健但短期 AI 晶片獲利了結風險上升，需注意集中度。",
+        "what_worked": [
+          "成功以 trailing stop 獲利了結 MU",
+          "維持 TSM 高信心 AI 代工持倉表現穩定",
+          "保留充足現金維持策略彈性"
+        ],
+        "mistakes_or_risks": [
+          "持倉過度集中於少數 AI 晶片及代工股",
+          "NVDA 近期回檔導致未實現虧損擴大",
+          "缺乏記憶體或設備材料板塊分散配置"
+        ],
+        "next_improvements": [
+          "逢低分批布局 AI 記憶體或先進封裝相關個股",
+          "強化個股止蝕與再平衡機制",
+          "定期檢視各持倉 thesis 與市場訊號一致性"
+        ],
+        "risk_notes": [
+          "AI 股短期波動加劇受獲利了結影響",
+          "市場資金可能持續輪動離開高估值科技股",
+          "長期 AI 資本支出趨勢不變但需觀察 Q3 指引"
         ]
       }
     }
