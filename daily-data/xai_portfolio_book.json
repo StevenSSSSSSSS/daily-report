@@ -9,12 +9,12 @@
       "avg_cost": 215.3300018310547,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 208.85980224609375,
+      "last_price": 207.41000366210938,
       "last_decision": "hold",
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "Core AI chip leader thesis intact amid structural demand; recent pullback buying opportunity per signals.",
+      "last_reason": "Core AI chip holding with strong fundamentals; recent dip aligns with add opportunity but maintain existing position.",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -28,12 +28,12 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 516.1099853515625,
+      "last_price": 507.2900085449219,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "GPU acceleration with Meta orders supporting momentum; overall_score 78 remains strong.",
+      "last_reason": "GPU/AI partnerships expanding; position performing well with solid conviction.",
       "highest_price": 546.4600219726562,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -47,12 +47,12 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 430.2699890136719,
+      "last_price": 425.8299865722656,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "Highest conviction AI foundry play (score 90), advanced process monopoly core to infrastructure buildout.",
+      "last_reason": "Advanced process leader benefiting from AI demand; stable holding with positive thesis.",
       "highest_price": 444.9200134277344,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -2992,65 +2992,71 @@
       "unrealized_pnl": 50.6,
       "cash_after": 2254.94,
       "reason": "Highest conviction AI foundry play (score 90), advanced process monopoly core to infrastructure buildout."
+    },
+    {
+      "time": "2026-06-17 15:08",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 207.41,
+      "shares": 4.644035,
+      "value": 963.22,
+      "unrealized_pnl": -36.78,
+      "cash_after": 2254.94,
+      "reason": "Core AI chip holding with strong fundamentals; recent dip aligns with add opportunity but maintain existing position."
+    },
+    {
+      "time": "2026-06-17 15:08",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 507.29,
+      "shares": 2.138992,
+      "value": 1085.09,
+      "unrealized_pnl": 85.09,
+      "cash_after": 2254.94,
+      "reason": "GPU/AI partnerships expanding; position performing well with solid conviction."
+    },
+    {
+      "time": "2026-06-17 15:08",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 425.83,
+      "shares": 2.380159,
+      "value": 1013.54,
+      "unrealized_pnl": 13.54,
+      "cash_after": 2254.94,
+      "reason": "Advanced process leader benefiting from AI demand; stable holding with positive thesis."
     }
   ],
-  "last_updated_at": "2026-06-17 02:51",
+  "last_updated_at": "2026-06-17 15:08",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-17 02:51",
+    "time": "2026-06-17 15:08",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI mandate持倉集中NVDA/AMD/TSM，止損紀律佳但追高風險與獲利了結壓力並存。",
+      "summary": "持倉高度集中AI晶片與代工股，雖止損紀律佳但暴露集中風險與短期波動壓力。",
       "what_worked": [
-        "MU trailing stop獲利307%執行精準",
-        "AVGO轉向更廣AI曝險決策果斷",
-        "核心thesis維持NVDA/AMD/TSM持股穩定"
+        "嚴守 trailing stop 賣出 MU 獲利了結",
+        "核心持倉 NVDA/AMD/TSM thesis 維持穩健",
+        "聚焦 AI 供應鏈符合 mandate"
       ],
       "mistakes_or_risks": [
-        "僅3檔持倉過度集中AI晶片鏈",
-        "NVDA小虧未觸發止損但市場獲利了結明顯",
-        "錯過MBLY/QQQ等基礎設施機會"
+        "僅三檔持倉，晶片股集中度過高",
+        "未分散至設備或基礎設施相關機會",
+        "近期晶片賣壓下未調整倉位"
       ],
       "next_improvements": [
-        "增加ETF分散如QQQ",
-        "強化內部集中度監控上限",
-        "定期檢視thesis有效性"
+        "引入 AI 基礎設施或設備 ETF/個股分散風險",
+        "設定單一股或子板塊倉位上限",
+        "加強板塊輪動監控與 clearer 技術訊號等待"
       ],
       "risk_notes": [
-        "半導體板塊波動加劇",
-        "政治利多支撐風險偏好但不持久",
-        "現金充足可適度加碼但控總持倉≤5"
+        "內部集中風險警示",
+        "短期納指回落與晶片賣壓",
+        "止損執行良好但需防追高回檔"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-10 19:51",
-      "review": {
-        "strategy_health": "good",
-        "summary": "策略維持強勢持倉，thesis intact，MU獲利續抱表現穩健，符合AI復甦訊號。",
-        "what_worked": [
-          "MU 26%獲利讓winner run",
-          "所有持倉thesis持續成立並hold",
-          "聚焦AI晶片/記憶體/代工符合市場買盤浮現"
-        ],
-        "mistakes_or_risks": [
-          "NVDA小幅虧損未設止蝕",
-          "現金閒置未加碼AI ETF或設備股",
-          "AVGO轉QQQ未執行，錯過廣泛AI曝險"
-        ],
-        "next_improvements": [
-          "在AI mandate內考慮加入QQQ或半導體設備股分散",
-          "設定明確止蝕/再平衡規則",
-          "監控VIX高檔下風險控管"
-        ],
-        "risk_notes": [
-          "GPU重疊(NVDA/AMD)",
-          "VIX升至22.13顯示波動加大",
-          "MU單一持倉權重偏高"
-        ]
-      }
-    },
     {
       "time": "2026-06-11 01:49",
       "review": {
@@ -3559,6 +3565,33 @@
           "半導體板塊波動加劇",
           "政治利多支撐風險偏好但不持久",
           "現金充足可適度加碼但控總持倉≤5"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-17 15:08",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "持倉高度集中AI晶片與代工股，雖止損紀律佳但暴露集中風險與短期波動壓力。",
+        "what_worked": [
+          "嚴守 trailing stop 賣出 MU 獲利了結",
+          "核心持倉 NVDA/AMD/TSM thesis 維持穩健",
+          "聚焦 AI 供應鏈符合 mandate"
+        ],
+        "mistakes_or_risks": [
+          "僅三檔持倉，晶片股集中度過高",
+          "未分散至設備或基礎設施相關機會",
+          "近期晶片賣壓下未調整倉位"
+        ],
+        "next_improvements": [
+          "引入 AI 基礎設施或設備 ETF/個股分散風險",
+          "設定單一股或子板塊倉位上限",
+          "加強板塊輪動監控與 clearer 技術訊號等待"
+        ],
+        "risk_notes": [
+          "內部集中風險警示",
+          "短期納指回落與晶片賣壓",
+          "止損執行良好但需防追高回檔"
         ]
       }
     }
