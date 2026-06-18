@@ -28,5 +28,25 @@
     "first_price": 9.788399696350098,
     "sell_price": 9.788399696350098,
     "performance_pct": 0.0
+  },
+  {
+    "ticker": "NVDA",
+    "name": "NVIDIA",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-06-18T14:51:10.413143+08:00",
+    "cooldown_days": 7,
+    "first_price": 219.50999450683594,
+    "sell_price": 204.64999389648438,
+    "performance_pct": -6.77
+  },
+  {
+    "ticker": "SMCI",
+    "name": "Super Micro Computer",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-06-18T14:51:10.413143+08:00",
+    "cooldown_days": 7,
+    "first_price": 41.95500183105469,
+    "sell_price": 27.780000686645508,
+    "performance_pct": -33.79
   }
 ]
