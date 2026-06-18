@@ -14,7 +14,7 @@
       "reason": "AI晶片龍頭，thesis強勁",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "非美股交易時段，原建議 sell 未執行：better_opportunity",
+      "last_reason": "非美股交易時段，原建議 sell 未執行：stop_loss_hit",
       "highest_price": 218.66000366210938,
       "stop_price": 193.797,
       "target_price": 279.929,
@@ -33,7 +33,7 @@
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "conviction_maintained",
+      "last_reason": "Conviction remains solid at 75; GPU acceleration complementary to NVDA",
       "highest_price": 546.4600219726562,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -52,7 +52,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "conviction_maintained",
+      "last_reason": "Highest conviction holding at 80; AI foundry leader with controlled geopolitical risk",
       "highest_price": 444.9200134277344,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -3058,72 +3058,78 @@
       "unrealized_pnl": 28.59,
       "cash_after": 2254.94,
       "reason": "conviction_maintained"
+    },
+    {
+      "time": "2026-06-18 20:00",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 204.65,
+      "shares": 4.644035,
+      "value": 950.4,
+      "unrealized_pnl": -49.6,
+      "cash_after": 2254.94,
+      "reason": "非美股交易時段，原建議 sell 未執行：stop_loss_hit"
+    },
+    {
+      "time": "2026-06-18 20:00",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 512.48,
+      "shares": 2.138992,
+      "value": 1096.19,
+      "unrealized_pnl": 96.19,
+      "cash_after": 2254.94,
+      "reason": "Conviction remains solid at 75; GPU acceleration complementary to NVDA"
+    },
+    {
+      "time": "2026-06-18 20:00",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 432.15,
+      "shares": 2.380159,
+      "value": 1028.59,
+      "unrealized_pnl": 28.59,
+      "cash_after": 2254.94,
+      "reason": "Highest conviction holding at 80; AI foundry leader with controlled geopolitical risk"
     }
   ],
-  "last_updated_at": "2026-06-18 14:51",
+  "last_updated_at": "2026-06-18 20:00",
   "pending_orders": [
     {
       "ticker": "NVDA",
       "action": "sell",
-      "reason": "better_opportunity",
-      "created_at": "2026-06-18 14:51"
+      "reason": "stop_loss_hit",
+      "created_at": "2026-06-18 20:00"
     }
   ],
   "latest_review": {
-    "time": "2026-06-18 14:51",
+    "time": "2026-06-18 20:00",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI mandate下持倉集中NVDA/AMD/TSM，Fed升息與地緣風險下AI板塊承壓，NVDA止損賣出暴露追高後風險管理不足。",
+      "summary": "止蝕NVDA紀律佳但持倉過度集中AI晶片與代工，缺乏設備及ETF分散。",
       "what_worked": [
-        "AMD/TSM持倉維持thesis有效，GPU與代工需求支撐正報酬",
-        "MU獲利了結執行止盈紀律良好",
-        "現金保留等待 clearer 訊號符合壓縮市況"
+        "NVDA stop-loss執行降低集中風險",
+        "MU獲利了結展現紀律",
+        "AMD/TSM高 conviction thesis維持有效"
       ],
       "mistakes_or_risks": [
-        "僅3檔AI股過度集中，缺乏基礎設施ETF分散",
-        "NVDA止損賣出但thesis仍強，暴露追高後情緒決策風險",
-        "錯過電力/AI基建ETF轉向機會"
+        "晶片股持倉過度集中，違反廣泛AI鏈分散原則",
+        "未實際新增QQQ或AMZN分散風險",
+        "短期追高後回檔暴露追高風險"
       ],
       "next_improvements": [
-        "增加AI基礎設施ETF曝險降低單股集中",
-        "強化止損與thesis獨立評估機制",
-        "定期檢視地緣與Fed政策對估值影響"
+        "逐步轉向設備與基礎設施ETF",
+        "設定單一股權上限20%",
+        "強化thesis有效性定期檢視"
       ],
       "risk_notes": [
-        "VIX升至18.44，半導體設備與先進封裝短期觀望",
-        "10年債殖利率4.49%壓抑科技估值",
-        "地緣政治風險偏好下降，現金等待訊號正確"
+        "AI晶片集中風險高",
+        "地緣緩和後資金可能轉向更廣泛板塊",
+        "VIX回落但獲利了結壓力仍存"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-11 13:03",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "持倉集中AI晶片/記憶體/代工，短期回檔續抱但內部分散不足，現金未積極部署。",
-        "what_worked": [
-          "MU獲利24.6%續抱符合thesis",
-          "避免過度交易維持紀律",
-          "AVGO止損轉向更廣AI曝險"
-        ],
-        "mistakes_or_risks": [
-          "4檔持倉高度重疊於半導體供應鏈",
-          "NVDA小虧未設止損",
-          "未利用現金新增設備/基礎設施/ETF"
-        ],
-        "next_improvements": [
-          "AI mandate內新增設備股分散",
-          "監控單一細分環節權重",
-          "等待回檔後評估基礎設施機會"
-        ],
-        "risk_notes": [
-          "記憶體與GPU風險因子重疊",
-          "市場估值焦慮可能延續波動",
-          "現金閒置降低整體曝險"
-        ]
-      }
-    },
     {
       "time": "2026-06-11 14:48",
       "review": {
@@ -3632,6 +3638,33 @@
           "VIX升至18.44，半導體設備與先進封裝短期觀望",
           "10年債殖利率4.49%壓抑科技估值",
           "地緣政治風險偏好下降，現金等待訊號正確"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-18 20:00",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "止蝕NVDA紀律佳但持倉過度集中AI晶片與代工，缺乏設備及ETF分散。",
+        "what_worked": [
+          "NVDA stop-loss執行降低集中風險",
+          "MU獲利了結展現紀律",
+          "AMD/TSM高 conviction thesis維持有效"
+        ],
+        "mistakes_or_risks": [
+          "晶片股持倉過度集中，違反廣泛AI鏈分散原則",
+          "未實際新增QQQ或AMZN分散風險",
+          "短期追高後回檔暴露追高風險"
+        ],
+        "next_improvements": [
+          "逐步轉向設備與基礎設施ETF",
+          "設定單一股權上限20%",
+          "強化thesis有效性定期檢視"
+        ],
+        "risk_notes": [
+          "AI晶片集中風險高",
+          "地緣緩和後資金可能轉向更廣泛板塊",
+          "VIX回落但獲利了結壓力仍存"
         ]
       }
     }
