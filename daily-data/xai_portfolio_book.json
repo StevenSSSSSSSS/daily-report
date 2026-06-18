@@ -1,26 +1,7 @@
 {
   "initial_capital": 5000.0,
-  "cash": 2254.94,
+  "cash": 3230.42,
   "positions": {
-    "NVDA": {
-      "ticker": "NVDA",
-      "name": "NVDA",
-      "shares": 4.6440346978893725,
-      "avg_cost": 215.3300018310547,
-      "invested": 1000.0,
-      "opened_at": "2026-05-26 00:57",
-      "last_price": 204.64999389648438,
-      "last_decision": "hold",
-      "reason": "AI晶片龍頭，thesis強勁",
-      "stop": "跌破20日均線",
-      "buy_price_confirmed": 215.3300018310547,
-      "last_reason": "非美股交易時段，原建議 sell 未執行：stop_loss_hit",
-      "highest_price": 218.66000366210938,
-      "stop_price": 193.797,
-      "target_price": 279.929,
-      "trailing_stop_pct": 0.05,
-      "trailing_stop": "獲利超過25%後，最高價回調5%止賺"
-    },
     "AMD": {
       "ticker": "AMD",
       "name": "AMD",
@@ -28,12 +9,12 @@
       "avg_cost": 467.510009765625,
       "invested": 1000.0,
       "opened_at": "2026-05-26 00:57",
-      "last_price": 512.47998046875,
+      "last_price": 535.2949829101562,
       "last_decision": "hold",
       "reason": "GPU業務加速，風險可控",
       "stop": "跌破關鍵支撐",
       "buy_price_confirmed": 467.510009765625,
-      "last_reason": "Conviction remains solid at 75; GPU acceleration complementary to NVDA",
+      "last_reason": "High conviction GPU/AI demand intact; 14.5% unrealized gain and 85 conviction score support continuation",
       "highest_price": 546.4600219726562,
       "stop_price": 420.759,
       "target_price": 607.763,
@@ -47,13 +28,13 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 432.1499938964844,
+      "last_price": 458.82501220703125,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "Highest conviction holding at 80; AI foundry leader with controlled geopolitical risk",
-      "highest_price": 444.9200134277344,
+      "last_reason": "Advanced packaging leader with steady uptrend; 9.21% gain and 80 conviction support holding for further AI foundry upside",
+      "highest_price": 458.82501220703125,
       "stop_price": 378.126,
       "target_price": 546.182,
       "trailing_stop_pct": 0.05,
@@ -84,6 +65,18 @@
       "proceeds": 1307.07,
       "pnl": 307.07,
       "reason": "Trailing stop 觸發：獲利超過25%，現價 981.61 <= 最高價回調5%的 1032.56"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVDA",
+      "opened_at": "2026-05-26 00:57",
+      "closed_at": "2026-06-19 01:52",
+      "avg_cost": 215.3300018310547,
+      "sell_price": 210.0500030517578,
+      "invested": 1000.0,
+      "proceeds": 975.48,
+      "pnl": -24.52,
+      "reason": "stop_loss_hit"
     }
   ],
   "trade_log": [
@@ -3091,72 +3084,72 @@
       "unrealized_pnl": 28.59,
       "cash_after": 2254.94,
       "reason": "Highest conviction holding at 80; AI foundry leader with controlled geopolitical risk"
-    }
-  ],
-  "last_updated_at": "2026-06-18 20:00",
-  "pending_orders": [
+    },
     {
-      "ticker": "NVDA",
+      "time": "2026-06-19 01:52",
       "action": "sell",
-      "reason": "stop_loss_hit",
-      "created_at": "2026-06-18 20:00"
+      "ticker": "NVDA",
+      "price": 210.05,
+      "shares": 4.644035,
+      "amount": 975.48,
+      "invested": 1000.0,
+      "pnl": -24.52,
+      "cash_after": 3230.42,
+      "reason": "stop_loss_hit"
+    },
+    {
+      "time": "2026-06-19 01:52",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 535.295,
+      "shares": 2.138992,
+      "value": 1144.99,
+      "unrealized_pnl": 144.99,
+      "cash_after": 3230.42,
+      "reason": "High conviction GPU/AI demand intact; 14.5% unrealized gain and 85 conviction score support continuation"
+    },
+    {
+      "time": "2026-06-19 01:52",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 458.825,
+      "shares": 2.380159,
+      "value": 1092.08,
+      "unrealized_pnl": 92.08,
+      "cash_after": 3230.42,
+      "reason": "Advanced packaging leader with steady uptrend; 9.21% gain and 80 conviction support holding for further AI foundry upside"
     }
   ],
+  "last_updated_at": "2026-06-19 01:52",
+  "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-18 20:00",
+    "time": "2026-06-19 01:52",
     "review": {
-      "strategy_health": "warning",
-      "summary": "止蝕NVDA紀律佳但持倉過度集中AI晶片與代工，缺乏設備及ETF分散。",
+      "strategy_health": "good",
+      "summary": "止蝕紀律執行良好，持倉獲利但現金過剩與集中風險需注意。",
       "what_worked": [
-        "NVDA stop-loss執行降低集中風險",
-        "MU獲利了結展現紀律",
-        "AMD/TSM高 conviction thesis維持有效"
+        "NVDA止蝕賣出降低損失",
+        "AMD與TSM thesis有效且獲利",
+        "市場反彈下風險偏好回升"
       ],
       "mistakes_or_risks": [
-        "晶片股持倉過度集中，違反廣泛AI鏈分散原則",
-        "未實際新增QQQ或AMZN分散風險",
-        "短期追高後回檔暴露追高風險"
+        "持倉僅兩檔AI股過度集中",
+        "高現金比例錯過部署機會",
+        "過去AVGO虧損顯示選股波動"
       ],
       "next_improvements": [
-        "逐步轉向設備與基礎設施ETF",
-        "設定單一股權上限20%",
-        "強化thesis有效性定期檢視"
+        "引入AI ETF分散風險",
+        "設定現金部署閾值",
+        "強化內部集中度監控"
       ],
       "risk_notes": [
-        "AI晶片集中風險高",
-        "地緣緩和後資金可能轉向更廣泛板塊",
-        "VIX回落但獲利了結壓力仍存"
+        "AI晶片板塊波動仍高",
+        "地緣風險緩和但需持續觀察",
+        "僅限AI mandate內部風險"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-11 14:48",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate holdings stable with valid theses amid volatility; no major execution issues.",
-        "what_worked": [
-          "Held core positions (MU, NVDA, AMD, TSM) through pullback preserving long-term AI theses",
-          "Avoided over-trading with consistent hold decisions",
-          "MU profit retained as memory demand outlook unchanged"
-        ],
-        "mistakes_or_risks": [
-          "MU 24.6% gain nearing trailing stop without adjustment",
-          "All positions concentrated in AI semiconductor supply chain sub-segments (memory/GPU/foundry)",
-          "Cash idle with no mandate-compliant additions despite market dip"
-        ],
-        "next_improvements": [
-          "Tighten trailing stop discipline on high-PnL names like MU",
-          "Evaluate equipment/material names for cash deployment within AI mandate",
-          "Monitor thesis overlap between NVDA/AMD GPU exposure"
-        ],
-        "risk_notes": [
-          "VIX at 19.87 signals elevated volatility and narrow breadth",
-          "Single ticker MU profit concentration within memory sub-segment",
-          "Market sell pressure on AI semis may test stop-loss adherence"
-        ]
-      }
-    },
     {
       "time": "2026-06-11 20:26",
       "review": {
@@ -3665,6 +3658,33 @@
           "AI晶片集中風險高",
           "地緣緩和後資金可能轉向更廣泛板塊",
           "VIX回落但獲利了結壓力仍存"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-19 01:52",
+      "review": {
+        "strategy_health": "good",
+        "summary": "止蝕紀律執行良好，持倉獲利但現金過剩與集中風險需注意。",
+        "what_worked": [
+          "NVDA止蝕賣出降低損失",
+          "AMD與TSM thesis有效且獲利",
+          "市場反彈下風險偏好回升"
+        ],
+        "mistakes_or_risks": [
+          "持倉僅兩檔AI股過度集中",
+          "高現金比例錯過部署機會",
+          "過去AVGO虧損顯示選股波動"
+        ],
+        "next_improvements": [
+          "引入AI ETF分散風險",
+          "設定現金部署閾值",
+          "強化內部集中度監控"
+        ],
+        "risk_notes": [
+          "AI晶片板塊波動仍高",
+          "地緣風險緩和但需持續觀察",
+          "僅限AI mandate內部風險"
         ]
       }
     }
