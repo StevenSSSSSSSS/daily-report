@@ -33,7 +33,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "Strong AI foundry positioning with positive returns and high conviction alignment",
+      "last_reason": "High conviction AI foundry leader, positive performance, aligns with memory/AI theme",
       "highest_price": 462.1199951171875,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -3140,72 +3140,67 @@
       "unrealized_pnl": 99.92,
       "cash_after": 3230.42,
       "reason": "Strong AI foundry positioning with positive returns and high conviction alignment"
+    },
+    {
+      "time": "2026-06-19 20:29",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 537.37,
+      "shares": 2.138992,
+      "value": 1149.43,
+      "unrealized_pnl": 149.43,
+      "cash_after": 3230.42,
+      "reason": "非美股交易時段，原建議 sell 未執行：better_opportunity"
+    },
+    {
+      "time": "2026-06-19 20:29",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 462.12,
+      "shares": 2.380159,
+      "value": 1099.92,
+      "unrealized_pnl": 99.92,
+      "cash_after": 3230.42,
+      "reason": "High conviction AI foundry leader, positive performance, aligns with memory/AI theme"
     }
   ],
-  "last_updated_at": "2026-06-19 15:05",
+  "last_updated_at": "2026-06-19 20:29",
   "pending_orders": [
     {
       "ticker": "AMD",
       "action": "sell",
       "reason": "better_opportunity",
-      "created_at": "2026-06-19 15:05"
+      "created_at": "2026-06-19 20:29"
     }
   ],
   "latest_review": {
-    "time": "2026-06-19 15:05",
+    "time": "2026-06-19 20:29",
     "review": {
       "strategy_health": "warning",
-      "summary": "止損紀律佳但持倉過度集中於AMD與TSM，內部風險上升。",
+      "summary": "AI供應鏈持倉表現穩健但集中風險上升，止蝕紀律尚可。",
       "what_worked": [
-        "NVDA stop-loss執行有效",
-        "MU trailing stop獲利了結",
-        "TSM高conviction thesis維持"
+        "MU獲利了結25%以上",
+        "NVDA嚴格執行止蝕",
+        "TSM高 conviction thesis持續正報酬"
       ],
       "mistakes_or_risks": [
-        "僅2持倉，AI mandate內集中度過高",
-        "AMD sell pending未執行延誤再平衡",
-        "VIX上升暴露風險偏好波動"
+        "AMD與TSM雙持倉過度集中AI晶片/代工",
+        "AMD賣單因非交易時段未執行",
+        "錯過更廣泛AI基礎設施或ETF分散機會"
       ],
       "next_improvements": [
-        "增加AI ETF或設備股分散",
-        "設定單一股上限20%",
-        "定期檢視thesis有效性"
+        "增加記憶體或設備股分散",
+        "設定交易時段執行機制",
+        "定期檢視thesis有效性與新催化劑"
       ],
       "risk_notes": [
-        "政治風險推升避險情緒",
-        "現金高但未積極部署",
-        "追高後回檔風險"
+        "AI mandate內部晶片鏈集中度偏高",
+        "政治與泡沫疑慮仍存",
+        "現金比例高但未積極尋找新機會"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-12 02:00",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate holdings performing as expected with thesis intact amid market rebound, disciplined holds on winners and laggards.",
-        "what_worked": [
-          "MU position delivering 26% unrealized gain on strong AI memory demand thesis",
-          "Consistent hold decisions across all positions avoiding overtrading",
-          "AVGO exit to pursue broader AI exposure via QQQ aligned with mandate"
-        ],
-        "mistakes_or_risks": [
-          "NVDA and TSM showing modest unrealized losses despite thesis support",
-          "Portfolio limited to 4 positions with ~19% cash, underutilizing max 5 slots within AI mandate",
-          "Heavy weighting toward chip/memory/foundry segments with limited equipment or infrastructure exposure"
-        ],
-        "next_improvements": [
-          "Deploy cash into another AI mandate name (e.g., equipment or ETF) to reach 5 positions",
-          "Monitor Intel/Oracle/Supermicro developments for potential thesis-aligned additions",
-          "Review position sizing to balance recent MU outperformance with underperformers"
-        ],
-        "risk_notes": [
-          "AI mandate internal concentration in semiconductor supply chain segments remains within guidelines",
-          "No single ticker or thesis overlap exceeding prudent levels",
-          "Market risk appetite recovery supports continued AI focus without immediate thesis invalidation"
-        ]
-      }
-    },
     {
       "time": "2026-06-12 14:40",
       "review": {
@@ -3714,6 +3709,33 @@
           "政治風險推升避險情緒",
           "現金高但未積極部署",
           "追高後回檔風險"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-19 20:29",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI供應鏈持倉表現穩健但集中風險上升，止蝕紀律尚可。",
+        "what_worked": [
+          "MU獲利了結25%以上",
+          "NVDA嚴格執行止蝕",
+          "TSM高 conviction thesis持續正報酬"
+        ],
+        "mistakes_or_risks": [
+          "AMD與TSM雙持倉過度集中AI晶片/代工",
+          "AMD賣單因非交易時段未執行",
+          "錯過更廣泛AI基礎設施或ETF分散機會"
+        ],
+        "next_improvements": [
+          "增加記憶體或設備股分散",
+          "設定交易時段執行機制",
+          "定期檢視thesis有效性與新催化劑"
+        ],
+        "risk_notes": [
+          "AI mandate內部晶片鏈集中度偏高",
+          "政治與泡沫疑慮仍存",
+          "現金比例高但未積極尋找新機會"
         ]
       }
     }

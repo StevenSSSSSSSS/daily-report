@@ -1,15 +1,5 @@
 [
   {
-    "ticker": "AVGO",
-    "name": "Broadcom",
-    "reason": "跌穿止蝕位",
-    "removed_at": "2026-06-12T19:57:08.747330+08:00",
-    "cooldown_days": 7,
-    "first_price": 414.1400146484375,
-    "sell_price": 385.57000732421875,
-    "performance_pct": -6.9
-  },
-  {
     "ticker": "MBLY",
     "name": "Mobileye",
     "reason": "跌穿止蝕位",
