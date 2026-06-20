@@ -9,12 +9,12 @@
       "avg_cost": 420.1400146484375,
       "invested": 1000.0,
       "opened_at": "2026-05-28 01:49",
-      "last_price": 432.1499938964844,
+      "last_price": 462.1199951171875,
       "last_decision": "hold",
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "Highest conviction AI foundry play; strong weekly performance and portfolio core holding",
+      "last_reason": "Strong 9.99% PNL, AI foundry leader, 80 conviction; continue hold as core position while adding diversification.",
       "highest_price": 462.1199951171875,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -3178,65 +3178,49 @@
       "unrealized_pnl": 28.59,
       "cash_after": 4326.61,
       "reason": "Highest conviction AI foundry play; strong weekly performance and portfolio core holding"
+    },
+    {
+      "time": "2026-06-20 14:24",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 462.12,
+      "shares": 2.380159,
+      "value": 1099.92,
+      "unrealized_pnl": 99.92,
+      "cash_after": 4326.61,
+      "reason": "Strong 9.99% PNL, AI foundry leader, 80 conviction; continue hold as core position while adding diversification."
     }
   ],
-  "last_updated_at": "2026-06-20 01:09",
+  "last_updated_at": "2026-06-20 14:24",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-20 01:09",
+    "time": "2026-06-20 14:24",
     "review": {
       "strategy_health": "warning",
-      "summary": "持倉過度集中TSM，AI mandate內風險偏高，過去交易止損與轉向紀律待強化。",
+      "summary": "單一股TSM集中風險高，過去止損與better_opportunity交易混雜，現金閒置未有效分散AI曝險。",
       "what_worked": [
-        "TSM作為核心持倉表現穩健且高conviction",
-        "AMD成功獲利了結轉向更好機會",
-        "聚焦記憶體與設備等AI供應鏈主題"
+        "MU trailing stop獲利307%執行紀律佳",
+        "AMD與AVGO轉向better_opportunity調整靈活",
+        "TSM持續高conviction持倉符合AI foundry thesis"
       ],
       "mistakes_or_risks": [
-        "單一股集中風險過高",
-        "NVDA與AVGO過去止損或轉向造成虧損",
-        "追高或thesis轉變時機不佳"
+        "僅持單一股TSM，內部集中度過高",
+        "NVDA stop_loss_hit與AVGO小虧暴露追高後調整風險",
+        "現金4326高但未配置ETF或設備股，錯過反彈分散機會"
       ],
       "next_improvements": [
-        "分散持倉至其他AI股降低集中度",
-        "強化止損與獲利了結紀律",
-        "定期檢視thesis有效性與錯過機會"
+        "設定單股上限20%以控集中風險",
+        "強化止損後快速轉向ETF配置",
+        "監控半導體設備與電力股補充watchlist"
       ],
       "risk_notes": [
-        "AI板塊波動大需控風險",
-        "現金充裕適合下週買點準備",
-        "政治與Fed事件影響有限但仍需監控"
+        "AI mandate內單一股曝險過度",
+        "政治風險緩和後反彈追高潛在回檔",
+        "VIX回落但Fed與中東事件仍需監控"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-12 19:57",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate holdings intact with positive market momentum and no over-trading; theses remain valid across memory, GPU, foundry and infrastructure exposure.",
-        "what_worked": [
-          "MU position delivering 32.61% unrealized gain with HBM thesis reinforced by recent rebound",
-          "AVGO closed to rotate into QQQ ETF for broader AI/tech mandate exposure",
-          "All four core positions held with consistent thesis language and no impulsive adds despite cash availability"
-        ],
-        "mistakes_or_risks": [
-          "NVDA position at -4.86% unrealized while market rallied; single-name AI chip exposure remains the largest thesis overlap risk",
-          "Portfolio concentrated in four AI supply-chain names with limited sub-segment spread (memory/GPU/foundry dominant)",
-          "No explicit stop-loss discipline visible on underperforming NVDA despite mandate review cadence"
-        ],
-        "next_improvements": [
-          "Within AI mandate, consider modest reallocation from cash to equipment or advanced packaging names if Q2 capex guidance supports",
-          "Monitor single-name weights; cap any one ticker below 30% of portfolio value to manage internal concentration",
-          "Review thesis refresh cadence for NVDA to confirm ongoing validity versus broader ETF alternatives"
-        ],
-        "risk_notes": [
-          "AI mandate internal concentration in memory and GPU sub-segments elevated after MU outperformance",
-          "Cash buffer at ~19% provides flexibility but opportunity cost if AI capital-expenditure cycle accelerates",
-          "VIX at 18.88 and risk-on sentiment supportive but watch for Q2 earnings volatility in semiconductor equipment"
-        ]
-      }
-    },
     {
       "time": "2026-06-13 01:29",
       "review": {
@@ -3745,6 +3729,33 @@
           "AI板塊波動大需控風險",
           "現金充裕適合下週買點準備",
           "政治與Fed事件影響有限但仍需監控"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-20 14:24",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "單一股TSM集中風險高，過去止損與better_opportunity交易混雜，現金閒置未有效分散AI曝險。",
+        "what_worked": [
+          "MU trailing stop獲利307%執行紀律佳",
+          "AMD與AVGO轉向better_opportunity調整靈活",
+          "TSM持續高conviction持倉符合AI foundry thesis"
+        ],
+        "mistakes_or_risks": [
+          "僅持單一股TSM，內部集中度過高",
+          "NVDA stop_loss_hit與AVGO小虧暴露追高後調整風險",
+          "現金4326高但未配置ETF或設備股，錯過反彈分散機會"
+        ],
+        "next_improvements": [
+          "設定單股上限20%以控集中風險",
+          "強化止損後快速轉向ETF配置",
+          "監控半導體設備與電力股補充watchlist"
+        ],
+        "risk_notes": [
+          "AI mandate內單一股曝險過度",
+          "政治風險緩和後反彈追高潛在回檔",
+          "VIX回落但Fed與中東事件仍需監控"
         ]
       }
     }
