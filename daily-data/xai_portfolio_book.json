@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "Strong 9.99% PNL, AI foundry leader, 80 conviction; continue hold as core position while adding diversification.",
+      "last_reason": "AI晶片代工龍頭，Portfolio已持獲利近10%，conviction_score 80，續抱觀察反彈潛力。",
       "highest_price": 462.1199951171875,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -3189,65 +3189,49 @@
       "unrealized_pnl": 99.92,
       "cash_after": 4326.61,
       "reason": "Strong 9.99% PNL, AI foundry leader, 80 conviction; continue hold as core position while adding diversification."
+    },
+    {
+      "time": "2026-06-21 14:54",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 462.12,
+      "shares": 2.380159,
+      "value": 1099.92,
+      "unrealized_pnl": 99.92,
+      "cash_after": 4326.61,
+      "reason": "AI晶片代工龍頭，Portfolio已持獲利近10%，conviction_score 80，續抱觀察反彈潛力。"
     }
   ],
-  "last_updated_at": "2026-06-20 14:24",
+  "last_updated_at": "2026-06-21 14:54",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-20 14:24",
+    "time": "2026-06-21 14:54",
     "review": {
       "strategy_health": "warning",
-      "summary": "單一股TSM集中風險高，過去止損與better_opportunity交易混雜，現金閒置未有效分散AI曝險。",
+      "summary": "單一持倉TSM集中風險高，現金過剩未部署，過去交易止損與better_opportunity紀律尚可但錯失設備股機會。",
       "what_worked": [
-        "MU trailing stop獲利307%執行紀律佳",
-        "AMD與AVGO轉向better_opportunity調整靈活",
-        "TSM持續高conviction持倉符合AI foundry thesis"
+        "TSM持倉獲利近10%且thesis有效",
+        "AMD賣出實現獲利並轉向更好機會",
+        "MU trailing stop成功鎖定307%獲利"
       ],
       "mistakes_or_risks": [
-        "僅持單一股TSM，內部集中度過高",
-        "NVDA stop_loss_hit與AVGO小虧暴露追高後調整風險",
-        "現金4326高但未配置ETF或設備股，錯過反彈分散機會"
+        "僅持TSM一檔，AI mandate內部過度集中",
+        "現金4326未用於設備/電力等高確信標的",
+        "NVDA與AVGO早期止損暴露追高後回檔風險"
       ],
       "next_improvements": [
-        "設定單股上限20%以控集中風險",
-        "強化止損後快速轉向ETF配置",
-        "監控半導體設備與電力股補充watchlist"
+        "增加2-3檔設備股分散集中度",
+        "強化週末watchlist轉換為下週買點",
+        "設定現金部署上限避免過度持有"
       ],
       "risk_notes": [
-        "AI mandate內單一股曝險過度",
-        "政治風險緩和後反彈追高潛在回檔",
-        "VIX回落但Fed與中東事件仍需監控"
+        "地緣緩和利多可能短期推升設備股",
+        "Fed預期與資本支出催化AI供應鏈",
+        "避免單一股超過portfolio 30%"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-13 01:29",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate 下持倉 thesis 穩固，週五反彈後續抱決策合理，無明顯過度交易或 thesis 失效跡象。",
-        "what_worked": [
-          "MU、AMD 持倉隨 AI 記憶體與 GPU 需求反彈，獲利貢獻明顯且 thesis 持續成立",
-          "週五大漲後選擇 hold 而非追高，展現紀律",
-          "AVGO 及時止損轉向更廣泛 AI 曝險，符合 mandate 內部調整"
-        ],
-        "mistakes_or_risks": [
-          "NVDA 與 AMD 同屬 GPU/AI 晶片細分環節，thesis 重疊度較高",
-          "單一持倉權重相對均衡但現金比例偏高，尚未部署 mandate 內設備或 ETF 機會",
-          "近期交易以 hold 為主，缺少對記憶體或設備股的 watchlist 跟進"
-        ],
-        "next_improvements": [
-          "在 AI mandate 內部評估設備材料或 AI 基礎設施 ETF 作為潛在分散標的",
-          "設定 thesis 失效觸發條件，避免單一細分環節過度集中",
-          "下週聚焦記憶體與設備需求，準備高 conviction 買點但維持現有持倉紀律"
-        ],
-        "risk_notes": [
-          "AI 晶片與記憶體需求受地緣與 Nvidia 消息影響，波動可能放大",
-          "10年債息回升可能對成長股估值造成壓力",
-          "目前 4 檔持倉均為 mandate 內核心，但需監控單一風險因子重疊"
-        ]
-      }
-    },
     {
       "time": "2026-06-13 14:20",
       "review": {
@@ -3756,6 +3740,33 @@
           "AI mandate內單一股曝險過度",
           "政治風險緩和後反彈追高潛在回檔",
           "VIX回落但Fed與中東事件仍需監控"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-21 14:54",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "單一持倉TSM集中風險高，現金過剩未部署，過去交易止損與better_opportunity紀律尚可但錯失設備股機會。",
+        "what_worked": [
+          "TSM持倉獲利近10%且thesis有效",
+          "AMD賣出實現獲利並轉向更好機會",
+          "MU trailing stop成功鎖定307%獲利"
+        ],
+        "mistakes_or_risks": [
+          "僅持TSM一檔，AI mandate內部過度集中",
+          "現金4326未用於設備/電力等高確信標的",
+          "NVDA與AVGO早期止損暴露追高後回檔風險"
+        ],
+        "next_improvements": [
+          "增加2-3檔設備股分散集中度",
+          "強化週末watchlist轉換為下週買點",
+          "設定現金部署上限避免過度持有"
+        ],
+        "risk_notes": [
+          "地緣緩和利多可能短期推升設備股",
+          "Fed預期與資本支出催化AI供應鏈",
+          "避免單一股超過portfolio 30%"
         ]
       }
     }

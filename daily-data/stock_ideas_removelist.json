@@ -58,5 +58,25 @@
     "first_price": 714.510009765625,
     "sell_price": 740.6199951171875,
     "performance_pct": 3.65
+  },
+  {
+    "ticker": "KLAC",
+    "name": "KLA",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-06-21T14:54:14.696039+08:00",
+    "cooldown_days": 7,
+    "first_price": 241.16400146484375,
+    "sell_price": 259.55999755859375,
+    "performance_pct": 7.63
+  },
+  {
+    "ticker": "LRCX",
+    "name": "Lam Research",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-06-21T14:54:14.696039+08:00",
+    "cooldown_days": 7,
+    "first_price": 389.0400085449219,
+    "sell_price": 389.0400085449219,
+    "performance_pct": 0.0
   }
 ]
