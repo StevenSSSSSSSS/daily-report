@@ -14,7 +14,7 @@
       "reason": "從watchlist選入，高信心AI代工機會",
       "stop": "跌破20日均線",
       "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "AI晶片代工龍頭，Portfolio已持獲利近10%，conviction_score 80，續抱觀察反彈潛力。",
+      "last_reason": "sold_for_better_opportunity",
       "highest_price": 462.1199951171875,
       "stop_price": 378.126,
       "target_price": 546.182,
@@ -3200,65 +3200,60 @@
       "unrealized_pnl": 99.92,
       "cash_after": 4326.61,
       "reason": "AI晶片代工龍頭，Portfolio已持獲利近10%，conviction_score 80，續抱觀察反彈潛力。"
+    },
+    {
+      "time": "2026-06-22 15:23",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 462.12,
+      "shares": 2.380159,
+      "value": 1099.92,
+      "unrealized_pnl": 99.92,
+      "cash_after": 4326.61,
+      "reason": "非美股交易時段，原建議 sell 未執行：better_opportunity"
+    },
+    {
+      "time": "2026-06-22 15:23",
+      "action": "hold",
+      "ticker": "TSM",
+      "price": 462.12,
+      "shares": 2.380159,
+      "value": 1099.92,
+      "unrealized_pnl": 99.92,
+      "cash_after": 4326.61,
+      "reason": "sold_for_better_opportunity"
     }
   ],
-  "last_updated_at": "2026-06-21 14:54",
+  "last_updated_at": "2026-06-22 15:23",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-21 14:54",
+    "time": "2026-06-22 15:23",
     "review": {
       "strategy_health": "warning",
-      "summary": "單一持倉TSM集中風險高，現金過剩未部署，過去交易止損與better_opportunity紀律尚可但錯失設備股機會。",
+      "summary": "單一股TSM集中風險高，雖有獲利但偏離分散AI基礎設施目標。",
       "what_worked": [
-        "TSM持倉獲利近10%且thesis有效",
-        "AMD賣出實現獲利並轉向更好機會",
-        "MU trailing stop成功鎖定307%獲利"
+        "TSM持倉獲利近10%符合AI代工thesis",
+        "AMD賣出實現96美元獲利轉向更好機會",
+        "近期止損紀律執行如MU獲利了結"
       ],
       "mistakes_or_risks": [
-        "僅持TSM一檔，AI mandate內部過度集中",
-        "現金4326未用於設備/電力等高確信標的",
-        "NVDA與AVGO早期止損暴露追高後回檔風險"
+        "單一股TSM持倉達portfolio 25%+集中風險",
+        "多次hold TSM未執行sell建議暴露執行不一致",
+        "錯過多元化AI ETF或設備材料配置"
       ],
       "next_improvements": [
-        "增加2-3檔設備股分散集中度",
-        "強化週末watchlist轉換為下週買點",
-        "設定現金部署上限避免過度持有"
+        "嚴格執行分散至AI infra ETF上限",
+        "強化thesis有效性檢核避免追高",
+        "設定單一股持倉上限20%"
       ],
       "risk_notes": [
-        "地緣緩和利多可能短期推升設備股",
-        "Fed預期與資本支出催化AI供應鏈",
-        "避免單一股超過portfolio 30%"
+        "AI mandate內部集中度過高",
+        "政治事件傳導有限但波動仍存",
+        "現金過多未積極配置基礎設施機會"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-13 14:20",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate 內持倉分散、thesis 穩固，現金充裕適合下週高 conviction 佈局。",
-        "what_worked": [
-          "MU 獲利續抱、thesis 強勁",
-          "AVGO 止損移除轉向更廣 AI 曝險",
-          "持倉 thesis 持續成立無過度交易"
-        ],
-        "mistakes_or_risks": [
-          "NVDA 小幅虧損需監控 Blackwell 出貨",
-          "AI 晶片與記憶體細分環節權重較高",
-          "美債利率上升可能影響估值"
-        ],
-        "next_improvements": [
-          "下週關注半導體設備與先進封裝美股訊號",
-          "評估 QQQ 等 AI ETF 作為第 5 檔持倉",
-          "維持現金水位準備高 conviction 買點"
-        ],
-        "risk_notes": [
-          "單一 ticker 權重控制在 20-25%",
-          "避免同一風險因子過度集中",
-          "利率與供應鏈訊號持續追蹤"
-        ]
-      }
-    },
     {
       "time": "2026-06-14 14:44",
       "review": {
@@ -3767,6 +3762,33 @@
           "地緣緩和利多可能短期推升設備股",
           "Fed預期與資本支出催化AI供應鏈",
           "避免單一股超過portfolio 30%"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-22 15:23",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "單一股TSM集中風險高，雖有獲利但偏離分散AI基礎設施目標。",
+        "what_worked": [
+          "TSM持倉獲利近10%符合AI代工thesis",
+          "AMD賣出實現96美元獲利轉向更好機會",
+          "近期止損紀律執行如MU獲利了結"
+        ],
+        "mistakes_or_risks": [
+          "單一股TSM持倉達portfolio 25%+集中風險",
+          "多次hold TSM未執行sell建議暴露執行不一致",
+          "錯過多元化AI ETF或設備材料配置"
+        ],
+        "next_improvements": [
+          "嚴格執行分散至AI infra ETF上限",
+          "強化thesis有效性檢核避免追高",
+          "設定單一股持倉上限20%"
+        ],
+        "risk_notes": [
+          "AI mandate內部集中度過高",
+          "政治事件傳導有限但波動仍存",
+          "現金過多未積極配置基礎設施機會"
         ]
       }
     }
