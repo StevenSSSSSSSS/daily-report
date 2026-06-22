@@ -3228,63 +3228,36 @@
       "reason": "better_opportunity"
     }
   ],
-  "last_updated_at": "2026-06-22 22:11",
+  "last_updated_at": "2026-06-23 02:39",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-22 22:11",
+    "time": "2026-06-23 02:39",
     "review": {
       "strategy_health": "warning",
-      "summary": "單一股集中風險已透過賣出TSM修正，但過去多檔AI個股交易暴露止損與機會轉換不穩。",
+      "summary": "組合全現金缺乏AI產業鏈曝險，過去交易止損與輪動紀律佳但暴露持倉過度集中風險。",
       "what_worked": [
-        "TSM獲利117.98後賣出轉向ETF分散",
-        "MU trailing stop獲利307.07",
-        "AI需求thesis在市場回流下有效"
+        "成功執行止損與better_opportunity賣出獲利",
+        "MU與TSM實現正報酬了結",
+        "維持高現金準備市場輪動"
       ],
       "mistakes_or_risks": [
-        "AVGO與NVDA止損虧損暴露追高風險",
-        "單一股TSM長期持倉集中度過高",
-        "多次hold後才sell錯過更早分散機會"
+        "目前零持倉違反AI mandate曝險要求",
+        "過度賣出錯失基礎設施輪動機會",
+        "單一股TSM持倉曾過度集中"
       ],
       "next_improvements": [
-        "優先配置AI infra ETF降低個股風險",
-        "強化止損紀律與thesis再驗證機制",
-        "現金充裕時聚焦設備與基礎設施相關ETF"
+        "逐步配置AI ETF分散風險",
+        "設定持倉上限與再入場規則",
+        "強化多股或ETF輪動thesis追蹤"
       ],
       "risk_notes": [
-        "目前無持倉，集中風險已消除",
-        "地緣緩和利多AI但利率升溫需留意",
-        "避免重回單一股曝險"
+        "現金過多暴露機會成本",
+        "AI供應鏈輪動中需積極布局",
+        "VIX上升反映短期波動風險"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-15 15:19",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate 執行穩健，MU 獲利續抱、核心持倉 thesis 維持，現金充裕適合擇機調整。",
-        "what_worked": [
-          "MU 獲利 30% 讓 winner run，thesis 持續成立",
-          "NVDA/AMD/TSM 持穩，無過度交易",
-          "AVGO 及時轉向更廣 AI 曝險機會"
-        ],
-        "mistakes_or_risks": [
-          "AI mandate 內部記憶體與 GPU 細分環節權重較高",
-          "NVDA 小幅虧損但未觸發止蝕",
-          "尚未執行市場建議的 AI ETF 配置"
-        ],
-        "next_improvements": [
-          "在 5 檔上限內評估設備或 ETF 補強",
-          "定期檢視各 thesis 基本面變化",
-          "維持現金彈性避免追高"
-        ],
-        "risk_notes": [
-          "VIX 回落、風險偏好回升有利 AI 板塊",
-          "單一 ticker 權重未過度集中",
-          "無明顯追高或過度交易跡象"
-        ]
-      }
-    },
     {
       "time": "2026-06-15 22:41",
       "review": {
@@ -3793,6 +3766,33 @@
           "目前無持倉，集中風險已消除",
           "地緣緩和利多AI但利率升溫需留意",
           "避免重回單一股曝險"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-23 02:39",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "組合全現金缺乏AI產業鏈曝險，過去交易止損與輪動紀律佳但暴露持倉過度集中風險。",
+        "what_worked": [
+          "成功執行止損與better_opportunity賣出獲利",
+          "MU與TSM實現正報酬了結",
+          "維持高現金準備市場輪動"
+        ],
+        "mistakes_or_risks": [
+          "目前零持倉違反AI mandate曝險要求",
+          "過度賣出錯失基礎設施輪動機會",
+          "單一股TSM持倉曾過度集中"
+        ],
+        "next_improvements": [
+          "逐步配置AI ETF分散風險",
+          "設定持倉上限與再入場規則",
+          "強化多股或ETF輪動thesis追蹤"
+        ],
+        "risk_notes": [
+          "現金過多暴露機會成本",
+          "AI供應鏈輪動中需積極布局",
+          "VIX上升反映短期波動風險"
         ]
       }
     }
