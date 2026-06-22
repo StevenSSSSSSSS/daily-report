@@ -1,27 +1,7 @@
 {
   "initial_capital": 5000.0,
-  "cash": 4326.61,
-  "positions": {
-    "TSM": {
-      "ticker": "TSM",
-      "name": "TSM",
-      "shares": 2.3801589116351476,
-      "avg_cost": 420.1400146484375,
-      "invested": 1000.0,
-      "opened_at": "2026-05-28 01:49",
-      "last_price": 462.1199951171875,
-      "last_decision": "hold",
-      "reason": "從watchlist選入，高信心AI代工機會",
-      "stop": "跌破20日均線",
-      "buy_price_confirmed": 420.1400146484375,
-      "last_reason": "sold_for_better_opportunity",
-      "highest_price": 462.1199951171875,
-      "stop_price": 378.126,
-      "target_price": 546.182,
-      "trailing_stop_pct": 0.05,
-      "trailing_stop": "獲利超過25%後，最高價回調5%止賺"
-    }
-  },
+  "cash": 5444.59,
+  "positions": {},
   "closed_trades": [
     {
       "ticker": "AVGO",
@@ -69,6 +49,18 @@
       "invested": 1000.0,
       "proceeds": 1096.19,
       "pnl": 96.19,
+      "reason": "better_opportunity"
+    },
+    {
+      "ticker": "TSM",
+      "name": "TSM",
+      "opened_at": "2026-05-28 01:49",
+      "closed_at": "2026-06-22 22:11",
+      "avg_cost": 420.1400146484375,
+      "sell_price": 469.7099914550781,
+      "invested": 1000.0,
+      "proceeds": 1117.98,
+      "pnl": 117.98,
       "reason": "better_opportunity"
     }
   ],
@@ -3222,65 +3214,50 @@
       "unrealized_pnl": 99.92,
       "cash_after": 4326.61,
       "reason": "sold_for_better_opportunity"
+    },
+    {
+      "time": "2026-06-22 22:11",
+      "action": "sell",
+      "ticker": "TSM",
+      "price": 469.71,
+      "shares": 2.380159,
+      "amount": 1117.98,
+      "invested": 1000.0,
+      "pnl": 117.98,
+      "cash_after": 5444.59,
+      "reason": "better_opportunity"
     }
   ],
-  "last_updated_at": "2026-06-22 15:23",
+  "last_updated_at": "2026-06-22 22:11",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-22 15:23",
+    "time": "2026-06-22 22:11",
     "review": {
       "strategy_health": "warning",
-      "summary": "單一股TSM集中風險高，雖有獲利但偏離分散AI基礎設施目標。",
+      "summary": "單一股集中風險已透過賣出TSM修正，但過去多檔AI個股交易暴露止損與機會轉換不穩。",
       "what_worked": [
-        "TSM持倉獲利近10%符合AI代工thesis",
-        "AMD賣出實現96美元獲利轉向更好機會",
-        "近期止損紀律執行如MU獲利了結"
+        "TSM獲利117.98後賣出轉向ETF分散",
+        "MU trailing stop獲利307.07",
+        "AI需求thesis在市場回流下有效"
       ],
       "mistakes_or_risks": [
-        "單一股TSM持倉達portfolio 25%+集中風險",
-        "多次hold TSM未執行sell建議暴露執行不一致",
-        "錯過多元化AI ETF或設備材料配置"
+        "AVGO與NVDA止損虧損暴露追高風險",
+        "單一股TSM長期持倉集中度過高",
+        "多次hold後才sell錯過更早分散機會"
       ],
       "next_improvements": [
-        "嚴格執行分散至AI infra ETF上限",
-        "強化thesis有效性檢核避免追高",
-        "設定單一股持倉上限20%"
+        "優先配置AI infra ETF降低個股風險",
+        "強化止損紀律與thesis再驗證機制",
+        "現金充裕時聚焦設備與基礎設施相關ETF"
       ],
       "risk_notes": [
-        "AI mandate內部集中度過高",
-        "政治事件傳導有限但波動仍存",
-        "現金過多未積極配置基礎設施機會"
+        "目前無持倉，集中風險已消除",
+        "地緣緩和利多AI但利率升溫需留意",
+        "避免重回單一股曝險"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-14 14:44",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate 內持倉 thesis 穩固、細分環節分散，市場回暖下執行穩健無明顯問題。",
-        "what_worked": [
-          "MU 獲利逾30%續抱符合高 conviction 記憶體 thesis",
-          "NVDA/AMD/TSM 分屬晶片、GPU、代工不同環節，風險因子分散",
-          "週末休市模式下僅 hold、無過度交易"
-        ],
-        "mistakes_or_risks": [
-          "現金比例偏高，未及時部署 mandate 內 ETF 或設備材料機會",
-          "單一持倉規模相近，雖 thesis 不同但需監控整體 AI 供應鏈 beta",
-          "AVGO 提前平倉轉 ETF 計劃尚未執行，錯過部分反彈"
-        ],
-        "next_improvements": [
-          "在 AI mandate 內部評估設備/材料或 ETF 作為第五倉位補充",
-          "設定 thesis 失效觸發點以強化止蝕紀律",
-          "下週聚焦市場廣度改善時，檢視記憶體 vs GPU 權重平衡"
-        ],
-        "risk_notes": [
-          "AI 晶片與記憶體需求強勁，Blackwell/HBM 週期 thesis 仍成立",
-          "無同一細分環節過度集中",
-          "VIX 回落利於風險偏好回升，適合 watchlist 準備"
-        ]
-      }
-    },
     {
       "time": "2026-06-15 15:19",
       "review": {
@@ -3789,6 +3766,33 @@
           "AI mandate內部集中度過高",
           "政治事件傳導有限但波動仍存",
           "現金過多未積極配置基礎設施機會"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-22 22:11",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "單一股集中風險已透過賣出TSM修正，但過去多檔AI個股交易暴露止損與機會轉換不穩。",
+        "what_worked": [
+          "TSM獲利117.98後賣出轉向ETF分散",
+          "MU trailing stop獲利307.07",
+          "AI需求thesis在市場回流下有效"
+        ],
+        "mistakes_or_risks": [
+          "AVGO與NVDA止損虧損暴露追高風險",
+          "單一股TSM長期持倉集中度過高",
+          "多次hold後才sell錯過更早分散機會"
+        ],
+        "next_improvements": [
+          "優先配置AI infra ETF降低個股風險",
+          "強化止損紀律與thesis再驗證機制",
+          "現金充裕時聚焦設備與基礎設施相關ETF"
+        ],
+        "risk_notes": [
+          "目前無持倉，集中風險已消除",
+          "地緣緩和利多AI但利率升溫需留意",
+          "避免重回單一股曝險"
         ]
       }
     }
