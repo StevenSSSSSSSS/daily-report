@@ -3228,61 +3228,36 @@
       "reason": "better_opportunity"
     }
   ],
-  "last_updated_at": "2026-06-23 02:39",
+  "last_updated_at": "2026-06-23 14:05",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-23 02:39",
+    "time": "2026-06-23 14:05",
     "review": {
       "strategy_health": "warning",
-      "summary": "組合全現金缺乏AI產業鏈曝險，過去交易止損與輪動紀律佳但暴露持倉過度集中風險。",
+      "summary": "全現金持倉偏離AI產業鏈授權，過去頻繁better_opportunity交易暴露缺乏紀律與集中風險。",
       "what_worked": [
-        "成功執行止損與better_opportunity賣出獲利",
-        "MU與TSM實現正報酬了結",
-        "維持高現金準備市場輪動"
+        "TSM持倉獲利117.98美元後賣出鎖定收益",
+        "MU trailing stop成功獲利307美元",
+        "多次及時止損避免更大虧損"
       ],
       "mistakes_or_risks": [
-        "目前零持倉違反AI mandate曝險要求",
-        "過度賣出錯失基礎設施輪動機會",
-        "單一股TSM持倉曾過度集中"
+        "持倉過度集中單一股TSM，違反分散原則",
+        "無AI ETF或基礎設施曝險，錯過市場建議方向",
+        "現金過高且無持倉，thesis有效性存疑"
       ],
       "next_improvements": [
-        "逐步配置AI ETF分散風險",
-        "設定持倉上限與再入場規則",
-        "強化多股或ETF輪動thesis追蹤"
+        "設定AI ETF最低曝險比例",
+        "強化止蝕與再平衡紀律",
+        "檢討better_opportunity觸發條件避免過度交易"
       ],
       "risk_notes": [
-        "現金過多暴露機會成本",
-        "AI供應鏈輪動中需積極布局",
-        "VIX上升反映短期波動風險"
+        "地緣風險推升VIX，AI股賣壓持續",
+        "無持倉暴露錯過反彈機會風險",
+        "現金配置過高降低策略主動性"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-15 22:41",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI mandate holdings performing well in rebound with intact theses and disciplined holds on winners.",
-        "what_worked": [
-          "MU winner run with 41%+ gain and thesis reinforcement",
-          "All positions held per mandate with no over-trading",
-          "AVGO exit for mandate-aligned opportunity"
-        ],
-        "mistakes_or_risks": [
-          "GPU thesis overlap between NVDA and AMD creating internal concentration",
-          "Four positions all in core AI semis/memory/foundry with limited sub-segment spread"
-        ],
-        "next_improvements": [
-          "Within AI mandate, consider adding equipment or infrastructure names to balance memory/GPU exposure",
-          "Monitor single-ticker weights to keep under 25% each",
-          "Review QQQ ETF addition for broader AI ETF diversification if not already allocated"
-        ],
-        "risk_notes": [
-          "No stop-loss triggers hit but maintain thesis review on NVDA small unrealized loss",
-          "Cash buffer supports opportunistic adds within mandate during volatility"
-        ]
-      }
-    },
     {
       "time": "2026-06-16 02:59",
       "review": {
@@ -3793,6 +3768,33 @@
           "現金過多暴露機會成本",
           "AI供應鏈輪動中需積極布局",
           "VIX上升反映短期波動風險"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-23 14:05",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "全現金持倉偏離AI產業鏈授權，過去頻繁better_opportunity交易暴露缺乏紀律與集中風險。",
+        "what_worked": [
+          "TSM持倉獲利117.98美元後賣出鎖定收益",
+          "MU trailing stop成功獲利307美元",
+          "多次及時止損避免更大虧損"
+        ],
+        "mistakes_or_risks": [
+          "持倉過度集中單一股TSM，違反分散原則",
+          "無AI ETF或基礎設施曝險，錯過市場建議方向",
+          "現金過高且無持倉，thesis有效性存疑"
+        ],
+        "next_improvements": [
+          "設定AI ETF最低曝險比例",
+          "強化止蝕與再平衡紀律",
+          "檢討better_opportunity觸發條件避免過度交易"
+        ],
+        "risk_notes": [
+          "地緣風險推升VIX，AI股賣壓持續",
+          "無持倉暴露錯過反彈機會風險",
+          "現金配置過高降低策略主動性"
         ]
       }
     }
