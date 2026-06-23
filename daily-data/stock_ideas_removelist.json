@@ -98,5 +98,15 @@
     "first_price": 370.2799987792969,
     "sell_price": 370.2799987792969,
     "performance_pct": 0.0
+  },
+  {
+    "ticker": "SPY",
+    "name": "SPDR S&P 500 ETF",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-06-24T01:09:40.807676+08:00",
+    "cooldown_days": 7,
+    "first_price": 746.739990234375,
+    "sell_price": 736.9400024414062,
+    "performance_pct": -1.31
   }
 ]

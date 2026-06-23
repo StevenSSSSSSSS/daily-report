@@ -3228,63 +3228,36 @@
       "reason": "better_opportunity"
     }
   ],
-  "last_updated_at": "2026-06-23 19:36",
+  "last_updated_at": "2026-06-24 01:09",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-23 19:36",
+    "time": "2026-06-24 01:09",
     "review": {
       "strategy_health": "warning",
-      "summary": "全現金持倉但AI mandate下錯失電力基礎設施機會，止損與再配置紀律待強化。",
+      "summary": "Portfolio全現金無AI持倉，成功獲利了結但暴露集中風險與機會錯失。",
       "what_worked": [
-        "TSM獲利117.98實現正報酬",
-        "MU trailing stop獲利307.07展現紀律",
-        "多次better_opportunity賣出避免更大回檔"
+        "TSM與AMD獲利了結實現正報酬",
+        "及時賣出避免AI板塊進一步回檔",
+        "維持高現金應對市場疑慮"
       ],
       "mistakes_or_risks": [
-        "持倉過度集中單一股TSM後全數賣出",
-        "AI股賣壓下未及時轉向電力ETF",
-        "近期closed trades有NVDA與AVGO虧損暴露選股風險"
+        "單一股TSM過度集中後全數賣出",
+        "多次better_opportunity賣出卻未進新倉",
+        "AI mandate下目前零曝險錯過低檔機會"
       ],
       "next_improvements": [
-        "逐步布局AI電力與設備ETF",
-        "設定明確再入場支撐位",
-        "增加ETF分散以符合mandate"
+        "引入AI ETF分散風險",
+        "設定明確再進場條件",
+        "強化thesis有效性追蹤"
       ],
       "risk_notes": [
-        "VIX急升反映波動加劇",
-        "Nasdaq領跌AI股獲利了結壓力大",
-        "現金充裕但需避免長期空倉錯失驅動"
+        "AI資本支出疑慮持續拖累",
+        "Fed鷹派與地緣政治加劇波動",
+        "市場風險偏好轉弱需防禦"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-16 13:27",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "追蹤止損執行良好但持倉過度集中於NVDA、AMD、TSM三檔AI股。",
-        "what_worked": [
-          "MU trailing stop成功鎖定30%獲利",
-          "thesis持續檢視維持持倉紀律",
-          "AVGO及時轉向更廣AI曝險"
-        ],
-        "mistakes_or_risks": [
-          "AI mandate內持倉集中風險高",
-          "僅三檔個股缺乏設備或ETF分散",
-          "現金比例偏高可能錯過基礎設施機會"
-        ],
-        "next_improvements": [
-          "增加AI設備或ETF持倉分散",
-          "設定單一股上限以控集中度",
-          "定期檢視thesis有效性"
-        ],
-        "risk_notes": [
-          "NVDA/AMD/TSM三檔合計曝險過高",
-          "地緣緩和後需監控回檔風險",
-          "止損紀律佳但需強化再入場機制"
-        ]
-      }
-    },
     {
       "time": "2026-06-16 15:25",
       "review": {
@@ -3795,6 +3768,33 @@
           "VIX急升反映波動加劇",
           "Nasdaq領跌AI股獲利了結壓力大",
           "現金充裕但需避免長期空倉錯失驅動"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-24 01:09",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "Portfolio全現金無AI持倉，成功獲利了結但暴露集中風險與機會錯失。",
+        "what_worked": [
+          "TSM與AMD獲利了結實現正報酬",
+          "及時賣出避免AI板塊進一步回檔",
+          "維持高現金應對市場疑慮"
+        ],
+        "mistakes_or_risks": [
+          "單一股TSM過度集中後全數賣出",
+          "多次better_opportunity賣出卻未進新倉",
+          "AI mandate下目前零曝險錯過低檔機會"
+        ],
+        "next_improvements": [
+          "引入AI ETF分散風險",
+          "設定明確再進場條件",
+          "強化thesis有效性追蹤"
+        ],
+        "risk_notes": [
+          "AI資本支出疑慮持續拖累",
+          "Fed鷹派與地緣政治加劇波動",
+          "市場風險偏好轉弱需防禦"
         ]
       }
     }
