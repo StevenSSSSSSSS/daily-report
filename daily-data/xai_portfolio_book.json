@@ -9,7 +9,7 @@
       "avg_cost": 681.3909912109375,
       "invested": 1000.0,
       "opened_at": "2026-06-24 23:23",
-      "last_price": 680.3200073242188,
+      "last_price": 678.239990234375,
       "last_decision": "hold",
       "reason": "符合 AI ETF 分散與高 conviction 條件，strong_buy 且 scores 達標",
       "thesis": "廣泛曝險美股，AI權重高，市場風險偏好回升下適合穩健布局",
@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 681.3909912109375,
       "buy_price_confirmed": 681.3909912109375,
-      "last_reason": "持倉 thesis 仍成立，AI ETF 分散配置符合現況"
+      "last_reason": "持倉 thesis 仍成立，現金充裕但無符合高 conviction 新買入機會"
     },
     "MU": {
       "ticker": "MU",
@@ -40,7 +40,7 @@
       "avg_cost": 1034.68994140625,
       "invested": 1000.0,
       "opened_at": "2026-06-24 23:23",
-      "last_price": 1039.1800537109375,
+      "last_price": 1036.89990234375,
       "last_decision": "hold",
       "reason": "高 conviction AI記憶體股，catalyst_score 高，財報前止穩訊號",
       "thesis": "AI基礎設施需求持續，記憶體股受益於資料中心資本支出",
@@ -62,7 +62,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1039.1800537109375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "持倉 thesis 仍成立，高 conviction AI記憶體股止穩訊號有效"
+      "last_reason": "持倉 thesis 仍成立，strong_buy 地位確認，財報催化劑待驗證"
     }
   },
   "closed_trades": [
@@ -3355,65 +3355,60 @@
       "unrealized_pnl": 4.34,
       "cash_after": 3444.59,
       "reason": "持倉 thesis 仍成立，高 conviction AI記憶體股止穩訊號有效"
+    },
+    {
+      "time": "2026-06-25 00:58",
+      "action": "hold",
+      "ticker": "VOO",
+      "price": 678.24,
+      "shares": 1.467586,
+      "value": 995.38,
+      "unrealized_pnl": -4.62,
+      "cash_after": 3444.59,
+      "reason": "持倉 thesis 仍成立，現金充裕但無符合高 conviction 新買入機會"
+    },
+    {
+      "time": "2026-06-25 00:58",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1036.8999,
+      "shares": 0.966473,
+      "value": 1002.14,
+      "unrealized_pnl": 2.14,
+      "cash_after": 3444.59,
+      "reason": "持倉 thesis 仍成立，strong_buy 地位確認，財報催化劑待驗證"
     }
   ],
-  "last_updated_at": "2026-06-24 23:47",
+  "last_updated_at": "2026-06-25 00:58",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-24 23:47",
+    "time": "2026-06-25 00:58",
     "review": {
       "strategy_health": "warning",
-      "summary": "持倉僅VOO與MU兩檔，AI分散初步成立但現金過高且集中風險明顯。",
+      "summary": "持倉僅VOO與MU，AI記憶體集中風險高，待MU財報驗證thesis有效性。",
       "what_worked": [
-        "VOO與MU thesis有效，止穩訊號確認",
-        "TSM獲利了結轉向更好機會",
-        "VIX回落風險偏好改善"
+        "VOO提供廣泛AI ETF分散曝險",
+        "MU高conviction thesis符合記憶體需求",
+        "明確止蝕與review trigger設定"
       ],
       "mistakes_or_risks": [
-        "持倉數僅2檔，內部集中風險",
-        "高現金未積極部署AI鏈",
-        "過去NVDA止損但錯過反彈"
+        "單一股MU集中度過高",
+        "高現金比例未積極部署AI鏈",
+        "近期買入可能暴露追高反彈風險"
       ],
       "next_improvements": [
-        "增加AI相關ETF或設備股分散",
-        "強化止蝕紀律執行",
-        "監控財報催化劑"
+        "增加其他AI ETF或設備股分散",
+        "強化單一股持倉上限",
+        "優化better_opportunity賣出紀律"
       ],
       "risk_notes": [
-        "AI板塊資金觀望",
-        "MU財報風險",
-        "VOO非純AI曝險"
+        "MU財報不及預期可能觸發賣壓",
+        "板塊輪動導致資金流出風險",
+        "VIX回落但地緣事件仍存變數"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-17 20:33",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "Portfolio 集中持倉 NVDA、AMD 及 TSM，thesis 穩健但短期 AI 晶片獲利了結風險上升，需注意集中度。",
-        "what_worked": [
-          "成功以 trailing stop 獲利了結 MU",
-          "維持 TSM 高信心 AI 代工持倉表現穩定",
-          "保留充足現金維持策略彈性"
-        ],
-        "mistakes_or_risks": [
-          "持倉過度集中於少數 AI 晶片及代工股",
-          "NVDA 近期回檔導致未實現虧損擴大",
-          "缺乏記憶體或設備材料板塊分散配置"
-        ],
-        "next_improvements": [
-          "逢低分批布局 AI 記憶體或先進封裝相關個股",
-          "強化個股止蝕與再平衡機制",
-          "定期檢視各持倉 thesis 與市場訊號一致性"
-        ],
-        "risk_notes": [
-          "AI 股短期波動加劇受獲利了結影響",
-          "市場資金可能持續輪動離開高估值科技股",
-          "長期 AI 資本支出趨勢不變但需觀察 Q3 指引"
-        ]
-      }
-    },
     {
       "time": "2026-06-18 01:42",
       "review": {
@@ -3924,6 +3919,33 @@
           "AI板塊資金觀望",
           "MU財報風險",
           "VOO非純AI曝險"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-25 00:58",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "持倉僅VOO與MU，AI記憶體集中風險高，待MU財報驗證thesis有效性。",
+        "what_worked": [
+          "VOO提供廣泛AI ETF分散曝險",
+          "MU高conviction thesis符合記憶體需求",
+          "明確止蝕與review trigger設定"
+        ],
+        "mistakes_or_risks": [
+          "單一股MU集中度過高",
+          "高現金比例未積極部署AI鏈",
+          "近期買入可能暴露追高反彈風險"
+        ],
+        "next_improvements": [
+          "增加其他AI ETF或設備股分散",
+          "強化單一股持倉上限",
+          "優化better_opportunity賣出紀律"
+        ],
+        "risk_notes": [
+          "MU財報不及預期可能觸發賣壓",
+          "板塊輪動導致資金流出風險",
+          "VIX回落但地緣事件仍存變數"
         ]
       }
     }
