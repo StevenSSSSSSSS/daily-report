@@ -110,6 +110,7 @@
 | 2026-06-11 | `portfolio_book.html`, `PROGRESS.md` | 修正 Portfolio Strategy Review 版面：改為 full-width summary + 四欄 review cards，對齊現有 portfolio page 深色卡片設計 | Code review：diff 只影響 review 區塊 CSS/HTML render；Debug：抽出 `portfolio_book.html` script 後 `node --check` 通過，`python3 -m py_compile main_new.py prompts.py` 通過 |
 | 2026-06-11 | `prompts.py`, `PROGRESS.md` | 小改 portfolio review prompt：要求 concentration risk 必須表述為 AI mandate 內部細分環節 / 風險因子 / thesis 過度集中，避免誤解為投資 AI 產業鏈本身有問題 | Code review：diff 只影響 `PORTFOLIO_REVIEW_SYSTEM_PROMPT` wording；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
 | 2026-06-24 | `prompts.py`, `PROGRESS.md` | 收緊 stock ideas 與 portfolio orders prompt 契約：`status` 固定英文 enum、分數不可為 null、stop / target 必須可解析，並補完整 buy order schema，降低 buy 被 validation 過濾導致長期空倉的風險 | Code review：diff 只影響 prompt wording 與進度記錄；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
+| 2026-06-24 | `prompts.py`, `PROGRESS.md` | 補充 portfolio manager 對最近 review 摘要的使用方式：review 是重要背景但不是硬性命令；若採納或偏離改善方向，需在 order reason 用最新市況自然解釋 | Code review：diff 只影響 `PORTFOLIO_SYSTEM_PROMPT` wording；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
 
 ## 暫停 / 恢復記錄
 
