@@ -98,5 +98,15 @@
     "first_price": 746.739990234375,
     "sell_price": 736.9400024414062,
     "performance_pct": -1.31
+  },
+  {
+    "ticker": "XOVR",
+    "name": "XOVR ETF",
+    "reason": "跌穿止蝕位",
+    "removed_at": "2026-06-24T19:21:51.515444+08:00",
+    "cooldown_days": 7,
+    "first_price": 20.43000030517578,
+    "sell_price": 19.610000610351562,
+    "performance_pct": -4.01
   }
 ]

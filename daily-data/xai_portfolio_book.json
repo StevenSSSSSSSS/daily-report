@@ -3228,63 +3228,36 @@
       "reason": "better_opportunity"
     }
   ],
-  "last_updated_at": "2026-06-24 14:05",
+  "last_updated_at": "2026-06-24 19:21",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-24 14:05",
+    "time": "2026-06-24 19:21",
     "review": {
       "strategy_health": "warning",
-      "summary": "全現金持倉避開AI賣壓但暴露無曝險風險，過去交易紀律佳惟頻繁better_opportunity轉換未達分散。",
+      "summary": "空倉現金充裕但AI mandate下錯失近期反彈機會，單一股交易頻繁暴露集中風險。",
       "what_worked": [
-        "TSM獲利117.98實現正報酬",
-        "MU trailing stop鎖定307.07獲利",
-        "及時賣出避免更大跌幅"
+        "TSM與MU獲利了結執行止盈紀律",
+        "多次better_opportunity轉換提升整體報酬",
+        "現金水位高可應對短期波動"
       ],
       "mistakes_or_risks": [
-        "portfolio全空未符合AI mandate曝險",
-        "多次better_opportunity賣出後未及時重置持倉",
-        "單一股TSM曾佔比過高集中風險"
+        "持倉曾過度集中單一股TSM",
+        "近期全數賣出後未配置ETF分散風險",
+        "追高賣壓下thesis未經財報驗證即轉向"
       ],
       "next_improvements": [
-        "設定最低AI ETF曝險比例",
-        "建立止盈後再入場規則",
-        "加入設備股或基礎設施ETF分散"
+        "配置AI相關ETF降低單股集中度",
+        "設定明確再入場條件避免長期空倉",
+        "強化止損與再平衡機制"
       ],
       "risk_notes": [
-        "AI資本支出疑慮持續，VIX高檔",
-        "Fed鷹派壓抑成長股估值",
-        "地緣風險推升避險需求"
+        "AI資本支出疑慮持續，短期波動加劇",
+        "無持倉下錯過更好機會風險上升",
+        "宏觀Fed預期與地緣因素仍影響風險偏好"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-16 21:09",
-      "review": {
-        "strategy_health": "good",
-        "summary": "AI核心持倉穩健，止損紀律良好，集中風險需注意。",
-        "what_worked": [
-          "Trailing stop成功獲利了結MU",
-          "NVDA/AMD/TSM thesis持續有效",
-          "市場反彈中持倉正報酬"
-        ],
-        "mistakes_or_risks": [
-          "持倉過度集中於三檔AI半導體股",
-          "缺乏ETF或基礎設施分散",
-          "AVGO提前出場後未補新機會"
-        ],
-        "next_improvements": [
-          "考慮加入AI ETF降低集中度",
-          "強化多標的監控機制",
-          "現金部署AI基礎設施機會"
-        ],
-        "risk_notes": [
-          "AI需求論述穩健但防回檔",
-          "半導體鏈集中風險",
-          "政治事件影響可控"
-        ]
-      }
-    },
     {
       "time": "2026-06-17 02:51",
       "review": {
@@ -3795,6 +3768,33 @@
           "AI資本支出疑慮持續，VIX高檔",
           "Fed鷹派壓抑成長股估值",
           "地緣風險推升避險需求"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-24 19:21",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "空倉現金充裕但AI mandate下錯失近期反彈機會，單一股交易頻繁暴露集中風險。",
+        "what_worked": [
+          "TSM與MU獲利了結執行止盈紀律",
+          "多次better_opportunity轉換提升整體報酬",
+          "現金水位高可應對短期波動"
+        ],
+        "mistakes_or_risks": [
+          "持倉曾過度集中單一股TSM",
+          "近期全數賣出後未配置ETF分散風險",
+          "追高賣壓下thesis未經財報驗證即轉向"
+        ],
+        "next_improvements": [
+          "配置AI相關ETF降低單股集中度",
+          "設定明確再入場條件避免長期空倉",
+          "強化止損與再平衡機制"
+        ],
+        "risk_notes": [
+          "AI資本支出疑慮持續，短期波動加劇",
+          "無持倉下錯過更好機會風險上升",
+          "宏觀Fed預期與地緣因素仍影響風險偏好"
         ]
       }
     }
