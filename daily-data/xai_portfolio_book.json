@@ -1,7 +1,68 @@
 {
   "initial_capital": 5000.0,
-  "cash": 5444.59,
-  "positions": {},
+  "cash": 3444.59,
+  "positions": {
+    "VOO": {
+      "ticker": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "shares": 1.4675861772443526,
+      "avg_cost": 681.3909912109375,
+      "invested": 1000.0,
+      "opened_at": "2026-06-24 23:23",
+      "last_price": 681.3909912109375,
+      "last_decision": "buy",
+      "reason": "符合 AI ETF 分散與高 conviction 條件，strong_buy 且 scores 達標",
+      "thesis": "廣泛曝險美股，AI權重高，市場風險偏好回升下適合穩健布局",
+      "evidence": [
+        "市場訊號聚焦AI ETF",
+        "conviction_score 78 >=75",
+        "catalyst_score 65 >=60"
+      ],
+      "falsification_points": [
+        "宏觀緊縮風險加劇",
+        "AI資本支出疑慮持續惡化"
+      ],
+      "review_trigger": "VIX回升或AI相關ETF資金流出",
+      "stop": "520.0",
+      "target": "560.0",
+      "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+      "stop_price": 520.0,
+      "target_price": 560.0,
+      "trailing_stop_pct": 0.05,
+      "highest_price": 681.3909912109375,
+      "buy_price_confirmed": 681.3909912109375
+    },
+    "MU": {
+      "ticker": "MU",
+      "name": "Micron Technology",
+      "shares": 0.9664731046296798,
+      "avg_cost": 1034.68994140625,
+      "invested": 1000.0,
+      "opened_at": "2026-06-24 23:23",
+      "last_price": 1034.68994140625,
+      "last_decision": "buy",
+      "reason": "高 conviction AI記憶體股，catalyst_score 高，財報前止穩訊號",
+      "thesis": "AI基礎設施需求持續，記憶體股受益於資料中心資本支出",
+      "evidence": [
+        "conviction_score 75 >=75",
+        "catalyst_score 88 >=60",
+        "technical_score 60 >=60"
+      ],
+      "falsification_points": [
+        "MU財報不及預期",
+        "板塊輪動導致賣壓重啟"
+      ],
+      "review_trigger": "MU財報發布或半導體板塊資金流向變化",
+      "stop": "931.22",
+      "target": "1345.10",
+      "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+      "stop_price": 931.22,
+      "target_price": 1345.1,
+      "trailing_stop_pct": 0.05,
+      "highest_price": 1034.68994140625,
+      "buy_price_confirmed": 1034.68994140625
+    }
+  },
   "closed_trades": [
     {
       "ticker": "AVGO",
@@ -3226,65 +3287,82 @@
       "pnl": 117.98,
       "cash_after": 5444.59,
       "reason": "better_opportunity"
+    },
+    {
+      "time": "2026-06-24 23:23",
+      "action": "buy",
+      "ticker": "VOO",
+      "price": 681.391,
+      "shares": 1.467586,
+      "amount": 1000.0,
+      "cash_after": 4444.59,
+      "reason": "符合 AI ETF 分散與高 conviction 條件，strong_buy 且 scores 達標",
+      "thesis": "廣泛曝險美股，AI權重高，市場風險偏好回升下適合穩健布局",
+      "evidence": [
+        "市場訊號聚焦AI ETF",
+        "conviction_score 78 >=75",
+        "catalyst_score 65 >=60"
+      ],
+      "falsification_points": [
+        "宏觀緊縮風險加劇",
+        "AI資本支出疑慮持續惡化"
+      ],
+      "review_trigger": "VIX回升或AI相關ETF資金流出",
+      "stop": "520.0"
+    },
+    {
+      "time": "2026-06-24 23:23",
+      "action": "buy",
+      "ticker": "MU",
+      "price": 1034.6899,
+      "shares": 0.966473,
+      "amount": 1000.0,
+      "cash_after": 3444.59,
+      "reason": "高 conviction AI記憶體股，catalyst_score 高，財報前止穩訊號",
+      "thesis": "AI基礎設施需求持續，記憶體股受益於資料中心資本支出",
+      "evidence": [
+        "conviction_score 75 >=75",
+        "catalyst_score 88 >=60",
+        "technical_score 60 >=60"
+      ],
+      "falsification_points": [
+        "MU財報不及預期",
+        "板塊輪動導致賣壓重啟"
+      ],
+      "review_trigger": "MU財報發布或半導體板塊資金流向變化",
+      "stop": "931.22"
     }
   ],
-  "last_updated_at": "2026-06-24 19:21",
+  "last_updated_at": "2026-06-24 23:23",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-24 19:21",
+    "time": "2026-06-24 23:23",
     "review": {
       "strategy_health": "warning",
-      "summary": "空倉現金充裕但AI mandate下錯失近期反彈機會，單一股交易頻繁暴露集中風險。",
+      "summary": "AI mandate下VOO過度分散且持倉集中單一記憶體股，追高與止蝕紀律待強化。",
       "what_worked": [
-        "TSM與MU獲利了結執行止盈紀律",
-        "多次better_opportunity轉換提升整體報酬",
-        "現金水位高可應對短期波動"
+        "TSM等持倉獲利了結轉向更好機會",
+        "MU trailing stop曾成功執行",
+        "市場風險偏好回升時聚焦ETF"
       ],
       "mistakes_or_risks": [
-        "持倉曾過度集中單一股TSM",
-        "近期全數賣出後未配置ETF分散風險",
-        "追高賣壓下thesis未經財報驗證即轉向"
+        "VOO非純AI ETF稀釋mandate聚焦",
+        "新倉僅2檔集中風險高",
+        "近期多次better_opportunity賣出暴露選股不穩"
       ],
       "next_improvements": [
-        "配置AI相關ETF降低單股集中度",
-        "設定明確再入場條件避免長期空倉",
-        "強化止損與再平衡機制"
+        "限制寬基ETF權重上限",
+        "強化thesis falsification監測",
+        "增加先進封裝或設備股分散"
       ],
       "risk_notes": [
-        "AI資本支出疑慮持續，短期波動加劇",
-        "無持倉下錯過更好機會風險上升",
-        "宏觀Fed預期與地緣因素仍影響風險偏好"
+        "現金充裕但AI供應鏈曝險不足",
+        "MU財報前止穩訊號需驗證",
+        "VIX回落後追高風險上升"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-17 02:51",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "AI mandate持倉集中NVDA/AMD/TSM，止損紀律佳但追高風險與獲利了結壓力並存。",
-        "what_worked": [
-          "MU trailing stop獲利307%執行精準",
-          "AVGO轉向更廣AI曝險決策果斷",
-          "核心thesis維持NVDA/AMD/TSM持股穩定"
-        ],
-        "mistakes_or_risks": [
-          "僅3檔持倉過度集中AI晶片鏈",
-          "NVDA小虧未觸發止損但市場獲利了結明顯",
-          "錯過MBLY/QQQ等基礎設施機會"
-        ],
-        "next_improvements": [
-          "增加ETF分散如QQQ",
-          "強化內部集中度監控上限",
-          "定期檢視thesis有效性"
-        ],
-        "risk_notes": [
-          "半導體板塊波動加劇",
-          "政治利多支撐風險偏好但不持久",
-          "現金充足可適度加碼但控總持倉≤5"
-        ]
-      }
-    },
     {
       "time": "2026-06-17 15:08",
       "review": {
@@ -3795,6 +3873,33 @@
           "AI資本支出疑慮持續，短期波動加劇",
           "無持倉下錯過更好機會風險上升",
           "宏觀Fed預期與地緣因素仍影響風險偏好"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-24 23:23",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI mandate下VOO過度分散且持倉集中單一記憶體股，追高與止蝕紀律待強化。",
+        "what_worked": [
+          "TSM等持倉獲利了結轉向更好機會",
+          "MU trailing stop曾成功執行",
+          "市場風險偏好回升時聚焦ETF"
+        ],
+        "mistakes_or_risks": [
+          "VOO非純AI ETF稀釋mandate聚焦",
+          "新倉僅2檔集中風險高",
+          "近期多次better_opportunity賣出暴露選股不穩"
+        ],
+        "next_improvements": [
+          "限制寬基ETF權重上限",
+          "強化thesis falsification監測",
+          "增加先進封裝或設備股分散"
+        ],
+        "risk_notes": [
+          "現金充裕但AI供應鏈曝險不足",
+          "MU財報前止穩訊號需驗證",
+          "VIX回落後追高風險上升"
         ]
       }
     }
