@@ -771,6 +771,8 @@ http://localhost:8001/portfolio_book.html
       const cash     = book.cash || 0;
       const equity   = totalValue + cash;
       const initCap  = book.initial_capital || 0;
+      const assetPnl = equity - initCap;
+      const assetRet = initCap ? (assetPnl / initCap) * 100 : 0;
 
       document.getElementById("summaryCards").innerHTML = `
         <div class="card">
@@ -788,12 +790,12 @@ http://localhost:8001/portfolio_book.html
         <div class="card">
           <div class="label">總資產</div>
           <div class="value">$${money(equity)}</div>
-          <div class="sub ${cls(totalPnl)}">${tagged(totalPnl)}</div>
+          <div class="sub ${cls(assetPnl)}">${tagged(assetPnl)} / ${pct2(assetRet)}</div>
         </div>
         <div class="card">
           <div class="label">總回報</div>
-          <div class="value ${cls(totalRet)}">${pct2(totalRet)}</div>
-          <div class="sub ${cls(totalPnl)}">${tagged(totalPnl)}</div>
+          <div class="value ${cls(assetRet)}">${pct2(assetRet)}</div>
+          <div class="sub ${cls(assetPnl)}">${tagged(assetPnl)}</div>
         </div>
       `;
 
