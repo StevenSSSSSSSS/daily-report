@@ -1,6 +1,6 @@
 {
   "initial_capital": 5000.0,
-  "cash": 3444.59,
+  "cash": 2444.59,
   "positions": {
     "VOO": {
       "ticker": "VOO",
@@ -9,7 +9,7 @@
       "avg_cost": 681.3909912109375,
       "invested": 1000.0,
       "opened_at": "2026-06-24 23:23",
-      "last_price": 675.6900024414062,
+      "last_price": 675.4099731445312,
       "last_decision": "hold",
       "reason": "符合 AI ETF 分散與高 conviction 條件，strong_buy 且 scores 達標",
       "thesis": "廣泛曝險美股，AI權重高，市場風險偏好回升下適合穩健布局",
@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 681.3909912109375,
       "buy_price_confirmed": 681.3909912109375,
-      "last_reason": "持倉thesis仍成立，現金充裕下維持分散曝險"
+      "last_reason": "持倉 thesis 仍成立，AI ETF分散角色持續"
     },
     "MU": {
       "ticker": "MU",
@@ -40,7 +40,7 @@
       "avg_cost": 1034.68994140625,
       "invested": 1000.0,
       "opened_at": "2026-06-24 23:23",
-      "last_price": 1048.510009765625,
+      "last_price": 1218.4427490234375,
       "last_decision": "hold",
       "reason": "高 conviction AI記憶體股，catalyst_score 高，財報前止穩訊號",
       "thesis": "AI基礎設施需求持續，記憶體股受益於資料中心資本支出",
@@ -60,9 +60,40 @@
       "stop_price": 931.22,
       "target_price": 1345.1,
       "trailing_stop_pct": 0.05,
-      "highest_price": 1048.510009765625,
+      "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "持倉thesis仍成立，財報催化有效，短期無需賣出"
+      "last_reason": "持倉 thesis 仍成立，高 conviction AI記憶體股，財報催化有效"
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "shares": 5.133206778564976,
+      "avg_cost": 194.80999755859375,
+      "invested": 1000.0,
+      "opened_at": "2026-06-26 01:02",
+      "last_price": 194.80999755859375,
+      "last_decision": "buy",
+      "reason": "高 conviction AI晶片龍頭，catalyst與technical分數達標，MU財報帶動AI記憶體需求延續至2027，市場風險偏好回升",
+      "thesis": "AI基礎設施需求穩健，股東會前布局晶片供應鏈，估值壓力下仍具結構性上漲空間",
+      "evidence": [
+        "MU財報指引AI記憶體短缺至2027帶動相關供應鏈反彈",
+        "VIX回落至17.91利高beta科技股",
+        "地緣政治風險下降支撐風險偏好"
+      ],
+      "falsification_points": [
+        "PCE數據超預期導致Fed緊縮預期升溫",
+        "AI估值疑慮引發集中賣壓",
+        "NVDA股價跌破115支撐"
+      ],
+      "review_trigger": "下週PCE數據公布或NVDA股價回測120-125區間",
+      "stop": "115.0",
+      "target": "258.70",
+      "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+      "stop_price": 115.0,
+      "target_price": 258.7,
+      "trailing_stop_pct": 0.05,
+      "highest_price": 194.80999755859375,
+      "buy_price_confirmed": 194.80999755859375
     }
   },
   "closed_trades": [
@@ -3443,19 +3474,16 @@
       "unrealized_pnl": 13.36,
       "cash_after": 3444.59,
       "reason": "持倉thesis仍成立，財報催化有效，短期無需賣出"
-    }
-  ],
-  "last_updated_at": "2026-06-25 19:12",
-  "pending_orders": [
+    },
     {
+      "time": "2026-06-26 01:02",
       "action": "buy",
       "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
+      "price": 194.81,
+      "shares": 5.133207,
+      "amount": 1000.0,
+      "cash_after": 2444.59,
       "reason": "高 conviction AI晶片龍頭，catalyst與technical分數達標，MU財報帶動AI記憶體需求延續至2027，市場風險偏好回升",
-      "allocation_usd": 1000,
-      "stop": "115.0",
-      "target": "258.70",
-      "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
       "thesis": "AI基礎設施需求穩健，股東會前布局晶片供應鏈，估值壓力下仍具結構性上漲空間",
       "evidence": [
         "MU財報指引AI記憶體短缺至2027帶動相關供應鏈反彈",
@@ -3468,87 +3496,61 @@
         "NVDA股價跌破115支撐"
       ],
       "review_trigger": "下週PCE數據公布或NVDA股價回測120-125區間",
-      "created_at": "2026-06-25 19:12",
-      "source": "ai",
-      "original_order": {
-        "action": "buy",
-        "ticker": "NVDA",
-        "name": "NVIDIA Corporation",
-        "reason": "高 conviction AI晶片龍頭，catalyst與technical分數達標，MU財報帶動AI記憶體需求延續至2027，市場風險偏好回升",
-        "allocation_usd": 1000,
-        "stop": "115.0",
-        "target": "258.70",
-        "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
-        "thesis": "AI基礎設施需求穩健，股東會前布局晶片供應鏈，估值壓力下仍具結構性上漲空間",
-        "evidence": [
-          "MU財報指引AI記憶體短缺至2027帶動相關供應鏈反彈",
-          "VIX回落至17.91利高beta科技股",
-          "地緣政治風險下降支撐風險偏好"
-        ],
-        "falsification_points": [
-          "PCE數據超預期導致Fed緊縮預期升溫",
-          "AI估值疑慮引發集中賣壓",
-          "NVDA股價跌破115支撐"
-        ],
-        "review_trigger": "下週PCE數據公布或NVDA股價回測120-125區間"
-      }
+      "stop": "115.0"
+    },
+    {
+      "time": "2026-06-26 01:02",
+      "action": "hold",
+      "ticker": "VOO",
+      "price": 675.41,
+      "shares": 1.467586,
+      "value": 991.22,
+      "unrealized_pnl": -8.78,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，AI ETF分散角色持續"
+    },
+    {
+      "time": "2026-06-26 01:02",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1218.4427,
+      "shares": 0.966473,
+      "value": 1177.59,
+      "unrealized_pnl": 177.59,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，高 conviction AI記憶體股，財報催化有效"
     }
   ],
+  "last_updated_at": "2026-06-26 01:02",
+  "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-25 19:12",
+    "time": "2026-06-26 01:02",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI記憶體與晶片曝險集中，分散不足且追高風險存在。",
+      "summary": "AI供應鏈持倉集中於MU與NVDA，MU催化有效但分散不足。",
       "what_worked": [
-        "MU財報催化有效帶動反彈",
-        "VIX回落利高beta科技股",
-        "部分舊倉如MU獲利了結"
+        "MU財報超預期催化記憶體需求",
+        "NVDA高conviction入場符合AI晶片龍頭定位",
+        "VOO維持ETF分散角色"
       ],
       "mistakes_or_risks": [
-        "NVDA買入增加AI晶片集中風險",
-        "VOO非純AI持倉偏離mandate",
-        "過去NVDA止損仍有損失"
+        "AI晶片與記憶體過度集中風險",
+        "追高NVDA後止損位較寬",
+        "錯過半導體設備或先進封裝機會"
       ],
       "next_improvements": [
-        "強化內部集中度監控",
-        "優化thesis falsification點驗證",
-        "增加AI基礎設施以外分散"
+        "增加AI設備或封裝相關標的分散",
+        "強化止損紀律執行",
+        "定期檢視thesis falsification點"
       ],
       "risk_notes": [
-        "AI估值壓力與資金輪動風險",
-        "PCE數據前觀望Fed路徑",
-        "現金充裕但新倉集中AI鏈"
+        "NVDA與MU相關性高易放大波動",
+        "現金充足但持倉僅3檔",
+        "VIX回升可能衝擊高beta AI股"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-19 01:52",
-      "review": {
-        "strategy_health": "good",
-        "summary": "止蝕紀律執行良好，持倉獲利但現金過剩與集中風險需注意。",
-        "what_worked": [
-          "NVDA止蝕賣出降低損失",
-          "AMD與TSM thesis有效且獲利",
-          "市場反彈下風險偏好回升"
-        ],
-        "mistakes_or_risks": [
-          "持倉僅兩檔AI股過度集中",
-          "高現金比例錯過部署機會",
-          "過去AVGO虧損顯示選股波動"
-        ],
-        "next_improvements": [
-          "引入AI ETF分散風險",
-          "設定現金部署閾值",
-          "強化內部集中度監控"
-        ],
-        "risk_notes": [
-          "AI晶片板塊波動仍高",
-          "地緣風險緩和但需持續觀察",
-          "僅限AI mandate內部風險"
-        ]
-      }
-    },
     {
       "time": "2026-06-19 15:05",
       "review": {
@@ -4059,6 +4061,33 @@
           "AI估值壓力與資金輪動風險",
           "PCE數據前觀望Fed路徑",
           "現金充裕但新倉集中AI鏈"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-26 01:02",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI供應鏈持倉集中於MU與NVDA，MU催化有效但分散不足。",
+        "what_worked": [
+          "MU財報超預期催化記憶體需求",
+          "NVDA高conviction入場符合AI晶片龍頭定位",
+          "VOO維持ETF分散角色"
+        ],
+        "mistakes_or_risks": [
+          "AI晶片與記憶體過度集中風險",
+          "追高NVDA後止損位較寬",
+          "錯過半導體設備或先進封裝機會"
+        ],
+        "next_improvements": [
+          "增加AI設備或封裝相關標的分散",
+          "強化止損紀律執行",
+          "定期檢視thesis falsification點"
+        ],
+        "risk_notes": [
+          "NVDA與MU相關性高易放大波動",
+          "現金充足但持倉僅3檔",
+          "VIX回升可能衝擊高beta AI股"
         ]
       }
     }
