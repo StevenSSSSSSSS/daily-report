@@ -12,6 +12,8 @@ http://localhost:8001/portfolio_book.html
 
     body {
       margin: 24px;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #07111f;
       color: #e5edf7;
@@ -192,6 +194,14 @@ http://localhost:8001/portfolio_book.html
       color: #9caec4;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+
+    .text-cell,
+    .text-cell div,
+    .trade-reason {
+      font-size: inherit;
+      font-weight: 400;
+      line-height: inherit;
     }
 
     tbody tr {
@@ -509,6 +519,14 @@ http://localhost:8001/portfolio_book.html
         font-size: 9px !important;
       }
 
+      .text-cell,
+      .text-cell div,
+      .trade-reason {
+        font-size: 10px !important;
+        font-weight: 400 !important;
+        line-height: 1.25 !important;
+      }
+
       .tag {
         font-size: 9px;
         padding: 2px 6px;
@@ -790,7 +808,7 @@ http://localhost:8001/portfolio_book.html
             <td class="${cls(r.pnl)}">${tagged(r.pnl)}</td>
             <td class="${cls(r.ret)}">${pct2(r.ret)}</td>
             <td>${r.stop || "-"}</td>
-            <td>
+            <td class="text-cell">
               <div>${r.thesis || r.reason || r.last_reason || "-"}</div>
               ${r.review_trigger ? `<div class="meta">Review: ${r.review_trigger}</div>` : ""}
               ${Array.isArray(r.falsification_points) && r.falsification_points.length
@@ -930,7 +948,7 @@ http://localhost:8001/portfolio_book.html
           <td>$${money(t.price)}</td>
           <td>${num4(t.shares)}</td>
           <td>$${money(t.amount)}</td>
-          <td>${t.reason || "-"}</td>
+          <td class="trade-reason">${t.reason || "-"}</td>
           <td>${t.stop || "-"}</td>
         </tr>
       `).join("");
