@@ -113,6 +113,7 @@
 | 2026-06-24 | `prompts.py`, `PROGRESS.md` | 補充 portfolio manager 對最近 review 摘要的使用方式：review 是重要背景但不是硬性命令；若採納或偏離改善方向，需在 order reason 用最新市況自然解釋 | Code review：diff 只影響 `PORTFOLIO_SYSTEM_PROMPT` wording；Debug：`python3 -m py_compile main_new.py prompts.py` 通過 |
 | 2026-06-25 | `portfolio_book.html`, `PROGRESS.md` | 修正手機版持倉 Thesis 與交易紀錄理由文字顯示：禁止手機自動放大，並統一字體大小與一般字重 | Code review：diff 只影響 portfolio page CSS/class；Debug：抽出 `portfolio_book.html` script 後 `node --check` 通過 |
 | 2026-06-25 | `portfolio_book.html`, `PROGRESS.md` | 修正持倉摘要卡：總資產下方改顯示總資產盈虧金額與百分比，總回報改用總資產相對初始資金的盈虧百分比 | Code review：diff 只影響 portfolio page summary 計算；Debug：抽出 `portfolio_book.html` script 後 `node --check` 通過 |
+| 2026-06-25 | `main_new.py`, `prompts.py`, `PROGRESS.md` | 優化交易執行邏輯：pending order 保存完整原始 order；better_opportunity sell 必須有同步 replacement buy；非交易時段 buy 也可 pending；buy stop/target 自動補合理值；watchlist stop 高過現價時修正而不誤入 removelist；高現金時 prompt 要求優先部署 starter positions | Code review：diff 聚焦 portfolio order validation / pending / removelist / prompt；Debug：`python3 -m py_compile main_new.py prompts.py` 通過，並用本地函數 smoke test 驗證 better_opportunity sell 會在無 replacement buy 時被過濾 |
 
 ## 暫停 / 恢復記錄
 

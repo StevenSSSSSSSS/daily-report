@@ -40,6 +40,7 @@ MODEL = "grok-4.3"
 PORTFOLIO_INITIAL_CAPITAL = 5000.0
 PORTFOLIO_POSITION_NOTIONAL = 1000.0
 PORTFOLIO_MAX_POSITIONS = 5
+PORTFOLIO_CASH_DEPLOYMENT_THRESHOLD = 0.40
 
 # ==================== 新增開關 ====================
 USE_XAI = True   # 設為 False 可暫時關閉 xAI 呼叫，快速測試排版
@@ -92,6 +93,7 @@ def build_portfolio_prompt(today, report, portfolio_text, watchlist_text, sessio
 候選監察名單：{watchlist_text}
 剔除/冷卻狀態：{removelist_text}
 目前模擬 portfolio 狀態：{portfolio_text}
+資金使用提醒：{portfolio_cash_usage_note(book)}
 最近 portfolio review 摘要：{portfolio_review_feedback_summary(book)}"""
 
 
@@ -102,6 +104,25 @@ def market_signal_summary(report):
         "market_dashboard": report.get("market_dashboard"),
         "x_consensus": report.get("x_consensus"),
     } if isinstance(report, dict) else {}
+
+
+def portfolio_cash_usage_note(book):
+    if not isinstance(book, dict):
+        return "portfolio 狀態不足，按候選品質保守決策。"
+
+    initial_capital = float(book.get("initial_capital", PORTFOLIO_INITIAL_CAPITAL) or PORTFOLIO_INITIAL_CAPITAL)
+    cash = float(book.get("cash", 0) or 0)
+    positions = book.get("positions") if isinstance(book.get("positions"), dict) else {}
+    cash_ratio = cash / initial_capital if initial_capital else 0
+
+    if cash_ratio > PORTFOLIO_CASH_DEPLOYMENT_THRESHOLD and len(positions) < PORTFOLIO_MAX_POSITIONS:
+        return (
+            f"現金 {cash:.2f}，約佔初始資金 {cash_ratio:.0%}，持倉 {len(positions)}/{PORTFOLIO_MAX_POSITIONS}。"
+            "若有合格 strong_buy / 高 conviction 候選，優先建立 1-3 個 starter positions；"
+            "若不買，必須用最新市場風險或候選品質不足解釋。"
+        )
+
+    return "現金比例未超過上限；按最新市場訊號、風險與候選品質決策。"
 
 
 def portfolio_review_feedback_summary(book, limit=3):
@@ -457,6 +478,7 @@ def apply_portfolio_decisions(book, report, now):
         orders = pending_orders + orders
         book["pending_orders"] = []
         pending_orders = book["pending_orders"]
+    orders = reconcile_better_opportunity_orders(orders, positions)
     orders = sorted(
         orders,
         key=lambda order: {"sell": 0, "buy": 1, "hold": 2}.get(str(order.get("action") or "").lower().strip(), 3)
@@ -470,6 +492,8 @@ def apply_portfolio_decisions(book, report, now):
         if not ticker or ticker == "N/A":
             continue
 
+        if action == "buy":
+            normalize_buy_order_prices(order)
         price = get_latest_price(ticker)
 
         if action == "sell" and ticker in positions and (can_trade or order.get("force")):
@@ -516,12 +540,7 @@ def apply_portfolio_decisions(book, report, now):
                         pending for pending in pending_orders
                         if normalize_ticker(pending.get("ticker")) != ticker
                     ]
-                    pending_orders.append({
-                        "ticker": ticker,
-                        "action": "sell",
-                        "reason": order.get("reason", ""),
-                        "created_at": now_text,
-                    })
+                    pending_orders.append(pending_order_payload(order, now_text))
                 if price:
                     positions[ticker]["last_price"] = price
                 pos = positions[ticker]
@@ -541,6 +560,13 @@ def apply_portfolio_decisions(book, report, now):
                     "cash_after": round(cash, 2),
                     "reason": positions[ticker]["last_reason"],
                 })
+            elif action == "buy":
+                pending_orders[:] = [
+                    pending for pending in pending_orders
+                    if normalize_ticker(pending.get("ticker")) != ticker
+                ]
+                pending_orders.append(pending_order_payload(order, now_text))
+                print(f"⏸️ 非美股交易時段，延後 {ticker} buy")
             else:
                 print(f"⏸️ 非美股交易時段，跳過 {ticker} {action}")
 
@@ -708,6 +734,82 @@ def parse_target_price(value):
     return extract_number(value)
 
 
+def normalize_buy_order_prices(order):
+    if not isinstance(order, dict):
+        return order
+
+    action = str(order.get("action") or "").lower().strip()
+    if action != "buy":
+        return order
+
+    ticker = normalize_ticker(order.get("ticker"))
+    price = get_latest_price(ticker)
+    if not is_valid_price(price):
+        return order
+
+    price = float(price)
+    stop_price = parse_stop_price(order.get("stop"), price)
+    target_price = parse_target_price(order.get("target"))
+
+    if not is_valid_price(stop_price) or float(stop_price) >= price:
+        stop_price = round(price * 0.90, 2)
+        order["stop"] = f"{stop_price:.2f}"
+
+    if not is_valid_price(target_price) or float(target_price) <= price:
+        target_price = round(price * 1.30, 2)
+        order["target"] = f"{target_price:.2f}"
+
+    return order
+
+
+def is_better_opportunity_order(order):
+    reason = str((order or {}).get("reason") or "").lower()
+    return "better_opportunity" in reason or "better opportunity" in reason
+
+
+def has_replacement_buy(order, orders, positions):
+    ticker = normalize_ticker((order or {}).get("ticker"))
+    for candidate in orders:
+        if not isinstance(candidate, dict):
+            continue
+        action = str(candidate.get("action") or "").lower().strip()
+        candidate_ticker = normalize_ticker(candidate.get("ticker"))
+        if action != "buy" or not candidate_ticker or candidate_ticker == ticker:
+            continue
+        if candidate_ticker in positions:
+            continue
+        return True
+    return False
+
+
+def reconcile_better_opportunity_orders(orders, positions):
+    if not isinstance(orders, list):
+        return []
+
+    reconciled = []
+    for order in orders:
+        if not isinstance(order, dict):
+            continue
+        action = str(order.get("action") or "").lower().strip()
+        if action == "sell" and is_better_opportunity_order(order) and not has_replacement_buy(order, orders, positions):
+            ticker = normalize_ticker(order.get("ticker"))
+            print(f"⏸️ 跳過 {ticker} sell：better_opportunity 沒有同步 replacement buy")
+            continue
+        reconciled.append(order)
+    return reconciled
+
+
+def pending_order_payload(order, now_text):
+    payload = dict(order)
+    payload["ticker"] = normalize_ticker(order.get("ticker"))
+    payload["action"] = str(order.get("action") or "").lower().strip()
+    payload["reason"] = order.get("reason", "")
+    payload["created_at"] = order.get("created_at") or now_text
+    payload["source"] = order.get("source") or ("risk_rule" if order.get("force") else "ai")
+    payload["original_order"] = dict(order)
+    return payload
+
+
 def normalize_text_list(value, limit=3):
     if isinstance(value, list):
         return [str(item).strip() for item in value[:limit] if str(item).strip()]
@@ -835,6 +937,7 @@ def filter_portfolio_buy_orders(report, watchlist):
     for order in orders:
         if not isinstance(order, dict):
             continue
+        normalize_buy_order_prices(order)
         action = str(order.get("action") or "").lower().strip()
         ticker = normalize_ticker(order.get("ticker"))
         if not is_valid_portfolio_order(order):
@@ -844,7 +947,11 @@ def filter_portfolio_buy_orders(report, watchlist):
             print(f"⏸️ 跳過 {ticker} buy：不在 strong_buy / 高分 watchlist 候選中")
             continue
         filtered.append(order)
-    decisions["orders"] = filtered
+    positions = {}
+    portfolio_state = report.get("portfolio_state") if isinstance(report, dict) else None
+    if isinstance(portfolio_state, dict) and isinstance(portfolio_state.get("positions"), dict):
+        positions = portfolio_state.get("positions")
+    decisions["orders"] = reconcile_better_opportunity_orders(filtered, positions)
 
 
 def is_valid_portfolio_order(order):
@@ -1203,6 +1310,18 @@ def update_stock_history(items, now):
                 "recommend_count": 0,
             }
 
+        previous_price = record.get("last_price")
+        normalized_stop = item.get("stop", record.get("stop", ""))
+        stop_price = parse_stop_price(normalized_stop, current_price)
+        stop_was_plausible = (
+            is_valid_price(previous_price)
+            and is_valid_price(stop_price)
+            and float(stop_price) < float(previous_price)
+        )
+        if is_valid_price(current_price) and is_valid_price(stop_price) and float(stop_price) >= float(current_price) and not stop_was_plausible:
+            normalized_stop = f"{float(current_price) * 0.90:.2f}"
+            stop_price = float(normalized_stop)
+
         record.update({
             "name": item.get("name", record.get("name", "")),
             "sector": item.get("sector", record.get("sector", "")),
@@ -1215,13 +1334,18 @@ def update_stock_history(items, now):
             "last_review_reason": item.get("reason", record.get("last_review_reason", "")),
             "last_recommended_at": now_text,
             "last_price": current_price,
-            "stop": item.get("stop", record.get("stop", "")),
+            "stop": normalized_stop,
             "recommend_count": int(record.get("recommend_count", 0)) + 1,
         })
         history[ticker] = record
 
-        stop_price = extract_number(item.get("stop"))
-        if current_price is not None and stop_price is not None and current_price <= stop_price and ticker not in removelist_tickers:
+        if (
+            is_valid_price(current_price)
+            and is_valid_price(stop_price)
+            and stop_was_plausible
+            and float(current_price) <= float(stop_price)
+            and ticker not in removelist_tickers
+        ):
             performance_pct = None
             first_price = record.get("first_price")
             if isinstance(first_price, (int, float)) and isinstance(current_price, (int, float)):
