@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 681.3909912109375,
       "buy_price_confirmed": 681.3909912109375,
-      "last_reason": "持倉 thesis 仍成立，分散曝險"
+      "last_reason": "持倉thesis仍成立，現金充裕下維持分散曝險"
     },
     "MU": {
       "ticker": "MU",
@@ -62,7 +62,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1048.510009765625,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "持倉 thesis 仍成立，財報催化劑已驗證"
+      "last_reason": "持倉thesis仍成立，財報催化有效，短期無需賣出"
     }
   },
   "closed_trades": [
@@ -3421,108 +3421,107 @@
       "unrealized_pnl": 13.36,
       "cash_after": 3444.59,
       "reason": "持倉 thesis 仍成立，財報催化劑已驗證"
+    },
+    {
+      "time": "2026-06-25 19:12",
+      "action": "hold",
+      "ticker": "VOO",
+      "price": 675.69,
+      "shares": 1.467586,
+      "value": 991.63,
+      "unrealized_pnl": -8.37,
+      "cash_after": 3444.59,
+      "reason": "持倉thesis仍成立，現金充裕下維持分散曝險"
+    },
+    {
+      "time": "2026-06-25 19:12",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1048.51,
+      "shares": 0.966473,
+      "value": 1013.36,
+      "unrealized_pnl": 13.36,
+      "cash_after": 3444.59,
+      "reason": "持倉thesis仍成立，財報催化有效，短期無需賣出"
     }
   ],
-  "last_updated_at": "2026-06-25 17:54",
+  "last_updated_at": "2026-06-25 19:12",
   "pending_orders": [
     {
       "action": "buy",
       "ticker": "NVDA",
-      "name": "NVIDIA",
-      "reason": "高 conviction watchlist 符合條件，conviction_score=75、catalyst_score=65、technical_score=60，AI基礎設施龍頭需求穩健",
+      "name": "NVIDIA Corporation",
+      "reason": "高 conviction AI晶片龍頭，catalyst與technical分數達標，MU財報帶動AI記憶體需求延續至2027，市場風險偏好回升",
       "allocation_usd": 1000,
-      "stop": "128",
+      "stop": "115.0",
       "target": "258.70",
-      "trailing_stop": "獲利超過22%後，最高價回調5%止賺",
-      "thesis": "AI基礎設施長期需求穩健，股東會前震盪整理提供入場機會",
+      "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+      "thesis": "AI基礎設施需求穩健，股東會前布局晶片供應鏈，估值壓力下仍具結構性上漲空間",
       "evidence": [
-        "AI capex 持續焦點",
-        "財報後市場反應正面但估值疑慮提供安全邊際"
+        "MU財報指引AI記憶體短缺至2027帶動相關供應鏈反彈",
+        "VIX回落至17.91利高beta科技股",
+        "地緣政治風險下降支撐風險偏好"
       ],
       "falsification_points": [
-        "AI capex 放緩",
-        "監管風險升溫導致估值壓縮"
+        "PCE數據超預期導致Fed緊縮預期升溫",
+        "AI估值疑慮引發集中賣壓",
+        "NVDA股價跌破115支撐"
       ],
-      "review_trigger": "下次財報或 AI capex 確認訊號",
-      "created_at": "2026-06-25 17:54",
+      "review_trigger": "下週PCE數據公布或NVDA股價回測120-125區間",
+      "created_at": "2026-06-25 19:12",
       "source": "ai",
       "original_order": {
         "action": "buy",
         "ticker": "NVDA",
-        "name": "NVIDIA",
-        "reason": "高 conviction watchlist 符合條件，conviction_score=75、catalyst_score=65、technical_score=60，AI基礎設施龍頭需求穩健",
+        "name": "NVIDIA Corporation",
+        "reason": "高 conviction AI晶片龍頭，catalyst與technical分數達標，MU財報帶動AI記憶體需求延續至2027，市場風險偏好回升",
         "allocation_usd": 1000,
-        "stop": "128",
+        "stop": "115.0",
         "target": "258.70",
-        "trailing_stop": "獲利超過22%後，最高價回調5%止賺",
-        "thesis": "AI基礎設施長期需求穩健，股東會前震盪整理提供入場機會",
+        "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+        "thesis": "AI基礎設施需求穩健，股東會前布局晶片供應鏈，估值壓力下仍具結構性上漲空間",
         "evidence": [
-          "AI capex 持續焦點",
-          "財報後市場反應正面但估值疑慮提供安全邊際"
+          "MU財報指引AI記憶體短缺至2027帶動相關供應鏈反彈",
+          "VIX回落至17.91利高beta科技股",
+          "地緣政治風險下降支撐風險偏好"
         ],
         "falsification_points": [
-          "AI capex 放緩",
-          "監管風險升溫導致估值壓縮"
+          "PCE數據超預期導致Fed緊縮預期升溫",
+          "AI估值疑慮引發集中賣壓",
+          "NVDA股價跌破115支撐"
         ],
-        "review_trigger": "下次財報或 AI capex 確認訊號"
+        "review_trigger": "下週PCE數據公布或NVDA股價回測120-125區間"
       }
     }
   ],
   "latest_review": {
-    "time": "2026-06-25 17:54",
+    "time": "2026-06-25 19:12",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI供應鏈持倉分散但新增NVDA增加集中風險，估值疑慮下追高壓力明顯。",
+      "summary": "AI記憶體與晶片曝險集中，分散不足且追高風險存在。",
       "what_worked": [
-        "MU財報催化劑驗證有效",
-        "VOO ETF提供基礎分散",
-        "過去部分better_opportunity退出紀律"
+        "MU財報催化有效帶動反彈",
+        "VIX回落利高beta科技股",
+        "部分舊倉如MU獲利了結"
       ],
       "mistakes_or_risks": [
-        "AI過熱定位下新增NVDA集中風險",
-        "止蝕紀律執行不一（如先前NVDA止損）",
-        "錯過防禦板塊輪動機會"
+        "NVDA買入增加AI晶片集中風險",
+        "VOO非純AI持倉偏離mandate",
+        "過去NVDA止損仍有損失"
       ],
       "next_improvements": [
-        "嚴格執行catalyst與technical分數門檻",
-        "強化內部AI集中度監控",
-        "定期檢視thesis falsification points"
+        "強化內部集中度監控",
+        "優化thesis falsification點驗證",
+        "增加AI基礎設施以外分散"
       ],
       "risk_notes": [
-        "AI估值壓縮與監管不確定性",
-        "市場資金轉向防禦",
-        "現金充裕但新買需避免追高"
+        "AI估值壓力與資金輪動風險",
+        "PCE數據前觀望Fed路徑",
+        "現金充裕但新倉集中AI鏈"
       ]
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-18 20:00",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "止蝕NVDA紀律佳但持倉過度集中AI晶片與代工，缺乏設備及ETF分散。",
-        "what_worked": [
-          "NVDA stop-loss執行降低集中風險",
-          "MU獲利了結展現紀律",
-          "AMD/TSM高 conviction thesis維持有效"
-        ],
-        "mistakes_or_risks": [
-          "晶片股持倉過度集中，違反廣泛AI鏈分散原則",
-          "未實際新增QQQ或AMZN分散風險",
-          "短期追高後回檔暴露追高風險"
-        ],
-        "next_improvements": [
-          "逐步轉向設備與基礎設施ETF",
-          "設定單一股權上限20%",
-          "強化thesis有效性定期檢視"
-        ],
-        "risk_notes": [
-          "AI晶片集中風險高",
-          "地緣緩和後資金可能轉向更廣泛板塊",
-          "VIX回落但獲利了結壓力仍存"
-        ]
-      }
-    },
     {
       "time": "2026-06-19 01:52",
       "review": {
@@ -4033,6 +4032,33 @@
           "AI估值壓縮與監管不確定性",
           "市場資金轉向防禦",
           "現金充裕但新買需避免追高"
+        ]
+      }
+    },
+    {
+      "time": "2026-06-25 19:12",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI記憶體與晶片曝險集中，分散不足且追高風險存在。",
+        "what_worked": [
+          "MU財報催化有效帶動反彈",
+          "VIX回落利高beta科技股",
+          "部分舊倉如MU獲利了結"
+        ],
+        "mistakes_or_risks": [
+          "NVDA買入增加AI晶片集中風險",
+          "VOO非純AI持倉偏離mandate",
+          "過去NVDA止損仍有損失"
+        ],
+        "next_improvements": [
+          "強化內部集中度監控",
+          "優化thesis falsification點驗證",
+          "增加AI基礎設施以外分散"
+        ],
+        "risk_notes": [
+          "AI估值壓力與資金輪動風險",
+          "PCE數據前觀望Fed路徑",
+          "現金充裕但新倉集中AI鏈"
         ]
       }
     }
