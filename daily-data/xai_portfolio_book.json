@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 681.3909912109375,
       "buy_price_confirmed": 681.3909912109375,
-      "last_reason": "持倉 thesis 仍成立，現金充裕但無新合格 strong_buy 候選"
+      "last_reason": "持倉 thesis 仍成立，現金部署門檻未達合格候選"
     },
     "MU": {
       "ticker": "MU",
@@ -62,7 +62,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "持倉 thesis 仍成立，AI記憶體催化有效"
+      "last_reason": "持倉 thesis 仍成立，AI記憶體需求延續，獲利17%未觸發出場"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 195.74000549316406,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "持倉 thesis 仍成立，AI晶片需求延續"
+      "last_reason": "持倉 thesis 仍成立，高 conviction AI龍頭，MU催化帶動需求"
     }
   },
   "closed_trades": [
@@ -3586,65 +3586,87 @@
       "unrealized_pnl": 4.77,
       "cash_after": 2444.59,
       "reason": "持倉 thesis 仍成立，AI晶片需求延續"
+    },
+    {
+      "time": "2026-06-26 17:06",
+      "action": "hold",
+      "ticker": "VOO",
+      "price": 675.71,
+      "shares": 1.467586,
+      "value": 991.66,
+      "unrealized_pnl": -8.34,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，現金部署門檻未達合格候選"
+    },
+    {
+      "time": "2026-06-26 17:06",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1213.5601,
+      "shares": 0.966473,
+      "value": 1172.87,
+      "unrealized_pnl": 172.87,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，AI記憶體需求延續，獲利17%未觸發出場"
+    },
+    {
+      "time": "2026-06-26 17:06",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 195.74,
+      "shares": 5.133207,
+      "value": 1004.77,
+      "unrealized_pnl": 4.77,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，高 conviction AI龍頭，MU催化帶動需求"
     }
   ],
-  "last_updated_at": "2026-06-26 14:09",
+  "last_updated_at": "2026-06-26 17:06",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-26 14:09",
+    "time": "2026-06-26 17:06",
     "review": {
       "strategy_health": "warning",
-      "summary": "持倉 thesis 有效但現金過多未部署，AI 板塊集中風險上升。",
+      "summary": "持倉 thesis 穩健但現金過高、集中 NVDA/MU 且缺乏新 AI 標的部署。",
       "what_worked": [
-        "MU 獲利 17% 顯示 AI 記憶體 thesis 有效",
-        "NVDA 與 VOO 持倉穩定符合分散要求",
-        "過去 trailing stop 與 better_opportunity 機制運作正常"
+        "MU 獲利17% thesis 延續有效",
+        "NVDA 高 conviction 龍頭地位穩固",
+        "VOO ETF 分散風險"
       ],
       "mistakes_or_risks": [
-        "僅 3 檔持倉過度集中 AI 晶片與記憶體",
-        "現金 2444 美元閒置未找新 high conviction 標的",
-        "錯過部分先進封裝或電力 ETF 機會"
+        "現金占比49% 利用率偏低",
+        "僅3檔持倉過度集中 AI 晶片與記憶體",
+        "無止蝕紀律更新"
       ],
       "next_improvements": [
-        "設定現金部署門檻避免過度持有",
-        "定期檢視 conviction_score 低於 75 持倉",
-        "增加 AI 基礎設施 ETF 分散風險"
+        "增加 AI 設備或基礎設施 ETF",
+        "設定 trailing stop 保護獲利",
+        "每日掃描 strong_buy 候選"
       ],
       "risk_notes": [
-        "MU 財報前觀望可能放大波動",
-        "政治風險雖有限但仍需監控美中貿易",
-        "止蝕紀律需持續執行避免追高"
-      ]
+        "NVDA/MU 雙持倉集中風險",
+        "VIX 上升反映地緣波動",
+        "VOO 非純 AI mandate 標的"
+      ],
+      "trade_frequency": "今日全 hold，交易頻率不足，錯過短線 AI 輪動機會。",
+      "win_rate_estimate": "近5筆關閉交易 3勝2敗，勝率60%",
+      "avg_hold_days": "持倉天數偏短（多數1-3週），適合高波動 AI 股。",
+      "cash_utilisation": "現金占比49%，偏高，資金閒置。",
+      "density_check": {
+        "small_wins_count": 0,
+        "missed_swings": [
+          "AI 設備股冷卻期錯過低吸",
+          "ETF 輪動機會"
+        ],
+        "overhold_risk": [
+          "MU 獲利過高未設停利",
+          "NVDA 估值疑慮"
+        ],
+        "verdict": "交易頻率低、密度不足，需提升主動部署以捕捉短線機會。"
+      }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-20 01:09",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "持倉過度集中TSM，AI mandate內風險偏高，過去交易止損與轉向紀律待強化。",
-        "what_worked": [
-          "TSM作為核心持倉表現穩健且高conviction",
-          "AMD成功獲利了結轉向更好機會",
-          "聚焦記憶體與設備等AI供應鏈主題"
-        ],
-        "mistakes_or_risks": [
-          "單一股集中風險過高",
-          "NVDA與AVGO過去止損或轉向造成虧損",
-          "追高或thesis轉變時機不佳"
-        ],
-        "next_improvements": [
-          "分散持倉至其他AI股降低集中度",
-          "強化止損與獲利了結紀律",
-          "定期檢視thesis有效性與錯過機會"
-        ],
-        "risk_notes": [
-          "AI板塊波動大需控風險",
-          "現金充裕適合下週買點準備",
-          "政治與Fed事件影響有限但仍需監控"
-        ]
-      }
-    },
     {
       "time": "2026-06-20 14:24",
       "review": {
@@ -4155,6 +4177,49 @@
           "政治風險雖有限但仍需監控美中貿易",
           "止蝕紀律需持續執行避免追高"
         ]
+      }
+    },
+    {
+      "time": "2026-06-26 17:06",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "持倉 thesis 穩健但現金過高、集中 NVDA/MU 且缺乏新 AI 標的部署。",
+        "what_worked": [
+          "MU 獲利17% thesis 延續有效",
+          "NVDA 高 conviction 龍頭地位穩固",
+          "VOO ETF 分散風險"
+        ],
+        "mistakes_or_risks": [
+          "現金占比49% 利用率偏低",
+          "僅3檔持倉過度集中 AI 晶片與記憶體",
+          "無止蝕紀律更新"
+        ],
+        "next_improvements": [
+          "增加 AI 設備或基礎設施 ETF",
+          "設定 trailing stop 保護獲利",
+          "每日掃描 strong_buy 候選"
+        ],
+        "risk_notes": [
+          "NVDA/MU 雙持倉集中風險",
+          "VIX 上升反映地緣波動",
+          "VOO 非純 AI mandate 標的"
+        ],
+        "trade_frequency": "今日全 hold，交易頻率不足，錯過短線 AI 輪動機會。",
+        "win_rate_estimate": "近5筆關閉交易 3勝2敗，勝率60%",
+        "avg_hold_days": "持倉天數偏短（多數1-3週），適合高波動 AI 股。",
+        "cash_utilisation": "現金占比49%，偏高，資金閒置。",
+        "density_check": {
+          "small_wins_count": 0,
+          "missed_swings": [
+            "AI 設備股冷卻期錯過低吸",
+            "ETF 輪動機會"
+          ],
+          "overhold_risk": [
+            "MU 獲利過高未設停利",
+            "NVDA 估值疑慮"
+          ],
+          "verdict": "交易頻率低、密度不足，需提升主動部署以捕捉短線機會。"
+        }
       }
     }
   ]

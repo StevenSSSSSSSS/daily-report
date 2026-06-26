@@ -1,15 +1,5 @@
 [
   {
-    "ticker": "AMD",
-    "name": "超微",
-    "reason": "跌穿止蝕位",
-    "removed_at": "2026-06-19T15:05:28.191115+08:00",
-    "cooldown_days": 7,
-    "first_price": 449.5899963378906,
-    "sell_price": 537.3699951171875,
-    "performance_pct": 19.52
-  },
-  {
     "ticker": "AVGO",
     "name": "Broadcom",
     "reason": "跌穿止蝕位",
