@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 681.3909912109375,
       "buy_price_confirmed": 681.3909912109375,
-      "last_reason": "持倉 thesis 仍成立，現金部署門檻未達合格候選"
+      "last_reason": "持倉 thesis 仍成立，現金過高但無新 strong_buy 或高 conviction (conv>=75 且 cat/tech>=60) 候選，市場 AI 成本疑慮與 VIX 上升風險偏好轉弱"
     },
     "MU": {
       "ticker": "MU",
@@ -62,7 +62,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "持倉 thesis 仍成立，AI記憶體需求延續，獲利17%未觸發出場"
+      "last_reason": "持倉 thesis 仍成立，獲利17% 且 AI 記憶體需求延續，財報催化待 7/10"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 195.74000549316406,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "持倉 thesis 仍成立，高 conviction AI龍頭，MU催化帶動需求"
+      "last_reason": "持倉 thesis 仍成立，Gavin Baker 肯定與 Jensen 故事支撐，微利續航"
     }
   },
   "closed_trades": [
@@ -3619,81 +3619,85 @@
       "unrealized_pnl": 4.77,
       "cash_after": 2444.59,
       "reason": "持倉 thesis 仍成立，高 conviction AI龍頭，MU催化帶動需求"
+    },
+    {
+      "time": "2026-06-26 19:20",
+      "action": "hold",
+      "ticker": "VOO",
+      "price": 675.71,
+      "shares": 1.467586,
+      "value": 991.66,
+      "unrealized_pnl": -8.34,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，現金過高但無新 strong_buy 或高 conviction (conv>=75 且 cat/tech>=60) 候選，市場 AI 成本疑慮與 VIX 上升風險偏好轉弱"
+    },
+    {
+      "time": "2026-06-26 19:20",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1213.5601,
+      "shares": 0.966473,
+      "value": 1172.87,
+      "unrealized_pnl": 172.87,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，獲利17% 且 AI 記憶體需求延續，財報催化待 7/10"
+    },
+    {
+      "time": "2026-06-26 19:20",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 195.74,
+      "shares": 5.133207,
+      "value": 1004.77,
+      "unrealized_pnl": 4.77,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，Gavin Baker 肯定與 Jensen 故事支撐，微利續航"
     }
   ],
-  "last_updated_at": "2026-06-26 17:06",
+  "last_updated_at": "2026-06-26 19:20",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-26 17:06",
+    "time": "2026-06-26 19:20",
     "review": {
       "strategy_health": "warning",
-      "summary": "持倉 thesis 穩健但現金過高、集中 NVDA/MU 且缺乏新 AI 標的部署。",
+      "summary": "持倉thesis維持但現金過高達49%，市場AI成本疑慮下未積極部署，風險分散有限。",
       "what_worked": [
-        "MU 獲利17% thesis 延續有效",
-        "NVDA 高 conviction 龍頭地位穩固",
-        "VOO ETF 分散風險"
+        "MU獲利17%表現穩健",
+        "NVDA與VOO thesis持續成立",
+        "AI記憶體與晶片持倉符合mandate"
       ],
       "mistakes_or_risks": [
-        "現金占比49% 利用率偏低",
-        "僅3檔持倉過度集中 AI 晶片與記憶體",
-        "無止蝕紀律更新"
+        "現金利用率偏低未捕捉機會",
+        "僅3檔持倉集中於AI龍頭",
+        "無新high conviction買進暴露被動風險"
       ],
       "next_improvements": [
-        "增加 AI 設備或基礎設施 ETF",
-        "設定 trailing stop 保護獲利",
-        "每日掃描 strong_buy 候選"
+        "設定現金部署門檻降低至30%",
+        "增加AI設備或ETF候選監控",
+        "強化止蝕紀律與短線觸發條件"
       ],
       "risk_notes": [
-        "NVDA/MU 雙持倉集中風險",
-        "VIX 上升反映地緣波動",
-        "VOO 非純 AI mandate 標的"
+        "VIX上升風險偏好轉弱",
+        "AI基礎設施成本疑慮可能壓抑估值",
+        "資金輪動價值股影響科技曝險"
       ],
-      "trade_frequency": "今日全 hold，交易頻率不足，錯過短線 AI 輪動機會。",
-      "win_rate_estimate": "近5筆關閉交易 3勝2敗，勝率60%",
-      "avg_hold_days": "持倉天數偏短（多數1-3週），適合高波動 AI 股。",
-      "cash_utilisation": "現金占比49%，偏高，資金閒置。",
+      "trade_frequency": "今日全hold無動作，交易頻率偏低，可能錯過底部反彈短線機會。",
+      "win_rate_estimate": "近期closed trades 3勝2敗，勝率60%",
+      "avg_hold_days": "現有持倉平均2-3天，持倉天數合理但需觀察財報催化。",
+      "cash_utilisation": "現金占比49%，偏高，資金利用不足。",
       "density_check": {
         "small_wins_count": 0,
         "missed_swings": [
-          "AI 設備股冷卻期錯過低吸",
-          "ETF 輪動機會"
+          "AI供應鏈底部反彈機會"
         ],
         "overhold_risk": [
-          "MU 獲利過高未設停利",
-          "NVDA 估值疑慮"
+          "MU獲利17%未觸發部分獲利了結"
         ],
-        "verdict": "交易頻率低、密度不足，需提升主動部署以捕捉短線機會。"
+        "verdict": "交易頻率不足且無短線捕捉，密食策略整體偏被動需提升活躍度。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-20 14:24",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "單一股TSM集中風險高，過去止損與better_opportunity交易混雜，現金閒置未有效分散AI曝險。",
-        "what_worked": [
-          "MU trailing stop獲利307%執行紀律佳",
-          "AMD與AVGO轉向better_opportunity調整靈活",
-          "TSM持續高conviction持倉符合AI foundry thesis"
-        ],
-        "mistakes_or_risks": [
-          "僅持單一股TSM，內部集中度過高",
-          "NVDA stop_loss_hit與AVGO小虧暴露追高後調整風險",
-          "現金4326高但未配置ETF或設備股，錯過反彈分散機會"
-        ],
-        "next_improvements": [
-          "設定單股上限20%以控集中風險",
-          "強化止損後快速轉向ETF配置",
-          "監控半導體設備與電力股補充watchlist"
-        ],
-        "risk_notes": [
-          "AI mandate內單一股曝險過度",
-          "政治風險緩和後反彈追高潛在回檔",
-          "VIX回落但Fed與中東事件仍需監控"
-        ]
-      }
-    },
     {
       "time": "2026-06-21 14:54",
       "review": {
@@ -4219,6 +4223,47 @@
             "NVDA 估值疑慮"
           ],
           "verdict": "交易頻率低、密度不足，需提升主動部署以捕捉短線機會。"
+        }
+      }
+    },
+    {
+      "time": "2026-06-26 19:20",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "持倉thesis維持但現金過高達49%，市場AI成本疑慮下未積極部署，風險分散有限。",
+        "what_worked": [
+          "MU獲利17%表現穩健",
+          "NVDA與VOO thesis持續成立",
+          "AI記憶體與晶片持倉符合mandate"
+        ],
+        "mistakes_or_risks": [
+          "現金利用率偏低未捕捉機會",
+          "僅3檔持倉集中於AI龍頭",
+          "無新high conviction買進暴露被動風險"
+        ],
+        "next_improvements": [
+          "設定現金部署門檻降低至30%",
+          "增加AI設備或ETF候選監控",
+          "強化止蝕紀律與短線觸發條件"
+        ],
+        "risk_notes": [
+          "VIX上升風險偏好轉弱",
+          "AI基礎設施成本疑慮可能壓抑估值",
+          "資金輪動價值股影響科技曝險"
+        ],
+        "trade_frequency": "今日全hold無動作，交易頻率偏低，可能錯過底部反彈短線機會。",
+        "win_rate_estimate": "近期closed trades 3勝2敗，勝率60%",
+        "avg_hold_days": "現有持倉平均2-3天，持倉天數合理但需觀察財報催化。",
+        "cash_utilisation": "現金占比49%，偏高，資金利用不足。",
+        "density_check": {
+          "small_wins_count": 0,
+          "missed_swings": [
+            "AI供應鏈底部反彈機會"
+          ],
+          "overhold_risk": [
+            "MU獲利17%未觸發部分獲利了結"
+          ],
+          "verdict": "交易頻率不足且無短線捕捉，密食策略整體偏被動需提升活躍度。"
         }
       }
     }
