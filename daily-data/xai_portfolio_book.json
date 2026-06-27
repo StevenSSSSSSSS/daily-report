@@ -9,7 +9,7 @@
       "avg_cost": 681.3909912109375,
       "invested": 1000.0,
       "opened_at": "2026-06-24 23:23",
-      "last_price": 673.7479858398438,
+      "last_price": 670.260009765625,
       "last_decision": "hold",
       "reason": "符合 AI ETF 分散與高 conviction 條件，strong_buy 且 scores 達標",
       "thesis": "廣泛曝險美股，AI權重高，市場風險偏好回升下適合穩健布局",
@@ -40,7 +40,7 @@
       "avg_cost": 1034.68994140625,
       "invested": 1000.0,
       "opened_at": "2026-06-24 23:23",
-      "last_price": 1213.56005859375,
+      "last_price": 1132.3299560546875,
       "last_decision": "hold",
       "reason": "高 conviction AI記憶體股，catalyst_score 高，財報前止穩訊號",
       "thesis": "AI基礎設施需求持續，記憶體股受益於資料中心資本支出",
@@ -62,7 +62,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "高 conviction AI記憶體持倉，財報催化劑即將到來，thesis 維持"
+      "last_reason": "持倉 thesis 仍成立，MU 財報前高 conviction AI 記憶體需求催化劑強勁，pnl +9.44% 續抱"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -71,7 +71,7 @@
       "avg_cost": 194.80999755859375,
       "invested": 1000.0,
       "opened_at": "2026-06-26 01:02",
-      "last_price": 195.74000549316406,
+      "last_price": 192.52999877929688,
       "last_decision": "hold",
       "reason": "高 conviction AI晶片龍頭，catalyst與technical分數達標，MU財報帶動AI記憶體需求延續至2027，市場風險偏好回升",
       "thesis": "AI基礎設施需求穩健，股東會前布局晶片供應鏈，估值壓力下仍具結構性上漲空間",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 195.74000549316406,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "AI龍頭持倉穩健，市場風險偏好回升下 thesis 仍成立"
+      "last_reason": "持倉 thesis 仍成立，AI 龍頭地位穩固，MU 財報帶動需求延續至 2027，市場風險偏好回升"
     }
   },
   "closed_trades": [
@@ -3718,83 +3718,78 @@
       "unrealized_pnl": 4.77,
       "cash_after": 2444.59,
       "reason": "AI龍頭持倉穩健，市場風險偏好回升下 thesis 仍成立"
+    },
+    {
+      "time": "2026-06-27 17:38",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1132.33,
+      "shares": 0.966473,
+      "value": 1094.37,
+      "unrealized_pnl": 94.37,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，MU 財報前高 conviction AI 記憶體需求催化劑強勁，pnl +9.44% 續抱"
+    },
+    {
+      "time": "2026-06-27 17:38",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 192.53,
+      "shares": 5.133207,
+      "value": 988.3,
+      "unrealized_pnl": -11.7,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，AI 龍頭地位穩固，MU 財報帶動需求延續至 2027，市場風險偏好回升"
     }
   ],
-  "last_updated_at": "2026-06-27 13:55",
+  "last_updated_at": "2026-06-27 17:38",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-27 13:55",
+    "time": "2026-06-27 17:38",
     "review": {
       "strategy_health": "warning",
-      "summary": "持倉集中AI晶片與記憶體，現金偏高且VOO偏離純AI mandate，需警惕集中風險。",
+      "summary": "持倉集中NVDA/MU但VOO偏離AI mandate，高現金近半降低利用率，thesis維持但風險偏高。",
       "what_worked": [
-        "MU獲利17% thesis有效",
-        "NVDA持穩風險偏好回升",
-        "近期closed trades部分獲利"
+        "MU持倉獲利9.44%且thesis強勁",
+        "聚焦AI核心股移除非核心持倉",
+        "市場風險偏好回升下NVDA穩健"
       ],
       "mistakes_or_risks": [
-        "VOO非純AI ETF過度分散",
-        "現金利用率僅51%偏低",
-        "無止蝕紀律執行"
+        "VOO為廣泛ETF非純AI鏈，集中風險",
+        "現金2444.59占比高，錯過潛在買點",
+        "無明確止蝕紀律，持倉波動大"
       ],
       "next_improvements": [
-        "聚焦ASML/NVDA pullback買點",
-        "提升交易頻率捕捉短線",
-        "移除VOO轉向AI設備股"
+        "移除VOO轉AI ETF或設備股",
+        "設定MU財報後止蝕位",
+        "增加ASML等設備股分散"
       ],
       "risk_notes": [
         "內部集中度高僅3檔",
-        "追高風險低但overhold MU",
-        "資金閒置錯過機會"
+        "追高風險低但資金閒置",
+        "thesis有效但需監測MU財報"
       ],
-      "trade_frequency": "持倉被動，週末休市未積極準備watchlist，易錯過下週反彈短線。",
-      "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
-      "avg_hold_days": "持倉天數偏長，平均逾20天未積極調整。",
-      "cash_utilisation": "現金占比49%，偏高未充分利用。",
+      "trade_frequency": "交易頻率低，週末休市無新單，潛在錯過短線反彈機會。",
+      "win_rate_estimate": "近期閉倉5筆3勝2敗，勝率60%",
+      "avg_hold_days": "平均持倉天數偏長，部分持倉已逾月需檢討。",
+      "cash_utilisation": "現金占比約49%，偏高未充分利用。",
       "density_check": {
-        "small_wins_count": 2,
+        "small_wins_count": 0,
         "missed_swings": [
-          "ASML pullback",
-          "MU earnings前加碼",
-          "NVDA RSI低點"
+          "NVDA回檔至118以下買點",
+          "ASML1615支撐買點",
+          "MU財報後潛在dip"
         ],
         "overhold_risk": [
-          "MU財報前過久",
-          "VOO thesis弱化",
-          "NVDA微利續抱"
+          "VOO持續回檔風險",
+          "NVDA小幅虧損續抱",
+          "MU財報前波動放大"
         ],
-        "verdict": "交易頻率不足，密食策略執行差，需增加watchlist活躍度。"
+        "verdict": "交易頻率不足，密食策略偏保守，需提升活躍度捕捉AI鏈短線機會。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-22 22:11",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "單一股集中風險已透過賣出TSM修正，但過去多檔AI個股交易暴露止損與機會轉換不穩。",
-        "what_worked": [
-          "TSM獲利117.98後賣出轉向ETF分散",
-          "MU trailing stop獲利307.07",
-          "AI需求thesis在市場回流下有效"
-        ],
-        "mistakes_or_risks": [
-          "AVGO與NVDA止損虧損暴露追高風險",
-          "單一股TSM長期持倉集中度過高",
-          "多次hold後才sell錯過更早分散機會"
-        ],
-        "next_improvements": [
-          "優先配置AI infra ETF降低個股風險",
-          "強化止損紀律與thesis再驗證機制",
-          "現金充裕時聚焦設備與基礎設施相關ETF"
-        ],
-        "risk_notes": [
-          "目前無持倉，集中風險已消除",
-          "地緣緩和利多AI但利率升溫需留意",
-          "避免重回單一股曝險"
-        ]
-      }
-    },
     {
       "time": "2026-06-23 02:39",
       "review": {
@@ -4367,6 +4362,51 @@
             "NVDA微利續抱"
           ],
           "verdict": "交易頻率不足，密食策略執行差，需增加watchlist活躍度。"
+        }
+      }
+    },
+    {
+      "time": "2026-06-27 17:38",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "持倉集中NVDA/MU但VOO偏離AI mandate，高現金近半降低利用率，thesis維持但風險偏高。",
+        "what_worked": [
+          "MU持倉獲利9.44%且thesis強勁",
+          "聚焦AI核心股移除非核心持倉",
+          "市場風險偏好回升下NVDA穩健"
+        ],
+        "mistakes_or_risks": [
+          "VOO為廣泛ETF非純AI鏈，集中風險",
+          "現金2444.59占比高，錯過潛在買點",
+          "無明確止蝕紀律，持倉波動大"
+        ],
+        "next_improvements": [
+          "移除VOO轉AI ETF或設備股",
+          "設定MU財報後止蝕位",
+          "增加ASML等設備股分散"
+        ],
+        "risk_notes": [
+          "內部集中度高僅3檔",
+          "追高風險低但資金閒置",
+          "thesis有效但需監測MU財報"
+        ],
+        "trade_frequency": "交易頻率低，週末休市無新單，潛在錯過短線反彈機會。",
+        "win_rate_estimate": "近期閉倉5筆3勝2敗，勝率60%",
+        "avg_hold_days": "平均持倉天數偏長，部分持倉已逾月需檢討。",
+        "cash_utilisation": "現金占比約49%，偏高未充分利用。",
+        "density_check": {
+          "small_wins_count": 0,
+          "missed_swings": [
+            "NVDA回檔至118以下買點",
+            "ASML1615支撐買點",
+            "MU財報後潛在dip"
+          ],
+          "overhold_risk": [
+            "VOO持續回檔風險",
+            "NVDA小幅虧損續抱",
+            "MU財報前波動放大"
+          ],
+          "verdict": "交易頻率不足，密食策略偏保守，需提升活躍度捕捉AI鏈短線機會。"
         }
       }
     }
