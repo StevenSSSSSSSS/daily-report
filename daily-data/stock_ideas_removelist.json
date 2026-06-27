@@ -1,15 +1,5 @@
 [
   {
-    "ticker": "AVGO",
-    "name": "Broadcom",
-    "reason": "跌穿止蝕位",
-    "removed_at": "2026-06-20T01:09:50.260803+08:00",
-    "cooldown_days": 7,
-    "first_price": 414.1400146484375,
-    "sell_price": 392.8999938964844,
-    "performance_pct": -5.13
-  },
-  {
     "ticker": "QQQ",
     "name": "Invesco QQQ Trust",
     "reason": "跌穿止蝕位",
