@@ -69,6 +69,8 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Auto-update market state files [skip ci]"
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
             echo "✅ 已成功 commit 並 push 狀態檔案"
           fi
