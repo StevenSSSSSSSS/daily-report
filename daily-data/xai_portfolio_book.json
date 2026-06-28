@@ -62,7 +62,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "高 conviction thesis 仍成立，財報催化劑即將到來"
+      "last_reason": "thesis intact, high conviction AI memory play, monitor earnings momentum next week"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 195.74000549316406,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "高 conviction AI晶片龍頭，MU帶動需求延續，thesis維持"
+      "last_reason": "thesis intact, AI leader with MU earnings tailwind, awaiting pullback entry for add"
     }
   },
   "closed_trades": [
@@ -3762,83 +3762,78 @@
       "unrealized_pnl": -11.7,
       "cash_after": 2444.59,
       "reason": "高 conviction AI晶片龍頭，MU帶動需求延續，thesis維持"
+    },
+    {
+      "time": "2026-06-28 14:22",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1132.33,
+      "shares": 0.966473,
+      "value": 1094.37,
+      "unrealized_pnl": 94.37,
+      "cash_after": 2444.59,
+      "reason": "thesis intact, high conviction AI memory play, monitor earnings momentum next week"
+    },
+    {
+      "time": "2026-06-28 14:22",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 192.53,
+      "shares": 5.133207,
+      "value": 988.3,
+      "unrealized_pnl": -11.7,
+      "cash_after": 2444.59,
+      "reason": "thesis intact, AI leader with MU earnings tailwind, awaiting pullback entry for add"
     }
   ],
-  "last_updated_at": "2026-06-27 18:02",
+  "last_updated_at": "2026-06-28 14:22",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-27 18:02",
+    "time": "2026-06-28 14:22",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI mandate 持倉集中 MU/NVDA 但 VOO 偏離核心，現金過高且交易頻率低。",
+      "summary": "AI mandate聚焦清晰但現金過高、持倉過度集中NVDA/MU，交易頻率偏低錯過短線反彈。",
       "what_worked": [
-        "MU 高 conviction thesis 維持正報酬",
-        "近期 closed trades 部分獲利了結紀律",
-        "watchlist 準備回檔布局"
+        "MU高conviction持倉獲利9.44% thesis intact",
+        "風險偏好回穩下AI龍頭定位穩固",
+        "冷卻設備股避免過度曝險"
       ],
       "mistakes_or_risks": [
-        "VOO 屬廣泛 ETF 偏離 AI 產業鏈 mandate",
-        "現金占比近半利用率低",
-        "無明確止蝕執行紀錄"
+        "現金占比49%資金利用率低",
+        "僅3檔持倉集中風險高",
+        "VOO非純AI ETF偏離mandate"
       ],
       "next_improvements": [
-        "移除非 AI 核心持倉如 VOO",
-        "提升資金利用率至 70% 以上",
-        "強化短線 pullback 觸發機制"
+        "設定現金上限30%以提升利用率",
+        "增加ASML/AVGO等設備/晶片分散",
+        "強化pullback買點執行紀律"
       ],
       "risk_notes": [
-        "AI 供應鏈集中風險高",
-        "PCE 通脹與 Fed 鷹派壓抑風險偏好",
-        "MU/NVDA 雙持倉過度集中"
+        "MU財報前需監控止蝕",
+        "NVDA awaiting pullback但可能錯過反彈",
+        "無明顯追高但止蝕紀律待強化"
       ],
-      "trade_frequency": "持倉多為 hold，交易不活躍，易錯過短線反彈機會。",
-      "win_rate_estimate": "近5筆 closed trades 3勝2敗，勝率60%",
-      "avg_hold_days": "持倉天數偏長，部分 closed trades 達20-30天，需檢討。",
-      "cash_utilisation": "現金占比約49%，明顯偏高，資金閒置。",
+      "trade_frequency": "持倉多為hold，交易頻率不足，週末watchlist未積極捕捉短線機會。",
+      "win_rate_estimate": "近期closed trades 3勝2敗，勝率60%",
+      "avg_hold_days": "持倉天數偏長（部分逾月），適合長期thesis但錯過短線波動。",
+      "cash_utilisation": "現金占比49%，偏高，資金閒置影響回報。",
       "density_check": {
         "small_wins_count": 2,
         "missed_swings": [
-          "MU 財報後短期波動",
-          "NVDA 技術反彈",
-          "ASML 設備股輪動"
+          "NVDA pullback未及時加碼",
+          "ASML買點條件未觸發錯過反彈",
+          "設備股冷卻後反彈機會"
         ],
         "overhold_risk": [
-          "MU 獲利了結風險",
-          "NVDA 估值消化",
-          "VOO 拖累表現"
+          "MU財報前持倉過久波動風險",
+          "NVDA小虧續抱可能擴大",
+          "VOO已賣但原持倉偏離AI mandate"
         ],
-        "verdict": "交易頻率不足，密食策略弱，需增加短線布局。"
+        "verdict": "交易頻率與密度不足，需提升watchlist執行力與分散度。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-23 14:05",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "全現金持倉偏離AI產業鏈授權，過去頻繁better_opportunity交易暴露缺乏紀律與集中風險。",
-        "what_worked": [
-          "TSM持倉獲利117.98美元後賣出鎖定收益",
-          "MU trailing stop成功獲利307美元",
-          "多次及時止損避免更大虧損"
-        ],
-        "mistakes_or_risks": [
-          "持倉過度集中單一股TSM，違反分散原則",
-          "無AI ETF或基礎設施曝險，錯過市場建議方向",
-          "現金過高且無持倉，thesis有效性存疑"
-        ],
-        "next_improvements": [
-          "設定AI ETF最低曝險比例",
-          "強化止蝕與再平衡紀律",
-          "檢討better_opportunity觸發條件避免過度交易"
-        ],
-        "risk_notes": [
-          "地緣風險推升VIX，AI股賣壓持續",
-          "無持倉暴露錯過反彈機會風險",
-          "現金配置過高降低策略主動性"
-        ]
-      }
-    },
     {
       "time": "2026-06-23 19:36",
       "review": {
@@ -4447,6 +4442,51 @@
             "VOO 拖累表現"
           ],
           "verdict": "交易頻率不足，密食策略弱，需增加短線布局。"
+        }
+      }
+    },
+    {
+      "time": "2026-06-28 14:22",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI mandate聚焦清晰但現金過高、持倉過度集中NVDA/MU，交易頻率偏低錯過短線反彈。",
+        "what_worked": [
+          "MU高conviction持倉獲利9.44% thesis intact",
+          "風險偏好回穩下AI龍頭定位穩固",
+          "冷卻設備股避免過度曝險"
+        ],
+        "mistakes_or_risks": [
+          "現金占比49%資金利用率低",
+          "僅3檔持倉集中風險高",
+          "VOO非純AI ETF偏離mandate"
+        ],
+        "next_improvements": [
+          "設定現金上限30%以提升利用率",
+          "增加ASML/AVGO等設備/晶片分散",
+          "強化pullback買點執行紀律"
+        ],
+        "risk_notes": [
+          "MU財報前需監控止蝕",
+          "NVDA awaiting pullback但可能錯過反彈",
+          "無明顯追高但止蝕紀律待強化"
+        ],
+        "trade_frequency": "持倉多為hold，交易頻率不足，週末watchlist未積極捕捉短線機會。",
+        "win_rate_estimate": "近期closed trades 3勝2敗，勝率60%",
+        "avg_hold_days": "持倉天數偏長（部分逾月），適合長期thesis但錯過短線波動。",
+        "cash_utilisation": "現金占比49%，偏高，資金閒置影響回報。",
+        "density_check": {
+          "small_wins_count": 2,
+          "missed_swings": [
+            "NVDA pullback未及時加碼",
+            "ASML買點條件未觸發錯過反彈",
+            "設備股冷卻後反彈機會"
+          ],
+          "overhold_risk": [
+            "MU財報前持倉過久波動風險",
+            "NVDA小虧續抱可能擴大",
+            "VOO已賣但原持倉偏離AI mandate"
+          ],
+          "verdict": "交易頻率與密度不足，需提升watchlist執行力與分散度。"
         }
       }
     }
