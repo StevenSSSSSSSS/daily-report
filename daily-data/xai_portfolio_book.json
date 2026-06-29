@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 681.3909912109375,
       "buy_price_confirmed": 681.3909912109375,
-      "last_reason": "持倉 thesis 仍成立，但已列入冷卻名單，等待下週觀察反彈"
+      "last_reason": "非美股交易時段，原建議 sell 未執行：better_opportunity"
     },
     "MU": {
       "ticker": "MU",
@@ -62,7 +62,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "thesis intact, high conviction AI memory play, monitor earnings momentum next week"
+      "last_reason": "持倉 thesis 仍成立，財報後需求延續至2027，獲利9.44%續強"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 195.74000549316406,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "thesis intact, AI leader with MU earnings tailwind, awaiting pullback entry for add"
+      "last_reason": "持倉 thesis 仍成立，高 conviction AI晶片龍頭，等待pullback加碼訊號"
     }
   },
   "closed_trades": [
@@ -3784,83 +3784,150 @@
       "unrealized_pnl": -11.7,
       "cash_after": 2444.59,
       "reason": "thesis intact, AI leader with MU earnings tailwind, awaiting pullback entry for add"
+    },
+    {
+      "time": "2026-06-29 14:45",
+      "action": "hold",
+      "ticker": "VOO",
+      "price": 670.26,
+      "shares": 1.467586,
+      "value": 983.66,
+      "unrealized_pnl": -16.34,
+      "cash_after": 2444.59,
+      "reason": "非美股交易時段，原建議 sell 未執行：better_opportunity"
+    },
+    {
+      "time": "2026-06-29 14:45",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1132.33,
+      "shares": 0.966473,
+      "value": 1094.37,
+      "unrealized_pnl": 94.37,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，財報後需求延續至2027，獲利9.44%續強"
+    },
+    {
+      "time": "2026-06-29 14:45",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 192.53,
+      "shares": 5.133207,
+      "value": 988.3,
+      "unrealized_pnl": -11.7,
+      "cash_after": 2444.59,
+      "reason": "持倉 thesis 仍成立，高 conviction AI晶片龍頭，等待pullback加碼訊號"
     }
   ],
-  "last_updated_at": "2026-06-28 14:22",
-  "pending_orders": [],
+  "last_updated_at": "2026-06-29 14:45",
+  "pending_orders": [
+    {
+      "action": "sell",
+      "ticker": "VOO",
+      "exit_plan": "full",
+      "reason": "better_opportunity",
+      "created_at": "2026-06-29 14:45",
+      "source": "ai",
+      "original_order": {
+        "action": "sell",
+        "ticker": "VOO",
+        "exit_plan": "full",
+        "reason": "better_opportunity"
+      }
+    },
+    {
+      "action": "buy",
+      "ticker": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "trade_type": "swing",
+      "reason": "符合 AI ETF 分散與高 conviction 條件，現金高位優先建立 starter position",
+      "allocation_usd": 600,
+      "entry_plan": "full",
+      "stop": "476.00",
+      "target": "918.48",
+      "trailing_stop": "獲利超過4%後，最高價回調1.5%止賺",
+      "thesis": "Nasdaq反彈領漲，AI板塊資金流入穩定，Grok進展利多基礎設施需求",
+      "evidence": [
+        "Elon確認Grok 2T優化",
+        "Nasdaq上週五資金流入AI ETF",
+        "VIX回落風險偏好回升"
+      ],
+      "falsification_points": [
+        "大盤持續震盪跌破支撐",
+        "AI支出疑慮發酵導致半導體股回落"
+      ],
+      "review_trigger": "持倉超過5個交易日未達target或新催化劑出現",
+      "created_at": "2026-06-29 14:45",
+      "source": "ai",
+      "original_order": {
+        "action": "buy",
+        "ticker": "QQQ",
+        "name": "Invesco QQQ Trust",
+        "trade_type": "swing",
+        "reason": "符合 AI ETF 分散與高 conviction 條件，現金高位優先建立 starter position",
+        "allocation_usd": 600,
+        "entry_plan": "full",
+        "stop": "476.00",
+        "target": "918.48",
+        "trailing_stop": "獲利超過4%後，最高價回調1.5%止賺",
+        "thesis": "Nasdaq反彈領漲，AI板塊資金流入穩定，Grok進展利多基礎設施需求",
+        "evidence": [
+          "Elon確認Grok 2T優化",
+          "Nasdaq上週五資金流入AI ETF",
+          "VIX回落風險偏好回升"
+        ],
+        "falsification_points": [
+          "大盤持續震盪跌破支撐",
+          "AI支出疑慮發酵導致半導體股回落"
+        ],
+        "review_trigger": "持倉超過5個交易日未達target或新催化劑出現"
+      }
+    }
+  ],
   "latest_review": {
-    "time": "2026-06-28 14:22",
+    "time": "2026-06-29 14:45",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI mandate聚焦清晰但現金過高、持倉過度集中NVDA/MU，交易頻率偏低錯過短線反彈。",
+      "summary": "轉向QQQ提升AI曝險但現金過高、VOO偏離mandate，集中風險可控。",
       "what_worked": [
-        "MU高conviction持倉獲利9.44% thesis intact",
-        "風險偏好回穩下AI龍頭定位穩固",
-        "冷卻設備股避免過度曝險"
+        "MU獲利9.44%續強",
+        "Grok催化劑支撐thesis",
+        "風險偏好回升利多AI ETF"
       ],
       "mistakes_or_risks": [
-        "現金占比49%資金利用率低",
-        "僅3檔持倉集中風險高",
-        "VOO非純AI ETF偏離mandate"
+        "VOO非AI核心持倉",
+        "現金利用率偏低",
+        "交易頻率不足"
       ],
       "next_improvements": [
-        "設定現金上限30%以提升利用率",
-        "增加ASML/AVGO等設備/晶片分散",
-        "強化pullback買點執行紀律"
+        "加速執行QQQ買入",
+        "設定AI ETF最低配置比例",
+        "監控MU止盈點"
       ],
       "risk_notes": [
-        "MU財報前需監控止蝕",
-        "NVDA awaiting pullback但可能錯過反彈",
-        "無明顯追高但止蝕紀律待強化"
+        "AI板塊波動加劇",
+        "NVDA/MU雙持集中",
+        "高現金拖累回報"
       ],
-      "trade_frequency": "持倉多為hold，交易頻率不足，週末watchlist未積極捕捉短線機會。",
-      "win_rate_estimate": "近期closed trades 3勝2敗，勝率60%",
-      "avg_hold_days": "持倉天數偏長（部分逾月），適合長期thesis但錯過短線波動。",
-      "cash_utilisation": "現金占比49%，偏高，資金閒置影響回報。",
+      "trade_frequency": "持倉天數短但近期無新交易，建議增加swing頻率捕捉Grok反彈。",
+      "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
+      "avg_hold_days": "平均持倉約5-10天，適合swing但需更積極。",
+      "cash_utilisation": "現金占比49%，偏高，應優先部署AI相關。",
       "density_check": {
         "small_wins_count": 2,
         "missed_swings": [
-          "NVDA pullback未及時加碼",
-          "ASML買點條件未觸發錯過反彈",
-          "設備股冷卻後反彈機會"
+          "未及時加碼設備股",
+          "錯過記憶體短線反彈"
         ],
         "overhold_risk": [
-          "MU財報前持倉過久波動風險",
-          "NVDA小虧續抱可能擴大",
-          "VOO已賣但原持倉偏離AI mandate"
+          "NVDA小幅虧損續持",
+          "VOO未及時出清"
         ],
-        "verdict": "交易頻率與密度不足，需提升watchlist執行力與分散度。"
+        "verdict": "交易頻率不足，需增加短線操作密度以提升資金利用。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-23 19:36",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "全現金持倉但AI mandate下錯失電力基礎設施機會，止損與再配置紀律待強化。",
-        "what_worked": [
-          "TSM獲利117.98實現正報酬",
-          "MU trailing stop獲利307.07展現紀律",
-          "多次better_opportunity賣出避免更大回檔"
-        ],
-        "mistakes_or_risks": [
-          "持倉過度集中單一股TSM後全數賣出",
-          "AI股賣壓下未及時轉向電力ETF",
-          "近期closed trades有NVDA與AVGO虧損暴露選股風險"
-        ],
-        "next_improvements": [
-          "逐步布局AI電力與設備ETF",
-          "設定明確再入場支撐位",
-          "增加ETF分散以符合mandate"
-        ],
-        "risk_notes": [
-          "VIX急升反映波動加劇",
-          "Nasdaq領跌AI股獲利了結壓力大",
-          "現金充裕但需避免長期空倉錯失驅動"
-        ]
-      }
-    },
     {
       "time": "2026-06-24 01:09",
       "review": {
@@ -4487,6 +4554,49 @@
             "VOO已賣但原持倉偏離AI mandate"
           ],
           "verdict": "交易頻率與密度不足，需提升watchlist執行力與分散度。"
+        }
+      }
+    },
+    {
+      "time": "2026-06-29 14:45",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "轉向QQQ提升AI曝險但現金過高、VOO偏離mandate，集中風險可控。",
+        "what_worked": [
+          "MU獲利9.44%續強",
+          "Grok催化劑支撐thesis",
+          "風險偏好回升利多AI ETF"
+        ],
+        "mistakes_or_risks": [
+          "VOO非AI核心持倉",
+          "現金利用率偏低",
+          "交易頻率不足"
+        ],
+        "next_improvements": [
+          "加速執行QQQ買入",
+          "設定AI ETF最低配置比例",
+          "監控MU止盈點"
+        ],
+        "risk_notes": [
+          "AI板塊波動加劇",
+          "NVDA/MU雙持集中",
+          "高現金拖累回報"
+        ],
+        "trade_frequency": "持倉天數短但近期無新交易，建議增加swing頻率捕捉Grok反彈。",
+        "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
+        "avg_hold_days": "平均持倉約5-10天，適合swing但需更積極。",
+        "cash_utilisation": "現金占比49%，偏高，應優先部署AI相關。",
+        "density_check": {
+          "small_wins_count": 2,
+          "missed_swings": [
+            "未及時加碼設備股",
+            "錯過記憶體短線反彈"
+          ],
+          "overhold_risk": [
+            "NVDA小幅虧損續持",
+            "VOO未及時出清"
+          ],
+          "verdict": "交易頻率不足，需增加短線操作密度以提升資金利用。"
         }
       }
     }

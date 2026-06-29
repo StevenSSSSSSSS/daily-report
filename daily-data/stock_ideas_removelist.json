@@ -1,25 +1,5 @@
 [
   {
-    "ticker": "KLAC",
-    "name": "KLA",
-    "reason": "跌穿止蝕位",
-    "removed_at": "2026-06-21T14:54:14.696039+08:00",
-    "cooldown_days": 7,
-    "first_price": 241.16400146484375,
-    "sell_price": 259.55999755859375,
-    "performance_pct": 7.63
-  },
-  {
-    "ticker": "LRCX",
-    "name": "Lam Research",
-    "reason": "跌穿止蝕位",
-    "removed_at": "2026-06-21T14:54:14.696039+08:00",
-    "cooldown_days": 7,
-    "first_price": 389.0400085449219,
-    "sell_price": 389.0400085449219,
-    "performance_pct": 0.0
-  },
-  {
     "ticker": "TSM",
     "name": "台積電",
     "reason": "跌穿止蝕位",
