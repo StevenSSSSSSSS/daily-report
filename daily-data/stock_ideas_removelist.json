@@ -1,15 +1,5 @@
 [
   {
-    "ticker": "MSFT",
-    "name": "Microsoft",
-    "reason": "跌穿止蝕位",
-    "removed_at": "2026-06-23T02:39:21.007759+08:00",
-    "cooldown_days": 7,
-    "first_price": 370.2799987792969,
-    "sell_price": 370.2799987792969,
-    "performance_pct": 0.0
-  },
-  {
     "ticker": "SPY",
     "name": "SPDR S&P 500 ETF",
     "reason": "跌穿止蝕位",
