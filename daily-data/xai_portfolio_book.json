@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "高 conviction AI記憶體持倉，財報前止穩訊號仍有效，pnl +10.69% 續抱"
+      "last_reason": "高 conviction AI記憶體持倉 thesis 仍成立，財報催化劑即將到來，pnl 10.69% 維持"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -63,7 +63,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 195.74000549316406,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "AI晶片龍頭 strong_buy 持倉，FSD與資料中心需求延續，thesis 成立"
+      "last_reason": "AI晶片龍頭持倉 thesis 有效，地緣緩和與風險偏好回升支撐，無新催化劑但未達出場條件"
     },
     "QQQ": {
       "ticker": "QQQ",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 724.0800170898438,
       "buy_price_confirmed": 722.2999877929688,
-      "last_reason": "AI ETF 分散持倉，現金高位已建 starter，市場風險偏好回升中續抱"
+      "last_reason": "AI ETF 分散持倉 thesis 成立，Nasdaq 反彈延續，現金高位已建 starter position"
     }
   },
   "closed_trades": [
@@ -3940,83 +3940,89 @@
       "unrealized_pnl": 1.48,
       "cash_after": 2842.42,
       "reason": "AI ETF 分散持倉，現金高位已建 starter，市場風險偏好回升中續抱"
+    },
+    {
+      "time": "2026-06-30 19:25",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1145.28,
+      "shares": 0.966473,
+      "value": 1106.88,
+      "unrealized_pnl": 106.88,
+      "cash_after": 2842.42,
+      "reason": "高 conviction AI記憶體持倉 thesis 仍成立，財報催化劑即將到來，pnl 10.69% 維持"
+    },
+    {
+      "time": "2026-06-30 19:25",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 194.97,
+      "shares": 5.133207,
+      "value": 1000.82,
+      "unrealized_pnl": 0.82,
+      "cash_after": 2842.42,
+      "reason": "AI晶片龍頭持倉 thesis 有效，地緣緩和與風險偏好回升支撐，無新催化劑但未達出場條件"
+    },
+    {
+      "time": "2026-06-30 19:25",
+      "action": "hold",
+      "ticker": "QQQ",
+      "price": 724.08,
+      "shares": 0.83068,
+      "value": 601.48,
+      "unrealized_pnl": 1.48,
+      "cash_after": 2842.42,
+      "reason": "AI ETF 分散持倉 thesis 成立，Nasdaq 反彈延續，現金高位已建 starter position"
     }
   ],
-  "last_updated_at": "2026-06-30 14:10",
+  "last_updated_at": "2026-06-30 19:25",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-06-30 14:10",
+    "time": "2026-06-30 19:25",
     "review": {
       "strategy_health": "warning",
-      "summary": "持倉集中AI晶片與記憶體，現金過高導致資金利用率低，交易頻率不足。",
+      "summary": "持倉集中AI產業鏈但現金占比過高、交易頻率偏低，thesis維持但錯過反彈布局機會。",
       "what_worked": [
-        "MU與NVDA thesis有效，獲利續抱",
-        "QQQ ETF分散風險偏好回升",
-        "近期closed trades勝率60%"
+        "MU高conviction持倉獲利10.69%且thesis有效",
+        "QQQ ETF分散風險符合mandate",
+        "近期closed trades勝率60%止損紀律尚可"
       ],
       "mistakes_or_risks": [
-        "現金占比57%偏高，錯過短線機會",
-        "僅3檔持倉，內部集中度偏高",
-        "交易頻率低，無新進場"
+        "現金57%利用率偏低",
+        "僅3檔持倉未達max 5，集中風險未分散",
+        "無新買進錯過AVGO/AMD短線機會"
       ],
       "next_improvements": [
-        "降低現金至30%以下",
-        "增加AI鏈相關ETF或設備股分散",
-        "設定更積極止蝕與review trigger"
+        "提高資金利用率至70%以上",
+        "監控watch triggers積極布局",
+        "設定更嚴格持倉上限避免過度集中"
       ],
       "risk_notes": [
-        "SMCI監管風險傳導AI供應鏈",
-        "高現金暴露追高風險",
-        "thesis有效但需監控財報催化劑"
+        "AI記憶體與晶片雙持倉集中度偏高",
+        "地緣緩和後風險偏好回升但未積極加碼",
+        "VIX回落但止蝕紀律需持續監控"
       ],
-      "trade_frequency": "交易不夠活躍，近期僅換倉VOO至QQQ，錯過多檔AI短線反彈機會。",
+      "trade_frequency": "今日零交易，頻率不足，錯過Nasdaq反彈短線布局機會。",
       "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
-      "avg_hold_days": "近期持倉平均5-7天，偏短但合理；舊倉曾持逾20天。",
-      "cash_utilisation": "現金占比57%，偏高，資金利用率不足。",
+      "avg_hold_days": "平均持倉約5-10天，近期持倉偏短合理但需視catalyst調整。",
+      "cash_utilisation": "現金占比57%，偏高未積極部署AI設備股。",
       "density_check": {
-        "small_wins_count": 0,
+        "small_wins_count": 2,
         "missed_swings": [
-          "AI基礎設施ETF反彈",
-          "記憶體板塊資金流入",
-          "Tesla FSD利多帶動NVDA相關"
+          "AVGO強勢買進觸發",
+          "AMD反彈布局",
+          "AI設備股短線機會"
         ],
         "overhold_risk": [
-          "MU財報前過度集中",
-          "NVDA無新催化劑續抱",
-          "QQQ ETF持倉過久"
+          "MU財報前續抱風險",
+          "NVDA無新催化劑持倉過久",
+          "QQQ starter未加碼"
         ],
-        "verdict": "交易頻率與密度不足，現金高位錯失短線機會，整體策略偏保守。"
+        "verdict": "交易頻率低、密度不足，錯過反彈短線機會，整體策略偏保守。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-24 23:23",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "AI mandate下VOO過度分散且持倉集中單一記憶體股，追高與止蝕紀律待強化。",
-        "what_worked": [
-          "TSM等持倉獲利了結轉向更好機會",
-          "MU trailing stop曾成功執行",
-          "市場風險偏好回升時聚焦ETF"
-        ],
-        "mistakes_or_risks": [
-          "VOO非純AI ETF稀釋mandate聚焦",
-          "新倉僅2檔集中風險高",
-          "近期多次better_opportunity賣出暴露選股不穩"
-        ],
-        "next_improvements": [
-          "限制寬基ETF權重上限",
-          "強化thesis falsification監測",
-          "增加先進封裝或設備股分散"
-        ],
-        "risk_notes": [
-          "現金充裕但AI供應鏈曝險不足",
-          "MU財報前止穩訊號需驗證",
-          "VIX回落後追高風險上升"
-        ]
-      }
-    },
     {
       "time": "2026-06-24 23:47",
       "review": {
@@ -4711,6 +4717,51 @@
             "QQQ ETF持倉過久"
           ],
           "verdict": "交易頻率與密度不足，現金高位錯失短線機會，整體策略偏保守。"
+        }
+      }
+    },
+    {
+      "time": "2026-06-30 19:25",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "持倉集中AI產業鏈但現金占比過高、交易頻率偏低，thesis維持但錯過反彈布局機會。",
+        "what_worked": [
+          "MU高conviction持倉獲利10.69%且thesis有效",
+          "QQQ ETF分散風險符合mandate",
+          "近期closed trades勝率60%止損紀律尚可"
+        ],
+        "mistakes_or_risks": [
+          "現金57%利用率偏低",
+          "僅3檔持倉未達max 5，集中風險未分散",
+          "無新買進錯過AVGO/AMD短線機會"
+        ],
+        "next_improvements": [
+          "提高資金利用率至70%以上",
+          "監控watch triggers積極布局",
+          "設定更嚴格持倉上限避免過度集中"
+        ],
+        "risk_notes": [
+          "AI記憶體與晶片雙持倉集中度偏高",
+          "地緣緩和後風險偏好回升但未積極加碼",
+          "VIX回落但止蝕紀律需持續監控"
+        ],
+        "trade_frequency": "今日零交易，頻率不足，錯過Nasdaq反彈短線布局機會。",
+        "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
+        "avg_hold_days": "平均持倉約5-10天，近期持倉偏短合理但需視catalyst調整。",
+        "cash_utilisation": "現金占比57%，偏高未積極部署AI設備股。",
+        "density_check": {
+          "small_wins_count": 2,
+          "missed_swings": [
+            "AVGO強勢買進觸發",
+            "AMD反彈布局",
+            "AI設備股短線機會"
+          ],
+          "overhold_risk": [
+            "MU財報前續抱風險",
+            "NVDA無新催化劑持倉過久",
+            "QQQ starter未加碼"
+          ],
+          "verdict": "交易頻率低、密度不足，錯過反彈短線機會，整體策略偏保守。"
         }
       }
     }
