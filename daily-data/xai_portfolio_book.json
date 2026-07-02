@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "持倉 thesis 仍成立，AI記憶體需求高，等待催化劑"
+      "last_reason": "持倉 thesis 仍成立，AI記憶體需求穩健但短期輪動觀察就業數據"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -63,7 +63,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 200.08999633789062,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "持倉 thesis 仍成立，AI龍頭地位穩固，市場風險偏好回升"
+      "last_reason": "持倉 thesis 仍成立，AI龍頭地位穩固，META消息短期衝擊但長期需求不變"
     },
     "QQQ": {
       "ticker": "QQQ",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 736.4000244140625,
       "buy_price_confirmed": 722.2999877929688,
-      "last_reason": "持倉 thesis 仍成立，AI ETF 分散曝險，適合續抱"
+      "last_reason": "持倉 thesis 仍成立，分散AI曝險適合現金高位 starter"
     },
     "AMD": {
       "ticker": "AMD",
@@ -125,7 +125,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 550.760009765625,
       "buy_price_confirmed": 550.760009765625,
-      "last_reason": "持倉 thesis 仍成立，MI450 訂單與 AI 動能對齊"
+      "last_reason": "持倉 thesis 仍成立，MI450訂單與AI動能對齊，短期反彈機會"
     }
   },
   "closed_trades": [
@@ -4202,9 +4202,53 @@
       "unrealized_pnl": -8.97,
       "cash_after": 2342.42,
       "reason": "持倉 thesis 仍成立，MI450 訂單與 AI 動能對齊"
+    },
+    {
+      "time": "2026-07-02 19:04",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 1032.28,
+      "shares": 0.966473,
+      "value": 997.67,
+      "unrealized_pnl": -2.33,
+      "cash_after": 2342.42,
+      "reason": "持倉 thesis 仍成立，AI記憶體需求穩健但短期輪動觀察就業數據"
+    },
+    {
+      "time": "2026-07-02 19:04",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 197.58,
+      "shares": 5.133207,
+      "value": 1014.22,
+      "unrealized_pnl": 14.22,
+      "cash_after": 2342.42,
+      "reason": "持倉 thesis 仍成立，AI龍頭地位穩固，META消息短期衝擊但長期需求不變"
+    },
+    {
+      "time": "2026-07-02 19:04",
+      "action": "hold",
+      "ticker": "QQQ",
+      "price": 725.17,
+      "shares": 0.83068,
+      "value": 602.38,
+      "unrealized_pnl": 2.38,
+      "cash_after": 2342.42,
+      "reason": "持倉 thesis 仍成立，分散AI曝險適合現金高位 starter"
+    },
+    {
+      "time": "2026-07-02 19:04",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 540.88,
+      "shares": 0.907836,
+      "value": 491.03,
+      "unrealized_pnl": -8.97,
+      "cash_after": 2342.42,
+      "reason": "持倉 thesis 仍成立，MI450訂單與AI動能對齊，短期反彈機會"
     }
   ],
-  "last_updated_at": "2026-07-02 13:58",
+  "last_updated_at": "2026-07-02 19:04",
   "pending_orders": [
     {
       "action": "buy",
@@ -4256,76 +4300,49 @@
     }
   ],
   "latest_review": {
-    "time": "2026-07-02 13:58",
+    "time": "2026-07-02 19:04",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI晶片鏈持倉集中度高，現金利用率偏低，適合逢低加碼但需控風險。",
+      "summary": "AI硬體持倉集中度高、現金偏多，META消息引發輪動風險未積極調整。",
       "what_worked": [
-        "NVDA與QQQ小幅正報酬，thesis維持有效",
-        "QQQ ETF分散曝險降低單股波動",
-        "近期closed trades勝率60%顯示選股能力"
+        "持倉thesis維持一致，NVDA小幅獲利",
+        "QQQ ETF分散曝險符合mandate",
+        "近期closed trades勝率60%"
       ],
       "mistakes_or_risks": [
-        "持倉過度集中於NVDA/MU/AMD等AI晶片股",
-        "現金占比47%偏高，錯過部分布局機會",
-        "AMD/MU小幅回落未觸發止蝕，追高風險浮現"
+        "半導體持倉過度集中MU/NVDA/AMD，易受CapEx疑慮衝擊",
+        "現金47%偏高，未於回檔加碼",
+        "今日無交易，錯過輪動短線機會"
       ],
       "next_improvements": [
-        "增加設備或基礎設施股分散風險",
-        "設定更嚴格止蝕紀律",
-        "下週NFP前檢視持倉"
+        "增加設備/基礎設施分散",
+        "設定明確止蝕紀律應對就業數據",
+        "降低現金至30%以下"
       ],
       "risk_notes": [
-        "半導體權重過高易受獲利了結影響",
-        "AI capex疑慮可能壓縮估值",
-        "VIX低檔但輪動風險仍存"
+        "AI硬體輪動加劇，META雲端消息放大CapEx疑慮",
+        "地緣與Fed言論增加不確定性",
+        "非農數據前持倉需觀察"
       ],
-      "trade_frequency": "交易頻率適中，近期買入AVGO與AMD但未積極捕捉短線回落機會。",
+      "trade_frequency": "交易頻率偏低，今日全hold未捕捉半導體輪動短線機會。",
       "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
-      "avg_hold_days": "持倉天數偏短（多數1-2週），適合高波動AI股但需注意過度交易。",
-      "cash_utilisation": "現金占比47%，偏高，應優先建立AVGO starter position。",
+      "avg_hold_days": "持倉天數合理，部分short-term closed trades表現佳。",
+      "cash_utilisation": "現金占比47%，偏高，適合逢低加碼但未執行。",
       "density_check": {
-        "small_wins_count": 2,
+        "small_wins_count": 0,
         "missed_swings": [
-          "MU跌破118未加碼",
-          "半導體回落時未逢低布局設備股"
+          "半導體回檔未加碼核心晶片股",
+          "軟體雲端相對強勢未轉持"
         ],
         "overhold_risk": [
-          "AMD持倉過久可能擴大虧損",
-          "MU等待催化劑風險延長"
+          "MU/NVDA持倉過久面對CapEx疑慮",
+          "AMD短期反彈未設定止蝕"
         ],
-        "verdict": "交易頻率合理但密食策略不足，需提升短線捕捉能力。"
+        "verdict": "交易頻率不足、密食策略弱，集中風險高需分散。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-26 01:02",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "AI供應鏈持倉集中於MU與NVDA，MU催化有效但分散不足。",
-        "what_worked": [
-          "MU財報超預期催化記憶體需求",
-          "NVDA高conviction入場符合AI晶片龍頭定位",
-          "VOO維持ETF分散角色"
-        ],
-        "mistakes_or_risks": [
-          "AI晶片與記憶體過度集中風險",
-          "追高NVDA後止損位較寬",
-          "錯過半導體設備或先進封裝機會"
-        ],
-        "next_improvements": [
-          "增加AI設備或封裝相關標的分散",
-          "強化止損紀律執行",
-          "定期檢視thesis falsification點"
-        ],
-        "risk_notes": [
-          "NVDA與MU相關性高易放大波動",
-          "現金充足但持倉僅3檔",
-          "VIX回升可能衝擊高beta AI股"
-        ]
-      }
-    },
     {
       "time": "2026-06-26 13:46",
       "review": {
@@ -5115,6 +5132,49 @@
             "MU等待催化劑風險延長"
           ],
           "verdict": "交易頻率合理但密食策略不足，需提升短線捕捉能力。"
+        }
+      }
+    },
+    {
+      "time": "2026-07-02 19:04",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI硬體持倉集中度高、現金偏多，META消息引發輪動風險未積極調整。",
+        "what_worked": [
+          "持倉thesis維持一致，NVDA小幅獲利",
+          "QQQ ETF分散曝險符合mandate",
+          "近期closed trades勝率60%"
+        ],
+        "mistakes_or_risks": [
+          "半導體持倉過度集中MU/NVDA/AMD，易受CapEx疑慮衝擊",
+          "現金47%偏高，未於回檔加碼",
+          "今日無交易，錯過輪動短線機會"
+        ],
+        "next_improvements": [
+          "增加設備/基礎設施分散",
+          "設定明確止蝕紀律應對就業數據",
+          "降低現金至30%以下"
+        ],
+        "risk_notes": [
+          "AI硬體輪動加劇，META雲端消息放大CapEx疑慮",
+          "地緣與Fed言論增加不確定性",
+          "非農數據前持倉需觀察"
+        ],
+        "trade_frequency": "交易頻率偏低，今日全hold未捕捉半導體輪動短線機會。",
+        "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
+        "avg_hold_days": "持倉天數合理，部分short-term closed trades表現佳。",
+        "cash_utilisation": "現金占比47%，偏高，適合逢低加碼但未執行。",
+        "density_check": {
+          "small_wins_count": 0,
+          "missed_swings": [
+            "半導體回檔未加碼核心晶片股",
+            "軟體雲端相對強勢未轉持"
+          ],
+          "overhold_risk": [
+            "MU/NVDA持倉過久面對CapEx疑慮",
+            "AMD短期反彈未設定止蝕"
+          ],
+          "verdict": "交易頻率不足、密食策略弱，集中風險高需分散。"
         }
       }
     }
