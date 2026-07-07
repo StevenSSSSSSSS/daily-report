@@ -31,7 +31,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1218.4427490234375,
       "buy_price_confirmed": 1034.68994140625,
-      "last_reason": "thesis維持，AI記憶體需求穩健，雖小虧但未觸發stop，等待財報催化劑"
+      "last_reason": "非美股交易時段，原建議 sell 未執行：momentum_fade"
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -63,7 +63,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 200.08999633789062,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "高conviction AI晶片龍頭，需求延續至2027，市場風險偏好回升"
+      "last_reason": "thesis 仍成立，AI龍頭動能延續"
     },
     "QQQ": {
       "ticker": "QQQ",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 736.4000244140625,
       "buy_price_confirmed": 722.2999877929688,
-      "last_reason": "AI ETF分散曝險，持倉thesis成立，現金利用已優化"
+      "last_reason": "AI ETF 分散曝險，納指反彈延續"
     },
     "AMD": {
       "ticker": "AMD",
@@ -125,7 +125,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 554.4400024414062,
       "buy_price_confirmed": 550.760009765625,
-      "last_reason": "strong_buy條件符合，MI450訂單與AI動能對齊"
+      "last_reason": "MI450訂單與AI動能強，持倉 thesis 成立"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -156,7 +156,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 375.40008544921875,
       "buy_price_confirmed": 360.0,
-      "last_reason": "高conviction AI基礎設施領導者，Apple合作延長催化劑強勁"
+      "last_reason": "Apple ASIC合作強化需求，獲利中鎖利觀察"
     }
   },
   "closed_trades": [
@@ -4827,99 +4827,170 @@
       "unrealized_pnl": 38.61,
       "cash_after": 1342.42,
       "reason": "高conviction AI基礎設施領導者，Apple合作延長催化劑強勁"
+    },
+    {
+      "time": "2026-07-07 19:21",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 984.75,
+      "shares": 0.966473,
+      "value": 951.73,
+      "unrealized_pnl": -48.27,
+      "cash_after": 1342.42,
+      "reason": "非美股交易時段，原建議 sell 未執行：momentum_fade"
+    },
+    {
+      "time": "2026-07-07 19:21",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 195.55,
+      "shares": 5.133207,
+      "value": 1003.8,
+      "unrealized_pnl": 3.8,
+      "cash_after": 1342.42,
+      "reason": "thesis 仍成立，AI龍頭動能延續"
+    },
+    {
+      "time": "2026-07-07 19:21",
+      "action": "hold",
+      "ticker": "QQQ",
+      "price": 722.82,
+      "shares": 0.83068,
+      "value": 600.43,
+      "unrealized_pnl": 0.43,
+      "cash_after": 1342.42,
+      "reason": "AI ETF 分散曝險，納指反彈延續"
+    },
+    {
+      "time": "2026-07-07 19:21",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 552.05,
+      "shares": 0.907836,
+      "value": 501.17,
+      "unrealized_pnl": 1.17,
+      "cash_after": 1342.42,
+      "reason": "MI450訂單與AI動能強，持倉 thesis 成立"
+    },
+    {
+      "time": "2026-07-07 19:21",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 373.9,
+      "shares": 2.777778,
+      "value": 1038.61,
+      "unrealized_pnl": 38.61,
+      "cash_after": 1342.42,
+      "reason": "Apple ASIC合作強化需求，獲利中鎖利觀察"
     }
   ],
-  "last_updated_at": "2026-07-07 14:06",
-  "pending_orders": [],
+  "last_updated_at": "2026-07-07 19:21",
+  "pending_orders": [
+    {
+      "action": "sell",
+      "ticker": "MU",
+      "exit_plan": "full",
+      "reason": "momentum_fade",
+      "created_at": "2026-07-07 19:21",
+      "source": "ai",
+      "original_order": {
+        "action": "sell",
+        "ticker": "MU",
+        "exit_plan": "full",
+        "reason": "momentum_fade"
+      }
+    },
+    {
+      "action": "buy",
+      "ticker": "AMAT",
+      "name": "Applied Materials",
+      "trade_type": "position",
+      "reason": "strong_buy 高 conviction AI設備需求，符合 position 建倉條件",
+      "allocation_usd": 1000,
+      "entry_plan": "full",
+      "stop": "195.00",
+      "target": "770.63",
+      "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+      "thesis": "AI先進製程設備需求強勁，ASML PT上調帶動，技術面整理後上攻",
+      "evidence": [
+        "昨日半導體指數漲逾2%",
+        "AI供應鏈反彈延續至2027",
+        "catalyst_score 72 technical 70"
+      ],
+      "falsification_points": [
+        "美債收益率持續上升壓抑估值",
+        "地緣供應鏈風險升溫"
+      ],
+      "review_trigger": "持倉滿3檔 position 或 7日未達 target",
+      "created_at": "2026-07-07 19:21",
+      "source": "ai",
+      "original_order": {
+        "action": "buy",
+        "ticker": "AMAT",
+        "name": "Applied Materials",
+        "trade_type": "position",
+        "reason": "strong_buy 高 conviction AI設備需求，符合 position 建倉條件",
+        "allocation_usd": 1000,
+        "entry_plan": "full",
+        "stop": "195.00",
+        "target": "770.63",
+        "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+        "thesis": "AI先進製程設備需求強勁，ASML PT上調帶動，技術面整理後上攻",
+        "evidence": [
+          "昨日半導體指數漲逾2%",
+          "AI供應鏈反彈延續至2027",
+          "catalyst_score 72 technical 70"
+        ],
+        "falsification_points": [
+          "美債收益率持續上升壓抑估值",
+          "地緣供應鏈風險升溫"
+        ],
+        "review_trigger": "持倉滿3檔 position 或 7日未達 target"
+      }
+    }
+  ],
   "latest_review": {
-    "time": "2026-07-07 14:06",
+    "time": "2026-07-07 19:21",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI持倉過度集中，MU小虧未止蝕，交易頻率偏低。",
+      "summary": "AI反彈中賣出MU未執行，持倉集中風險上升，現金利用待優化。",
       "what_worked": [
-        "AVGO獲利3.86% thesis強勁",
-        "NVDA高conviction需求延續",
-        "QQQ ETF分散曝險"
+        "NVDA與AVGO小幅獲利",
+        "QQQ提供分散曝險",
+        "多數thesis維持有效"
       ],
       "mistakes_or_risks": [
-        "AI晶片記憶體集中風險高",
-        "MU未觸發stop-loss持倉過久",
-        "現金27%利用不足"
+        "MU虧損未及時止損",
+        "過度集中AI晶片與設備",
+        "追高風險於高估值股"
       ],
       "next_improvements": [
-        "強化止蝕紀律",
-        "分散至AI設備ETF",
-        "提高交易頻率"
+        "強化止損執行紀律",
+        "提升交易頻率捕捉短線",
+        "監控美債收益率影響"
       ],
       "risk_notes": [
-        "mandate內AI集中風險",
-        "無追高但持倉過久",
-        "資金利用率偏低"
+        "AI供應鏈估值壓力上升",
+        "地緣風險傳導有限但需留意"
       ],
-      "trade_frequency": "交易頻率不足，多hold，錯過短線反彈機會。",
-      "win_rate_estimate": "近5筆closed 3勝2敗，勝率60%",
-      "avg_hold_days": "平均持倉約10-20天，合理但可縮短。",
-      "cash_utilisation": "現金占比27%，偏高，應積極布局AI。",
+      "trade_frequency": "交易不夠活躍，錯過部分半導體反彈短線機會。",
+      "win_rate_estimate": "近5筆 3勝2敗，勝率60%",
+      "avg_hold_days": "平均持倉天數約10-14天，尚合理。",
+      "cash_utilisation": "現金占比27%，適中但可提升利用率。",
       "density_check": {
         "small_wins_count": 2,
         "missed_swings": [
-          "AVGO反彈前",
-          "MU財報催化"
+          "半導體設備反彈",
+          "記憶體需求延續機會"
         ],
         "overhold_risk": [
-          "MU小虧持倉",
-          "AMD低波動"
+          "MU持倉過久導致虧損擴大"
         ],
-        "verdict": "交易頻率低，密食策略不足，需增加活躍度。"
+        "verdict": "交易頻率偏低，密食策略執行不足，需增加短線操作。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-29 20:44",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "資金利用率偏低、持倉偏向AI記憶體與晶片，VOO廣泛ETF偏離mandate，thesis有效但交易不夠活躍。",
-        "what_worked": [
-          "MU財報後獲利9.44%且thesis確認延續至2027",
-          "AI供應鏈需求訊號強勁，市場風險偏好回升",
-          "近期closed trades如MU、AMD、TSM有獲利"
-        ],
-        "mistakes_or_risks": [
-          "VOO非AI專屬ETF，持倉偏離mandate",
-          "現金占比約49%過高，資金利用不足",
-          "交易頻率低，無新進場動作可能錯過短線"
-        ],
-        "next_improvements": [
-          "執行pending sell VOO並轉向QQQ等AI ETF",
-          "為NVDA設定明確止蝕或加碼條件",
-          "提升交易活躍度，監控ASML、QQQ觸發點"
-        ],
-        "risk_notes": [
-          "AI板塊集中風險仍存，需分散設備或基礎設施",
-          "政治與宏觀風險緩和但VIX仍18.25",
-          "overhold NVDA小幅虧損風險"
-        ],
-        "trade_frequency": "交易頻率偏低，近幾日僅hold無新單，可能錯過MU帶動的AI短線反彈機會。",
-        "win_rate_estimate": "近期closed trades 3勝2敗，勝率60%",
-        "avg_hold_days": "持倉天數約5-10天，偏短但需加速周轉。",
-        "cash_utilisation": "現金占比約49%，偏高，應優先建立AI ETF starter position。",
-        "density_check": {
-          "small_wins_count": 0,
-          "missed_swings": [
-            "MU財報後AI供應鏈短線反彈",
-            "Nasdaq止穩時QQQ加碼機會",
-            "油價回落利多AI基礎設施"
-          ],
-          "overhold_risk": [
-            "NVDA小幅回檔持續持倉",
-            "VOO非核心AI曝險過久",
-            "無新催化劑時持倉過久"
-          ],
-          "verdict": "交易頻率不足，密食策略執行不佳，需增加watch triggers執行率。"
-        }
-      }
-    },
     {
       "time": "2026-06-30 01:26",
       "review": {
@@ -5734,6 +5805,47 @@
             "AMD低波動"
           ],
           "verdict": "交易頻率低，密食策略不足，需增加活躍度。"
+        }
+      }
+    },
+    {
+      "time": "2026-07-07 19:21",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI反彈中賣出MU未執行，持倉集中風險上升，現金利用待優化。",
+        "what_worked": [
+          "NVDA與AVGO小幅獲利",
+          "QQQ提供分散曝險",
+          "多數thesis維持有效"
+        ],
+        "mistakes_or_risks": [
+          "MU虧損未及時止損",
+          "過度集中AI晶片與設備",
+          "追高風險於高估值股"
+        ],
+        "next_improvements": [
+          "強化止損執行紀律",
+          "提升交易頻率捕捉短線",
+          "監控美債收益率影響"
+        ],
+        "risk_notes": [
+          "AI供應鏈估值壓力上升",
+          "地緣風險傳導有限但需留意"
+        ],
+        "trade_frequency": "交易不夠活躍，錯過部分半導體反彈短線機會。",
+        "win_rate_estimate": "近5筆 3勝2敗，勝率60%",
+        "avg_hold_days": "平均持倉天數約10-14天，尚合理。",
+        "cash_utilisation": "現金占比27%，適中但可提升利用率。",
+        "density_check": {
+          "small_wins_count": 2,
+          "missed_swings": [
+            "半導體設備反彈",
+            "記憶體需求延續機會"
+          ],
+          "overhold_risk": [
+            "MU持倉過久導致虧損擴大"
+          ],
+          "verdict": "交易頻率偏低，密食策略執行不足，需增加短線操作。"
         }
       }
     }
