@@ -32,7 +32,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 200.08999633789062,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "持倉 thesis 仍成立，高 conviction AI龍頭"
+      "last_reason": "strong_buy 資格符合，thesis 仍成立，短期反彈催化劑 Grok 4.5 即將公開"
     },
     "QQQ": {
       "ticker": "QQQ",
@@ -63,7 +63,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 736.4000244140625,
       "buy_price_confirmed": 722.2999877929688,
-      "last_reason": "持倉 thesis 仍成立，AI ETF 分散曝險"
+      "last_reason": "AI ETF 分散持倉，現金比例適中，等待市場風險偏好回穩"
     },
     "AMD": {
       "ticker": "AMD",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 554.4400024414062,
       "buy_price_confirmed": 550.760009765625,
-      "last_reason": "非美股交易時段，原建議 sell 未執行：better_opportunity"
+      "last_reason": "MI450 催化劑仍在，雖短期承壓但 conviction 接近門檻，維持觀察"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -125,7 +125,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 375.40008544921875,
       "buy_price_confirmed": 360.0,
-      "last_reason": "持倉 thesis 仍成立，高 conviction AI基礎設施"
+      "last_reason": "AI 基礎設施領導者，持倉 thesis 有效，短期波動可控"
     },
     "AMAT": {
       "ticker": "AMAT",
@@ -156,7 +156,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 554.5,
       "buy_price_confirmed": 550.4199829101562,
-      "last_reason": "持倉 thesis 仍成立，AI設備需求強勁"
+      "last_reason": "strong_buy 高 conviction AI 設備需求，position 建倉條件仍成立"
     }
   },
   "closed_trades": [
@@ -5027,24 +5027,65 @@
       "unrealized_pnl": 7.41,
       "cash_after": 1239.88,
       "reason": "持倉 thesis 仍成立，AI設備需求強勁"
+    },
+    {
+      "time": "2026-07-08 18:33",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 196.93,
+      "shares": 5.133207,
+      "value": 1010.88,
+      "unrealized_pnl": 10.88,
+      "cash_after": 1239.88,
+      "reason": "strong_buy 資格符合，thesis 仍成立，短期反彈催化劑 Grok 4.5 即將公開"
+    },
+    {
+      "time": "2026-07-08 18:33",
+      "action": "hold",
+      "ticker": "QQQ",
+      "price": 709.43,
+      "shares": 0.83068,
+      "value": 589.31,
+      "unrealized_pnl": -10.69,
+      "cash_after": 1239.88,
+      "reason": "AI ETF 分散持倉，現金比例適中，等待市場風險偏好回穩"
+    },
+    {
+      "time": "2026-07-08 18:33",
+      "action": "hold",
+      "ticker": "AMD",
+      "price": 516.11,
+      "shares": 0.907836,
+      "value": 468.54,
+      "unrealized_pnl": -31.46,
+      "cash_after": 1239.88,
+      "reason": "MI450 催化劑仍在，雖短期承壓但 conviction 接近門檻，維持觀察"
+    },
+    {
+      "time": "2026-07-08 18:33",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 370.78,
+      "shares": 2.777778,
+      "value": 1029.94,
+      "unrealized_pnl": 29.94,
+      "cash_after": 1239.88,
+      "reason": "AI 基礎設施領導者，持倉 thesis 有效，短期波動可控"
+    },
+    {
+      "time": "2026-07-08 18:33",
+      "action": "hold",
+      "ticker": "AMAT",
+      "price": 554.5,
+      "shares": 1.816795,
+      "value": 1007.41,
+      "unrealized_pnl": 7.41,
+      "cash_after": 1239.88,
+      "reason": "strong_buy 高 conviction AI 設備需求，position 建倉條件仍成立"
     }
   ],
-  "last_updated_at": "2026-07-08 13:20",
+  "last_updated_at": "2026-07-08 18:33",
   "pending_orders": [
-    {
-      "action": "sell",
-      "ticker": "AMD",
-      "exit_plan": "full",
-      "reason": "better_opportunity",
-      "created_at": "2026-07-08 13:20",
-      "source": "ai",
-      "original_order": {
-        "action": "sell",
-        "ticker": "AMD",
-        "exit_plan": "full",
-        "reason": "better_opportunity"
-      }
-    },
     {
       "action": "buy",
       "ticker": "MU",
@@ -5095,94 +5136,49 @@
     }
   ],
   "latest_review": {
-    "time": "2026-07-08 13:20",
+    "time": "2026-07-08 18:33",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI mandate 持倉集中但待執行賣出AMD換MU，現金適中，thesis 有效性尚可惟止蝕紀律待強化。",
+      "summary": "AI板塊高度集中，市場下跌下持倉波動加大，thesis有效但風險控管不足。",
       "what_worked": [
-        "AVGO與AMAT小幅正報酬，AI基礎設施與設備需求催化劑延續",
-        "QQQ ETF 分散曝險降低單股風險",
-        "高 conviction position 建倉如AMAT符合 mandate"
+        "AVGO與AMAT小幅正報酬",
+        "AI ETF分散持倉維持",
+        "現金比例適中等待訊號"
       ],
       "mistakes_or_risks": [
-        "AMD 持倉過久導致-6%虧損，追高風險暴露",
-        "pending sell/buy 未執行，交易頻率不足",
-        "五檔全AI相關，內部集中度偏高"
+        "過度集中AI晶片與設備股",
+        "AMD持倉虧損未執行止蝕",
+        "近期closed trade勝率偏低"
       ],
       "next_improvements": [
-        "強化止蝕執行，設定嚴格review trigger",
-        "增加短線swing 機會捕捉機制",
-        "維持現金20-30%以應對回檔加碼"
+        "設定明確止蝕紀律",
+        "降低單一股權重上限",
+        "增加ETF分散曝險"
       ],
       "risk_notes": [
-        "美中政治風險推升VIX，AI股波動加劇",
-        "利率上升可能壓抑高估值科技股",
-        "MU財報前需監控需求催化劑"
+        "AI mandate內部集中風險高",
+        "短期供應鏈消息拖累估值",
+        "宏觀風險偏好下降傳導明顯"
       ],
-      "trade_frequency": "近期交易偏靜態，pending orders 未執行導致錯過AMD止損與MU進場，短線機會捕捉不足。",
-      "win_rate_estimate": "近5筆已平倉 2勝3敗，勝率40%",
-      "avg_hold_days": "持倉天數約5-14天，position型合理但swing需縮短。",
-      "cash_utilisation": "現金占比24.8%，適中適合等待回檔加碼AI ETF或設備股。",
+      "trade_frequency": "今日無交易，市場下跌時被動hold，短期機會捕捉不足。",
+      "win_rate_estimate": "近5筆closed trades 2勝3敗，勝率40%",
+      "avg_hold_days": "平均持倉約10-12天，短期波動下需檢視是否過長。",
+      "cash_utilisation": "現金占比約25%，適中但可提升利用率。",
       "density_check": {
-        "small_wins_count": 2,
+        "small_wins_count": 0,
         "missed_swings": [
-          "AMD反彈機會",
-          "MU財報前進場時機"
+          "MU賣壓後反彈機會",
+          "半導體輪動短線切換"
         ],
         "overhold_risk": [
-          "AMD持續虧損",
-          "QQQ小幅回檔未及時調整"
+          "AMD持續虧損持倉",
+          "QQQ小幅回檔未調整"
         ],
-        "verdict": "交易頻率偏低，密食策略不足，需提升活躍度以捕捉AI板塊短線波動。"
+        "verdict": "交易頻率偏低，錯過短線機會，需提升主動性與風險控管。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-06-30 19:25",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "持倉集中AI產業鏈但現金占比過高、交易頻率偏低，thesis維持但錯過反彈布局機會。",
-        "what_worked": [
-          "MU高conviction持倉獲利10.69%且thesis有效",
-          "QQQ ETF分散風險符合mandate",
-          "近期closed trades勝率60%止損紀律尚可"
-        ],
-        "mistakes_or_risks": [
-          "現金57%利用率偏低",
-          "僅3檔持倉未達max 5，集中風險未分散",
-          "無新買進錯過AVGO/AMD短線機會"
-        ],
-        "next_improvements": [
-          "提高資金利用率至70%以上",
-          "監控watch triggers積極布局",
-          "設定更嚴格持倉上限避免過度集中"
-        ],
-        "risk_notes": [
-          "AI記憶體與晶片雙持倉集中度偏高",
-          "地緣緩和後風險偏好回升但未積極加碼",
-          "VIX回落但止蝕紀律需持續監控"
-        ],
-        "trade_frequency": "今日零交易，頻率不足，錯過Nasdaq反彈短線布局機會。",
-        "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
-        "avg_hold_days": "平均持倉約5-10天，近期持倉偏短合理但需視catalyst調整。",
-        "cash_utilisation": "現金占比57%，偏高未積極部署AI設備股。",
-        "density_check": {
-          "small_wins_count": 2,
-          "missed_swings": [
-            "AVGO強勢買進觸發",
-            "AMD反彈布局",
-            "AI設備股短線機會"
-          ],
-          "overhold_risk": [
-            "MU財報前續抱風險",
-            "NVDA無新催化劑持倉過久",
-            "QQQ starter未加碼"
-          ],
-          "verdict": "交易頻率低、密度不足，錯過反彈短線機會，整體策略偏保守。"
-        }
-      }
-    },
     {
       "time": "2026-07-01 00:59",
       "review": {
@@ -5991,6 +5987,49 @@
             "QQQ小幅回檔未及時調整"
           ],
           "verdict": "交易頻率偏低，密食策略不足，需提升活躍度以捕捉AI板塊短線波動。"
+        }
+      }
+    },
+    {
+      "time": "2026-07-08 18:33",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI板塊高度集中，市場下跌下持倉波動加大，thesis有效但風險控管不足。",
+        "what_worked": [
+          "AVGO與AMAT小幅正報酬",
+          "AI ETF分散持倉維持",
+          "現金比例適中等待訊號"
+        ],
+        "mistakes_or_risks": [
+          "過度集中AI晶片與設備股",
+          "AMD持倉虧損未執行止蝕",
+          "近期closed trade勝率偏低"
+        ],
+        "next_improvements": [
+          "設定明確止蝕紀律",
+          "降低單一股權重上限",
+          "增加ETF分散曝險"
+        ],
+        "risk_notes": [
+          "AI mandate內部集中風險高",
+          "短期供應鏈消息拖累估值",
+          "宏觀風險偏好下降傳導明顯"
+        ],
+        "trade_frequency": "今日無交易，市場下跌時被動hold，短期機會捕捉不足。",
+        "win_rate_estimate": "近5筆closed trades 2勝3敗，勝率40%",
+        "avg_hold_days": "平均持倉約10-12天，短期波動下需檢視是否過長。",
+        "cash_utilisation": "現金占比約25%，適中但可提升利用率。",
+        "density_check": {
+          "small_wins_count": 0,
+          "missed_swings": [
+            "MU賣壓後反彈機會",
+            "半導體輪動短線切換"
+          ],
+          "overhold_risk": [
+            "AMD持續虧損持倉",
+            "QQQ小幅回檔未調整"
+          ],
+          "verdict": "交易頻率偏低，錯過短線機會，需提升主動性與風險控管。"
         }
       }
     }
