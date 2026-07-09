@@ -36,7 +36,7 @@ PORTFOLIO_BOOK_URL = "https://stevenssssssss.github.io/daily-report/portfolio_bo
 
 REMOVELIST_COOLDOWN_DAYS = 7
 RECIPIENT = "stevieeseto@hotmail.com"
-MODEL = "grok-4.3"
+MODEL = "grok-4.5"
 PORTFOLIO_INITIAL_CAPITAL = 5000.0
 PORTFOLIO_POSITION_NOTIONAL = 1000.0
 PORTFOLIO_MAX_POSITIONS = 5
@@ -308,7 +308,6 @@ def get_latest_price(ticker):
 
     try:
         ticker_obj = yf.Ticker(symbol)
-        # 優先使用 history
         hist = ticker_obj.history(period="5d", auto_adjust=True)
         
         if len(hist) > 0:
@@ -321,7 +320,6 @@ def get_latest_price(ticker):
     except Exception as e:
         print(f"⚠️ {symbol} history 失敗: {e}")
 
-    # 備用方案：使用 info
     try:
         info = ticker_obj.info
         for key in ['currentPrice', 'regularMarketPrice', 'previousClose']:
@@ -497,7 +495,6 @@ def apply_portfolio_decisions(book, report, now):
         price = get_latest_price(ticker)
 
         if action == "sell" and ticker in positions and (can_trade or order.get("force")):
-            # ... (賣出邏輯保持不變)
             pos = positions.pop(ticker)
             shares = float(pos.get("shares", 0) or 0)
             if price is None:
@@ -621,7 +618,7 @@ def apply_portfolio_decisions(book, report, now):
                 "ticker": ticker,
                 "name": order.get("name", ticker),
                 "shares": shares,
-                "avg_cost": price,           # ← 關鍵修正
+                "avg_cost": price,
                 "invested": allocation,
                 "opened_at": now_text,
                 "last_price": price,
@@ -638,7 +635,7 @@ def apply_portfolio_decisions(book, report, now):
                 "target_price": target_price,
                 "trailing_stop_pct": trailing_stop_pct,
                 "highest_price": price,
-                "buy_price_confirmed": price   # 備份
+                "buy_price_confirmed": price
             }
             trade_log.append({
                 "time": now_text,
@@ -666,10 +663,8 @@ def portfolio_snapshot_rows(book):
     """修正後的持倉顯示"""
     rows = []
     for ticker, pos in (book.get("positions") or {}).items():
-        # 優先使用 invested / shares 修正後的買入成本
         avg_cost = normalize_portfolio_position_cost(pos)
         
-        # 最新市場價格
         current_price = get_latest_price(ticker)
         if current_price is None:
             current_price = pos.get("last_price", avg_cost)
@@ -1091,7 +1086,10 @@ def ask_xai_with_system(prompt, system_prompt, purpose):
 
     client = Client(
         api_key=os.environ.get("API_KEY"),
-        metadata=(("x-grok-conv-id", "daily_market_morning_note_v2"),)
+        metadata=(
+            ("x-grok-conv-id", "daily_market_morning_note_v2"),
+            ("x-grok-cache-key", "market_analysis_v2"),
+        )
     )
 
     global last_token_usage, total_token_usage
@@ -1103,7 +1101,7 @@ def ask_xai_with_system(prompt, system_prompt, purpose):
             chat.append(system(system_prompt))
             chat.append(user(prompt))
             
-            print(f"正在呼叫 xAI grok-4.3 {purpose}（已啟用 Prompt Caching）...")
+            print(f"正在呼叫 xAI {MODEL} {purpose}（已啟用 Prompt Caching）...")
             signal.alarm(240)
             response = chat.sample()
             signal.alarm(0)
@@ -1807,7 +1805,6 @@ def send_email(subject, content):
     clean_subject = re.sub(r"^市場觀察[：:]\s*", "", clean_subject)
     clean_subject = re.sub(r"\s*[:：]\s*", "：", clean_subject)
     clean_subject = re.sub(r"<[^>]+>", "", clean_subject)
-    #final_subject = "Market Watch | 投行市場快報：" + clean_subject.strip()
     final_subject = clean_subject.strip()
     
     print(f"郵件標題 → {final_subject}")
