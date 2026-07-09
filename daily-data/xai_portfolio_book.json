@@ -32,7 +32,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 204.1199951171875,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "持倉 thesis 仍成立，AI 需求催化劑持續"
+      "last_reason": "高conviction AI晶片龍頭thesis仍成立，H200中國有限開放與資料中心需求支撐，pnl+4.78%距target尚遠，技術支撐強，無止損觸發"
     },
     "QQQ": {
       "ticker": "QQQ",
@@ -63,7 +63,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 736.4000244140625,
       "buy_price_confirmed": 722.2999877929688,
-      "last_reason": "持倉 thesis 仍成立，AI ETF 分散功能維持"
+      "last_reason": "非美股交易時段，原建議 sell 未執行：better_opportunity"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -94,7 +94,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 390.7900085449219,
       "buy_price_confirmed": 360.0,
-      "last_reason": "持倉 thesis 仍成立，AI 基礎設施中線上漲"
+      "last_reason": "高conviction基礎設施領導者，Apple客製晶片大單與AI networking催化強勁，pnl+7.97%動能延續，position規則未達trailing門檻，持有待更高目標"
     },
     "AMAT": {
       "ticker": "AMAT",
@@ -125,7 +125,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 570.5,
       "buy_price_confirmed": 550.4199829101562,
-      "last_reason": "持倉 thesis 仍成立，AI 設備需求強勁"
+      "last_reason": "AI先進製程與封裝設備需求swing動能仍在，剛開倉1日pnl+3.65%未超5日強制review，技術突破回測後上攻，stop/target intact"
     },
     "MU": {
       "ticker": "MU",
@@ -156,7 +156,7 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 948.7999877929688,
       "buy_price_confirmed": 934.7000122070312,
-      "last_reason": "持倉 thesis 仍成立，AI 記憶體需求延續"
+      "last_reason": "高conviction AI記憶體HBM需求強勁，BofA重申買入，剛開倉pnl+1.51% thesis有效，無新失效訊號，持有待催化確認"
     }
   },
   "closed_trades": [
@@ -5282,95 +5282,175 @@
       "unrealized_pnl": 15.09,
       "cash_after": 702.55,
       "reason": "持倉 thesis 仍成立，AI 記憶體需求延續"
+    },
+    {
+      "time": "2026-07-09 20:59",
+      "action": "hold",
+      "ticker": "QQQ",
+      "price": 711.44,
+      "shares": 0.83068,
+      "value": 590.98,
+      "unrealized_pnl": -9.02,
+      "cash_after": 702.55,
+      "reason": "非美股交易時段，原建議 sell 未執行：better_opportunity"
+    },
+    {
+      "time": "2026-07-09 20:59",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 204.12,
+      "shares": 5.133207,
+      "value": 1047.79,
+      "unrealized_pnl": 47.79,
+      "cash_after": 702.55,
+      "reason": "高conviction AI晶片龍頭thesis仍成立，H200中國有限開放與資料中心需求支撐，pnl+4.78%距target尚遠，技術支撐強，無止損觸發"
+    },
+    {
+      "time": "2026-07-09 20:59",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 388.69,
+      "shares": 2.777778,
+      "value": 1079.69,
+      "unrealized_pnl": 79.69,
+      "cash_after": 702.55,
+      "reason": "高conviction基礎設施領導者，Apple客製晶片大單與AI networking催化強勁，pnl+7.97%動能延續，position規則未達trailing門檻，持有待更高目標"
+    },
+    {
+      "time": "2026-07-09 20:59",
+      "action": "hold",
+      "ticker": "AMAT",
+      "price": 570.5,
+      "shares": 1.816795,
+      "value": 1036.48,
+      "unrealized_pnl": 36.48,
+      "cash_after": 702.55,
+      "reason": "AI先進製程與封裝設備需求swing動能仍在，剛開倉1日pnl+3.65%未超5日強制review，技術突破回測後上攻，stop/target intact"
+    },
+    {
+      "time": "2026-07-09 20:59",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 948.8,
+      "shares": 1.069862,
+      "value": 1015.09,
+      "unrealized_pnl": 15.09,
+      "cash_after": 702.55,
+      "reason": "高conviction AI記憶體HBM需求強勁，BofA重申買入，剛開倉pnl+1.51% thesis有效，無新失效訊號，持有待催化確認"
     }
   ],
-  "last_updated_at": "2026-07-09 19:28",
-  "pending_orders": [],
+  "last_updated_at": "2026-07-09 20:59",
+  "pending_orders": [
+    {
+      "action": "sell",
+      "ticker": "QQQ",
+      "exit_plan": "full",
+      "reason": "better_opportunity",
+      "created_at": "2026-07-09 20:59",
+      "source": "ai",
+      "original_order": {
+        "action": "sell",
+        "ticker": "QQQ",
+        "exit_plan": "full",
+        "reason": "better_opportunity"
+      }
+    },
+    {
+      "action": "buy",
+      "ticker": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "trade_type": "position",
+      "reason": "組合已集中4檔半導體/AI個股達上限，依集中度分散規則與最新review優先納入廣泛型ETF降低板塊風險；SPY為strong_buy且conviction/catalyst/technical達標，現金在賣出QQQ後足夠建立position starter，油價地緣下提供大盤緩衝優於純科技QQQ",
+      "allocation_usd": 1000,
+      "entry_plan": "full",
+      "stop": "715.00",
+      "target": "820.00",
+      "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+      "thesis": "在AI供應鏈資金流延續但地緣油價推升通膨與債息風險下，SPY提供S&P500廣泛曝險與流動性，降低半導體集中度同時保留市場beta，符合中線分散與風險管理",
+      "evidence": [
+        "市場訊號顯示納指AI韌性但道瓊受油價拖累分化，資金續流向AI核心但review多次警告集中風險",
+        "SPY strong_buy分數達標(conviction75/catalyst65/technical70)，entry接近745支撐穩固",
+        "VIX回落至16.74波動可控，下週CPI/財報前適合建立緩衝倉"
+      ],
+      "falsification_points": [
+        "油價持續急升導致通膨預期失控、10年債突破4.7%壓抑估值",
+        "AI半導體全面回檔拖累大盤且SPY跌破715止損",
+        "地緣升級引發風險偏好全面崩潰"
+      ],
+      "review_trigger": "下週CPI數據後或持倉達+8%時檢查是否加碼/調整trailing；若半導體集中度再升則考慮再分散",
+      "created_at": "2026-07-09 20:59",
+      "source": "ai",
+      "original_order": {
+        "action": "buy",
+        "ticker": "SPY",
+        "name": "SPDR S&P 500 ETF Trust",
+        "trade_type": "position",
+        "reason": "組合已集中4檔半導體/AI個股達上限，依集中度分散規則與最新review優先納入廣泛型ETF降低板塊風險；SPY為strong_buy且conviction/catalyst/technical達標，現金在賣出QQQ後足夠建立position starter，油價地緣下提供大盤緩衝優於純科技QQQ",
+        "allocation_usd": 1000,
+        "entry_plan": "full",
+        "stop": "715.00",
+        "target": "820.00",
+        "trailing_stop": "獲利超過25%後，最高價回調5%止賺",
+        "thesis": "在AI供應鏈資金流延續但地緣油價推升通膨與債息風險下，SPY提供S&P500廣泛曝險與流動性，降低半導體集中度同時保留市場beta，符合中線分散與風險管理",
+        "evidence": [
+          "市場訊號顯示納指AI韌性但道瓊受油價拖累分化，資金續流向AI核心但review多次警告集中風險",
+          "SPY strong_buy分數達標(conviction75/catalyst65/technical70)，entry接近745支撐穩固",
+          "VIX回落至16.74波動可控，下週CPI/財報前適合建立緩衝倉"
+        ],
+        "falsification_points": [
+          "油價持續急升導致通膨預期失控、10年債突破4.7%壓抑估值",
+          "AI半導體全面回檔拖累大盤且SPY跌破715止損",
+          "地緣升級引發風險偏好全面崩潰"
+        ],
+        "review_trigger": "下週CPI數據後或持倉達+8%時檢查是否加碼/調整trailing；若半導體集中度再升則考慮再分散"
+      }
+    }
+  ],
   "latest_review": {
-    "time": "2026-07-09 19:28",
+    "time": "2026-07-09 20:59",
     "review": {
       "strategy_health": "warning",
-      "summary": "Portfolio 5檔全集中AI半導體，集中度風險高，需立即分散。",
+      "summary": "AI供應鏈動能與thesis有效，但半導體高度集中且近期輪動whipsaw拖累勝率，今日轉SPY分散方向正確。",
       "what_worked": [
-        "AI需求thesis持續有效，多檔小幅獲利",
-        "AMAT/MU近期建倉符合強勢訊號",
-        "QQQ提供ETF分散功能"
+        "NVDA/AVGO持倉有效捕捉AI基礎設施與客製晶片上漲",
+        "及時識別集中風險並計劃納入SPY",
+        "高conviction部位與市場AI資金流一致"
       ],
       "mistakes_or_risks": [
-        "5檔全AI供應鏈，集中度過高",
-        "現金利用率偏低，錯過短線機會",
-        "無明確止蝕紀律"
+        "MU賣出後隔日回補造成whipsaw虧損",
+        "過度輪動（VOO/QQQ/AMD）降低勝率與摩擦成本",
+        "4檔半導體個股高度相關，板塊同步回檔風險大"
       ],
       "next_improvements": [
-        "逐步轉換部分持倉新增SPY/VOO分散板塊風險",
-        "配置PFF/VNQ等非科技ETF管理集中度",
-        "設定止蝕點並監控7/14 CPI催化劑"
+        "立即執行賣QQQ買SPY降低半導體集中度",
+        "新開倉強制5日review並啟動trailing stop",
+        "若集中再升則再配置VOO/VTI或PFF/VNQ分散"
       ],
       "risk_notes": [
-        "Samsung財報反映AI記憶體估值敏感",
-        "地緣緩解利好但需防反轉",
-        "Hyperscalers capex持續但FCF優勢需追蹤"
+        "油價急升與10年債上行恐延後降息壓抑估值",
+        "半導體板塊高度相關同步回檔風險",
+        "地緣升級可能引發全面風險偏好崩潰"
       ],
-      "trade_frequency": "持倉穩定但交易頻率低，近期無新進出，可能錯過AI輪動短線機會。",
-      "win_rate_estimate": "近5筆已平倉交易2勝3敗，勝率40%",
-      "avg_hold_days": "平均持倉天數約10-20天，適合中線但需避免過持。",
-      "cash_utilisation": "現金占比約14%，偏低但仍可優化部署。",
+      "trade_frequency": "近期輪動偏頻，捕捉短線尚可但whipsaw明顯，部分持倉延續機會被過早出場打斷。",
+      "win_rate_estimate": "近5筆 2勝3敗，勝率40%",
+      "avg_hold_days": "平均約10-15天，swing合理但部分過短增加摩擦。",
+      "cash_utilisation": "現金占比約13%，利用率高；pending執行後將進一步提升。",
       "density_check": {
-        "small_wins_count": 2,
+        "small_wins_count": 0,
         "missed_swings": [
-          "錯過AI板塊輪動至低估值科技機會"
+          "MU回補前反彈未完整捕捉",
+          "早期VOO持倉過早出場錯過緩衝",
+          "非半導AI基礎設施短線機會有限參與"
         ],
         "overhold_risk": [
-          "NVDA/AVGO持倉過久面臨估值修正風險"
+          "AVGO接近trailing門檻需嚴控回吐",
+          "NVDA中線持倉若動能轉弱恐延遲止蝕"
         ],
-        "verdict": "交易頻率不足，需增加分散交易捕捉短線機會。"
+        "verdict": "交易頻率偏高導致無效輪動與whipsaw，密食策略需更嚴格確認後再動以提升勝率。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-07-02 01:04",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "AI持倉集中但現金過高，交易頻率偏低。",
-        "what_worked": [
-          "AI需求強勁確認趨勢",
-          "部分持倉小漲thesis intact",
-          "BofA等共識支持"
-        ],
-        "mistakes_or_risks": [
-          "現金利用率低",
-          "過度集中AI晶片記憶體",
-          "可能錯過短線機會"
-        ],
-        "next_improvements": [
-          "增加swing交易頻率",
-          "嚴格執行stop loss",
-          "分散至設備或ETF"
-        ],
-        "risk_notes": [
-          "HBM催化劑待07-15確認",
-          "持倉過久風險",
-          "現金47%偏高"
-        ],
-        "trade_frequency": "交易不夠活躍，錯過部分短線機會。",
-        "win_rate_estimate": "近5筆3勝2敗，勝率60%",
-        "avg_hold_days": "持倉天數合理，部分超過5日。",
-        "cash_utilisation": "現金占比47%，偏高。",
-        "density_check": {
-          "small_wins_count": 2,
-          "missed_swings": [
-            "ASML pullback",
-            "MU HBM確認後加碼"
-          ],
-          "overhold_risk": [
-            "NVDA長期持倉",
-            "QQQ ETF過久"
-          ],
-          "verdict": "交易頻率與密度不足，需提升活躍度。"
-        }
-      }
-    },
     {
       "time": "2026-07-02 13:58",
       "review": {
@@ -6181,6 +6261,50 @@
             "NVDA/AVGO持倉過久面臨估值修正風險"
           ],
           "verdict": "交易頻率不足，需增加分散交易捕捉短線機會。"
+        }
+      }
+    },
+    {
+      "time": "2026-07-09 20:59",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI供應鏈動能與thesis有效，但半導體高度集中且近期輪動whipsaw拖累勝率，今日轉SPY分散方向正確。",
+        "what_worked": [
+          "NVDA/AVGO持倉有效捕捉AI基礎設施與客製晶片上漲",
+          "及時識別集中風險並計劃納入SPY",
+          "高conviction部位與市場AI資金流一致"
+        ],
+        "mistakes_or_risks": [
+          "MU賣出後隔日回補造成whipsaw虧損",
+          "過度輪動（VOO/QQQ/AMD）降低勝率與摩擦成本",
+          "4檔半導體個股高度相關，板塊同步回檔風險大"
+        ],
+        "next_improvements": [
+          "立即執行賣QQQ買SPY降低半導體集中度",
+          "新開倉強制5日review並啟動trailing stop",
+          "若集中再升則再配置VOO/VTI或PFF/VNQ分散"
+        ],
+        "risk_notes": [
+          "油價急升與10年債上行恐延後降息壓抑估值",
+          "半導體板塊高度相關同步回檔風險",
+          "地緣升級可能引發全面風險偏好崩潰"
+        ],
+        "trade_frequency": "近期輪動偏頻，捕捉短線尚可但whipsaw明顯，部分持倉延續機會被過早出場打斷。",
+        "win_rate_estimate": "近5筆 2勝3敗，勝率40%",
+        "avg_hold_days": "平均約10-15天，swing合理但部分過短增加摩擦。",
+        "cash_utilisation": "現金占比約13%，利用率高；pending執行後將進一步提升。",
+        "density_check": {
+          "small_wins_count": 0,
+          "missed_swings": [
+            "MU回補前反彈未完整捕捉",
+            "早期VOO持倉過早出場錯過緩衝",
+            "非半導AI基礎設施短線機會有限參與"
+          ],
+          "overhold_risk": [
+            "AVGO接近trailing門檻需嚴控回吐",
+            "NVDA中線持倉若動能轉弱恐延遲止蝕"
+          ],
+          "verdict": "交易頻率偏高導致無效輪動與whipsaw，密食策略需更嚴格確認後再動以提升勝率。"
         }
       }
     }
