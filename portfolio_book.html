@@ -168,9 +168,11 @@ http://localhost:8001/portfolio_book.html
     .trade-table th:nth-child(4),
     .trade-table th:nth-child(5),
     .trade-table th:nth-child(6),
+    .trade-table th:nth-child(7),
     #tradeRows tr td:nth-child(4),
     #tradeRows tr td:nth-child(5),
     #tradeRows tr td:nth-child(6),
+    #tradeRows tr td:nth-child(7),
     .watch-table th:nth-child(6),
     .watch-table th:nth-child(7),
     .watch-table th:nth-child(8),
@@ -602,6 +604,9 @@ http://localhost:8001/portfolio_book.html
     <div class="header-right">
       <div class="header-label">最後更新</div>
       <div class="header-update" id="headerUpdate">-</div>
+      <div class="header-label" style="margin-top:8px;">網頁刷新</div>
+      <div class="header-update" id="autoRefreshNote">-</div>
+      <button id="refreshBtn" type="button" style="margin-top:8px;background:#1c2d43;color:#9caec4;border:1px solid #34465e;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;">立即刷新</button>
     </div>
   </div>
 
@@ -656,6 +661,7 @@ http://localhost:8001/portfolio_book.html
             <th>價格</th>
             <th>股數</th>
             <th>金額</th>
+            <th>損益</th>
             <th>理由</th>
             <th>止損</th>
           </tr>
@@ -718,8 +724,14 @@ http://localhost:8001/portfolio_book.html
     async function loadAll() {
       const errEl = document.getElementById("error");
       try {
+        // 加上時間戳避免瀏覽器/CDN 快取舊的 JSON，確保每次都拿到最新持倉價錢
+        const cacheBuster = `t=${Date.now()}`;
+        const bookUrl  = `${BOOK_URL}${BOOK_URL.includes("?") ? "&" : "?"}${cacheBuster}`;
+        const ideasUrl = `${IDEAS_URL}${IDEAS_URL.includes("?") ? "&" : "?"}${cacheBuster}`;
+
         const [bookRes, ideasRes] = await Promise.all([
-          fetch(BOOK_URL), fetch(IDEAS_URL)
+          fetch(bookUrl,  { cache: "no-store" }),
+          fetch(ideasUrl, { cache: "no-store" }),
         ]);
         if (!bookRes.ok) throw new Error(`Portfolio HTTP ${bookRes.status}`);
         if (!ideasRes.ok) throw new Error(`Ideas HTTP ${ideasRes.status}`);
@@ -732,6 +744,7 @@ http://localhost:8001/portfolio_book.html
         renderReview(book);
         renderTrades(book);
         renderWatchlist(ideas, book);
+        errEl.style.display = "none";
         document.getElementById("footerNote").textContent =
           `資料來源：daily-data/xai_portfolio_book.json`;
         // 頂欄日期與更新時間
@@ -740,6 +753,8 @@ http://localhost:8001/portfolio_book.html
           `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
         document.getElementById("headerUpdate").textContent =
           book.last_updated_at || "?";
+        document.getElementById("autoRefreshNote").textContent =
+          `${now.toLocaleTimeString("zh-HK", { hour12: false })}`;
       } catch (err) {
         errEl.style.display = "block";
         errEl.textContent = location.protocol === "file:"
@@ -868,7 +883,7 @@ http://localhost:8001/portfolio_book.html
             <div class="reason">${e.reason || "-"}</div>
             <div class="meta">
               <span>價格 $${money(e.price)}</span>
-              <span>PnL ${tagged(e.unrealized_pnl || 0)}</span>
+              <span>${e.action === "sell" ? "已實現" : "PnL"} ${tagged(e.action === "sell" ? (e.pnl || 0) : (e.unrealized_pnl || 0))}</span>
               ${e.stop ? `<span>止損 ${e.stop}</span>` : ""}
             </div>
           </div>
@@ -933,7 +948,7 @@ http://localhost:8001/portfolio_book.html
 
       if (!trades.length) {
         document.getElementById("tradeRows").innerHTML =
-          '<tr><td colspan="8" style="color:#6e7681;text-align:center;">尚無交易紀錄</td></tr>';
+          '<tr><td colspan="9" style="color:#6e7681;text-align:center;">尚無交易紀錄</td></tr>';
         return;
       }
 
@@ -950,6 +965,7 @@ http://localhost:8001/portfolio_book.html
           <td>$${money(t.price)}</td>
           <td>${num4(t.shares)}</td>
           <td>$${money(t.amount)}</td>
+          <td>${t.action === "sell" ? tagged(t.pnl || 0) : "-"}</td>
           <td class="trade-reason">${t.reason || "-"}</td>
           <td>${t.stop || "-"}</td>
         </tr>
@@ -1003,7 +1019,27 @@ http://localhost:8001/portfolio_book.html
       }).join("");
     }
 
+    // ---- 自動刷新：每 60 秒重新讀取一次 daily-data JSON，持倉價錢/損益會自動更新 ----
+    const REFRESH_INTERVAL_MS = 60_000;
+    let refreshTimer = null;
+
+    function scheduleAutoRefresh() {
+      if (refreshTimer) clearInterval(refreshTimer);
+      refreshTimer = setInterval(loadAll, REFRESH_INTERVAL_MS);
+    }
+
+    document.getElementById("refreshBtn").addEventListener("click", () => {
+      loadAll();
+      scheduleAutoRefresh(); // 手動刷新後重新計時，避免緊接著又自動刷新一次
+    });
+
+    // 分頁切回前景時立即刷新一次，避免背景分頁長時間顯示過期價錢
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") loadAll();
+    });
+
     loadAll();
+    scheduleAutoRefresh();
   </script>
 </body>
 </html>
