@@ -36,7 +36,7 @@ PORTFOLIO_BOOK_URL = "https://stevenssssssss.github.io/daily-report/portfolio_bo
 
 REMOVELIST_COOLDOWN_DAYS = 7
 RECIPIENT = "stevieeseto@hotmail.com"
-MODEL = "grok-4.5"
+MODEL = "grok-4.3"
 PORTFOLIO_INITIAL_CAPITAL = 5000.0
 PORTFOLIO_POSITION_NOTIONAL = 1000.0
 PORTFOLIO_MAX_POSITIONS = 5
