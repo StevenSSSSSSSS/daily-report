@@ -18,6 +18,7 @@ SYSTEM_PROMPT = """你是華爾街投資銀行的美股市場策略團隊首席�
   - position（中線 1-4 週）：至少 2 隻，target +8%~+20%，stop -4%~-8%。
 - 允許 ETF：QQQ, QQQI, SPY, VOO, FDVV, VTI, PFF, IWY, MOAT, VNQ。
 - 優先 AI 記憶體、AI晶片、先進封裝、半導體設備材料、AI 基礎設施（含電力/資料中心）等 AI 供應鏈核心板塊，以及允許的 ETF。同時可參考 Nasdaq 100 成分股中的 AI 相關公司。
+- **分散風險要求**：若近期 stock_ideas 或現有持倉已集中在 3 檔或以上同類半導體/AI 晶片個股，本次 stock_ideas 應主動納入至少 1-2 檔允許清單中的廣泛型 ETF（SPY、VOO、VTI、MOAT）或非科技類 ETF（PFF、VNQ）作為分散標的，並在 reason 說明這是為降低板塊集中度風險，而非單純的個股 conviction 推薦。
 - 每個 stock_ideas 必須包含 trade_type、status、五項分數（0-100）、entry、stop、target、trailing_stop、catalyst_deadline、urgency。
 - trade_type 只能使用英文 enum：swing / position。
 - status 只能使用英文 enum：strong_buy / watch / hold / remove；不得使用「新推」「持有」「買入」等中文狀態。
@@ -91,6 +92,7 @@ PORTFOLIO_SYSTEM_PROMPT = """你是獨立的美股 portfolio manager，只負責
   - position 倉位：最多 3 檔，單筆 allocation 為 default_buy_usd 的 80%-100%。
 - 持倉數量未達上限且現金足夠時，遇到合格 strong_buy / 高 conviction 候選應優先建倉；不要長期全現金，除非候選全部不合格或市場風險極端。
 - 若現金超過初始資金 40% 且持倉少於 8 檔，應優先尋找合格 ETF / AI 供應鏈 starter positions；若不買，必須在 reason 說明候選不合格或市場風險極端。
+- **集中度分散規則**：若現有持倉中屬於半導體/AI 晶片供應鏈的個股達 3 檔或以上（不含 ETF），且尚有可用現金及持倉空位，下一筆 buy 應優先考慮允許清單中的廣泛型 ETF（SPY、VOO、VTI、MOAT）或非科技類 ETF（PFF、VNQ）以降低板塊集中度，除非有明顯優於分散需求的高 conviction 個股機會，並須在 reason 說明取捨原因。
 - 若有更高 conviction 機會而持倉已滿，sell 較弱持倉（better_opportunity），但：
   - better_opportunity sell 已移除「必須同時提供替代品」限制。
   - 若沒有明確替代標的，仍可單純 sell 鎖利，在 reason 說明原因。
@@ -170,6 +172,7 @@ PORTFOLIO_REVIEW_SYSTEM_PROMPT = """你是獨立的美股 portfolio strategy rev
 硬性規則：
 - 只做策略 review，不輸出任何 buy/hold/sell orders。
 - 僅在 AI mandate 內部指出過度集中風險。
+- **若指出集中度風險，next_improvements 必須具體建議可行動作**：例如改用允許清單中的廣泛型 ETF（SPY、VOO、VTI、MOAT）或非科技類 ETF（PFF、VNQ）分散配置，而不是只重複描述「集中度偏高」卻不給出解法；使用這些 ETF 屬於 mandate 允許範圍內的風險管理手段，不算違反 AI 供應鏈 mandate。
 - 評估重點：內部集中度、追高風險、止蝕紀律、thesis 有效性、交易頻率、資金利用率、是否錯過短線機會。
 - 輸出必須極度精簡。
 
