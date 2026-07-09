@@ -202,6 +202,7 @@ http://localhost:8001/portfolio_book.html
       font-size: inherit;
       font-weight: 400;
       line-height: 1.6;
+      color: inherit;
     }
 
     .text-cell > div:first-child {
@@ -209,10 +210,6 @@ http://localhost:8001/portfolio_book.html
     }
 
     .text-cell .meta {
-      font-size: 11.5px;
-      font-weight: 400;
-      color: #8192a8;
-      line-height: 1.5;
       margin-top: 4px;
     }
 
@@ -543,7 +540,6 @@ http://localhost:8001/portfolio_book.html
       }
 
       .text-cell .meta {
-        font-size: 9px !important;
         margin-top: 3px !important;
       }
 
@@ -643,7 +639,7 @@ http://localhost:8001/portfolio_book.html
             <th>Avg Cost</th>
             <th>Last Price</th>
             <th>Value</th>
-            <th>PnL / Return</th>
+            <th>PnL</th>
             <th>Stop</th>
             <th>Thesis</th>
           </tr>
@@ -709,6 +705,9 @@ http://localhost:8001/portfolio_book.html
         </thead>
         <tbody id="watchRows"></tbody>
       </table>
+    </div>
+    <div style="text-align:center;margin-top:10px;">
+      <button id="watchToggleBtn" type="button" style="display:none;background:#1c2d43;color:#9caec4;border:1px solid #34465e;border-radius:6px;padding:5px 14px;font-size:12px;cursor:pointer;"></button>
     </div>
   </div>
 
@@ -820,9 +819,12 @@ http://localhost:8001/portfolio_book.html
           <div class="value">$${money(cash)}</div>
         </div>
         <div class="card">
-          <div class="label">總資產 / 總回報</div>
-          <div class="value" style="color:${assetPnl > 0 ? "#00c896" : assetPnl < 0 ? "#ff4d5f" : "#f4f7fb"}">$${money(equity)}</div>
-          <div class="sub">${tagged(assetPnl)} <span class="${cls(assetRet)}">(${pct2(assetRet)})</span></div>
+          <div class="label">總資產</div>
+          <div class="value">$${money(equity)}</div>
+        </div>
+        <div class="card">
+          <div class="label">總回報</div>
+          <div class="value" style="font-size:20px;color:${assetPnl > 0 ? "#00c896" : assetPnl < 0 ? "#ff4d5f" : "#f4f7fb"}">${tagged(assetPnl)} (${pct2(assetRet)})</div>
         </div>
       `;
 
@@ -836,7 +838,7 @@ http://localhost:8001/portfolio_book.html
             <td>$${money(r.value)}</td>
             <td class="${cls(r.pnl)}">
               <div>${tagged(r.pnl)}</div>
-              <div class="cell-sub ${cls(r.ret)}">${pct2(r.ret)}</div>
+              <div class="cell-sub ${cls(r.ret)}">(${pct2(r.ret)})</div>
             </td>
             <td>${r.stop || "-"}</td>
             <td class="text-cell">
@@ -853,11 +855,11 @@ http://localhost:8001/portfolio_book.html
           <td></td>
           <td></td>
           <td></td>
-          <td class="summary-label"><strong>總計</strong></td>
+          <td class="summary-label"><strong>持倉總計</strong></td>
           <td>$${money(totalValue)}</td>
           <td class="${cls(totalPnl)}">
             <div>${tagged(totalPnl)}</div>
-            <div class="cell-sub ${cls(totalRet)}">${pct2(totalRet)}</div>
+            <div class="cell-sub ${cls(totalRet)}">(${pct2(totalRet)})</div>
           </td>
           <td colspan="2"></td>
         </tr>`;
@@ -890,6 +892,10 @@ http://localhost:8001/portfolio_book.html
 
       document.getElementById("dailyGrid").innerHTML = entries.map(e => {
         const decLabel = { buy: "買入", sell: "賣出", hold: "持有" }[e.action] || e.action;
+        const isSell = e.action === "sell";
+        const pnlValue = isSell ? (e.pnl || 0) : (e.unrealized_pnl || 0);
+        const invested = isSell ? (e.invested || 0) : ((e.value || 0) - (e.unrealized_pnl || 0));
+        const pnlPct = invested ? (pnlValue / invested) * 100 : 0;
         return `
           <div class="daily-card">
             <div class="card-head">
@@ -899,7 +905,7 @@ http://localhost:8001/portfolio_book.html
             <div class="reason">${e.reason || "-"}</div>
             <div class="meta">
               <span>價格 $${money(e.price)}</span>
-              <span>${e.action === "sell" ? "已實現" : "PnL"} ${tagged(e.action === "sell" ? (e.pnl || 0) : (e.unrealized_pnl || 0))}</span>
+              <span>${isSell ? "已實現" : "PnL"} ${tagged(pnlValue)} <span class="${cls(pnlPct)}">(${pct2(pnlPct)})</span></span>
               ${e.stop ? `<span>止損 ${e.stop}</span>` : ""}
             </div>
           </div>
@@ -996,11 +1002,16 @@ http://localhost:8001/portfolio_book.html
     // ================================================================
     // 4. 持續追蹤名單
     // ================================================================
+    let watchExpanded = false;
+    const WATCH_COLLAPSE_COUNT = 8;
+
     function renderWatchlist(ideas, book) {
       const items = Object.values(ideas || {});
+      const toggleBtn = document.getElementById("watchToggleBtn");
       if (!items.length) {
         document.getElementById("watchRows").innerHTML =
           '<tr><td colspan="10" style="color:#6e7681;text-align:center;">尚無追蹤名單</td></tr>';
+        toggleBtn.style.display = "none";
         return;
       }
 
@@ -1012,7 +1023,10 @@ http://localhost:8001/portfolio_book.html
 
       items.sort((a, b) => (b.recommend_count || 0) - (a.recommend_count || 0));
 
-      document.getElementById("watchRows").innerHTML = items.map(it => {
+      const hasMore = items.length > WATCH_COLLAPSE_COUNT;
+      const visibleItems = (watchExpanded || !hasMore) ? items : items.slice(0, WATCH_COLLAPSE_COUNT);
+
+      document.getElementById("watchRows").innerHTML = visibleItems.map(it => {
         const isHeld    = heldTickers.has(it.ticker);
         const statusTag = isHeld
           ? '<span class="tag tag-held">已持倉</span>'
@@ -1038,6 +1052,19 @@ http://localhost:8001/portfolio_book.html
           </tr>
         `;
       }).join("");
+
+      if (hasMore) {
+        toggleBtn.style.display = "inline-block";
+        toggleBtn.textContent = watchExpanded
+          ? "收起列表 ▲"
+          : `顯示全部 ${items.length} 檔 ▼`;
+        toggleBtn.onclick = () => {
+          watchExpanded = !watchExpanded;
+          renderWatchlist(ideas, book);
+        };
+      } else {
+        toggleBtn.style.display = "none";
+      }
     }
 
     // ---- 自動刷新：每 60 秒重新讀取一次 daily-data JSON，持倉價錢/損益會自動更新 ----
