@@ -147,7 +147,7 @@ http://localhost:8001/portfolio_book.html
       border: 1px solid #27394f;
       padding: 8px 10px;
       text-align: left;
-      vertical-align: middle;
+      vertical-align: top;
       white-space: nowrap;
       word-break: keep-all;
       overflow-wrap: normal;
@@ -158,13 +158,11 @@ http://localhost:8001/portfolio_book.html
     .portfolio-table th:nth-child(4),
     .portfolio-table th:nth-child(5),
     .portfolio-table th:nth-child(6),
-    .portfolio-table th:nth-child(7),
     #posRows tr td:nth-child(2),
     #posRows tr td:nth-child(3),
     #posRows tr td:nth-child(4),
     #posRows tr td:nth-child(5),
     #posRows tr td:nth-child(6),
-    #posRows tr td:nth-child(7),
     .trade-table th:nth-child(4),
     .trade-table th:nth-child(5),
     .trade-table th:nth-child(6),
@@ -229,6 +227,9 @@ http://localhost:8001/portfolio_book.html
     /* colors */
     .pos { color: #00c896; font-weight: 700; }
     .neg { color: #ff4d5f; font-weight: 700; }
+
+    /* secondary line inside a merged table cell, e.g. % under a $ amount */
+    .cell-sub { font-size: 11px; font-weight: 400; margin-top: 3px; opacity: 0.85; }
 
     /* holding vs watching tags */
     .tag {
@@ -387,8 +388,8 @@ http://localhost:8001/portfolio_book.html
     }
 
     /* trade action badges in table */
-    .act-buy  { color: #00c896; font-weight: 300; }
-    .act-sell { color: #ff4d5f; font-weight: 300; }
+    .act-buy  { color: #00c896; font-weight: 700; }
+    .act-sell { color: #ff4d5f; font-weight: 700; }
 
     .trade-row-buy  { border-left: 3px solid #00c896; }
     .trade-row-sell { border-left: 3px solid #ff4d5f; }
@@ -625,8 +626,7 @@ http://localhost:8001/portfolio_book.html
             <th>Avg Cost</th>
             <th>Last Price</th>
             <th>Value</th>
-            <th>PnL</th>
-            <th>Return</th>
+            <th>PnL / Return</th>
             <th>Stop</th>
             <th>Thesis</th>
           </tr>
@@ -803,14 +803,9 @@ http://localhost:8001/portfolio_book.html
           <div class="value">$${money(cash)}</div>
         </div>
         <div class="card">
-          <div class="label">總資產</div>
+          <div class="label">總資產 / 總回報</div>
           <div class="value">$${money(equity)}</div>
-          <div class="sub ${cls(assetPnl)}">${tagged(assetPnl)} / ${pct2(assetRet)}</div>
-        </div>
-        <div class="card">
-          <div class="label">總回報</div>
-          <div class="value ${cls(assetRet)}">${pct2(assetRet)}</div>
-          <div class="sub ${cls(assetPnl)}">${tagged(assetPnl)}</div>
+          <div class="sub ${cls(assetPnl)}">${tagged(assetPnl)} (${pct2(assetRet)})</div>
         </div>
       `;
 
@@ -822,8 +817,10 @@ http://localhost:8001/portfolio_book.html
             <td>$${money(r.avg_cost)}</td>
             <td>$${money(r.last_price)}</td>
             <td>$${money(r.value)}</td>
-            <td class="${cls(r.pnl)}">${tagged(r.pnl)}</td>
-            <td class="${cls(r.ret)}">${pct2(r.ret)}</td>
+            <td class="${cls(r.pnl)}">
+              <div>${tagged(r.pnl)}</div>
+              <div class="cell-sub ${cls(r.ret)}">${pct2(r.ret)}</div>
+            </td>
             <td>${r.stop || "-"}</td>
             <td class="text-cell">
               <div>${r.thesis || r.reason || r.last_reason || "-"}</div>
@@ -841,8 +838,10 @@ http://localhost:8001/portfolio_book.html
           <td></td>
           <td class="summary-label"><strong>總計</strong></td>
           <td>$${money(totalValue)}</td>
-          <td class="${cls(totalPnl)}">${tagged(totalPnl)}</td>
-          <td class="${cls(totalRet)}">${pct2(totalRet)}</td>
+          <td class="${cls(totalPnl)}">
+            <div>${tagged(totalPnl)}</div>
+            <div class="cell-sub ${cls(totalRet)}">${pct2(totalRet)}</div>
+          </td>
           <td colspan="2"></td>
         </tr>`;
     }
