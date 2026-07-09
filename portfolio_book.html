@@ -822,7 +822,7 @@ http://localhost:8001/portfolio_book.html
         <div class="card">
           <div class="label">總資產 / 總回報</div>
           <div class="value" style="color:${assetPnl > 0 ? "#00c896" : assetPnl < 0 ? "#ff4d5f" : "#f4f7fb"}">$${money(equity)}</div>
-          <div class="sub ${cls(assetPnl)}">${tagged(assetPnl)} (${pct2(assetRet)})</div>
+          <div class="sub">${tagged(assetPnl)} <span class="${cls(assetRet)}">(${pct2(assetRet)})</span></div>
         </div>
       `;
 
