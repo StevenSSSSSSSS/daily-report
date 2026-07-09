@@ -201,7 +201,19 @@ http://localhost:8001/portfolio_book.html
     .trade-reason {
       font-size: inherit;
       font-weight: 400;
-      line-height: inherit;
+      line-height: 1.6;
+    }
+
+    .text-cell > div:first-child {
+      margin-bottom: 5px;
+    }
+
+    .text-cell .meta {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: #8192a8;
+      line-height: 1.5;
+      margin-top: 4px;
     }
 
     tbody tr {
@@ -527,7 +539,12 @@ http://localhost:8001/portfolio_book.html
       .trade-reason {
         font-size: 10px !important;
         font-weight: 400 !important;
-        line-height: 1.25 !important;
+        line-height: 1.45 !important;
+      }
+
+      .text-cell .meta {
+        font-size: 9px !important;
+        margin-top: 3px !important;
       }
 
       .tag {
@@ -804,7 +821,7 @@ http://localhost:8001/portfolio_book.html
         </div>
         <div class="card">
           <div class="label">總資產 / 總回報</div>
-          <div class="value">$${money(equity)}</div>
+          <div class="value" style="color:${assetPnl > 0 ? "#00c896" : assetPnl < 0 ? "#ff4d5f" : "#f4f7fb"}">$${money(equity)}</div>
           <div class="sub ${cls(assetPnl)}">${tagged(assetPnl)} (${pct2(assetRet)})</div>
         </div>
       `;
