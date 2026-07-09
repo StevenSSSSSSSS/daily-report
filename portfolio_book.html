@@ -973,7 +973,9 @@ http://localhost:8001/portfolio_book.html
 
       const actLabel = { buy: "買入", sell: "賣出" };
 
-      document.getElementById("tradeRows").innerHTML = trades.map(t => `
+      document.getElementById("tradeRows").innerHTML = trades.map(t => {
+        const pnlPct = t.action === "sell" && t.invested ? (t.pnl / t.invested) * 100 : 0;
+        return `
         <tr class="trade-row-${t.action}">
           <td style="color:#8b949e;">${t.time || "-"}</td>
           <td><strong>${t.ticker}</strong></td>
@@ -981,11 +983,14 @@ http://localhost:8001/portfolio_book.html
           <td>$${money(t.price)}</td>
           <td>${num4(t.shares)}</td>
           <td>$${money(t.amount)}</td>
-          <td>${t.action === "sell" ? tagged(t.pnl || 0) : "-"}</td>
+          <td>${t.action === "sell"
+            ? `${tagged(t.pnl || 0)} <span class="${cls(pnlPct)}">(${pct2(pnlPct)})</span>`
+            : "-"}</td>
           <td class="trade-reason">${t.reason || "-"}</td>
           <td>${t.stop || "-"}</td>
         </tr>
-      `).join("");
+      `;
+      }).join("");
     }
 
     // ================================================================
