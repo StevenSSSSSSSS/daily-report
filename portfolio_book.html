@@ -992,7 +992,7 @@ http://localhost:8001/portfolio_book.html
           <td>${t.action === "sell"
             ? `${tagged(t.pnl || 0)} <span class="${cls(pnlPct)}">(${pct2(pnlPct)})</span>`
             : "-"}</td>
-          <td class="trade-reason">${t.reason || "-"}</td>
+          <td class="trade-reason">${t.decision_logic || t.reason || "-"}</td>
           <td>${t.stop || "-"}</td>
         </tr>
       `;
