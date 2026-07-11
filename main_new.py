@@ -514,6 +514,7 @@ def apply_portfolio_decisions(book, report, now):
                 "proceeds": round(proceeds, 2),
                 "pnl": round(realized_pnl, 2),
                 "reason": order.get("reason", ""),
+                "decision_logic": order.get("decision_logic", ""),
             })
             trade_log.append({
                 "time": now_text,
@@ -526,12 +527,14 @@ def apply_portfolio_decisions(book, report, now):
                 "pnl": round(realized_pnl, 2),
                 "cash_after": round(cash, 2),
                 "reason": order.get("reason", ""),
+                "decision_logic": order.get("decision_logic", ""),
             })
 
         elif action in {"buy", "sell"} and not can_trade:
             if ticker in positions:
                 positions[ticker]["last_decision"] = "hold"
                 positions[ticker]["last_reason"] = f"非美股交易時段，原建議 {action} 未執行：{order.get('reason', '')}"
+                positions[ticker]["last_decision_logic"] = order.get("decision_logic", "")
                 if action == "sell" and not order.get("force"):
                     pending_orders[:] = [
                         pending for pending in pending_orders
@@ -556,6 +559,7 @@ def apply_portfolio_decisions(book, report, now):
                     "unrealized_pnl": round(value - invested, 2),
                     "cash_after": round(cash, 2),
                     "reason": positions[ticker]["last_reason"],
+                    "decision_logic": order.get("decision_logic", ""),
                 })
             elif action == "buy":
                 pending_orders[:] = [
@@ -574,6 +578,7 @@ def apply_portfolio_decisions(book, report, now):
             ]
             positions[ticker]["last_decision"] = "hold"
             positions[ticker]["last_reason"] = order.get("reason", "")
+            positions[ticker]["last_decision_logic"] = order.get("decision_logic", "")
             if price:
                 positions[ticker]["last_price"] = price
             pos = positions[ticker]
@@ -592,6 +597,7 @@ def apply_portfolio_decisions(book, report, now):
                 "unrealized_pnl": round(value - invested, 2),
                 "cash_after": round(cash, 2),
                 "reason": order.get("reason", ""),
+                "decision_logic": order.get("decision_logic", ""),
             })
 
         elif action == "buy" and ticker not in positions and len(positions) < PORTFOLIO_MAX_POSITIONS and can_trade:
@@ -624,6 +630,7 @@ def apply_portfolio_decisions(book, report, now):
                 "last_price": price,
                 "last_decision": "buy",
                 "reason": order.get("reason", ""),
+                "decision_logic": order.get("decision_logic", ""),
                 "thesis": thesis,
                 "evidence": evidence,
                 "falsification_points": falsification_points,
@@ -646,6 +653,7 @@ def apply_portfolio_decisions(book, report, now):
                 "amount": round(allocation, 2),
                 "cash_after": round(cash, 2),
                 "reason": order.get("reason", ""),
+                "decision_logic": order.get("decision_logic", ""),
                 "thesis": thesis,
                 "evidence": evidence,
                 "falsification_points": falsification_points,
