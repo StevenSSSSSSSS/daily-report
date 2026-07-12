@@ -32,8 +32,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 210.9600067138672,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "持倉 thesis 仍成立，AI 需求延續至2027",
-      "last_decision_logic": "股價維持上漲趨勢，catalyst 與 technical 分數達標，無 momentum_fade 跡象，因此繼續持有。"
+      "last_reason": "持倉 thesis 仍成立，AI晶片龍頭需求延續",
+      "last_decision_logic": "高 conviction AI晶片龍頭，HBM需求與技術面強勢，thesis未變，維持持倉。"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -64,8 +64,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 403.3599853515625,
       "buy_price_confirmed": 360.0,
-      "last_reason": "持倉 thesis 仍成立，AI 基礎設施需求穩健",
-      "last_decision_logic": "現金流穩健且技術面健康，集中度已透過 SPY 分散，維持持倉觀察下週設備數據。"
+      "last_reason": "持倉 thesis 仍成立，AI基礎設施領導者",
+      "last_decision_logic": "Apple AI合作與基礎設施需求支撐，conviction達標，維持持倉。"
     },
     "AMAT": {
       "ticker": "AMAT",
@@ -96,8 +96,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 609.0650024414062,
       "buy_price_confirmed": 550.4199829101562,
-      "last_reason": "持倉 thesis 仍成立，AI 設備需求強勁",
-      "last_decision_logic": "突破前高且 catalyst_score 高，catalyst_deadline 將至，暫無出場理由。"
+      "last_reason": "持倉 thesis 仍成立，AI設備需求強勁",
+      "last_decision_logic": "strong_buy 高 conviction，catalyst與technical分數達標，thesis有效。"
     },
     "MU": {
       "ticker": "MU",
@@ -128,8 +128,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1021.5800170898438,
       "buy_price_confirmed": 934.7000122070312,
-      "last_reason": "持倉 thesis 仍成立，AI 記憶體需求延續",
-      "last_decision_logic": "旗形突破量能配合，performance 正向，等待 7/25 catalyst。"
+      "last_reason": "持倉 thesis 仍成立，AI記憶體需求延續至2027",
+      "last_decision_logic": "strong_buy 高 conviction，AI記憶體供應鏈熱度延續，維持持倉。"
     },
     "SPY": {
       "ticker": "SPY",
@@ -161,8 +161,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 754.9500122070312,
       "buy_price_confirmed": 751.3900146484375,
-      "last_reason": "持倉 thesis 仍成立，分散半導體集中風險有效",
-      "last_decision_logic": "廣泛 ETF 符合集中度分散規則，技術通道上攻，維持持倉。"
+      "last_reason": "持倉 thesis 仍成立，已有效分散AI集中風險",
+      "last_decision_logic": "依集中度分散規則納入廣泛ETF，策略健康，thesis穩固。"
     }
   },
   "closed_trades": [
@@ -5714,94 +5714,113 @@
       "cash_after": 303.59,
       "reason": "持倉 thesis 仍成立，分散半導體集中風險有效",
       "decision_logic": "廣泛 ETF 符合集中度分散規則，技術通道上攻，維持持倉。"
+    },
+    {
+      "time": "2026-07-12 13:31",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 210.96,
+      "shares": 5.133207,
+      "value": 1082.9,
+      "unrealized_pnl": 82.9,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI晶片龍頭需求延續",
+      "decision_logic": "高 conviction AI晶片龍頭，HBM需求與技術面強勢，thesis未變，維持持倉。"
+    },
+    {
+      "time": "2026-07-12 13:31",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 399.97,
+      "shares": 2.777778,
+      "value": 1111.03,
+      "unrealized_pnl": 111.03,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI基礎設施領導者",
+      "decision_logic": "Apple AI合作與基礎設施需求支撐，conviction達標，維持持倉。"
+    },
+    {
+      "time": "2026-07-12 13:31",
+      "action": "hold",
+      "ticker": "AMAT",
+      "price": 602.5,
+      "shares": 1.816795,
+      "value": 1094.62,
+      "unrealized_pnl": 94.62,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI設備需求強勁",
+      "decision_logic": "strong_buy 高 conviction，catalyst與technical分數達標，thesis有效。"
+    },
+    {
+      "time": "2026-07-12 13:31",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 979.3,
+      "shares": 1.069862,
+      "value": 1047.72,
+      "unrealized_pnl": 47.72,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI記憶體需求延續至2027",
+      "decision_logic": "strong_buy 高 conviction，AI記憶體供應鏈熱度延續，維持持倉。"
+    },
+    {
+      "time": "2026-07-12 13:31",
+      "action": "hold",
+      "ticker": "SPY",
+      "price": 754.95,
+      "shares": 1.330867,
+      "value": 1004.74,
+      "unrealized_pnl": 4.74,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，已有效分散AI集中風險",
+      "decision_logic": "依集中度分散規則納入廣泛ETF，策略健康，thesis穩固。"
     }
   ],
-  "last_updated_at": "2026-07-11 19:44",
+  "last_updated_at": "2026-07-12 13:31",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-07-11 19:44",
+    "time": "2026-07-12 13:31",
     "review": {
-      "strategy_health": "good",
-      "summary": "持倉已納入SPY分散風險，thesis有效且正報酬，策略健康。",
+      "strategy_health": "warning",
+      "summary": "AI個股集中4檔加SPY分散，thesis有效但集中風險需注意。",
       "what_worked": [
-        "SPY分散AI集中風險有效",
-        "各持倉thesis持續成立",
-        "正報酬持倉比例高"
+        "高conviction AI持倉獲利正向",
+        "SPY已納入有效分散",
+        "thesis未變維持持倉"
       ],
       "mistakes_or_risks": [
-        "AI個股仍占4/5集中度偏高",
-        "現金僅6%利用率過高",
-        "無止蝕紀律設定"
+        "AI半導體集中度偏高",
+        "現金偏低利用率高",
+        "部分closed trade有虧損"
       ],
       "next_improvements": [
-        "新增PFF或VNQ分散非科技風險",
-        "設定各持倉5-8%止蝕點",
-        "下週設備數據前觀察MU/AVGO輪動"
+        "若需進一步分散，可考慮增加VOO或VTI配置",
+        "監控catalyst後適時調整持倉比例",
+        "設定明確止蝕紀律避免過度持倉"
       ],
       "risk_notes": [
-        "半導體板塊波動仍存",
-        "美中貿易催化劑正面但需監控",
-        "VIX回落風險偏好改善"
+        "4檔AI股佔比過高",
+        "地緣與利率風險仍存",
+        "HBM需求延續但需驗證"
       ],
-      "trade_frequency": "週末休市無交易，無錯過短線機會，適合position持倉。",
+      "trade_frequency": "持倉穩定未積極交易，近期無明顯錯過短線機會。",
       "win_rate_estimate": "近5筆closed trades 2勝3敗，勝率40%",
-      "avg_hold_days": "持倉多為近期開倉，平均10-15天合理。",
-      "cash_utilisation": "現金占比6%，利用率過高，建議保留緩衝。",
+      "avg_hold_days": "持倉天數約1-2週，適合高conviction策略但需防過久。",
+      "cash_utilisation": "現金占比約6%，利用率偏高，流動性低。",
       "density_check": {
-        "small_wins_count": 3,
+        "small_wins_count": 2,
         "missed_swings": [
           "無明顯錯過"
         ],
         "overhold_risk": [
-          "AMAT/MU若催化劑不及預期"
+          "MU持倉過久等待catalyst",
+          "AMAT突破後續觀察"
         ],
-        "verdict": "交易頻率適中，密食策略以position為主，無過度追高。"
+        "verdict": "交易頻率低，密食策略保守，適合週末復盤但需提升活躍度。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-07-04 13:49",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "持倉過度集中AI板塊，部分小幅虧損，現金利用率偏低。",
-        "what_worked": [
-          "AI thesis中線維持有效",
-          "closed trades 3勝2敗獲利",
-          "VIX回落風險偏好改善"
-        ],
-        "mistakes_or_risks": [
-          "AI mandate內集中風險高",
-          "AMD MU未設止蝕小虧",
-          "交易頻率低"
-        ],
-        "next_improvements": [
-          "增加分散至設備ETF",
-          "強化止蝕紀律",
-          "提高現金部署"
-        ],
-        "risk_notes": [
-          "AI晶片記憶體過度集中",
-          "持倉過久風險",
-          "現金1342偏高"
-        ],
-        "trade_frequency": "交易頻率不足，本週無新單，錯過短線反彈機會。",
-        "win_rate_estimate": "近5筆closed trades 3勝2敗，勝率60%",
-        "avg_hold_days": "平均持倉約20-30天，適合中線但需檢視過久風險。",
-        "cash_utilisation": "現金占比27%，偏高，建議下週部署。",
-        "density_check": {
-          "small_wins_count": 0,
-          "missed_swings": [
-            "半導體設備反彈機會"
-          ],
-          "overhold_risk": [
-            "MU持倉過久",
-            "AMD小虧未處理"
-          ],
-          "verdict": "交易頻率低，密食策略不足，需增加活躍度與分散。"
-        }
-      }
-    },
     {
       "time": "2026-07-05 14:08",
       "review": {
@@ -6589,6 +6608,48 @@
             "AMAT/MU若催化劑不及預期"
           ],
           "verdict": "交易頻率適中，密食策略以position為主，無過度追高。"
+        }
+      }
+    },
+    {
+      "time": "2026-07-12 13:31",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI個股集中4檔加SPY分散，thesis有效但集中風險需注意。",
+        "what_worked": [
+          "高conviction AI持倉獲利正向",
+          "SPY已納入有效分散",
+          "thesis未變維持持倉"
+        ],
+        "mistakes_or_risks": [
+          "AI半導體集中度偏高",
+          "現金偏低利用率高",
+          "部分closed trade有虧損"
+        ],
+        "next_improvements": [
+          "若需進一步分散，可考慮增加VOO或VTI配置",
+          "監控catalyst後適時調整持倉比例",
+          "設定明確止蝕紀律避免過度持倉"
+        ],
+        "risk_notes": [
+          "4檔AI股佔比過高",
+          "地緣與利率風險仍存",
+          "HBM需求延續但需驗證"
+        ],
+        "trade_frequency": "持倉穩定未積極交易，近期無明顯錯過短線機會。",
+        "win_rate_estimate": "近5筆closed trades 2勝3敗，勝率40%",
+        "avg_hold_days": "持倉天數約1-2週，適合高conviction策略但需防過久。",
+        "cash_utilisation": "現金占比約6%，利用率偏高，流動性低。",
+        "density_check": {
+          "small_wins_count": 2,
+          "missed_swings": [
+            "無明顯錯過"
+          ],
+          "overhold_risk": [
+            "MU持倉過久等待catalyst",
+            "AMAT突破後續觀察"
+          ],
+          "verdict": "交易頻率低，密食策略保守，適合週末復盤但需提升活躍度。"
         }
       }
     }
