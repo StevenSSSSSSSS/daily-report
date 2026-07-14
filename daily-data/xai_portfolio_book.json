@@ -32,8 +32,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 210.9600067138672,
       "buy_price_confirmed": 194.80999755859375,
-      "last_reason": "持倉 thesis 仍成立，AI晶片龍頭中線催化劑未變",
-      "last_decision_logic": "市場回檔但NVDA技術支撐強，conviction_score高且現有持倉獲利，維持不動。"
+      "last_reason": "持倉 thesis 仍成立，AI 晶片需求延續且技術支撐穩固",
+      "last_decision_logic": "市場風險偏好回落但 NVDA 中線催化劑未變，現有持倉續抱觀察下週 Fed 言論。"
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -64,8 +64,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 403.3599853515625,
       "buy_price_confirmed": 360.0,
-      "last_reason": "持倉 thesis 仍成立，AI基礎設施需求穩健",
-      "last_decision_logic": "AVGO上升通道完整，現金不足且已達持倉上限，繼續持有觀察催化劑。"
+      "last_reason": "持倉 thesis 仍成立，AI 基礎設施領導地位未變",
+      "last_decision_logic": "AVGO 技術面維持強勢，雖板塊集中但短期無明顯出場訊號。"
     },
     "AMAT": {
       "ticker": "AMAT",
@@ -96,8 +96,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 609.0650024414062,
       "buy_price_confirmed": 550.4199829101562,
-      "last_reason": "持倉 thesis 仍成立，AI設備需求強勁",
-      "last_decision_logic": "AMAT量價配合上攻，短期雖承壓但中線催化劑存在，暫不調整。"
+      "last_reason": "持倉 thesis 仍成立，AI 設備需求強勁",
+      "last_decision_logic": "AMAT 近期獲利穩定，半導體設備催化劑持續，暫無需調整。"
     },
     "MU": {
       "ticker": "MU",
@@ -128,8 +128,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 1021.5800170898438,
       "buy_price_confirmed": 934.7000122070312,
-      "last_reason": "持倉 thesis 仍成立，AI記憶體需求延續",
-      "last_decision_logic": "MU突破整理區且conviction高，現金不足無法加碼，維持現有position。"
+      "last_reason": "持倉 thesis 仍成立，AI 記憶體需求延續",
+      "last_decision_logic": "MU 現價接近支撐，短期波動屬健康整理，中線持倉續抱。"
     },
     "SPY": {
       "ticker": "SPY",
@@ -161,8 +161,8 @@
       "trailing_stop_pct": 0.05,
       "highest_price": 754.9500122070312,
       "buy_price_confirmed": 751.3900146484375,
-      "last_reason": "持倉已依分散規則納入廣泛ETF，風險管理有效",
-      "last_decision_logic": "SPY符合集中度分散需求，現金偏低且持倉上限已達，繼續持有降低板塊集中風險。"
+      "last_reason": "持倉 thesis 仍成立，已提供廣泛分散效果",
+      "last_decision_logic": "SPY 作為分散工具符合集中度規則，現金不足且無更高 conviction 機會，維持持倉。"
     }
   },
   "closed_trades": [
@@ -6014,97 +6014,114 @@
       "cash_after": 303.59,
       "reason": "持倉已依分散規則納入廣泛ETF，風險管理有效",
       "decision_logic": "SPY符合集中度分散需求，現金偏低且持倉上限已達，繼續持有降低板塊集中風險。"
+    },
+    {
+      "time": "2026-07-14 18:14",
+      "action": "hold",
+      "ticker": "NVDA",
+      "price": 203.53,
+      "shares": 5.133207,
+      "value": 1044.76,
+      "unrealized_pnl": 44.76,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI 晶片需求延續且技術支撐穩固",
+      "decision_logic": "市場風險偏好回落但 NVDA 中線催化劑未變，現有持倉續抱觀察下週 Fed 言論。"
+    },
+    {
+      "time": "2026-07-14 18:14",
+      "action": "hold",
+      "ticker": "AVGO",
+      "price": 384.05,
+      "shares": 2.777778,
+      "value": 1066.81,
+      "unrealized_pnl": 66.81,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI 基礎設施領導地位未變",
+      "decision_logic": "AVGO 技術面維持強勢，雖板塊集中但短期無明顯出場訊號。"
+    },
+    {
+      "time": "2026-07-14 18:14",
+      "action": "hold",
+      "ticker": "AMAT",
+      "price": 575.39,
+      "shares": 1.816795,
+      "value": 1045.37,
+      "unrealized_pnl": 45.37,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI 設備需求強勁",
+      "decision_logic": "AMAT 近期獲利穩定，半導體設備催化劑持續，暫無需調整。"
+    },
+    {
+      "time": "2026-07-14 18:14",
+      "action": "hold",
+      "ticker": "MU",
+      "price": 937.0,
+      "shares": 1.069862,
+      "value": 1002.46,
+      "unrealized_pnl": 2.46,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，AI 記憶體需求延續",
+      "decision_logic": "MU 現價接近支撐，短期波動屬健康整理，中線持倉續抱。"
+    },
+    {
+      "time": "2026-07-14 18:14",
+      "action": "hold",
+      "ticker": "SPY",
+      "price": 749.17,
+      "shares": 1.330867,
+      "value": 997.05,
+      "unrealized_pnl": -2.95,
+      "cash_after": 303.59,
+      "reason": "持倉 thesis 仍成立，已提供廣泛分散效果",
+      "decision_logic": "SPY 作為分散工具符合集中度規則，現金不足且無更高 conviction 機會，維持持倉。"
     }
   ],
-  "last_updated_at": "2026-07-14 12:50",
+  "last_updated_at": "2026-07-14 18:14",
   "pending_orders": [],
   "latest_review": {
-    "time": "2026-07-14 12:50",
+    "time": "2026-07-14 18:14",
     "review": {
       "strategy_health": "warning",
-      "summary": "AI板塊集中度偏高，雖納入SPY分散但仍需進一步廣泛配置。",
+      "summary": "AI半導體持倉集中，SPY分散效果有限，風險偏高。",
       "what_worked": [
-        "NVDA/AVGO/AMAT/MU thesis中線催化劑有效，持倉小幅獲利",
-        "SPY已納入降低板塊風險",
-        "無追高或過度交易"
+        "SPY已納入提供部分分散",
+        "各持倉thesis維持有效",
+        "無明顯追高行為"
       ],
       "mistakes_or_risks": [
-        "4檔半導體個股+SPY仍高度集中AI供應鏈",
-        "現金偏低無法應對短期波動",
-        "近期closed trades勝率偏低"
+        "4檔AI股集中度過高",
+        "現金偏低缺乏緩衝",
+        "交易頻率不足"
       ],
       "next_improvements": [
-        "新增VOO或VTI進一步分散至廣泛美股",
-        "配置PFF或VNQ等非科技ETF降低AI板塊曝險",
-        "設定現金緩衝比例至少15%以提升資金彈性"
+        "增加VOO或VTI提升廣泛分散",
+        "配置PFF或VNQ降低科技風險",
+        "設定明確止蝕位管理波動"
       ],
       "risk_notes": [
-        "VIX升溫下AI個股短期承壓",
-        "美中貿易風險可能影響出口預期",
-        "持倉上限已達無法加碼強勢股"
+        "Nasdaq回檔下AI板塊波動放大",
+        "政治風險推升避險需求",
+        "中線催化劑仍存但短期承壓"
       ],
-      "trade_frequency": "今日全hold，無新交易，短期swing機會可能錯過，建議監控突破個股。",
-      "win_rate_estimate": "近5筆closed trades 2勝3敗，勝率40%",
-      "avg_hold_days": "持倉天數約1-3週，適合中線但需注意止蝕紀律。",
-      "cash_utilisation": "現金占比約6%，利用率偏高，流動性不足。",
+      "trade_frequency": "持倉多為中線，交易不活躍，可能錯過短線反彈機會。",
+      "win_rate_estimate": "近5筆已平倉2勝3敗，勝率40%",
+      "avg_hold_days": "持倉天數約1-3週，適合中線thesis但需監控波動。",
+      "cash_utilisation": "現金占比約6%，利用率偏高，缺乏加碼或防禦空間。",
       "density_check": {
         "small_wins_count": 2,
         "missed_swings": [
-          "納指回檔後AI龍頭反彈機會",
-          "MU/AMAT短期突破未加碼"
+          "Nasdaq回檔後反彈機會",
+          "AI財報前短線波動"
         ],
         "overhold_risk": [
-          "NVDA/AVGO若短期回檔可能延長持倉",
-          "SPY在風險偏好回落時表現相對穩健但無額外保護"
+          "NVDA/AVGO若支撐破位",
+          "MU接近成本區續抱風險"
         ],
-        "verdict": "交易頻率偏低，密食策略不足，需增加廣泛ETF分散並提升現金緩衝。"
+        "verdict": "交易頻率偏低，密食策略不足，需提升分散與紀律。"
       }
     }
   },
   "review_history": [
-    {
-      "time": "2026-07-07 14:06",
-      "review": {
-        "strategy_health": "warning",
-        "summary": "AI持倉過度集中，MU小虧未止蝕，交易頻率偏低。",
-        "what_worked": [
-          "AVGO獲利3.86% thesis強勁",
-          "NVDA高conviction需求延續",
-          "QQQ ETF分散曝險"
-        ],
-        "mistakes_or_risks": [
-          "AI晶片記憶體集中風險高",
-          "MU未觸發stop-loss持倉過久",
-          "現金27%利用不足"
-        ],
-        "next_improvements": [
-          "強化止蝕紀律",
-          "分散至AI設備ETF",
-          "提高交易頻率"
-        ],
-        "risk_notes": [
-          "mandate內AI集中風險",
-          "無追高但持倉過久",
-          "資金利用率偏低"
-        ],
-        "trade_frequency": "交易頻率不足，多hold，錯過短線反彈機會。",
-        "win_rate_estimate": "近5筆closed 3勝2敗，勝率60%",
-        "avg_hold_days": "平均持倉約10-20天，合理但可縮短。",
-        "cash_utilisation": "現金占比27%，偏高，應積極布局AI。",
-        "density_check": {
-          "small_wins_count": 2,
-          "missed_swings": [
-            "AVGO反彈前",
-            "MU財報催化"
-          ],
-          "overhold_risk": [
-            "MU小虧持倉",
-            "AMD低波動"
-          ],
-          "verdict": "交易頻率低，密食策略不足，需增加活躍度。"
-        }
-      }
-    },
     {
       "time": "2026-07-07 19:21",
       "review": {
@@ -6877,6 +6894,49 @@
             "SPY在風險偏好回落時表現相對穩健但無額外保護"
           ],
           "verdict": "交易頻率偏低，密食策略不足，需增加廣泛ETF分散並提升現金緩衝。"
+        }
+      }
+    },
+    {
+      "time": "2026-07-14 18:14",
+      "review": {
+        "strategy_health": "warning",
+        "summary": "AI半導體持倉集中，SPY分散效果有限，風險偏高。",
+        "what_worked": [
+          "SPY已納入提供部分分散",
+          "各持倉thesis維持有效",
+          "無明顯追高行為"
+        ],
+        "mistakes_or_risks": [
+          "4檔AI股集中度過高",
+          "現金偏低缺乏緩衝",
+          "交易頻率不足"
+        ],
+        "next_improvements": [
+          "增加VOO或VTI提升廣泛分散",
+          "配置PFF或VNQ降低科技風險",
+          "設定明確止蝕位管理波動"
+        ],
+        "risk_notes": [
+          "Nasdaq回檔下AI板塊波動放大",
+          "政治風險推升避險需求",
+          "中線催化劑仍存但短期承壓"
+        ],
+        "trade_frequency": "持倉多為中線，交易不活躍，可能錯過短線反彈機會。",
+        "win_rate_estimate": "近5筆已平倉2勝3敗，勝率40%",
+        "avg_hold_days": "持倉天數約1-3週，適合中線thesis但需監控波動。",
+        "cash_utilisation": "現金占比約6%，利用率偏高，缺乏加碼或防禦空間。",
+        "density_check": {
+          "small_wins_count": 2,
+          "missed_swings": [
+            "Nasdaq回檔後反彈機會",
+            "AI財報前短線波動"
+          ],
+          "overhold_risk": [
+            "NVDA/AVGO若支撐破位",
+            "MU接近成本區續抱風險"
+          ],
+          "verdict": "交易頻率偏低，密食策略不足，需提升分散與紀律。"
         }
       }
     }
